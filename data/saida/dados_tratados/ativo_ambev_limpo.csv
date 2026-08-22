@@ -1,0 +1,649 @@
+﻿CNPJ_CIA,DT_REFER,VERSAO,DENOM_CIA,CD_CVM,GRUPO_DFP,MOEDA,ESCALA_MOEDA,ORDEM_EXERC,DT_FIM_EXERC,CD_CONTA,DS_CONTA,VL_CONTA,ST_CONTA_FIXA,ANO_ANALISE,TIPO_DEMONSTRATIVO
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1,Ativo Total,138602483.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1,Ativo Total,137958083.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01,Ativo Circulante,38627141.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01,Ativo Circulante,37816711.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.01,Caixa e Equivalentes de Caixa,16627698.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.01,Caixa e Equivalentes de Caixa,14926435.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.02,Aplicações Financeiras,1914607.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.02,Aplicações Financeiras,454497.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.02.01,Aplicações Financeiras Avaliadas a Valor Justo através do Resultado,1914607.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.02.01,Aplicações Financeiras Avaliadas a Valor Justo através do Resultado,454497.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.02.01.01,Títulos para Negociação,1914607.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.02.01.01,Títulos para Negociação,454497.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.02.01.02,Títulos Designados a Valor Justo,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.02.01.02,Títulos Designados a Valor Justo,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.02.02,Aplicações Financeiras Avaliadas a Valor Justo através de Outros Resultados Abrangentes,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.02.02,Aplicações Financeiras Avaliadas a Valor Justo através de Outros Resultados Abrangentes,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.02.03,Aplicações Financeiras Avaliadas ao Custo Amortizado,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.02.03,Aplicações Financeiras Avaliadas ao Custo Amortizado,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.03,Contas a Receber,4791634.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.03,Contas a Receber,5349105.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.03.01,Clientes,4636470.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.03.01,Clientes,5058422.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.03.02,Outras Contas a Receber,155164.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.03.02,Outras Contas a Receber,290683.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.03.02.01,Contas a Receber de Partes Relacionadas,155164.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.03.02.01,Contas a Receber de Partes Relacionadas,290683.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.04,Estoques,11000346.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.04,Estoques,12923025.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.04.01,Produto Acabado,3626651.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.04.01,Produto Acabado,4094014.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.04.02,Produto em Elaboração,672542.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.04.02,Produto em Elaboração,845661.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.04.03,Matérias-primas e itens de consumo,5306223.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.04.03,Matérias-primas e itens de consumo,6798273.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.04.04,Materiais de Produção,0.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.04.04,Materiais de Produção,0.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.04.05,Almoxarifado e Outros,1552704.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.04.05,Almoxarifado e Outros,1345250.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.04.06,Provisão para Perdas,-157774.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.04.06,Provisão para Perdas,-160173.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.05,Ativos Biológicos,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.05,Ativos Biológicos,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.06,Tributos a Recuperar,2612673.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.06,Tributos a Recuperar,2853475.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.06.01,Tributos Correntes a Recuperar,2612673.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.06.01,Tributos Correntes a Recuperar,2853475.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.06.01.01,Imposto de renda e Contribuição Social a Recuperar,631524.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.06.01.01,Imposto de renda e Contribuição Social a Recuperar,1808661.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.06.01.02,Impostos Indiretos a Recuperar,1981149.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.06.01.02,Impostos Indiretos a Recuperar,1044814.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.07,Despesas Antecipadas,524141.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.07,Despesas Antecipadas,499779.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.07.01,Despesas Antecipadas Marketing,524141.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.07.01,Despesas Antecipadas Marketing,499779.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.07.02,Outras Despesas Antecipadas,0.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.07.02,Outras Despesas Antecipadas,0.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.08,Outros Ativos Circulantes,1156042.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.08,Outros Ativos Circulantes,810395.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.08.01,Ativos Não-Correntes a Venda,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.08.01,Ativos Não-Correntes a Venda,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.08.02,Ativos de Operações Descontinuadas,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.08.02,Ativos de Operações Descontinuadas,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.08.03,Outros,1156042.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.08.03,Outros,810395.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.08.03.01,Instrumentos Financeiros Derivativos,597392.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.08.03.01,Instrumentos Financeiros Derivativos,272301.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.08.03.02,Juros a Receber,62801.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.08.03.02,Juros a Receber,40010.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.08.03.03,Outros Ativos,494337.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.08.03.03,Outros Ativos,498084.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.01.08.03.04,Dividendos a Receber,1512.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.01.08.03.04,Dividendos a Receber,0.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02,Ativo Não Circulante,99975342.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02,Ativo Não Circulante,100141372.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01,Ativo Realizável a Longo Prazo,19345626.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01,Ativo Realizável a Longo Prazo,19937456.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.01,Aplicações Financeiras Avaliadas a Valor Justo através do Resultado,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.01,Aplicações Financeiras Avaliadas a Valor Justo através do Resultado,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.01.01,Títulos Designados a Valor Justo,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.01.01,Títulos Designados a Valor Justo,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.02,Aplicações Financeiras Avaliadas a Valor Justo através de Outros Resultados Abrangentes,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.02,Aplicações Financeiras Avaliadas a Valor Justo através de Outros Resultados Abrangentes,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.03,Aplicações Financeiras Avaliadas ao Custo Amortizado,192877.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.03,Aplicações Financeiras Avaliadas ao Custo Amortizado,219055.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.03.01,Títulos Mantidos até o Vencimento,192877.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.03.01,Títulos Mantidos até o Vencimento,219055.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.04,Contas a Receber,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.04,Contas a Receber,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.04.01,Clientes,0.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.04.01,Clientes,0.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.04.02,Outras Contas a Receber,0.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.04.02,Outras Contas a Receber,0.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.05,Estoques,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.05,Estoques,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.06,Ativos Biológicos,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.06,Ativos Biológicos,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.07,Tributos Diferidos,4727749.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.07,Tributos Diferidos,6438835.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.07.01,Imposto de Renda e Contribuição Social Diferidos,4727749.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.07.01,Imposto de Renda e Contribuição Social Diferidos,6438835.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.08,Despesas Antecipadas,328889.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.08,Despesas Antecipadas,1031.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.09,Créditos com Partes Relacionadas,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.09,Créditos com Partes Relacionadas,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.09.01,Créditos com Coligadas,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.09.01,Créditos com Coligadas,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.09.03,Créditos com Controladores,0.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.09.03,Créditos com Controladores,0.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.09.04,Créditos com Outras Partes Relacionadas,0.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.09.04,Créditos com Outras Partes Relacionadas,0.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.10,Outros Ativos Não Circulantes,14096111.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.10,Outros Ativos Não Circulantes,13278535.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.10.01,Ativos Não-Correntes a Venda,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.10.01,Ativos Não-Correntes a Venda,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.10.02,Ativos de Operações Descontinuadas,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.10.02,Ativos de Operações Descontinuadas,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.10.03,Depósitos Judiciais Compulsórios e de Incentivos,682636.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.10.03,Depósitos Judiciais Compulsórios e de Incentivos,743951.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.10.04,Imposto de Renda e Contribuição Social a Recuperar,6326908.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.10.04,Imposto de Renda e Contribuição Social a Recuperar,4607486.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.10.05,Demais impostos a recuperar,6005396.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.10.05,Demais impostos a recuperar,6708773.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.10.06,Superávit de Ativos,27850.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.10.06,Superávit de Ativos,56582.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.10.08,Instrumentos Financeiros Derivativos,1581.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.10.08,Instrumentos Financeiros Derivativos,1531.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.10.09,Títulos a Receber,584412.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.10.09,Títulos a Receber,552992.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.01.10.10,Outros,467328.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.01.10.10,Outros,607220.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.02,Investimentos,305180.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.02,Investimentos,331939.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.02.01,Participações Societárias,305180.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.02.01,Participações Societárias,331939.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.02.01.01,Participações em Coligadas,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.02.01.01,Participações em Coligadas,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.02.01.04,Participações em Controladas em Conjunto,305180.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.02.01.04,Participações em Controladas em Conjunto,331939.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.02.01.05,Outros Investimentos,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.02.01.05,Outros Investimentos,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.02.02,Propriedades para Investimento,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.02.02,Propriedades para Investimento,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.03,Imobilizado,29224261.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.03,Imobilizado,30055690.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.03.01,Imobilizado em Operação,21259549.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.03.01,Imobilizado em Operação,22611552.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.03.02,Direito de Uso em Arrendamento,2560191.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.03.02,Direito de Uso em Arrendamento,3094390.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.03.03,Imobilizado em Andamento,5404521.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.03.03,Imobilizado em Andamento,4349748.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.04,Intangível,51100275.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.04,Intangível,49816287.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.04.01,Intangíveis,8689015.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.04.01,Intangíveis,9222249.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.04.01.01,Contrato de Concessão,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.04.01.01,Contrato de Concessão,0.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.04.01.02,Outros Intangíveis,8689015.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.04.01.02,Outros Intangíveis,9222249.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.04.01.03,Ágio,0.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.04.01.03,Ágio,0.0,N,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2021-12-31,1.02.04.02,Goodwill,42411260.0,S,2022,BPA
+07.526.557/0001-00,2022-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2022-12-31,1.02.04.02,Goodwill,40594038.0,S,2022,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1,Ativo Total,137958083.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1,Ativo Total,132644133.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01,Ativo Circulante,37816711.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01,Ativo Circulante,36563050.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.01,Caixa e Equivalentes de Caixa,14926435.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.01,Caixa e Equivalentes de Caixa,16059003.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.02,Aplicações Financeiras,454497.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.02,Aplicações Financeiras,277164.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.02.01,Aplicações Financeiras Avaliadas a Valor Justo através do Resultado,454497.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.02.01,Aplicações Financeiras Avaliadas a Valor Justo através do Resultado,277164.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.02.01.01,Títulos para Negociação,454497.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.02.01.01,Títulos para Negociação,277164.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.02.01.02,Títulos Designados a Valor Justo,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.02.01.02,Títulos Designados a Valor Justo,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.02.02,Aplicações Financeiras Avaliadas a Valor Justo através de Outros Resultados Abrangentes,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.02.02,Aplicações Financeiras Avaliadas a Valor Justo através de Outros Resultados Abrangentes,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.02.03,Aplicações Financeiras Avaliadas ao Custo Amortizado,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.02.03,Aplicações Financeiras Avaliadas ao Custo Amortizado,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.03,Contas a Receber,5349105.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.03,Contas a Receber,5741457.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.03.01,Clientes,5058422.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.03.01,Clientes,5504792.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.03.02,Outras Contas a Receber,290683.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.03.02,Outras Contas a Receber,236665.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.03.02.01,Contas a Receber de Partes Relacionadas,290683.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.03.02.01,Contas a Receber de Partes Relacionadas,236665.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.04,Estoques,12923025.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.04,Estoques,9619022.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.04.01,Produto Acabado,4094014.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.04.01,Produto Acabado,2990337.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.04.02,Produto em Elaboração,845661.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.04.02,Produto em Elaboração,826520.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.04.03,Matérias-primas e itens de consumo,6798273.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.04.03,Matérias-primas e itens de consumo,4599874.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.04.04,Materiais de Produção,0.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.04.04,Materiais de Produção,0.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.04.05,Almoxarifado e Outros,1345250.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.04.05,Almoxarifado e Outros,1344738.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.04.06,Provisão para Perdas,-160173.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.04.06,Provisão para Perdas,-142447.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.05,Ativos Biológicos,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.05,Ativos Biológicos,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.06,Tributos a Recuperar,2853475.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.06,Tributos a Recuperar,3435688.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.06.01,Tributos Correntes a Recuperar,2853475.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.06.01,Tributos Correntes a Recuperar,3435688.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.06.01.01,Imposto de renda e Contribuição Social a Recuperar,1808661.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.06.01.01,Imposto de renda e Contribuição Social a Recuperar,2436614.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.06.01.02,Impostos Indiretos a Recuperar,1044814.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.06.01.02,Impostos Indiretos a Recuperar,999074.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.07,Despesas Antecipadas,499779.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.07,Despesas Antecipadas,515692.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.07.01,Despesas Antecipadas Marketing,499779.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.07.01,Despesas Antecipadas Marketing,515692.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.07.02,Outras Despesas Antecipadas,0.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.07.02,Outras Despesas Antecipadas,0.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.08,Outros Ativos Circulantes,810395.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.08,Outros Ativos Circulantes,915024.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.08.01,Ativos Não-Correntes a Venda,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.08.01,Ativos Não-Correntes a Venda,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.08.02,Ativos de Operações Descontinuadas,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.08.02,Ativos de Operações Descontinuadas,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.08.03,Outros,810395.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.08.03,Outros,915024.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.08.03.01,Instrumentos Financeiros Derivativos,272301.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.08.03.01,Instrumentos Financeiros Derivativos,378049.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.08.03.02,Juros a Receber,40010.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.08.03.02,Juros a Receber,53156.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.08.03.03,Outros Ativos,498084.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.08.03.03,Outros Ativos,482788.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.01.08.03.04,Dividendos a Receber,0.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.01.08.03.04,Dividendos a Receber,1031.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02,Ativo Não Circulante,100141372.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02,Ativo Não Circulante,96081083.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01,Ativo Realizável a Longo Prazo,19937456.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01,Ativo Realizável a Longo Prazo,21116491.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.01,Aplicações Financeiras Avaliadas a Valor Justo através do Resultado,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.01,Aplicações Financeiras Avaliadas a Valor Justo através do Resultado,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.01.01,Títulos Designados a Valor Justo,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.01.01,Títulos Designados a Valor Justo,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.02,Aplicações Financeiras Avaliadas a Valor Justo através de Outros Resultados Abrangentes,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.02,Aplicações Financeiras Avaliadas a Valor Justo através de Outros Resultados Abrangentes,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.03,Aplicações Financeiras Avaliadas ao Custo Amortizado,219055.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.03,Aplicações Financeiras Avaliadas ao Custo Amortizado,242168.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.03.01,Títulos Mantidos até o Vencimento,219055.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.03.01,Títulos Mantidos até o Vencimento,242168.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.04,Contas a Receber,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.04,Contas a Receber,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.04.01,Clientes,0.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.04.01,Clientes,0.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.04.02,Outras Contas a Receber,0.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.04.02,Outras Contas a Receber,0.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.05,Estoques,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.05,Estoques,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.06,Ativos Biológicos,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.06,Ativos Biológicos,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.07,Tributos Diferidos,6438835.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.07,Tributos Diferidos,7969592.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.07.01,Imposto de Renda e Contribuição Social Diferidos,6438835.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.07.01,Imposto de Renda e Contribuição Social Diferidos,7969592.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.08,Despesas Antecipadas,1031.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.08,Despesas Antecipadas,232480.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.09,Créditos com Partes Relacionadas,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.09,Créditos com Partes Relacionadas,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.09.01,Créditos com Coligadas,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.09.01,Créditos com Coligadas,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.09.03,Créditos com Controladores,0.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.09.03,Créditos com Controladores,0.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.09.04,Créditos com Outras Partes Relacionadas,0.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.09.04,Créditos com Outras Partes Relacionadas,0.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.10,Outros Ativos Não Circulantes,13278535.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.10,Outros Ativos Não Circulantes,12672251.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.10.01,Ativos Não-Correntes a Venda,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.10.01,Ativos Não-Correntes a Venda,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.10.02,Ativos de Operações Descontinuadas,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.10.02,Ativos de Operações Descontinuadas,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.10.03,Depósitos Judiciais Compulsórios e de Incentivos,743951.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.10.03,Depósitos Judiciais Compulsórios e de Incentivos,558182.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.10.04,Imposto de Renda e Contribuição Social a Recuperar,4607486.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.10.04,Imposto de Renda e Contribuição Social a Recuperar,4087032.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.10.05,Demais impostos a recuperar,6708773.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.10.05,Demais impostos a recuperar,7238064.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.10.06,Superávit de Ativos,56582.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.10.06,Superávit de Ativos,57261.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.10.08,Instrumentos Financeiros Derivativos,1531.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.10.08,Instrumentos Financeiros Derivativos,1673.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.10.09,Títulos a Receber,552992.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.10.09,Títulos a Receber,457398.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.01.10.10,Outros,607220.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.01.10.10,Outros,272641.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.02,Investimentos,331939.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.02,Investimentos,289063.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.02.01,Participações Societárias,331939.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.02.01,Participações Societárias,289063.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.02.01.01,Participações em Coligadas,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.02.01.01,Participações em Coligadas,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.02.01.04,Participações em Controladas em Conjunto,331939.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.02.01.04,Participações em Controladas em Conjunto,289063.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.02.01.05,Outros Investimentos,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.02.01.05,Outros Investimentos,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.02.02,Propriedades para Investimento,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.02.02,Propriedades para Investimento,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.03,Imobilizado,30055690.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.03,Imobilizado,26630156.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.03.01,Imobilizado em Operação,22611552.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.03.01,Imobilizado em Operação,21116779.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.03.02,Direito de Uso em Arrendamento,3094390.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.03.02,Direito de Uso em Arrendamento,2967428.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.03.03,Imobilizado em Andamento,4349748.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.03.03,Imobilizado em Andamento,2545949.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.04,Intangível,49816287.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.04,Intangível,48045373.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.04.01,Intangíveis,9222249.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.04.01,Intangíveis,10041733.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.04.01.01,Contrato de Concessão,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.04.01.01,Contrato de Concessão,0.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.04.01.02,Outros Intangíveis,9222249.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.04.01.02,Outros Intangíveis,10041733.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.04.01.03,Ágio,0.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.04.01.03,Ágio,0.0,N,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2022-12-31,1.02.04.02,Goodwill,40594038.0,S,2023,BPA
+07.526.557/0001-00,2023-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2023-12-31,1.02.04.02,Goodwill,38003640.0,S,2023,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1,Ativo Total,132644133.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1,Ativo Total,162507949.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01,Ativo Circulante,36563050.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01,Ativo Circulante,54155784.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.01,Caixa e Equivalentes de Caixa,16059003.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.01,Caixa e Equivalentes de Caixa,28595666.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.02,Aplicações Financeiras,277164.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.02,Aplicações Financeiras,1242001.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.02.01,Aplicações Financeiras Avaliadas a Valor Justo através do Resultado,277164.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.02.01,Aplicações Financeiras Avaliadas a Valor Justo através do Resultado,1242001.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.02.01.01,Títulos para Negociação,277164.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.02.01.01,Títulos para Negociação,1242001.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.02.01.02,Títulos Designados a Valor Justo,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.02.01.02,Títulos Designados a Valor Justo,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.02.02,Aplicações Financeiras Avaliadas a Valor Justo através de Outros Resultados Abrangentes,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.02.02,Aplicações Financeiras Avaliadas a Valor Justo através de Outros Resultados Abrangentes,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.02.03,Aplicações Financeiras Avaliadas ao Custo Amortizado,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.02.03,Aplicações Financeiras Avaliadas ao Custo Amortizado,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.03,Contas a Receber,5741457.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.03,Contas a Receber,6269863.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.03.01,Clientes,5504792.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.03.01,Clientes,6031946.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.03.02,Outras Contas a Receber,236665.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.03.02,Outras Contas a Receber,237917.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.03.02.01,Contas a Receber de Partes Relacionadas,236665.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.03.02.01,Contas a Receber de Partes Relacionadas,237917.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.04,Estoques,9619022.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.04,Estoques,11689767.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.04.01,Produto Acabado,2990337.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.04.01,Produto Acabado,3903163.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.04.02,Produto em Elaboração,826520.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.04.02,Produto em Elaboração,738987.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.04.03,Matérias-primas e itens de consumo,4599874.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.04.03,Matérias-primas e itens de consumo,5622197.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.04.04,Materiais de Produção,0.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.04.04,Materiais de Produção,0.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.04.05,Almoxarifado e Outros,1344738.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.04.05,Almoxarifado e Outros,1566466.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.04.06,Provisão para Perdas,-142447.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.04.06,Provisão para Perdas,-141046.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.05,Ativos Biológicos,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.05,Ativos Biológicos,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.06,Tributos a Recuperar,3435688.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.06,Tributos a Recuperar,3582275.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.06.01,Tributos Correntes a Recuperar,3435688.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.06.01,Tributos Correntes a Recuperar,3582275.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.06.01.01,Imposto de renda e Contribuição Social a Recuperar,2436614.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.06.01.01,Imposto de renda e Contribuição Social a Recuperar,2582088.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.06.01.02,Impostos Indiretos a Recuperar,999074.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.06.01.02,Impostos Indiretos a Recuperar,1000187.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.07,Despesas Antecipadas,515692.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.07,Despesas Antecipadas,706041.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.07.01,Despesas Antecipadas Marketing,515692.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.07.01,Despesas Antecipadas Marketing,706041.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.07.02,Outras Despesas Antecipadas,0.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.07.02,Outras Despesas Antecipadas,0.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.08,Outros Ativos Circulantes,915024.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.08,Outros Ativos Circulantes,2070171.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.08.01,Ativos Não-Correntes a Venda,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.08.01,Ativos Não-Correntes a Venda,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.08.02,Ativos de Operações Descontinuadas,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.08.02,Ativos de Operações Descontinuadas,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.08.03,Outros,915024.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.08.03,Outros,2070171.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.08.03.01,Instrumentos Financeiros Derivativos,378049.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.08.03.01,Instrumentos Financeiros Derivativos,1218561.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.08.03.02,Juros a Receber,53156.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.08.03.02,Juros a Receber,125751.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.08.03.03,Outros Ativos,482788.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.08.03.03,Outros Ativos,724540.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.01.08.03.04,Dividendos a Receber,1031.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.01.08.03.04,Dividendos a Receber,1319.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02,Ativo Não Circulante,96081083.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02,Ativo Não Circulante,108352165.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01,Ativo Realizável a Longo Prazo,21116491.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01,Ativo Realizável a Longo Prazo,20913198.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.01,Aplicações Financeiras Avaliadas a Valor Justo através do Resultado,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.01,Aplicações Financeiras Avaliadas a Valor Justo através do Resultado,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.01.01,Títulos Designados a Valor Justo,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.01.01,Títulos Designados a Valor Justo,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.02,Aplicações Financeiras Avaliadas a Valor Justo através de Outros Resultados Abrangentes,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.02,Aplicações Financeiras Avaliadas a Valor Justo através de Outros Resultados Abrangentes,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.03,Aplicações Financeiras Avaliadas ao Custo Amortizado,242168.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.03,Aplicações Financeiras Avaliadas ao Custo Amortizado,184454.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.03.01,Títulos Mantidos até o Vencimento,242168.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.03.01,Títulos Mantidos até o Vencimento,184454.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.04,Contas a Receber,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.04,Contas a Receber,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.04.01,Clientes,0.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.04.01,Clientes,0.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.04.02,Outras Contas a Receber,0.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.04.02,Outras Contas a Receber,0.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.05,Estoques,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.05,Estoques,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.06,Ativos Biológicos,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.06,Ativos Biológicos,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.07,Tributos Diferidos,7969592.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.07,Tributos Diferidos,8691670.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.07.01,Imposto de Renda e Contribuição Social Diferidos,7969592.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.07.01,Imposto de Renda e Contribuição Social Diferidos,8691670.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.08,Despesas Antecipadas,232480.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.08,Despesas Antecipadas,443843.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.09,Créditos com Partes Relacionadas,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.09,Créditos com Partes Relacionadas,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.09.01,Créditos com Coligadas,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.09.01,Créditos com Coligadas,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.09.03,Créditos com Controladores,0.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.09.03,Créditos com Controladores,0.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.09.04,Créditos com Outras Partes Relacionadas,0.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.09.04,Créditos com Outras Partes Relacionadas,0.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.10,Outros Ativos Não Circulantes,12672251.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.10,Outros Ativos Não Circulantes,11593231.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.10.01,Ativos Não-Correntes a Venda,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.10.01,Ativos Não-Correntes a Venda,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.10.02,Ativos de Operações Descontinuadas,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.10.02,Ativos de Operações Descontinuadas,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.10.03,Depósitos Judiciais Compulsórios e de Incentivos,558182.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.10.03,Depósitos Judiciais Compulsórios e de Incentivos,540126.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.10.04,Imposto de Renda e Contribuição Social a Recuperar,4087032.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.10.04,Imposto de Renda e Contribuição Social a Recuperar,2922517.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.10.05,Demais impostos a recuperar,7238064.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.10.05,Demais impostos a recuperar,7581460.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.10.06,Superávit de Ativos,57261.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.10.06,Superávit de Ativos,70483.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.10.08,Instrumentos Financeiros Derivativos,1673.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.10.08,Instrumentos Financeiros Derivativos,26.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.10.09,Títulos a Receber,457398.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.10.09,Títulos a Receber,122461.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.01.10.10,Outros,272641.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.01.10.10,Outros,356158.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.02,Investimentos,289063.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.02,Investimentos,395393.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.02.01,Participações Societárias,289063.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.02.01,Participações Societárias,395393.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.02.01.01,Participações em Coligadas,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.02.01.01,Participações em Coligadas,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.02.01.04,Participações em Controladas em Conjunto,289063.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.02.01.04,Participações em Controladas em Conjunto,395393.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.02.01.05,Outros Investimentos,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.02.01.05,Outros Investimentos,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.02.02,Propriedades para Investimento,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.02.02,Propriedades para Investimento,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.03,Imobilizado,26630156.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.03,Imobilizado,30170194.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.03.01,Imobilizado em Operação,21116779.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.03.01,Imobilizado em Operação,24612975.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.03.02,Direito de Uso em Arrendamento,2967428.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.03.02,Direito de Uso em Arrendamento,3035655.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.03.03,Imobilizado em Andamento,2545949.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.03.03,Imobilizado em Andamento,2521564.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.04,Intangível,48045373.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.04,Intangível,56873380.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.04.01,Intangíveis,10041733.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.04.01,Intangíveis,12530712.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.04.01.01,Contrato de Concessão,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.04.01.01,Contrato de Concessão,0.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.04.01.02,Outros Intangíveis,10041733.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.04.01.02,Outros Intangíveis,12530712.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.04.01.03,Ágio,0.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.04.01.03,Ágio,0.0,N,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2023-12-31,1.02.04.02,Goodwill,38003640.0,S,2024,BPA
+07.526.557/0001-00,2024-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2024-12-31,1.02.04.02,Goodwill,44342668.0,S,2024,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1,Ativo Total,162507949.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1,Ativo Total,145087151.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01,Ativo Circulante,54155784.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01,Ativo Circulante,43875596.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.01,Caixa e Equivalentes de Caixa,28595666.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.01,Caixa e Equivalentes de Caixa,18638228.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.02,Aplicações Financeiras,1242001.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.02,Aplicações Financeiras,1681692.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.02.01,Aplicações Financeiras Avaliadas a Valor Justo através do Resultado,1242001.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.02.01,Aplicações Financeiras Avaliadas a Valor Justo através do Resultado,1681692.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.02.01.01,Títulos para Negociação,1242001.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.02.01.01,Títulos para Negociação,1681692.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.02.01.02,Títulos Designados a Valor Justo,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.02.01.02,Títulos Designados a Valor Justo,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.02.02,Aplicações Financeiras Avaliadas a Valor Justo através de Outros Resultados Abrangentes,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.02.02,Aplicações Financeiras Avaliadas a Valor Justo através de Outros Resultados Abrangentes,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.02.03,Aplicações Financeiras Avaliadas ao Custo Amortizado,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.02.03,Aplicações Financeiras Avaliadas ao Custo Amortizado,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.03,Contas a Receber,6269863.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.03,Contas a Receber,6351608.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.03.01,Clientes,6031946.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.03.01,Clientes,6123385.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.03.02,Outras Contas a Receber,237917.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.03.02,Outras Contas a Receber,228223.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.03.02.01,Contas a Receber de Partes Relacionadas,237917.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.03.02.01,Contas a Receber de Partes Relacionadas,228223.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.04,Estoques,11689767.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.04,Estoques,10520090.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.04.01,Produto Acabado,3903163.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.04.01,Produto Acabado,3218469.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.04.02,Produto em Elaboração,738987.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.04.02,Produto em Elaboração,619904.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.04.03,Matérias-primas e itens de consumo,5622197.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.04.03,Matérias-primas e itens de consumo,5297699.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.04.04,Materiais de Produção,0.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.04.04,Materiais de Produção,0.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.04.05,Almoxarifado e Outros,1566466.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.04.05,Almoxarifado e Outros,1495080.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.04.06,Provisão para Perdas,-141046.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.04.06,Provisão para Perdas,-111062.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.05,Ativos Biológicos,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.05,Ativos Biológicos,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.06,Tributos a Recuperar,3582275.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.06,Tributos a Recuperar,3623379.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.06.01,Tributos Correntes a Recuperar,3582275.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.06.01,Tributos Correntes a Recuperar,3623379.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.06.01.01,Imposto de renda e Contribuição Social a Recuperar,2582088.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.06.01.01,Imposto de renda e Contribuição Social a Recuperar,2480759.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.06.01.02,Impostos Indiretos a Recuperar,1000187.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.06.01.02,Impostos Indiretos a Recuperar,1142620.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.07,Despesas Antecipadas,706041.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.07,Despesas Antecipadas,714539.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.07.01,Despesas Antecipadas Marketing,706041.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.07.01,Despesas Antecipadas Marketing,714539.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.07.02,Outras Despesas Antecipadas,0.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.07.02,Outras Despesas Antecipadas,0.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.08,Outros Ativos Circulantes,2070171.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.08,Outros Ativos Circulantes,2346060.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.08.01,Ativos Não-Correntes a Venda,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.08.01,Ativos Não-Correntes a Venda,379445.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.08.02,Ativos de Operações Descontinuadas,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.08.02,Ativos de Operações Descontinuadas,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.08.03,Outros,2070171.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.08.03,Outros,1966615.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.08.03.01,Instrumentos Financeiros Derivativos,1218561.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.08.03.01,Instrumentos Financeiros Derivativos,769212.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.08.03.02,Juros a Receber,125751.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.08.03.02,Juros a Receber,254009.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.08.03.03,Outros Ativos,724540.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.08.03.03,Outros Ativos,944231.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.01.08.03.04,Dividendos a Receber,1319.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.01.08.03.04,Dividendos a Receber,-837.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02,Ativo Não Circulante,108352165.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02,Ativo Não Circulante,101211555.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01,Ativo Realizável a Longo Prazo,20913198.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01,Ativo Realizável a Longo Prazo,20500355.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.01,Aplicações Financeiras Avaliadas a Valor Justo através do Resultado,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.01,Aplicações Financeiras Avaliadas a Valor Justo através do Resultado,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.01.01,Títulos Designados a Valor Justo,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.01.01,Títulos Designados a Valor Justo,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.02,Aplicações Financeiras Avaliadas a Valor Justo através de Outros Resultados Abrangentes,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.02,Aplicações Financeiras Avaliadas a Valor Justo através de Outros Resultados Abrangentes,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.03,Aplicações Financeiras Avaliadas ao Custo Amortizado,184454.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.03,Aplicações Financeiras Avaliadas ao Custo Amortizado,123256.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.03.01,Títulos Mantidos até o Vencimento,184454.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.03.01,Títulos Mantidos até o Vencimento,123256.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.04,Contas a Receber,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.04,Contas a Receber,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.04.01,Clientes,0.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.04.01,Clientes,0.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.04.02,Outras Contas a Receber,0.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.04.02,Outras Contas a Receber,0.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.05,Estoques,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.05,Estoques,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.06,Ativos Biológicos,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.06,Ativos Biológicos,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.07,Tributos Diferidos,8691670.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.07,Tributos Diferidos,8404412.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.07.01,Imposto de Renda e Contribuição Social Diferidos,8691670.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.07.01,Imposto de Renda e Contribuição Social Diferidos,8404412.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.08,Despesas Antecipadas,443843.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.08,Despesas Antecipadas,346461.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.09,Créditos com Partes Relacionadas,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.09,Créditos com Partes Relacionadas,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.09.01,Créditos com Coligadas,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.09.01,Créditos com Coligadas,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.09.03,Créditos com Controladores,0.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.09.03,Créditos com Controladores,0.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.09.04,Créditos com Outras Partes Relacionadas,0.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.09.04,Créditos com Outras Partes Relacionadas,0.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.10,Outros Ativos Não Circulantes,11593231.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.10,Outros Ativos Não Circulantes,11626226.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.10.01,Ativos Não-Correntes a Venda,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.10.01,Ativos Não-Correntes a Venda,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.10.02,Ativos de Operações Descontinuadas,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.10.02,Ativos de Operações Descontinuadas,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.10.03,Depósitos Judiciais Compulsórios e de Incentivos,540126.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.10.03,Depósitos Judiciais Compulsórios e de Incentivos,538429.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.10.04,Imposto de Renda e Contribuição Social a Recuperar,2922517.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.10.04,Imposto de Renda e Contribuição Social a Recuperar,2455452.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.10.05,Demais impostos a recuperar,7581460.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.10.05,Demais impostos a recuperar,7693688.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.10.06,Superávit de Ativos,70483.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.10.06,Superávit de Ativos,29936.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.10.08,Instrumentos Financeiros Derivativos,26.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.10.08,Instrumentos Financeiros Derivativos,8904.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.10.09,Títulos a Receber,122461.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.10.09,Títulos a Receber,106623.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.01.10.10,Outros,356158.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.01.10.10,Outros,793194.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.02,Investimentos,395393.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.02,Investimentos,485792.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.02.01,Participações Societárias,395393.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.02.01,Participações Societárias,485792.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.02.01.01,Participações em Coligadas,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.02.01.01,Participações em Coligadas,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.02.01.04,Participações em Controladas em Conjunto,395393.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.02.01.04,Participações em Controladas em Conjunto,485792.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.02.01.05,Outros Investimentos,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.02.01.05,Outros Investimentos,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.02.02,Propriedades para Investimento,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.02.02,Propriedades para Investimento,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.03,Imobilizado,30170194.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.03,Imobilizado,27644317.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.03.01,Imobilizado em Operação,24612975.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.03.01,Imobilizado em Operação,22767583.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.03.02,Direito de Uso em Arrendamento,3035655.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.03.02,Direito de Uso em Arrendamento,3026370.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.03.03,Imobilizado em Andamento,2521564.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.03.03,Imobilizado em Andamento,1850364.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.04,Intangível,56873380.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.04,Intangível,52581091.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.04.01,Intangíveis,12530712.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.04.01,Intangíveis,11042703.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.04.01.01,Contrato de Concessão,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.04.01.01,Contrato de Concessão,0.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.04.01.02,Outros Intangíveis,12530712.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.04.01.02,Outros Intangíveis,11042703.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.04.01.03,Ágio,0.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.04.01.03,Ágio,0.0,N,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,PENÚLTIMO,2024-12-31,1.02.04.02,Goodwill,44342668.0,S,2025,BPA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Balanço Patrimonial Ativo,REAL,MIL,ÚLTIMO,2025-12-31,1.02.04.02,Goodwill,41538388.0,S,2025,BPA
