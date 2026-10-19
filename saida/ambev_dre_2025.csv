@@ -1,0 +1,73 @@
+﻿CNPJ_CIA,DT_REFER,VERSAO,DENOM_CIA,CD_CVM,GRUPO_DFP,MOEDA,ESCALA_MOEDA,ORDEM_EXERC,DT_INI_EXERC,DT_FIM_EXERC,CD_CONTA,DS_CONTA,VL_CONTA,ST_CONTA_FIXA
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.01,Receita de Venda de Bens e/ou Serviços,89452669.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.01,Receita de Venda de Bens e/ou Serviços,88242467.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.02,Custo dos Bens e/ou Serviços Vendidos,-43615080.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.02,Custo dos Bens e/ou Serviços Vendidos,-42864127.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.03,Resultado Bruto,45837589.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.03,Resultado Bruto,45378340.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.04,Despesas/Receitas Operacionais,-24032013.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.04,Despesas/Receitas Operacionais,-21954954.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.04.01,Despesas com Vendas,-20191324.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.04.01,Despesas com Vendas,-19276988.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.04.01.01,Despesas Logísticas,-11557161.0,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.04.01.01,Despesas Logísticas,-10928913.0,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.04.01.02,Despesas Comerciais,-8634163.0,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.04.01.02,Despesas Comerciais,-8348075.0,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.04.02,Despesas Gerais e Administrativas,-6201074.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.04.02,Despesas Gerais e Administrativas,-5862917.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.04.03,Perdas pela Não Recuperabilidade de Ativos,0.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.04.03,Perdas pela Não Recuperabilidade de Ativos,0.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.04.04,Outras Receitas Operacionais,2800226.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.04.04,Outras Receitas Operacionais,2986148.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.04.04.01,Recorrentes,2800226.0,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.04.04.01,Recorrentes,2986148.0,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.04.04.02,Não Recorrentes,0.0,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.04.04.02,Não Recorrentes,0.0,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.04.05,Outras Despesas Operacionais,-443759.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.04.05,Outras Despesas Operacionais,93018.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.04.05.01,Recorrentes,-342964.0,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.04.05.01,Recorrentes,-550251.0,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.04.05.02,Não Recorrentes,-100795.0,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.04.05.02,Não Recorrentes,643269.0,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.04.06,Resultado de Equivalência Patrimonial,3918.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.04.06,Resultado de Equivalência Patrimonial,105785.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.05,Resultado Antes do Resultado Financeiro e dos Tributos,21805576.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.05,Resultado Antes do Resultado Financeiro e dos Tributos,23423386.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.06,Resultado Financeiro,-2318249.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.06,Resultado Financeiro,-4001728.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.06.01,Receitas Financeiras,2423704.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.06.01,Receitas Financeiras,2216616.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.06.02,Despesas Financeiras,-4741953.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.06.02,Despesas Financeiras,-6218344.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.07,Resultado Antes dos Tributos sobre o Lucro,19487327.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.07,Resultado Antes dos Tributos sobre o Lucro,19421658.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.08,Imposto de Renda e Contribuição Social sobre o Lucro,-4640375.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.08,Imposto de Renda e Contribuição Social sobre o Lucro,-3433225.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.08.01,Corrente,-4530948.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.08.01,Corrente,-4004260.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.08.02,Diferido,-109427.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.08.02,Diferido,571035.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.09,Resultado Líquido das Operações Continuadas,14846952.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.09,Resultado Líquido das Operações Continuadas,15988433.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.10,Resultado Líquido de Operações Descontinuadas,0.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.10,Resultado Líquido de Operações Descontinuadas,0.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.10.01,Lucro/Prejuízo Líquido das Operações Descontinuadas,0.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.10.01,Lucro/Prejuízo Líquido das Operações Descontinuadas,0.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.10.02,Ganhos/Perdas Líquidas sobre Ativos de Operações Descontinuadas,0.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.10.02,Ganhos/Perdas Líquidas sobre Ativos de Operações Descontinuadas,0.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.11,Lucro/Prejuízo Consolidado do Período,14846952.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.11,Lucro/Prejuízo Consolidado do Período,15988433.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.11.01,Atribuído a Sócios da Empresa Controladora,14437238.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.11.01,Atribuído a Sócios da Empresa Controladora,15503400.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.11.02,Atribuído a Sócios Não Controladores,409714.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.11.02,Atribuído a Sócios Não Controladores,485033.0,S
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.99,Lucro por Ação - (Reais / Ação),0.0,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.99,Lucro por Ação - (Reais / Ação),0.0,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.99.01,Lucro Básico por Ação,0.0,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.99.01,Lucro Básico por Ação,0.0,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.99.01.01,ON,0.91755,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.99.01.01,ON,0.9926913764,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.99.02,Lucro Diluído por Ação,0.0,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.99.02,Lucro Diluído por Ação,0.0,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,PENÚLTIMO,2024-01-01,2024-12-31,3.99.02.01,ON,0.9129,N
+07.526.557/0001-00,2025-12-31,1,AMBEV S.A.,23264,DF Consolidado - Demonstração do Resultado,REAL,MIL,ÚLTIMO,2025-01-01,2025-12-31,3.99.02.01,ON,0.9884932269,N

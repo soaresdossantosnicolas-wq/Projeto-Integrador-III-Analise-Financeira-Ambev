@@ -1,29 +1,24 @@
-import io
+import logging
 import zipfile
-from pathlib import Path
 
 import pandas as pd
 import requests
 
-
-# ============================================================
-# CONFIGURAÇÕES
-# ============================================================
-
-ANOS = [2022, 2023, 2024, 2025]
-
-PASTA_DADOS = Path("dados_cvm")
-PASTA_SAIDA = Path("saida")
-
-PASTA_DADOS.mkdir(exist_ok=True)
-PASTA_SAIDA.mkdir(exist_ok=True)
+import config
 
 
-# Código CVM da Ambev
-COD_CVM_AMBEV = 23264
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(levelname)s | %(message)s"
+)
+log = logging.getLogger(__name__)
 
-# Nome da companhia
-NOME_EMPRESA = "AMBEV S.A."
+
+ANOS = config.ANOS
+PASTA_DADOS = config.PASTA_DADOS_CVM
+PASTA_SAIDA = config.PASTA_SAIDA_ETAPA1
+COD_CVM_AMBEV = config.COD_CVM_AMBEV
+NOME_EMPRESA = config.NOME_EMPRESA
 
 
 # ============================================================
@@ -43,18 +38,23 @@ def baixar_dfp(ano):
     caminho = PASTA_DADOS / f"dfp_cia_aberta_{ano}.zip"
 
     if caminho.exists():
-        print(f"[OK] Arquivo {ano} já existe.")
+        log.info("Arquivo %d já existe.", ano)
         return caminho
 
-    print(f"[DOWNLOAD] Baixando DFP {ano}...")
+    log.info("Baixando DFP %d...", ano)
 
-    resposta = requests.get(url, timeout=120)
+    try:
+        resposta = requests.get(url, timeout=120)
+        resposta.raise_for_status()
 
-    resposta.raise_for_status()
+    except requests.RequestException as erro:
+
+        log.error("Falha ao baixar DFP %d: %s", ano, erro)
+        raise
 
     caminho.write_bytes(resposta.content)
 
-    print(f"[OK] DFP {ano} baixada.")
+    log.info("DFP %d baixada.", ano)
 
     return caminho
 
@@ -88,10 +88,8 @@ def ler_csv_zip(caminho_zip, nome_arquivo):
         with z.open(arquivo) as f:
 
             return pd.read_csv(
-                f,
-                sep=";",
-                encoding="latin1",
-                low_memory=False
+                f, sep=";", encoding="latin1", low_memory=False,
+                dtype={"CD_CONTA": str}  # evita "3.10" virar 3.1
             )
 
 
@@ -107,10 +105,8 @@ def filtrar_ambev(df):
     if "CD_CVM" in df.columns:
 
         resultado = df[
-            pd.to_numeric(
-                df["CD_CVM"],
-                errors="coerce"
-            ) == COD_CVM_AMBEV
+            pd.to_numeric(df["CD_CVM"], errors="coerce")
+            == COD_CVM_AMBEV
         ].copy()
 
     else:
@@ -118,11 +114,7 @@ def filtrar_ambev(df):
         resultado = df[
             df["DENOM_CIA"]
             .astype(str)
-            .str.contains(
-                "AMBEV",
-                case=False,
-                na=False
-            )
+            .str.contains("AMBEV", case=False, na=False)
         ].copy()
 
     return resultado
@@ -131,18 +123,24 @@ def filtrar_ambev(df):
 # ============================================================
 # IDENTIFICAÇÃO DAS CONTAS
 # ============================================================
+#
+# Nesta etapa 1 mantemos a busca textual apenas para fins de
+# INSPEÇÃO/exportação bruta (é útil ver todas as contas que
+# contêm essas palavras, para conferência manual). A seleção
+# definitiva das contas usadas nos indicadores acontece na
+# Etapa 2, por CD_CONTA exato (ver config.CONTAS_DRE /
+# CONTAS_ATIVO / CONTAS_PASSIVO) — não por este texto livre.
 
 def procurar_contas(df, palavras):
     """
     Procura contas cujo nome contenha alguma das palavras.
+    Uso: inspeção/exportação bruta, não seleção de indicadores.
     """
 
     coluna = "DS_CONTA"
 
     if coluna not in df.columns:
-        raise ValueError(
-            f"A coluna {coluna} não foi encontrada."
-        )
+        raise ValueError(f"A coluna {coluna} não foi encontrada.")
 
     mascara = pd.Series(False, index=df.index)
 
@@ -151,29 +149,10 @@ def procurar_contas(df, palavras):
         mascara |= (
             df[coluna]
             .astype(str)
-            .str.contains(
-                palavra,
-                case=False,
-                na=False
-            )
+            .str.contains(palavra, case=False, na=False)
         )
 
     return df[mascara].copy()
-
-
-# ============================================================
-# CONVERSÃO DOS VALORES
-# ============================================================
-
-def converter_valor(valor):
-
-    if pd.isna(valor):
-        return None
-
-    try:
-        return float(valor)
-    except (ValueError, TypeError):
-        return None
 
 
 # ============================================================
@@ -182,35 +161,25 @@ def converter_valor(valor):
 
 def processar_dre(caminho_zip, ano):
 
-    print(f"[DRE] Processando {ano}...")
+    log.info("[DRE] Processando %d...", ano)
 
-    df = ler_csv_zip(
-        caminho_zip,
-        f"dfp_cia_aberta_DRE_con_{ano}.csv"
-    )
+    df = ler_csv_zip(caminho_zip, f"dfp_cia_aberta_DRE_con_{ano}.csv")
 
     df = filtrar_ambev(df)
 
     if df.empty:
-        print(f"[AVISO] Ambev não encontrada na DRE {ano}")
+        log.warning("Ambev não encontrada na DRE %d", ano)
         return pd.DataFrame()
 
-    # Mostra as contas encontradas
-    contas = procurar_contas(
-        df,
-        [
-            "Receita de Venda",
-            "Receita Líquida",
-            "Custo",
-            "Lucro Bruto",
-            "Resultado Antes",
-            "Lucro",
-            "Resultado Líquido"
-        ]
-    )
+    # CORREÇÃO: antes, a DRE era filtrada por palavras-chave em
+    # DS_CONTA ("Lucro Bruto", "Lucro", ...). A conta 3.03 se chama
+    # "Resultado Bruto" na DFP, então caía fora e Margem Bruta ficava
+    # NaN. Agora salvamos TODAS as contas da Ambev; a seleção dos
+    # indicadores é feita na Etapa 2, por CD_CONTA exato.
+    contas = df.copy()
 
     contas.to_csv(
-        PASTA_SAIDA / f"ambev_dre_contas_{ano}.csv",
+        PASTA_SAIDA / f"ambev_dre_{ano}.csv",
         index=False,
         encoding="utf-8-sig"
     )
@@ -224,31 +193,22 @@ def processar_dre(caminho_zip, ano):
 
 def processar_balanco(caminho_zip, ano):
 
-    print(f"[BALANÇO] Processando {ano}...")
+    log.info("[BALANÇO] Processando %d...", ano)
 
-    ativo = ler_csv_zip(
-        caminho_zip,
-        f"dfp_cia_aberta_BPA_con_{ano}.csv"
-    )
-
-    passivo = ler_csv_zip(
-        caminho_zip,
-        f"dfp_cia_aberta_BPP_con_{ano}.csv"
-    )
+    ativo = ler_csv_zip(caminho_zip, f"dfp_cia_aberta_BPA_con_{ano}.csv")
+    passivo = ler_csv_zip(caminho_zip, f"dfp_cia_aberta_BPP_con_{ano}.csv")
 
     ativo = filtrar_ambev(ativo)
     passivo = filtrar_ambev(passivo)
 
     ativo.to_csv(
         PASTA_SAIDA / f"ambev_ativo_{ano}.csv",
-        index=False,
-        encoding="utf-8-sig"
+        index=False, encoding="utf-8-sig"
     )
 
     passivo.to_csv(
         PASTA_SAIDA / f"ambev_passivo_{ano}.csv",
-        index=False,
-        encoding="utf-8-sig"
+        index=False, encoding="utf-8-sig"
     )
 
     return ativo, passivo
@@ -260,30 +220,24 @@ def processar_balanco(caminho_zip, ano):
 
 def processar_fluxo_caixa(caminho_zip, ano):
 
-    print(f"[DFC] Processando {ano}...")
+    log.info("[DFC] Processando %d...", ano)
 
     try:
 
         df = ler_csv_zip(
-            caminho_zip,
-            f"dfp_cia_aberta_DFC_MI_con_{ano}.csv"
+            caminho_zip, f"dfp_cia_aberta_DFC_MI_con_{ano}.csv"
         )
 
     except FileNotFoundError:
 
-        print(
-            f"[AVISO] Fluxo de caixa não encontrado "
-            f"para {ano}."
-        )
-
+        log.warning("Fluxo de caixa não encontrado para %d.", ano)
         return pd.DataFrame()
 
     df = filtrar_ambev(df)
 
     df.to_csv(
         PASTA_SAIDA / f"ambev_fluxo_caixa_{ano}.csv",
-        index=False,
-        encoding="utf-8-sig"
+        index=False, encoding="utf-8-sig"
     )
 
     return df
@@ -295,10 +249,9 @@ def processar_fluxo_caixa(caminho_zip, ano):
 
 def main():
 
-    print("=" * 60)
-    print("ANÁLISE FINANCEIRA - AMBEV")
-    print("Fonte: CVM - DFP")
-    print("=" * 60)
+    log.info("=" * 60)
+    log.info("ANÁLISE FINANCEIRA - AMBEV (Fonte: CVM - DFP)")
+    log.info("=" * 60)
 
     todos_dre = []
     todos_ativo = []
@@ -310,20 +263,9 @@ def main():
 
             zip_path = baixar_dfp(ano)
 
-            dre = processar_dre(
-                zip_path,
-                ano
-            )
-
-            ativo, passivo = processar_balanco(
-                zip_path,
-                ano
-            )
-
-            processar_fluxo_caixa(
-                zip_path,
-                ano
-            )
+            dre = processar_dre(zip_path, ano)
+            ativo, passivo = processar_balanco(zip_path, ano)
+            processar_fluxo_caixa(zip_path, ano)
 
             if not dre.empty:
                 dre["ANO_ANALISE"] = ano
@@ -337,63 +279,38 @@ def main():
                 passivo["ANO_ANALISE"] = ano
                 todos_passivo.append(passivo)
 
-        except Exception as erro:
+        except (requests.RequestException, FileNotFoundError,
+                zipfile.BadZipFile, ValueError) as erro:
 
-            print(
-                f"[ERRO] Não foi possível processar "
-                f"{ano}: {erro}"
-            )
-
-    # ========================================================
-    # CONSOLIDAÇÃO
-    # ========================================================
+            # Exceções esperadas (rede, arquivo ausente, layout
+            # inesperado) são logadas e o pipeline segue para o
+            # próximo ano. Erros de programação (ex: NameError,
+            # KeyError por bug) NÃO são silenciados aqui — vão
+            # estourar normalmente, para não mascarar bugs.
+            log.error("Não foi possível processar %d: %s", ano, erro)
 
     if todos_dre:
-
-        dre_final = pd.concat(
-            todos_dre,
-            ignore_index=True
-        )
-
-        dre_final.to_csv(
+        pd.concat(todos_dre, ignore_index=True).to_csv(
             PASTA_SAIDA / "ambev_dre_2022_2025.csv",
-            index=False,
-            encoding="utf-8-sig"
+            index=False, encoding="utf-8-sig"
         )
 
     if todos_ativo:
-
-        ativo_final = pd.concat(
-            todos_ativo,
-            ignore_index=True
-        )
-
-        ativo_final.to_csv(
+        pd.concat(todos_ativo, ignore_index=True).to_csv(
             PASTA_SAIDA / "ambev_ativo_2022_2025.csv",
-            index=False,
-            encoding="utf-8-sig"
+            index=False, encoding="utf-8-sig"
         )
 
     if todos_passivo:
-
-        passivo_final = pd.concat(
-            todos_passivo,
-            ignore_index=True
-        )
-
-        passivo_final.to_csv(
+        pd.concat(todos_passivo, ignore_index=True).to_csv(
             PASTA_SAIDA / "ambev_passivo_2022_2025.csv",
-            index=False,
-            encoding="utf-8-sig"
+            index=False, encoding="utf-8-sig"
         )
 
-    print()
-    print("=" * 60)
-    print("PROCESSAMENTO FINALIZADO")
-    print("=" * 60)
-
-    print(f"Dados brutos: {PASTA_DADOS}")
-    print(f"Resultados:   {PASTA_SAIDA}")
+    log.info("=" * 60)
+    log.info("PROCESSAMENTO FINALIZADO")
+    log.info("Dados brutos: %s", PASTA_DADOS)
+    log.info("Resultados:   %s", PASTA_SAIDA)
 
 
 if __name__ == "__main__":

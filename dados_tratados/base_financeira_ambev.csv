@@ -1,65 +1,53 @@
 ﻿ANO_ANALISE,INDICADOR,DS_CONTA,CD_CONTA,VL_CONTA,DT_FIM_EXERC,ORDEM_EXERC,GRUPO_DFP,DENOM_CIA,CD_CVM,TIPO_DEMONSTRATIVO
-2022,ativo_circulante,Ativo Circulante,1.01,38627141.0,2021-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
 2022,ativo_circulante,Ativo Circulante,1.01,37816711.0,2022-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
-2022,ativo_total,Ativo Total,1,138602483.0,2021-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
 2022,ativo_total,Ativo Total,1,137958083.0,2022-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
-2022,caixa_equivalentes,Caixa e Equivalentes de Caixa,1.01.01,16627698.0,2021-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
 2022,caixa_equivalentes,Caixa e Equivalentes de Caixa,1.01.01,14926435.0,2022-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
-2022,passivo_circulante,Passivo Circulante,2.01,38866406.0,2021-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
+2022,custo_vendas,Custo dos Bens e/ou Serviços Vendidos,3.02,-40422069.0,2022-12-31,ÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
+2022,estoques,Estoques,1.01.04,12923025.0,2022-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
+2022,lucro_bruto,Resultado Bruto,3.03,39286758.0,2022-12-31,ÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
+2022,lucro_liquido,Lucro/Prejuízo Consolidado do Período,3.11,14891291.0,2022-12-31,ÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
 2022,passivo_circulante,Passivo Circulante,2.01,40540538.0,2022-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
-2022,passivo_total,Passivo Total,2,138602483.0,2021-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
+2022,passivo_nao_circulante,Passivo Não Circulante,2.02,14089718.0,2022-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
 2022,passivo_total,Passivo Total,2,137958083.0,2022-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
-2022,patrimonio_liquido,Patrimônio Líquido Consolidado,2.03,84017617.0,2021-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
 2022,patrimonio_liquido,Patrimônio Líquido Consolidado,2.03,83327827.0,2022-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
-2022,receita_liquida,Receita de Venda de Bens e/ou Serviços,3.01,72854344.0,2021-12-31,PENÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
 2022,receita_liquida,Receita de Venda de Bens e/ou Serviços,3.01,79708827.0,2022-12-31,ÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
-2022,resultado_operacional,Resultado Antes do Resultado Financeiro e dos Tributos,3.05,16964525.0,2021-12-31,PENÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
 2022,resultado_operacional,Resultado Antes do Resultado Financeiro e dos Tributos,3.05,17658840.0,2022-12-31,ÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
-2023,ativo_circulante,Ativo Circulante,1.01,37816711.0,2022-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
 2023,ativo_circulante,Ativo Circulante,1.01,36563050.0,2023-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
-2023,ativo_total,Ativo Total,1,137958083.0,2022-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
 2023,ativo_total,Ativo Total,1,132644133.0,2023-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
-2023,caixa_equivalentes,Caixa e Equivalentes de Caixa,1.01.01,14926435.0,2022-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
 2023,caixa_equivalentes,Caixa e Equivalentes de Caixa,1.01.01,16059003.0,2023-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
-2023,passivo_circulante,Passivo Circulante,2.01,40540538.0,2022-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
+2023,custo_vendas,Custo dos Bens e/ou Serviços Vendidos,3.02,-39291571.0,2023-12-31,ÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
+2023,estoques,Estoques,1.01.04,9619022.0,2023-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
+2023,lucro_bruto,Resultado Bruto,3.03,40445285.0,2023-12-31,ÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
+2023,lucro_liquido,Lucro/Prejuízo Consolidado do Período,3.11,14960459.0,2023-12-31,ÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
 2023,passivo_circulante,Passivo Circulante,2.01,41004897.0,2023-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
-2023,passivo_total,Passivo Total,2,137958083.0,2022-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
+2023,passivo_nao_circulante,Passivo Não Circulante,2.02,11495434.0,2023-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
 2023,passivo_total,Passivo Total,2,132644133.0,2023-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
-2023,patrimonio_liquido,Patrimônio Líquido Consolidado,2.03,83327827.0,2022-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
 2023,patrimonio_liquido,Patrimônio Líquido Consolidado,2.03,80143802.0,2023-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
-2023,receita_liquida,Receita de Venda de Bens e/ou Serviços,3.01,79708827.0,2022-12-31,PENÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
 2023,receita_liquida,Receita de Venda de Bens e/ou Serviços,3.01,79736856.0,2023-12-31,ÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
-2023,resultado_operacional,Resultado Antes do Resultado Financeiro e dos Tributos,3.05,17658840.0,2022-12-31,PENÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
 2023,resultado_operacional,Resultado Antes do Resultado Financeiro e dos Tributos,3.05,18645692.0,2023-12-31,ÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
-2024,ativo_circulante,Ativo Circulante,1.01,36563050.0,2023-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
 2024,ativo_circulante,Ativo Circulante,1.01,54155784.0,2024-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
-2024,ativo_total,Ativo Total,1,132644133.0,2023-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
 2024,ativo_total,Ativo Total,1,162507949.0,2024-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
-2024,caixa_equivalentes,Caixa e Equivalentes de Caixa,1.01.01,16059003.0,2023-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
 2024,caixa_equivalentes,Caixa e Equivalentes de Caixa,1.01.01,28595666.0,2024-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
-2024,passivo_circulante,Passivo Circulante,2.01,41004897.0,2023-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
+2024,custo_vendas,Custo dos Bens e/ou Serviços Vendidos,3.02,-43615080.0,2024-12-31,ÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
+2024,estoques,Estoques,1.01.04,11689767.0,2024-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
+2024,lucro_bruto,Resultado Bruto,3.03,45837589.0,2024-12-31,ÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
+2024,lucro_liquido,Lucro/Prejuízo Consolidado do Período,3.11,14846952.0,2024-12-31,ÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
 2024,passivo_circulante,Passivo Circulante,2.01,49388714.0,2024-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
-2024,passivo_total,Passivo Total,2,132644133.0,2023-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
+2024,passivo_nao_circulante,Passivo Não Circulante,2.02,13538721.0,2024-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
 2024,passivo_total,Passivo Total,2,162507949.0,2024-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
-2024,patrimonio_liquido,Patrimônio Líquido Consolidado,2.03,80143802.0,2023-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
 2024,patrimonio_liquido,Patrimônio Líquido Consolidado,2.03,99580514.0,2024-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
-2024,receita_liquida,Receita de Venda de Bens e/ou Serviços,3.01,79736856.0,2023-12-31,PENÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
 2024,receita_liquida,Receita de Venda de Bens e/ou Serviços,3.01,89452669.0,2024-12-31,ÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
-2024,resultado_operacional,Resultado Antes do Resultado Financeiro e dos Tributos,3.05,18645692.0,2023-12-31,PENÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
 2024,resultado_operacional,Resultado Antes do Resultado Financeiro e dos Tributos,3.05,21805576.0,2024-12-31,ÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
-2025,ativo_circulante,Ativo Circulante,1.01,54155784.0,2024-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
 2025,ativo_circulante,Ativo Circulante,1.01,43875596.0,2025-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
-2025,ativo_total,Ativo Total,1,162507949.0,2024-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
 2025,ativo_total,Ativo Total,1,145087151.0,2025-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
-2025,caixa_equivalentes,Caixa e Equivalentes de Caixa,1.01.01,28595666.0,2024-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
 2025,caixa_equivalentes,Caixa e Equivalentes de Caixa,1.01.01,18638228.0,2025-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
-2025,passivo_circulante,Passivo Circulante,2.01,49388714.0,2024-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
+2025,custo_vendas,Custo dos Bens e/ou Serviços Vendidos,3.02,-42864127.0,2025-12-31,ÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
+2025,estoques,Estoques,1.01.04,10520090.0,2025-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Ativo,AMBEV S.A.,23264,BPA
+2025,lucro_bruto,Resultado Bruto,3.03,45378340.0,2025-12-31,ÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
+2025,lucro_liquido,Lucro/Prejuízo Consolidado do Período,3.11,15988433.0,2025-12-31,ÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
 2025,passivo_circulante,Passivo Circulante,2.01,45599307.0,2025-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
-2025,passivo_total,Passivo Total,2,162507949.0,2024-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
+2025,passivo_nao_circulante,Passivo Não Circulante,2.02,10713063.0,2025-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
 2025,passivo_total,Passivo Total,2,145087151.0,2025-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
-2025,patrimonio_liquido,Patrimônio Líquido Consolidado,2.03,99580514.0,2024-12-31,PENÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
 2025,patrimonio_liquido,Patrimônio Líquido Consolidado,2.03,88774781.0,2025-12-31,ÚLTIMO,DF Consolidado - Balanço Patrimonial Passivo,AMBEV S.A.,23264,BPP
-2025,receita_liquida,Receita de Venda de Bens e/ou Serviços,3.01,89452669.0,2024-12-31,PENÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
 2025,receita_liquida,Receita de Venda de Bens e/ou Serviços,3.01,88242467.0,2025-12-31,ÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
-2025,resultado_operacional,Resultado Antes do Resultado Financeiro e dos Tributos,3.05,21805576.0,2024-12-31,PENÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
 2025,resultado_operacional,Resultado Antes do Resultado Financeiro e dos Tributos,3.05,23423386.0,2025-12-31,ÚLTIMO,DF Consolidado - Demonstração do Resultado,AMBEV S.A.,23264,DRE
