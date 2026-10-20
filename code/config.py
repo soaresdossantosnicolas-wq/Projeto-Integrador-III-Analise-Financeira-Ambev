@@ -83,3 +83,12 @@ ORDEM_EXERC_VALIDA = "ÚLTIMO"
 # (ativo_total ≈ passivo_total, já que o código "2" da CVM é o
 # passivo total incluindo PL).
 TOLERANCIA_IDENTIDADE_CONTABIL = 0.01  # 1%
+
+# As DFPs da CVM informam a escala dos valores em ESCALA_MOEDA
+# ("MIL" = valores em milhares de reais; "UNIDADE" = em reais). Sem
+# converter, receita de R$ 79,7 bi aparece como 79.708.827 (e o dashboard
+# mostraria "R$ 79,71 mi"). A Etapa 2 converte tudo para reais.
+ESCALAS_MOEDA = {
+    "UNIDADE": 1,
+    "MIL": 1_000,
+}

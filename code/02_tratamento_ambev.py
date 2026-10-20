@@ -67,7 +67,8 @@ def limpar_colunas(df):
 
 def converter_numerico(df, coluna="VL_CONTA"):
     """
-    Converte a coluna VL_CONTA para número.
+    Converte a coluna VL_CONTA para número e aplica a escala informada
+    pela CVM em ESCALA_MOEDA, deixando todos os valores em reais (R$).
     """
 
     if coluna not in df.columns:
@@ -79,6 +80,32 @@ def converter_numerico(df, coluna="VL_CONTA"):
         df[coluna],
         errors="coerce"
     )
+
+    if "ESCALA_MOEDA" not in df.columns:
+
+        log.warning(
+            "Coluna ESCALA_MOEDA ausente — valores mantidos na "
+            "escala original da CVM (possivelmente em R$ mil)."
+        )
+
+        return df
+
+    escala = df["ESCALA_MOEDA"].astype(str).str.strip().str.upper()
+
+    fator = escala.map(config.ESCALAS_MOEDA)
+
+    desconhecidas = escala[fator.isna()].unique()
+
+    if len(desconhecidas) > 0:
+
+        log.warning(
+            "ESCALA_MOEDA desconhecida %s — tratada como unidade (x1).",
+            list(desconhecidas)
+        )
+
+    df[coluna] = df[coluna] * fator.fillna(1)
+
+    df["ESCALA_MOEDA"] = "UNIDADE"
 
     return df
 
