@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+saida/
+dados_cvm/
+dados_tratados/*
+!dados_tratados/indicadores_financeiros_ambev.csv
