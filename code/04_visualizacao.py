@@ -53,6 +53,7 @@ def estilizar(fig: go.Figure, titulo: str, eixo: str, tema: str) -> go.Figure:
         height=370,
         separators=",.",
         legend=dict(orientation="h", y=-0.23, x=0),
+        legend_title_text="",
         hovermode="x unified",
         dragmode=False,
     )
@@ -245,7 +246,7 @@ def sobre(metadados: dict) -> None:
 def main() -> None:
     """Carrega somente snapshots locais; erros esperados têm explicação sem traceback."""
     st.markdown(
-        "<style>.block-container{padding-top:2.1rem;max-width:1500px} [data-testid='stMetricValue']{font-size:1.65rem} h1{letter-spacing:-.045em} [data-testid='stCaptionContainer']{line-height:1.5}</style>",
+        "<style>.block-container{padding-top:4.2rem;max-width:1500px} [data-testid='stMetricValue']{font-size:1.65rem} h1{letter-spacing:-.045em} [data-testid='stCaptionContainer']{line-height:1.5}</style>",
         unsafe_allow_html=True,
     )
     try:
@@ -289,7 +290,11 @@ def main() -> None:
             format_func=lambda c: config.NOMES[c],
             key="series",
         )
-        tema = st.selectbox("Contraste dos gráficos", ["Escuro", "Claro"])
+        tema = st.selectbox(
+            "Contraste dos gráficos",
+            ["Escuro", "Claro"],
+            index=1 if st.get_option("theme.base") == "light" else 0,
+        )
         st.divider()
         st.caption(
             "Filtro de anos afeta gráficos e exportação. O delta dos cards compara o último ano selecionado com o ano calendário anterior da base completa."

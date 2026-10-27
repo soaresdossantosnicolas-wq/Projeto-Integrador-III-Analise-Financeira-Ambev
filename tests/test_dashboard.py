@@ -87,3 +87,18 @@ def test_dashboard_base_ausente_sem_traceback(monkeypatch, tmp_path):
     app = AppTest.from_file(str(RAIZ / "code/04_visualizacao.py")).run(timeout=30)
     assert not app.exception
     assert "Não foi possível" in app.error[0].value
+
+
+def test_tracos_plotly_preservam_valores_e_rotulos():
+    from conftest import carregar_script
+
+    dash = carregar_script("04_visualizacao")
+    df = pd.DataFrame({"ano_analise": [2024, 2025], "receita_liquida": [89452669000.0, 88242467000.0]})
+    antes = df.copy(deep=True)
+    for tema in ["Claro", "Escuro"]:
+        fig = dash.grafico_series(df, ("receita_liquida",), "Receita", tema)
+        np.testing.assert_allclose(fig.data[0].y, df.receita_liquida / 1e9)
+        assert fig.data[0].customdata[1][0] == "R$ 88,24 bi"
+        assert fig.layout.yaxis.title.text == "R$ bilhões"
+        assert fig.layout.legend.title.text == ""
+    pd.testing.assert_frame_equal(df, antes)

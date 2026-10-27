@@ -55,3 +55,23 @@ def test_retries_configurados(coleta):
         assert retry.total == 3
         assert 429 in retry.status_forcelist
         assert retry.allowed_methods == ["GET"]
+
+
+def test_download_interrompido_nao_publica_cache(coleta, tmp_path, monkeypatch):
+    import requests
+
+    class SessaoFalha:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            return None
+
+        def get(self, *args, **kwargs):
+            raise requests.ConnectionError("interrupção simulada")
+
+    monkeypatch.setattr(coleta, "PASTA_DADOS", tmp_path)
+    monkeypatch.setattr(coleta, "sessao_http", SessaoFalha)
+    with pytest.raises(ErroColetaCVM, match="download"):
+        coleta.baixar_dfp(2025)
+    assert not list(tmp_path.iterdir())

@@ -57,6 +57,11 @@ jobs:
             if curl --fail --silent http://127.0.0.1:8501/_stcore/health; then break; fi
             sleep 1
           done
+          python -m streamlit run code/04_visualizacao.py --server.port 8502 --theme.base light --theme.backgroundColor '#F7F9FC' --theme.secondaryBackgroundColor '#FFFFFF' --theme.textColor '#17253C' --theme.primaryColor '#2874F0' > /tmp/streamlit-claro.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:8502/_stcore/health; then break; fi
+            sleep 1
+          done
           node scripts/capturar_dashboard.mjs
       - uses: actions/upload-artifact@v4
         if: always()

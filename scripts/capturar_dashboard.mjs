@@ -18,8 +18,16 @@ try {
     await pagina.getByText(nome, { exact: false }).first().waitFor();
   }
   await pagina.getByRole('tab', { name: 'Visão Geral', exact: true }).click();
-  await pagina.setViewportSize({ width: 390, height: 844 });
-  await pagina.screenshot({ path: `${destino}/dashboard-mobile.png`, fullPage: true });
-  const largura = await pagina.evaluate(() => ({ pagina: document.documentElement.scrollWidth, janela: window.innerWidth }));
+  const mobile = await navegador.newPage({ viewport: { width: 390, height: 844 } });
+  await mobile.goto('http://127.0.0.1:8501');
+  await mobile.getByRole('heading', { name: 'Ambev, em perspectiva.' }).waitFor();
+  await mobile.getByTestId('stPlotlyChart').first().waitFor();
+  await mobile.screenshot({ path: `${destino}/dashboard-mobile.png`, fullPage: true });
+  const largura = await mobile.evaluate(() => ({ pagina: document.documentElement.scrollWidth, janela: window.innerWidth }));
+  if (largura.pagina > largura.janela) throw new Error('Overflow horizontal na página móvel');
+  await pagina.goto('http://127.0.0.1:8502');
+  await pagina.getByRole('heading', { name: 'Ambev, em perspectiva.' }).waitFor();
+  await pagina.getByTestId('stPlotlyChart').first().waitFor();
+  await pagina.screenshot({ path: `${destino}/dashboard-claro.png`, fullPage: true });
   await fs.writeFile(`${destino}/qa-visual.json`, JSON.stringify({ viewportMobile: largura, abas: 7, autoresConferidos: true }, null, 2));
 } finally { await navegador.close(); }
