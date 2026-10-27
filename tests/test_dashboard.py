@@ -102,3 +102,22 @@ def test_tracos_plotly_preservam_valores_e_rotulos():
         assert fig.layout.yaxis.title.text == "R$ bilhões"
         assert fig.layout.legend.title.text == ""
     pd.testing.assert_frame_equal(df, antes)
+
+
+def test_contraste_paleta_grafica_em_ambos_fundos():
+    import config
+
+    def luminancia(cor):
+        canais = [int(cor[i : i + 2], 16) / 255 for i in (1, 3, 5)]
+        linear = [v / 12.92 if v <= 0.04045 else ((v + 0.055) / 1.055) ** 2.4 for v in canais]
+        return sum(v * peso for v, peso in zip(linear, [0.2126, 0.7152, 0.0722]))
+
+    def contraste(a, b):
+        menor, maior = sorted([luminancia(a), luminancia(b)])
+        return (maior + 0.05) / (menor + 0.05)
+
+    for cor in set(config.PALETA.values()):
+        for fundo in ["#0B1220", "#F7F9FC"]:
+            assert contraste(cor, fundo) >= 3  # elementos gráficos não textuais
+    assert contraste("#E5EDF8", "#0B1220") >= 4.5
+    assert contraste("#17253C", "#F7F9FC") >= 4.5

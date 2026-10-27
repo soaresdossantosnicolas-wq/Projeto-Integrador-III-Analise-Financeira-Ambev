@@ -66,6 +66,7 @@ def mostrar(fig: go.Figure, chave: str) -> None:
     """Renderiza responsivamente com ferramentas discretas."""
     st.plotly_chart(
         fig,
+        theme=None,
         use_container_width=True,
         key=chave,
         config={"displaylogo": False, "scrollZoom": False, "modeBarButtonsToRemove": ["lasso2d", "select2d"]},
@@ -246,7 +247,7 @@ def sobre(metadados: dict) -> None:
 def main() -> None:
     """Carrega somente snapshots locais; erros esperados têm explicação sem traceback."""
     st.markdown(
-        "<style>.block-container{padding-top:4.2rem;max-width:1500px} [data-testid='stMetricValue']{font-size:1.65rem} h1{letter-spacing:-.045em} [data-testid='stCaptionContainer']{line-height:1.5}</style>",
+        "<style>.block-container{padding-top:4.2rem;max-width:1500px} [data-testid='stMetricValue']{font-size:1.65rem} h1{letter-spacing:-.045em} [data-testid='stCaptionContainer']{line-height:1.5;color:inherit;opacity:.85} [data-testid='stMetricDelta']{color:inherit!important}</style>",
         unsafe_allow_html=True,
     )
     try:
