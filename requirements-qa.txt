@@ -1,0 +1,4 @@
+# Ferramenta opcional Node.js para capturar o Streamlit real, fora do runtime Python.
+# npm install --no-save playwright@1.56.1
+# npx playwright install --with-deps chromium
+# node scripts/capturar_dashboard.mjs
