@@ -1,6 +1,29 @@
+# Ambientes e bytecode
 .venv/
+venv/
 __pycache__/
-saida/
-dados_cvm/
-dados_tratados/*
-!dados_tratados/indicadores_financeiros_ambev.csv
+*.py[cod]
+
+# Testes e ferramentas
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Dados regeneráveis; o snapshot alimenta o dashboard publicado
+/dados_cvm/
+/saida/
+/dados_tratados/*
+!/dados_tratados/indicadores_financeiros_ambev.csv
+
+# Configuração local e credenciais
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Sistema e editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

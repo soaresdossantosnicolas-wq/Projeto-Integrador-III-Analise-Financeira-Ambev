@@ -12,6 +12,7 @@ daquela etapa (evita, por exemplo, colar o conteúdo da Etapa 1 dentro do
 foram gerados e mostra os indicadores que ficaram vazios (NaN).
 """
 
+import argparse
 import subprocess
 import sys
 from pathlib import Path
@@ -121,7 +122,12 @@ def resumo_indicadores():
 
 
 def main():
-    sem_coleta = "--sem-coleta" in sys.argv
+    parser = argparse.ArgumentParser(description="Executa coleta, tratamento e indicadores da Ambev.")
+    parser.add_argument(
+        "--sem-coleta", action="store_true",
+        help="reutiliza os CSVs da coleta existentes em saida/",
+    )
+    sem_coleta = parser.parse_args().sem_coleta
 
     print(f"Raiz do projeto: {config.RAIZ_PROJETO}")
 
