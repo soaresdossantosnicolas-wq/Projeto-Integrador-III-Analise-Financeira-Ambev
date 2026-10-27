@@ -1,0 +1,30 @@
+[
+  {
+    "ano": 2022,
+    "status": "baixado_e_validado",
+    "sha256_fonte_atual": "4379d3b8986b3a42af0247fe02d7a9a42c34178b70437a4d36c86e682706c1d7",
+    "sha256_cache_usado": "1272858bbaf30c0434e70dae060ef12ec6474131f8ec5fd05938686184e907c9",
+    "igual_ao_cache": false
+  },
+  {
+    "ano": 2023,
+    "status": "baixado_e_validado",
+    "sha256_fonte_atual": "e2be633d975ed3731766538b8c8170a5f943956024fe55afa4387969e9194a90",
+    "sha256_cache_usado": "46f281e5849ae7e7f0862aa9b65241a1ead95bb22644d1b5310d6b6542d7c398",
+    "igual_ao_cache": false
+  },
+  {
+    "ano": 2024,
+    "status": "baixado_e_validado",
+    "sha256_fonte_atual": "c4def75946f770539f8a6f8e174afc8cab67f37d91657475dcc740018e94e203",
+    "sha256_cache_usado": "b51c920793c18edb66e8780c0780836d441af1199e1077064b73c7de6c865df0",
+    "igual_ao_cache": false
+  },
+  {
+    "ano": 2025,
+    "status": "baixado_e_validado",
+    "sha256_fonte_atual": "cdce6cc0e0bb85128d48928a697841f66019965bf120858c6d9802a8b70f1184",
+    "sha256_cache_usado": "5e273568aae97d1301c852e9f5d2ed024584beab31ee82a65eff47478ffdf34f",
+    "igual_ao_cache": false
+  }
+]

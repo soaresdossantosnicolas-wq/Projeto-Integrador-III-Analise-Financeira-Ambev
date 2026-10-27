@@ -1,0 +1,6 @@
+{
+  "commits": 10,
+  "blobs_verificados": 101,
+  "achados": [],
+  "limite": "Heurística para formatos conhecidos; não prova ausência universal de segredos ou dados pessoais. Metadados de autores Git não são classificados como segredos."
+}

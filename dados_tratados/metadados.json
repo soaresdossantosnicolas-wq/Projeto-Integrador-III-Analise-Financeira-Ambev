@@ -1,0 +1,45 @@
+{
+  "gerado_em_utc": "2026-10-27T22:20:33.155004+00:00",
+  "anos": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "moeda": "BRL",
+  "escala": "UNIDADE",
+  "demonstracao": "Consolidado",
+  "validacoes": 244,
+  "fontes": [
+    {
+      "ano": 2022,
+      "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2022.zip",
+      "arquivo": "dfp_cia_aberta_2022.zip",
+      "bytes": 13449429,
+      "sha256": "4379d3b8986b3a42af0247fe02d7a9a42c34178b70437a4d36c86e682706c1d7"
+    },
+    {
+      "ano": 2023,
+      "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2023.zip",
+      "arquivo": "dfp_cia_aberta_2023.zip",
+      "bytes": 13562065,
+      "sha256": "e2be633d975ed3731766538b8c8170a5f943956024fe55afa4387969e9194a90"
+    },
+    {
+      "ano": 2024,
+      "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2024.zip",
+      "arquivo": "dfp_cia_aberta_2024.zip",
+      "bytes": 13396926,
+      "sha256": "c4def75946f770539f8a6f8e174afc8cab67f37d91657475dcc740018e94e203"
+    },
+    {
+      "ano": 2025,
+      "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2025.zip",
+      "arquivo": "dfp_cia_aberta_2025.zip",
+      "bytes": 12806582,
+      "sha256": "cdce6cc0e0bb85128d48928a697841f66019965bf120858c6d9802a8b70f1184"
+    }
+  ],
+  "indicadores_sha256": "ff66a0ae2f3c3d443dc41924769e462219ce1084685c6b42fbaa749f59dddeee",
+  "status": "validado"
+}

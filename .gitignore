@@ -15,6 +15,10 @@ htmlcov/
 /saida/
 /dados_tratados/*
 !/dados_tratados/indicadores_financeiros_ambev.csv
+!/dados_tratados/metadados.json
+!/dados_tratados/relatorio_qualidade.csv
+!/dados_tratados/proveniencia_contas.csv
+!/dados_tratados/diagnostico_indicadores.csv
 
 # Configuração local e credenciais
 .env
@@ -27,3 +31,7 @@ htmlcov/
 Thumbs.db
 .vscode/
 .idea/
+
+# QA visual opcional
+node_modules/
+package-lock.json
