@@ -1,19 +1,19 @@
-# Deploy do dashboard
+# Publicação no Streamlit Community Cloud
 
-O dashboard usa `dados_tratados/indicadores_financeiros_ambev.csv`, incluído no repositório. Não precisa baixar as DFPs durante a inicialização.
+## Preparação
 
-1. Instale `requirements.txt` no ambiente de trabalho.
-2. Execute `python code/preparar_deploy.py` para validar o snapshot e as dependências locais. O comando não altera arquivos e não executa operações Git.
-3. Revise e publique suas alterações por uma branch e pull request.
-4. No Streamlit Community Cloud, selecione este repositório e a branch de publicação.
-5. Informe `code/04_visualizacao.py` como arquivo principal e Python 3.12 como versão do ambiente.
+Use Python 3.12. Instale `requirements.txt`, execute `python code/preparar_deploy.py` e confira se o dashboard abre localmente.
 
-Para testar localmente:
+O deploy depende de `dados_tratados/indicadores_financeiros_ambev.csv` e `dados_tratados/metadados.json`. O código valida os campos e a correspondência do hash antes de apresentar os números. As evidências adicionais de proveniência, qualidade e ausências ficam disponíveis no repositório.
 
-```bash
-python -m streamlit run code/04_visualizacao.py
-```
+## Configuração
 
-Para atualizar os dados, siga [dados.md](dados.md) e publique o novo CSV após a revisão. Os relatórios HTML históricos não são necessários para o deploy.
+No Streamlit Community Cloud, escolha este repositório, a branch que contém a revisão e o arquivo principal **`code/04_visualizacao.py`**. Configure Python **3.12**. O tema está em `.streamlit/config.toml`. A aplicação não precisa baixar os ZIPs na inicialização e não exige credenciais.
 
-O antigo `preparar_deploy.py --sim` fazia commit e push. Essa automação foi removida: o script agora só valida e apresenta os próximos passos. A opção `--sim` não é mais aceita.
+A revisão não publicou um novo aplicativo e não confirmou uma URL pública existente. Após a publicação, inclua a URL real no README; não use um endereço de exemplo como se estivesse ativo.
+
+## Atualizar dados
+
+Execute o pipeline localmente, confira os testes e a conciliação e publique juntos o CSV e os metadados correspondentes. Consulte [dados.md](dados.md). O validador não executa Git, não altera dependências e não faz push.
+
+Não adicione segredos a `.streamlit/config.toml`. Se integrações futuras exigirem credenciais, use os mecanismos de secrets do serviço; `.streamlit/secrets.toml` e `.env` são ignorados.

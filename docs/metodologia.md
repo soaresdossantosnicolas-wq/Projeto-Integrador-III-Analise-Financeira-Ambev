@@ -1,82 +1,75 @@
-# Metodologia e indicadores
+# Metodologia financeira e limites
 
-Margens, ROA, ROE, endividamento e capital de terceiros / PL são expressos em porcentagem (a razão da tabela multiplicada por 100). Liquidez é expressa como razão.
+## Contas e escala
 
+Somente DRE, BPA e BPP consolidados. Empresa identificada por código CVM/CNPJ. Seleção exclusiva de ÚLTIMO e período anual correspondente ao arquivo. Valores de MIL são multiplicados por 1.000 e marcados como UNIDADE para evitar dupla conversão. Moeda desconhecida, escala desconhecida e valores não finitos são rejeitados.
 
-| Grupo | Indicador | Fórmula |
+| Indicador-base | CD_CONTA | Tratamento |
 |---|---|---|
-| Liquidez | Liquidez corrente | Ativo circulante ÷ Passivo circulante |
-| Liquidez | Liquidez seca | (Ativo circulante − Estoques) ÷ Passivo circulante |
-| Rentabilidade | Margem bruta | Lucro bruto ÷ Receita líquida |
-| Rentabilidade | Margem operacional | Resultado operacional (EBIT) ÷ Receita líquida |
-| Rentabilidade | Margem líquida | Lucro líquido ÷ Receita líquida |
-| Rentabilidade | ROA | Lucro líquido ÷ Ativo total |
-| Rentabilidade | ROE | Lucro líquido ÷ Patrimônio líquido |
-| Endividamento | Endividamento geral | Passivo exigível (circulante + não circulante) ÷ Ativo total |
-| Endividamento | Capital de terceiros / PL | Passivo exigível ÷ Patrimônio líquido |
-| Crescimento | Crescimento anual | Variação percentual ano contra ano (receita, lucro bruto, lucro líquido, ativo e PL) |
+| Receita líquida | 3.01 | Obrigatório |
+| Custo das vendas | 3.02 | Custo negativo, conforme a DFP |
+| Lucro bruto | 3.03 | Fallback explícito: 3.01 + 3.02, registrado em log |
+| Despesas/receitas operacionais | 3.04 | Total assinado |
+| Resultado operacional CVM | 3.05 | Inclui equivalência patrimonial |
+| Resultado financeiro | 3.06 | Total assinado |
+| Resultado antes dos tributos | 3.07 | Validação com EBIT + financeiro |
+| Tributos sobre lucro | 3.08 | Sinal preservado |
+| Resultado continuado/descontinuado | 3.09 / 3.10 | Conciliação até o lucro |
+| Lucro líquido consolidado | 3.11 | Inclui não controladores; não é somente atribuível aos acionistas |
+| Equivalência patrimonial | 3.04.06 | Usada na conciliação de conceito do EBIT |
+| Ativo total / AC / ANC | 1 / 1.01 / 1.02 | Resumo patrimonial |
+| Caixa / estoques | 1.01.01 / 1.01.04 | Confirmados nos dados dos quatro anos |
+| Passivo + PL / PC / PNC / PL | 2 / 2.01 / 2.02 / 2.03 | Código 2 inclui patrimônio líquido |
 
-Além disso, o pipeline gera:
+A seleção usa CD_CONTA exato, nunca DS_CONTA. Contas obrigatórias ausentes interrompem a etapa com explicação. Não há fallback por nome nem preenchimento arbitrário por zero.
 
-- **Análise horizontal:** variação percentual de cada conta entre anos consecutivos;
-- **Análise vertical:** peso do lucro bruto, do resultado operacional e do lucro líquido sobre a receita líquida;
-- **Resumo do período:** valor inicial, valor final e variação acumulada de cada indicador-chave.
+## Fórmulas
 
-## Decisões metodológicas e controles de qualidade
+| Indicador | Definição e unidade |
+|---|---|
+| Liquidez corrente | AC / PC, em vezes |
+| Liquidez seca | (AC − estoques) / PC, em vezes; não exclui outras contas de menor liquidez |
+| Margem bruta | Lucro bruto / receita × 100, em % |
+| Margem operacional CVM | CVM 3.05 / receita × 100, em % |
+| Margem líquida | Lucro consolidado / receita × 100, em % |
+| ROA | Lucro consolidado / ativo final × 100, em % |
+| ROE | Lucro consolidado / PL consolidado final × 100, em % |
+| Endividamento geral | (PC + PNC) / ativo × 100, em % |
+| Capital de terceiros / PL | (PC + PNC) / PL × 100, em % |
+| Crescimento/análise horizontal | (Atual − anterior) / valor absoluto do anterior × 100 |
+| Análise vertical | Conta da DRE / receita do mesmo ano × 100 |
 
-**Exercício correto.** Cada DFP traz, na mesma tabela, o exercício atual (`ORDEM_EXERC = "ÚLTIMO"`) e o comparativo do ano anterior (`"PENÚLTIMO"`). O pipeline mantém somente o `ÚLTIMO`; sem esse filtro, os valores de um ano são substituídos pelos do ano anterior.
+O fallback do passivo exigível, se PC/PNC estiverem ausentes no uso isolado da função, é passivo CVM 2 − PL, com log. O pipeline completo exige as contas originais e valida sua identidade.
 
-**Seleção de contas por código, não por texto.** As contas são localizadas pelo `CD_CONTA` do plano de contas padronizado da CVM, e não por busca em `DS_CONTA` (que pode casar várias contas com a mesma palavra):
+Zero e valores não finitos no denominador produzem n/d. A ausência de dívida financeira ou EBITDA normalizado é explicitamente registrada: passivo exigível não substitui dívida financeira e EBIT não substitui EBITDA ajustado. Esses indicadores não são apresentados como resultados calculados.
 
-| Indicador | `CD_CONTA` | Conta |
-|---|---|---|
-| `receita_liquida` | 3.01 | Receita de venda de bens e/ou serviços |
-| `custo_vendas` | 3.02 | Custo dos bens e/ou serviços vendidos |
-| `lucro_bruto` | 3.03 | Resultado bruto |
-| `resultado_operacional` | 3.05 | Resultado antes do resultado financeiro e dos tributos (EBIT) |
-| `lucro_liquido` | 3.11 | Lucro/prejuízo consolidado do período |
-| `ativo_total` | 1 | Ativo total |
-| `ativo_circulante` | 1.01 | Ativo circulante |
-| `caixa_equivalentes` | 1.01.01 | Caixa e equivalentes de caixa |
-| `estoques` | 1.01.04 | Estoques |
-| `passivo_total` | 2 | Passivo total (inclui o patrimônio líquido) |
-| `passivo_circulante` | 2.01 | Passivo circulante |
-| `passivo_nao_circulante` | 2.02 | Passivo não circulante |
-| `patrimonio_liquido` | 2.03 | Patrimônio líquido consolidado |
+Crescimento anual só compara anos consecutivos, sem forward fill. Uma base anterior negativa usa o valor absoluto para manter o sentido da mudança — passar de prejuízo de 100 para prejuízo de 50 representa aumento de 50 nesta convenção. A análise continua exigindo interpretação econômica. Base zero é indefinida, não crescimento zero.
 
-Os códigos seguem a estrutura padronizada da CVM; a conta de estoques (1.01.04) deve ser conferida a cada novo ano de dados.
+Os cards usam o ano calendário anterior da base completa. Margens e retornos variam em pontos percentuais, e valores monetários variam em porcentagem. A comparação dos extremos selecionados é identificada como comparação de períodos, sem fingir ser anualizada.
 
-**Escala monetária.** As DFPs informam os valores em R$ mil (`ESCALA_MOEDA = MIL`). A Etapa 2 converte tudo para **reais**, de modo que receita e lucro apareçam corretamente (por exemplo, R$ 79,7 bi, e não R$ 79,7 mi).
+## Identidades e subtotais
 
-**Demonstrações consolidadas.** Apenas o grupo consolidado é utilizado.
+Antes de exportar, são testados: Ativo = Passivo + PL; Ativo = AC + ANC; passivo CVM 2 = PC + PNC + PL; bruto = receita + custo; EBIT = bruto + operacionais; LAIR = EBIT + financeiro; continuado = LAIR + tributos; líquido = continuado + descontinuado. Também são comparados os pais com seus filhos imediatos no balanço e na conta DRE 3.04.
 
-**Lucro bruto derivado.** Se a linha 3.03 não vier na DFP, o lucro bruto é calculado como `receita_liquida + custo_vendas` (o custo já é negativo na CVM), com aviso no log.
+Tolerância: maior entre R$ 1.000 e 1e-6 do valor absoluto da referência (0,0001%). Cada resultado, diferença e tolerância fica no relatório de qualidade. A etapa falha se a tolerância for excedida.
 
-**Validações contábeis automáticas (Etapa 2):**
+## Conferência com o RI da Ambev
 
-- `Ativo total ≈ Passivo total` (tolerância de 1%);
-- `Passivo circulante + Passivo não circulante + Patrimônio líquido ≈ Passivo total`;
-- alerta quando uma conta não é encontrada ou quando sobra mais de um valor por ano e indicador.
+Referência: [Destaques Financeiros](https://ri.ambev.com.br/visao-geral/destaques-financeiros/), consultada em 27/10/2026. Foram congelados 28 valores: receita, bruto, líquido, ativo, PL, ROE e EBIT para os quatro exercícios. O portal informa valores monetários em milhões e ROE com uma casa decimal.
 
-**Endividamento.** O numerador usa o **passivo exigível** (circulante + não circulante). O passivo total da CVM inclui o patrimônio líquido e, por identidade contábil, é sempre igual ao ativo, o que resultaria em 100% em todos os anos.
+Tolerância de comparação: R$ 0,5 milhão para os valores arredondados e 0,05 p.p. para ROE. A conciliação pode ser reproduzida sem rede com `python scripts/validar_referencia.py`. Não se trata de validar todos os indicadores contra um cálculo independente publicado: liquidez, estoques e subtotais são conferidos nos dados originais e nas identidades; suas fórmulas têm testes sintéticos.
 
+O resultado CVM 3.05 difere do EBIT do RI. Nos quatro anos, subtrair a equivalência patrimonial CVM 3.04.06 reconcilia a diferença dentro do arredondamento da página. O valor CVM não foi substituído pelo valor arredondado do RI:
 
-## Limitações e próximos passos
+| Ano | CVM 3.05 (R$ mi) | Equivalência patrimonial (R$ mi) | Comparável ao EBIT RI (R$ mi) | RI (R$ mi) |
+|---|---|---|---|---|
+| 2022 | 17.658,840 | −29,106 | 17.687,946 | 17.688 |
+| 2023 | 18.645,692 | −185,406 | 18.831,098 | 18.831 |
+| 2024 | 21.805,576 | 3,918 | 21.801,658 | 21.802 |
+| 2025 | 23.423,386 | 105,785 | 23.317,601 | 23.318 |
 
+As demais diferenças nessa amostra externa são compatíveis com o arredondamento do RI. A página oficial foi usada como segunda publicação para conferência; a referência congelada não é um substituto para os demonstrativos completos.
 
-**Limitações**
+## Limitações
 
-- **Amostra pequena:** são apenas quatro observações anuais; a análise é descritiva e não sustenta inferência estatística ou projeções.
-- **Valores nominais:** não há ajuste pela inflação (IPCA), o que pode superestimar o crescimento real.
-- **ROA e ROE sobre saldo final:** o cálculo usa o saldo de fim de período, e não a média entre o início e o fim do ano.
-- **EBITDA e dívida líquida/EBITDA** não são calculados, pois dependem da depreciação e amortização (DFC) e da abertura da dívida bruta.
-- **Sem modelagem preditiva:** o projeto é de análise fundamentalista; não há modelo de previsão.
-
-**Próximos passos**
-
-- Incorporar as ITRs (dados trimestrais) para aumentar a granularidade da série.
-- Deflacionar os valores pelo IPCA e calcular crescimento real.
-- Adicionar o fluxo de caixa (DFC) para EBITDA, dívida líquida e geração de caixa.
-- Integrar preços de ABEV3 (retornos logarítmicos, volatilidade, índice de Sharpe e *drawdown* máximo) e confrontá-los com os fundamentos.
-- Comparar com empresas pares do setor.
-- Cobrir as etapas do pipeline com testes automatizados.
+Amostra de quatro anos, valores nominais, sem ajustes de inflação ou câmbio, sem inferência causal e sem modelagem preditiva. ROA/ROE usam saldos de encerramento; calcular retornos sobre saldos médios exigiria um saldo de abertura adicional e outro contrato de dados. O lucro consolidado inclui não controladores. Menor endividamento ou liquidez maior não significa automaticamente melhor desempenho. Dados podem ser reapresentados pela CVM. O projeto é educacional e não recomenda investimento.

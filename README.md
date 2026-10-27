@@ -1,16 +1,19 @@
-# Análise Financeira da Ambev S.A. (ABEV3)
+# Ambev, em perspectiva
 
-Projeto Integrador III — análise descritiva das demonstrações financeiras consolidadas da Ambev, de 2022 a 2025, com dados abertos da CVM, pipeline em Python e dashboard Streamlit.
+**Projeto Integrador III · Ciência de Dados · Fatec Cotia**
 
-[![Qualidade](https://github.com/soaresdossantosnicolas-wq/Projeto-Integrador-III-Analise-Financeira-Ambev/actions/workflows/quality.yml/badge.svg)](https://github.com/soaresdossantosnicolas-wq/Projeto-Integrador-III-Analise-Financeira-Ambev/actions/workflows/quality.yml)
-![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+Pipeline auditável em Python para analisar as Demonstrações Financeiras Padronizadas (DFP) **consolidadas da Ambev S.A.**, nos exercícios de **2022 a 2025**, e apresentar resultados em um dashboard Streamlit. A fonte é o portal de dados abertos da CVM; a seleção usa código CVM/CNPJ e códigos de contas, sem inferir valores pelo nome das contas.
 
-## Início rápido
+[![Qualidade](https://github.com/soaresdossantosnicolas-wq/Projeto-Integrador-III-Analise-Financeira-Ambev/actions/workflows/quality.yml/badge.svg?branch=feat)](https://github.com/soaresdossantosnicolas-wq/Projeto-Integrador-III-Analise-Financeira-Ambev/actions/workflows/quality.yml)
+![Python](https://img.shields.io/badge/Python-3.12-3776AB)
+![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-2874F0)
 
-Requer Python 3.10 ou superior. A integração contínua verifica Python 3.10 e 3.12.
+## Começar pelo dashboard
+
+Requer **Python 3.12**. O snapshot validado está incluído: não é necessário baixar os ZIPs para abrir a aplicação.
 
 ```bash
-git clone https://github.com/soaresdossantosnicolas-wq/Projeto-Integrador-III-Analise-Financeira-Ambev.git
+git clone --branch feat https://github.com/soaresdossantosnicolas-wq/Projeto-Integrador-III-Analise-Financeira-Ambev.git
 cd Projeto-Integrador-III-Analise-Financeira-Ambev
 python -m venv .venv
 ```
@@ -27,72 +30,146 @@ Ative o ambiente:
 source .venv/bin/activate
 ```
 
-Instale as dependências e abra o dashboard com o CSV já incluído:
-
 ```bash
 python -m pip install -r requirements.txt
 python -m streamlit run code/04_visualizacao.py
 ```
 
-Acesse <http://localhost:8501>. O dashboard permite filtrar anos, comparar resultados, explorar margens, liquidez e endividamento e baixar os dados exibidos.
+Abra <http://localhost:8501>. As abas são **Visão Geral, DRE, Rentabilidade, Liquidez e Endividamento, Balanço, Comparação de Períodos e Sobre**. O filtro de anos afeta gráficos e exportação; os cards comparam o último ano selecionado com o **ano calendário anterior da base completa**, inclusive se ele estiver oculto pelo filtro.
 
-## Reproduzir a análise
+Não há URL de aplicativo público confirmada nesta revisão. Consulte as [instruções de publicação](docs/deploy.md). A licença e a identificação acadêmica estão no próprio dashboard.
+
+## Capturas do dashboard real
+
+![Visão geral em tema escuro](docs/images/dashboard-visao-geral.png)
+
+![DRE em cascata](docs/images/dashboard-dre.png)
+
+As capturas são produzidas pelo aplicativo real no GitHub Actions. A pasta `docs/images/` também contém a versão clara e a captura móvel. A validação funcional e os limites da inspeção visual estão na [revisão final](docs/revisao-final.md).
+
+## Reproduzir o pipeline
+
+Um comando executa as três etapas, interrompendo o fluxo diante de falhas:
 
 ```bash
-# Coleta na CVM, tratamento e cálculo de indicadores
 python code/run_pipeline.py
+```
 
-# Reutilizar os CSVs da etapa de coleta já gerados localmente
+```bash
+# Sem acesso à rede: exige os quatro ZIPs em dados_cvm/
+python code/run_pipeline.py --offline
+
+# Reutiliza os CSVs já extraídos em saida/
 python code/run_pipeline.py --sem-coleta
 ```
 
-A coleta exige internet. Os ZIPs ficam em cache; as etapas seguintes funcionam sem rede. Em um clone novo, execute o pipeline completo antes de usar `--sem-coleta`.
+A ordem para execução individual é:
 
-| Etapa | Código | Entrada | Destino local |
-|---|---|---|---|
-| Coleta | `code/analise_ambev_cvm.py` | DFPs anuais da CVM | `dados_cvm/` e `saida/` |
-| Tratamento | `code/02_tratamento_ambev.py` | CSVs de `saida/` | `dados_tratados/` |
-| Indicadores | `code/03_analise_financeira.py` | Base financeira tratada | `dados_tratados/` |
-| Dashboard | `code/04_visualizacao.py` | CSV de indicadores | Interface Streamlit |
+```bash
+python code/analise_ambev_cvm.py
+python code/02_tratamento_ambev.py
+python code/03_analise_financeira.py
+python -m streamlit run code/04_visualizacao.py
+```
 
-As etapas podem ser executadas individualmente com `python caminho/do/script.py`, na ordem da tabela; o dashboard usa o comando Streamlit acima.
+Em sistemas com GNU Make: `make pipeline`, `make offline`, `make dashboard` e `make check`. O Makefile é opcional; os comandos Python também funcionam no Windows.
 
-## Organização
+## Origem e controles dos dados
+
+- **CVM:** [DFP — Demonstrações Financeiras Padronizadas](https://dados.cvm.gov.br/dataset/cia_aberta-doc-dfp).
+- **Empresa:** Ambev S.A., código CVM `23264`, CNPJ `07.526.557/0001-00`.
+- **Conjunto:** DRE, BPA e BPP consolidados, exercícios anuais de janeiro a dezembro, última versão disponível de cada DFP.
+- **Moeda:** `REAL`; `MIL` é convertido para reais exatamente uma vez. Nenhuma etapa usa valores de anos comparativos para preencher anos ausentes.
+- **Conferência externa:** [RI da Ambev — Destaques Financeiros](https://ri.ambev.com.br/visao-geral/destaques-financeiros/), consultado em 27/10/2026. A referência congelada e a conciliação estão em `reports/validacao/`.
+
+O pipeline valida integridade e membros dos ZIPs, `DT_REFER`, `DT_INI_EXERC`, `DT_FIM_EXERC`, `ORDEM_EXERC = ÚLTIMO`, empresa, consolidação, moeda, escala, versão, unicidade e identidades contábeis. Registros conflitantes causam erro, sem agregação por média ou escolha arbitrária. Veja a [política de dados e rastreabilidade](docs/dados.md).
+
+## Arquitetura e estrutura
+
+```mermaid
+flowchart TD
+    A["ZIPs anuais da CVM"] --> B["Coleta e validação da origem"]
+    B --> C["Tratamento e contas exatas"]
+    C --> D["Indicadores e diagnósticos"]
+    D --> E["Snapshot validado e dashboard"]
+```
 
 | Caminho | Responsabilidade |
 |---|---|
-| `code/` | Etapas do pipeline, configuração compartilhada e entrada do dashboard |
-| `dados_tratados/indicadores_financeiros_ambev.csv` | Snapshot versionado necessário para abrir o dashboard sem coleta |
-| `docs/` | Metodologia, arquitetura, política de dados e instruções de deploy |
-| `reports/visualizacoes/` | Relatórios HTML históricos preservados do projeto |
-| `tests/` | Testes dos indicadores, tratamento, deploy e abertura do dashboard |
-| `.github/` | Integração contínua e modelos de colaboração |
-| `requirements.txt` | Dependências de execução com intervalos de compatibilidade |
-| `requirements-dev.txt` | Dependências para testes e análise estática |
+| `code/analise_ambev_cvm.py` | Download, retries, cache, CRC e extração por ano |
+| `code/cvm.py`, `code/excecoes.py` | Contrato dos dados e erros de domínio |
+| `code/02_tratamento_ambev.py` | Seleção de contas, fallback explícito e identidades |
+| `code/03_analise_financeira.py` | Indicadores, análises horizontal/vertical e diagnóstico de ausências |
+| `code/config.py` | Período, mapas CVM, caminhos, autores, fórmulas e paleta |
+| `code/04_visualizacao.py`, `code/dashboard_utils.py` | Interface e funções puras de apresentação |
+| `dados_tratados/` | Snapshot do dashboard, metadados, proveniência e evidências de qualidade |
+| `reports/validacao/` | Referência oficial, conciliação, downloads e varredura de segurança |
+| `reports/historico/` | HTMLs antigos preservados; não são resultados atuais |
+| `tests/` | Testes sintéticos, regressões financeiras, validação externa congelada e AppTest |
+| `scripts/` | Conciliação, varredura de segredos e captura visual |
+| `.streamlit/`, `.github/`, `docs/` | Tema, integração contínua e documentação |
 
-Os caminhos de execução existentes foram mantidos para preservar o uso local e o deploy. ZIPs, intermediários e caches são gerados localmente e ignorados pelo Git. Consulte a [política de dados](docs/dados.md).
+A [arquitetura](docs/arquitetura.md) detalha os contratos e o comportamento de falha.
 
-## Desenvolvimento
+## Indicadores e unidades
+
+| Indicador | Fórmula | Unidade |
+|---|---|---|
+| Liquidez corrente | Ativo circulante / passivo circulante | vezes |
+| Liquidez seca | (Ativo circulante − estoques) / passivo circulante | vezes |
+| Margem bruta | Lucro bruto / receita líquida × 100 | % |
+| Margem operacional CVM | Resultado da conta 3.05 / receita líquida × 100 | % |
+| Margem líquida | Lucro líquido consolidado / receita líquida × 100 | % |
+| ROA | Lucro líquido consolidado / ativo total final × 100 | % |
+| ROE | Lucro líquido consolidado / PL consolidado final × 100 | % |
+| Endividamento geral | (PC + PNC) / ativo total × 100 | % |
+| Capital de terceiros / PL | (PC + PNC) / patrimônio líquido × 100 | % |
+| Crescimento / análise horizontal | (Atual − anterior) / valor absoluto do anterior × 100 | % |
+| Análise vertical da DRE | Conta / receita líquida do mesmo ano × 100 | % da receita |
+
+PC = passivo circulante; PNC = passivo não circulante. O código CVM `2` inclui o PL: não é o numerador do endividamento. Divisões por zero e ausências resultam em n/d, com motivo no diagnóstico. Crescimento exige anos consecutivos e não preenche valores ausentes. Diferenças de margens e retornos nos cards são apresentadas em **pontos percentuais**.
+
+**Atenção ao EBIT:** a conta CVM `3.05` inclui equivalência patrimonial. O EBIT mostrado no RI a exclui. A conciliação subtrai `3.04.06` para comparar conceitos; o valor original da CVM é preservado. Veja [metodologia e limitações](docs/metodologia.md).
+
+## Resultados verificados de exemplo
+
+Valores monetários em R$ bilhões, arredondados apenas para exibição:
+
+| Exercício | Receita líquida | Lucro líquido consolidado | Margem bruta | ROE | Endividamento geral |
+|---|---|---|---|---|---|
+| 2022 | 79,71 | 14,89 | 49,29% | 17,87% | 39,60% |
+| 2023 | 79,74 | 14,96 | 50,72% | 18,67% | 39,58% |
+| 2024 | 89,45 | 14,85 | 51,24% | 14,91% | 38,72% |
+| 2025 | 88,24 | 15,99 | 51,42% | 18,01% | 38,81% |
+
+A receita de R$ 89,45 bilhões pertence a **2024**, não a 2025. A receita de 2025 é R$ 88,24 bilhões. A proximidade das receitas de 2022 e 2023 é real, conforme a referência oficial consultada. Consulte a [revisão final](docs/revisao-final.md) para os resultados e limites de cada item A–J.
+
+## Testes e qualidade
 
 ```bash
 python -m pip install -r requirements-dev.txt
 python -m ruff check .
 python -m pytest
+python scripts/validar_referencia.py
+python code/preparar_deploy.py
 ```
 
-As mesmas verificações rodam em pull requests e pushes para `main`. Os testes usam dados sintéticos e o snapshot do dashboard, sem baixar dados da CVM. Consulte [CONTRIBUTING.md](CONTRIBUTING.md).
+`requirements.in` registra as seis dependências diretas. `requirements.txt` fixa as 37 dependências de execução, incluindo as transitivas resolvidas no ambiente validado. Testes e Ruff ficam em `requirements-dev.txt`.
 
-## Documentação
+Os testes não dependem de acesso à internet: usam fixtures sintéticas com o schema da CVM e valores oficiais congelados. A integração contínua usa Python 3.12 e Ubuntu 24.04. A captura visual opcional gera telas do Streamlit real como artefato da execução do GitHub Actions; consulte [validação visual](docs/validacao-visual.md).
 
-- [Metodologia, fórmulas e limitações](docs/metodologia.md)
-- [Arquitetura e configuração](docs/arquitetura.md)
-- [Origem, versionamento e atualização dos dados](docs/dados.md)
-- [Deploy do dashboard](docs/deploy.md)
+## Limitações
 
-## Contexto acadêmico
+Quatro observações anuais, valores nominais sem correção monetária e análise estritamente descritiva. ROA e ROE usam saldos finais, não médios. O lucro consolidado inclui não controladores. Dívida financeira e EBITDA normalizado não são extraídos; os indicadores dependentes ficam n/d com justificativa. A CVM pode republicar arquivos: hashes e versões documentam a origem usada, mas não garantem downloads futuros idênticos. A tolerância contábil é o maior valor entre R$ 1.000 e 0,0001% do saldo de referência.
 
-Projeto Integrador III de Ciência de Dados — Fatec Cotia. Os nomes dos demais integrantes devem ser incluídos pelos autores responsáveis.
+Não há recomendação de investimento, previsão de preço de ações ou inferência causal.
 
-Fonte: [CVM — Demonstrações Financeiras Padronizadas](https://dados.cvm.gov.br/dataset/cia_aberta-doc-dfp), empresa de código CVM `23264`, demonstrações consolidadas de 2022–2025. Valores monetários são convertidos para reais; margens e retornos são expressos em porcentagem.
+## Autores
 
-As análises têm finalidade educacional e não constituem recomendação de investimento. O repositório ainda não define uma licença de software; essa decisão cabe aos autores.
+**Arthur Almeida, Nicolas Soares e Pedro Barreto.**
+
+Ciência de Dados · Fatec Cotia · Projeto Integrador III.
+
+## Licença
+
+Código sob [licença MIT](LICENSE). A licença do projeto não substitui as condições de uso dos dados públicos da CVM nem concede direitos sobre marcas de terceiros. O dashboard usa cabeçalho textual, sem logotipo da Ambev.
