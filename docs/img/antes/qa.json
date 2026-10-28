@@ -1,0 +1,258 @@
+[
+  {
+    "tema": "escuro",
+    "dispositivo": "desktop",
+    "aba": "Visão Geral",
+    "arquivo": "docs/img/antes/escuro-desktop-01.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "escuro",
+    "dispositivo": "desktop",
+    "aba": "DRE",
+    "arquivo": "docs/img/antes/escuro-desktop-02.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "escuro",
+    "dispositivo": "desktop",
+    "aba": "Rentabilidade",
+    "arquivo": "docs/img/antes/escuro-desktop-03.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "escuro",
+    "dispositivo": "desktop",
+    "aba": "Liquidez e Endividamento",
+    "arquivo": "docs/img/antes/escuro-desktop-04.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "escuro",
+    "dispositivo": "desktop",
+    "aba": "Balanço",
+    "arquivo": "docs/img/antes/escuro-desktop-05.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "escuro",
+    "dispositivo": "desktop",
+    "aba": "Comparação de Períodos",
+    "arquivo": "docs/img/antes/escuro-desktop-06.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "escuro",
+    "dispositivo": "desktop",
+    "aba": "Projeções",
+    "arquivo": "docs/img/antes/escuro-desktop-07.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "escuro",
+    "dispositivo": "desktop",
+    "aba": "Sobre",
+    "arquivo": "docs/img/antes/escuro-desktop-08.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "escuro",
+    "dispositivo": "celular",
+    "aba": "Visão Geral",
+    "arquivo": "docs/img/antes/escuro-celular-01.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "escuro",
+    "dispositivo": "celular",
+    "aba": "DRE",
+    "arquivo": "docs/img/antes/escuro-celular-02.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "escuro",
+    "dispositivo": "celular",
+    "aba": "Rentabilidade",
+    "arquivo": "docs/img/antes/escuro-celular-03.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "escuro",
+    "dispositivo": "celular",
+    "aba": "Liquidez e Endividamento",
+    "arquivo": "docs/img/antes/escuro-celular-04.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "escuro",
+    "dispositivo": "celular",
+    "aba": "Balanço",
+    "arquivo": "docs/img/antes/escuro-celular-05.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "escuro",
+    "dispositivo": "celular",
+    "aba": "Comparação de Períodos",
+    "arquivo": "docs/img/antes/escuro-celular-06.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "escuro",
+    "dispositivo": "celular",
+    "aba": "Projeções",
+    "arquivo": "docs/img/antes/escuro-celular-07.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "escuro",
+    "dispositivo": "celular",
+    "aba": "Sobre",
+    "arquivo": "docs/img/antes/escuro-celular-08.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "claro",
+    "dispositivo": "desktop",
+    "aba": "Visão Geral",
+    "arquivo": "docs/img/antes/claro-desktop-01.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "claro",
+    "dispositivo": "desktop",
+    "aba": "DRE",
+    "arquivo": "docs/img/antes/claro-desktop-02.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "claro",
+    "dispositivo": "desktop",
+    "aba": "Rentabilidade",
+    "arquivo": "docs/img/antes/claro-desktop-03.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "claro",
+    "dispositivo": "desktop",
+    "aba": "Liquidez e Endividamento",
+    "arquivo": "docs/img/antes/claro-desktop-04.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "claro",
+    "dispositivo": "desktop",
+    "aba": "Balanço",
+    "arquivo": "docs/img/antes/claro-desktop-05.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "claro",
+    "dispositivo": "desktop",
+    "aba": "Comparação de Períodos",
+    "arquivo": "docs/img/antes/claro-desktop-06.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "claro",
+    "dispositivo": "desktop",
+    "aba": "Projeções",
+    "arquivo": "docs/img/antes/claro-desktop-07.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "claro",
+    "dispositivo": "desktop",
+    "aba": "Sobre",
+    "arquivo": "docs/img/antes/claro-desktop-08.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "claro",
+    "dispositivo": "celular",
+    "aba": "Visão Geral",
+    "arquivo": "docs/img/antes/claro-celular-01.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "claro",
+    "dispositivo": "celular",
+    "aba": "DRE",
+    "arquivo": "docs/img/antes/claro-celular-02.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "claro",
+    "dispositivo": "celular",
+    "aba": "Rentabilidade",
+    "arquivo": "docs/img/antes/claro-celular-03.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "claro",
+    "dispositivo": "celular",
+    "aba": "Liquidez e Endividamento",
+    "arquivo": "docs/img/antes/claro-celular-04.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "claro",
+    "dispositivo": "celular",
+    "aba": "Balanço",
+    "arquivo": "docs/img/antes/claro-celular-05.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "claro",
+    "dispositivo": "celular",
+    "aba": "Comparação de Períodos",
+    "arquivo": "docs/img/antes/claro-celular-06.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "claro",
+    "dispositivo": "celular",
+    "aba": "Projeções",
+    "arquivo": "docs/img/antes/claro-celular-07.png",
+    "overflow": false,
+    "excecoes": 0
+  },
+  {
+    "tema": "claro",
+    "dispositivo": "celular",
+    "aba": "Sobre",
+    "arquivo": "docs/img/antes/claro-celular-08.png",
+    "overflow": false,
+    "excecoes": 0
+  }
+]

@@ -1,0 +1,365 @@
+{
+  "capturas": [
+    {
+      "tema": "escuro",
+      "dispositivo": "desktop",
+      "aba": "Visão Geral",
+      "arquivo": "docs/img/depois/escuro-desktop-01.png",
+      "largura": {
+        "pagina": 1440,
+        "janela": 1440
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "escuro",
+      "dispositivo": "desktop",
+      "aba": "DRE",
+      "arquivo": "docs/img/depois/escuro-desktop-02.png",
+      "largura": {
+        "pagina": 1440,
+        "janela": 1440
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "escuro",
+      "dispositivo": "desktop",
+      "aba": "Rentabilidade",
+      "arquivo": "docs/img/depois/escuro-desktop-03.png",
+      "largura": {
+        "pagina": 1440,
+        "janela": 1440
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "escuro",
+      "dispositivo": "desktop",
+      "aba": "Liquidez e Endividamento",
+      "arquivo": "docs/img/depois/escuro-desktop-04.png",
+      "largura": {
+        "pagina": 1440,
+        "janela": 1440
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "escuro",
+      "dispositivo": "desktop",
+      "aba": "Balanço",
+      "arquivo": "docs/img/depois/escuro-desktop-05.png",
+      "largura": {
+        "pagina": 1440,
+        "janela": 1440
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "escuro",
+      "dispositivo": "desktop",
+      "aba": "Comparação de Períodos",
+      "arquivo": "docs/img/depois/escuro-desktop-06.png",
+      "largura": {
+        "pagina": 1440,
+        "janela": 1440
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "escuro",
+      "dispositivo": "desktop",
+      "aba": "Projeções",
+      "arquivo": "docs/img/depois/escuro-desktop-07.png",
+      "largura": {
+        "pagina": 1440,
+        "janela": 1440
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "escuro",
+      "dispositivo": "desktop",
+      "aba": "Sobre",
+      "arquivo": "docs/img/depois/escuro-desktop-08.png",
+      "largura": {
+        "pagina": 1440,
+        "janela": 1440
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "escuro",
+      "dispositivo": "celular",
+      "aba": "Visão Geral",
+      "arquivo": "docs/img/depois/escuro-celular-01.png",
+      "largura": {
+        "pagina": 390,
+        "janela": 390
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "escuro",
+      "dispositivo": "celular",
+      "aba": "DRE",
+      "arquivo": "docs/img/depois/escuro-celular-02.png",
+      "largura": {
+        "pagina": 390,
+        "janela": 390
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "escuro",
+      "dispositivo": "celular",
+      "aba": "Rentabilidade",
+      "arquivo": "docs/img/depois/escuro-celular-03.png",
+      "largura": {
+        "pagina": 390,
+        "janela": 390
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "escuro",
+      "dispositivo": "celular",
+      "aba": "Liquidez e Endividamento",
+      "arquivo": "docs/img/depois/escuro-celular-04.png",
+      "largura": {
+        "pagina": 390,
+        "janela": 390
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "escuro",
+      "dispositivo": "celular",
+      "aba": "Balanço",
+      "arquivo": "docs/img/depois/escuro-celular-05.png",
+      "largura": {
+        "pagina": 390,
+        "janela": 390
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "escuro",
+      "dispositivo": "celular",
+      "aba": "Comparação de Períodos",
+      "arquivo": "docs/img/depois/escuro-celular-06.png",
+      "largura": {
+        "pagina": 390,
+        "janela": 390
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "escuro",
+      "dispositivo": "celular",
+      "aba": "Projeções",
+      "arquivo": "docs/img/depois/escuro-celular-07.png",
+      "largura": {
+        "pagina": 390,
+        "janela": 390
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "escuro",
+      "dispositivo": "celular",
+      "aba": "Sobre",
+      "arquivo": "docs/img/depois/escuro-celular-08.png",
+      "largura": {
+        "pagina": 390,
+        "janela": 390
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "claro",
+      "dispositivo": "desktop",
+      "aba": "Visão Geral",
+      "arquivo": "docs/img/depois/claro-desktop-01.png",
+      "largura": {
+        "pagina": 1440,
+        "janela": 1440
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "claro",
+      "dispositivo": "desktop",
+      "aba": "DRE",
+      "arquivo": "docs/img/depois/claro-desktop-02.png",
+      "largura": {
+        "pagina": 1440,
+        "janela": 1440
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "claro",
+      "dispositivo": "desktop",
+      "aba": "Rentabilidade",
+      "arquivo": "docs/img/depois/claro-desktop-03.png",
+      "largura": {
+        "pagina": 1440,
+        "janela": 1440
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "claro",
+      "dispositivo": "desktop",
+      "aba": "Liquidez e Endividamento",
+      "arquivo": "docs/img/depois/claro-desktop-04.png",
+      "largura": {
+        "pagina": 1440,
+        "janela": 1440
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "claro",
+      "dispositivo": "desktop",
+      "aba": "Balanço",
+      "arquivo": "docs/img/depois/claro-desktop-05.png",
+      "largura": {
+        "pagina": 1440,
+        "janela": 1440
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "claro",
+      "dispositivo": "desktop",
+      "aba": "Comparação de Períodos",
+      "arquivo": "docs/img/depois/claro-desktop-06.png",
+      "largura": {
+        "pagina": 1440,
+        "janela": 1440
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "claro",
+      "dispositivo": "desktop",
+      "aba": "Projeções",
+      "arquivo": "docs/img/depois/claro-desktop-07.png",
+      "largura": {
+        "pagina": 1440,
+        "janela": 1440
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "claro",
+      "dispositivo": "desktop",
+      "aba": "Sobre",
+      "arquivo": "docs/img/depois/claro-desktop-08.png",
+      "largura": {
+        "pagina": 1440,
+        "janela": 1440
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "claro",
+      "dispositivo": "celular",
+      "aba": "Visão Geral",
+      "arquivo": "docs/img/depois/claro-celular-01.png",
+      "largura": {
+        "pagina": 390,
+        "janela": 390
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "claro",
+      "dispositivo": "celular",
+      "aba": "DRE",
+      "arquivo": "docs/img/depois/claro-celular-02.png",
+      "largura": {
+        "pagina": 390,
+        "janela": 390
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "claro",
+      "dispositivo": "celular",
+      "aba": "Rentabilidade",
+      "arquivo": "docs/img/depois/claro-celular-03.png",
+      "largura": {
+        "pagina": 390,
+        "janela": 390
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "claro",
+      "dispositivo": "celular",
+      "aba": "Liquidez e Endividamento",
+      "arquivo": "docs/img/depois/claro-celular-04.png",
+      "largura": {
+        "pagina": 390,
+        "janela": 390
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "claro",
+      "dispositivo": "celular",
+      "aba": "Balanço",
+      "arquivo": "docs/img/depois/claro-celular-05.png",
+      "largura": {
+        "pagina": 390,
+        "janela": 390
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "claro",
+      "dispositivo": "celular",
+      "aba": "Comparação de Períodos",
+      "arquivo": "docs/img/depois/claro-celular-06.png",
+      "largura": {
+        "pagina": 390,
+        "janela": 390
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "claro",
+      "dispositivo": "celular",
+      "aba": "Projeções",
+      "arquivo": "docs/img/depois/claro-celular-07.png",
+      "largura": {
+        "pagina": 390,
+        "janela": 390
+      },
+      "excecoes": 0
+    },
+    {
+      "tema": "claro",
+      "dispositivo": "celular",
+      "aba": "Sobre",
+      "arquivo": "docs/img/depois/claro-celular-08.png",
+      "largura": {
+        "pagina": 390,
+        "janela": 390
+      },
+      "excecoes": 0
+    }
+  ],
+  "verificacoes": {
+    "dialogo": true,
+    "selecao_plotly": true,
+    "selecao_consumida": true,
+    "downloads": true,
+    "link_compartilhavel": "http://127.0.0.1:8503/?aba=Proje%C3%A7%C3%B5es&cenario=Pessimista&forma=Barras&frequencia=Trimestral+%C2%B7+2026T1%E2%80%93T4",
+    "apresentacao": true,
+    "troca_tema": true
+  }
+}

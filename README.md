@@ -41,13 +41,22 @@ Abra <http://localhost:8501>. As abas são **Visão Geral, DRE, Rentabilidade, L
 
 Não há URL de aplicativo público confirmada nesta revisão. Consulte as [instruções de publicação](docs/deploy.md). A licença e a identificação acadêmica estão no próprio dashboard.
 
+## Explorar e compartilhar a análise
+
+A identidade **Executivo moderno** usa grafite, âmbar e tipografia Manrope com fallback local. Os KPIs mostram sparklines, e a Visão Geral reúne indicador, gráfico e insight coordenados. Clique em um ponto ou use “Ver contas” para abrir o detalhamento do exercício.
+
+- Alterne linha/barras, unidade monetária e % da receita; explore a DRE por cascata/mapa de calor e o balanço por composição.
+- Compare dois exercícios explícitos e exporte o recorte em CSV/Excel ou o gráfico em HTML interativo.
+- Copie a URL do navegador para compartilhar aba, filtros, indicador e cenário. O modo apresentação oculta os filtros laterais.
+- As projeções continuam consumindo somente CSVs salvos. A mudança de design não altera os resultados financeiros.
+
 ## Capturas do dashboard real
 
-![Visão geral em tema escuro](docs/images/dashboard-visao-geral.png)
+![Visão geral em tema escuro](docs/img/depois/capa-escuro-desktop.png)
 
-![DRE em cascata](docs/images/dashboard-dre.png)
+![DRE e análise vertical](docs/img/depois/escuro-desktop-02.png)
 
-As capturas são produzidas pelo aplicativo real no GitHub Actions. A pasta `docs/images/` também contém a versão clara e a captura móvel. A validação funcional e os limites da inspeção visual estão na [revisão final](docs/revisao-final.md).
+A [revisão de design](docs/design-dashboard.md) registra o diagnóstico e as duas direções propostas. As pastas `docs/img/antes/` e `docs/img/depois/` contêm as oito abas, em claro/escuro e desktop/celular, capturadas no aplicativo real. A execução do QA e seus limites estão documentados no relatório.
 
 ## Reproduzir o pipeline
 
