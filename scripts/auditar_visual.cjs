@@ -4,7 +4,7 @@ const fs=require('node:fs/promises');
 const path=require('node:path');
 const abas=['Visão Geral','DRE','Rentabilidade','Liquidez e Endividamento','Balanço','Comparação de Períodos','Projeções','Sobre'];
 const fase=process.env.QA_FASE||'depois';
-const destino=`docs/img/${fase}`;
+const destino=`outputs/qa-visual/${fase}`;
 async function aguardar(p){
   await p.getByRole('heading',{name:'Ambev, em perspectiva.',exact:true}).waitFor({timeout:60000});
   for(let i=0;i<300;i++){

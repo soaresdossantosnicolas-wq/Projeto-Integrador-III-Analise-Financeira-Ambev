@@ -38,3 +38,7 @@ package-lock.json
 
 # ZIPs usados exclusivamente na ampliação da série preditiva
 /dados_modelagem/
+
+# Capturas completas e pacotes locais de QA visual
+/outputs/qa-visual/
+/outputs/dashboard-capturas-*.zip
