@@ -23,6 +23,7 @@ from dashboard_utils import (
     validar_snapshot,
 )
 from excecoes import ErroValidacaoDados
+from explicacoes import EXPLICACOES_GRAFICOS, GLOSSARIO, ajuda_indicador
 
 log = logging.getLogger(__name__)
 st.set_page_config(page_title="Ambev | Análise financeira", page_icon="📊", layout="wide")
@@ -128,7 +129,7 @@ def criar_kpis(base: pd.DataFrame, ano: int) -> None:
             formatar_indicador(nome, atual),
             delta=delta,
             delta_color="inverse" if nome == "endividamento_geral" else "normal",
-            help=config.FORMULAS[nome] + " Delta usa o ano calendário anterior, mesmo fora do filtro.",
+            help=ajuda_indicador(nome) + " Delta usa o ano calendário anterior, mesmo fora do filtro.",
         )
 
 
@@ -212,6 +213,12 @@ def cascata_dre(linha: pd.Series, tema: str) -> go.Figure:
     return estilizar(fig, f"Da receita ao lucro · {int(linha.ano_analise)}", "R$ bilhões", tema)
 
 
+def explicar_grafico(chave: str, mostrar_explicacoes: bool) -> None:
+    """Mostra uma frase de leitura sem ocultar avisos essenciais de integridade."""
+    if mostrar_explicacoes:
+        st.caption("Como ler: " + EXPLICACOES_GRAFICOS[chave])
+
+
 def sobre(metadados: dict) -> None:
     """Metodologia e atribuição disponíveis dentro da aplicação publicada."""
     st.subheader("Uma leitura dos números, com origem verificável")
@@ -221,6 +228,18 @@ def sobre(metadados: dict) -> None:
     st.markdown(
         f"**Autores:** {', '.join(config.AUTORES)}.  \n**Licença do código:** {config.LICENCA}.  \n[Fonte CVM]({config.FONTE_CVM}) · [Código e documentação]({config.REPOSITORIO})"
     )
+    st.subheader("Glossário para quem está começando")
+    st.caption(
+        "Exemplos hipotéticos para explicar os conceitos; não são resultados adicionais da Ambev. O glossário permanece disponível mesmo quando as explicações dos gráficos estão ocultas."
+    )
+    for nome, (titulo, significado, cuidado, exemplo) in GLOSSARIO.items():
+        with st.expander(titulo):
+            st.write(significado)
+            st.markdown(f"**Como interpretar:** {cuidado}")
+            st.markdown(f"**Exemplo hipotético:** {exemplo}")
+            if nome in config.FORMULAS:
+                st.caption("Fórmula no projeto: " + config.FORMULAS[nome])
+    st.subheader("Metodologia e fórmulas")
     st.markdown(
         "**Método:** empresa por código CVM/CNPJ; demonstração consolidada; exercício ÚLTIMO; datas anuais e última versão da DFP; contas exatas; conversão de R$ mil para reais; validações contábeis antes da publicação."
     )
@@ -296,6 +315,12 @@ def main() -> None:
             ["Escuro", "Claro"],
             index=1 if st.get_option("theme.base") == "light" else 0,
         )
+        mostrar_explicacoes = st.checkbox(
+            "Mostrar explicações",
+            value=True,
+            key="mostrar_explicacoes",
+            help="Exibe guias curtos junto aos gráficos. A ajuda dos cards, o glossário e os avisos metodológicos permanecem disponíveis.",
+        )
         st.divider()
         st.caption(
             "Filtro de anos afeta gráficos e exportação. O delta dos cards compara o último ano selecionado com o ano calendário anterior da base completa."
@@ -324,6 +349,7 @@ def main() -> None:
     )
     with abas[0]:
         st.subheader("O desempenho ao longo do tempo")
+        explicar_grafico("geral", mostrar_explicacoes)
         if series:
             mostrar(
                 grafico_series(filtrado, tuple(series), "Receita e resultados consolidados", tema), "geral"
@@ -345,10 +371,12 @@ def main() -> None:
             )
         tabela_dados(filtrado)
     with abas[1]:
+        explicar_grafico("cascata", mostrar_explicacoes)
         mostrar(cascata_dre(filtrado.iloc[-1], tema), "cascata")
         st.caption(
             "Custos e despesas mantêm o sinal da DFP. Operacionais incluem equivalência patrimonial; subtotais não são somados duas vezes."
         )
+        explicar_grafico("vertical", mostrar_explicacoes)
         contas = ("custo_vendas", "lucro_bruto", "resultado_operacional", "lucro_liquido")
         vertical = dados_grafico(filtrado, contas).copy()
         receitas = filtrado.set_index("ano_analise").receita_liquida
@@ -374,6 +402,7 @@ def main() -> None:
             "As contas se sobrepõem: lucro bruto, EBIT e lucro líquido não formam uma composição de 100%."
         )
     with abas[2]:
+        explicar_grafico("margens", mostrar_explicacoes)
         mostrar(
             grafico_series(
                 filtrado,
@@ -385,6 +414,7 @@ def main() -> None:
             ),
             "margens",
         )
+        explicar_grafico("retornos", mostrar_explicacoes)
         mostrar(
             grafico_series(
                 filtrado,
@@ -397,6 +427,7 @@ def main() -> None:
             "retornos",
         )
     with abas[3]:
+        explicar_grafico("liquidez", mostrar_explicacoes)
         fig = grafico_series(
             filtrado,
             ("liquidez_corrente", "liquidez_seca"),
@@ -408,6 +439,7 @@ def main() -> None:
             y=1, line_dash="dot", line_color=config.PALETA["neutro"], annotation_text="Referência: 1,0 ×"
         )
         mostrar(fig, "liquidez")
+        explicar_grafico("endividamento", mostrar_explicacoes)
         mostrar(
             grafico_series(
                 filtrado,
@@ -423,6 +455,7 @@ def main() -> None:
             "Dívida líquida / EBITDA: n/d. O pipeline não extrai dívida financeira nem EBITDA normalizado; passivo exigível não é uma medida equivalente de dívida financeira."
         )
     with abas[4]:
+        explicar_grafico("balanco", mostrar_explicacoes)
         dados = dados_grafico(
             filtrado, ("passivo_circulante", "passivo_nao_circulante", "patrimonio_liquido")
         ).copy()
@@ -446,6 +479,7 @@ def main() -> None:
         )
     with abas[5]:
         st.subheader("Variações e comparação entre extremos")
+        explicar_grafico("comparacao", mostrar_explicacoes)
         if len(filtrado) < 2:
             st.info("Selecione pelo menos dois exercícios para comparar períodos.")
         else:
@@ -466,6 +500,7 @@ def main() -> None:
                 )
             st.dataframe(pd.DataFrame(linhas), hide_index=True, use_container_width=True)
             st.caption("Comparação entre extremos selecionados; não é crescimento anualizado.")
+        explicar_grafico("horizontal", mostrar_explicacoes)
         campo = st.selectbox(
             "Conta para análise horizontal anual",
             ["receita_liquida", "lucro_liquido", "lucro_bruto"],

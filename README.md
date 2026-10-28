@@ -37,6 +37,8 @@ python -m streamlit run code/04_visualizacao.py
 
 Abra <http://localhost:8501>. As abas são **Visão Geral, DRE, Rentabilidade, Liquidez e Endividamento, Balanço, Comparação de Períodos e Sobre**. O filtro de anos afeta gráficos e exportação; os cards comparam o último ano selecionado com o **ano calendário anterior da base completa**, inclusive se ele estiver oculto pelo filtro.
 
+**Para quem está começando:** a opção “Mostrar explicações”, ativada por padrão na barra lateral, exibe guias curtos de leitura dos gráficos. Os ícones de ajuda dos cards explicam o significado e a fórmula. A aba Sobre reúne um glossário de todos os campos do snapshot, com exemplos hipotéticos e cuidados de interpretação. Ocultar os guias mantém o glossário, a ajuda e os avisos metodológicos disponíveis.
+
 Não há URL de aplicativo público confirmada nesta revisão. Consulte as [instruções de publicação](docs/deploy.md). A licença e a identificação acadêmica estão no próprio dashboard.
 
 ## Capturas do dashboard real
