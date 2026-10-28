@@ -1,94 +1,141 @@
-"""
-Configurações e constantes compartilhadas entre as etapas do
-pipeline de análise financeira da Ambev.
-
-Centralizar isso aqui evita que COD_CVM_AMBEV, ANOS e caminhos
-fiquem duplicados (e possivelmente divergentes) em cada script.
-"""
+"""Constantes compartilhadas do pipeline e da apresentação, sem efeitos ao importar."""
 
 from pathlib import Path
 
-# ============================================================
-# EMPRESA
-# ============================================================
-
-COD_CVM_AMBEV = 23264
-NOME_EMPRESA = "AMBEV S.A."
-
-# ============================================================
-# PERÍODO
-# ============================================================
-
-ANOS = [2022, 2023, 2024, 2025]
-
-# ============================================================
-# CAMINHOS (relativos à raiz do projeto, e não ao diretório de
-# onde o script é chamado). Este arquivo fica em code/, então a
-# raiz do projeto é a pasta acima (parent.parent) — a mesma onde
-# estão .venv, code/ e data/.
-# ============================================================
-
-RAIZ_PROJETO = Path(__file__).resolve().parent.parent
-
+RAIZ_PROJETO = Path(__file__).resolve().parents[1]
 PASTA_DADOS_CVM = RAIZ_PROJETO / "dados_cvm"
 PASTA_SAIDA_ETAPA1 = RAIZ_PROJETO / "saida"
 PASTA_DADOS_TRATADOS = RAIZ_PROJETO / "dados_tratados"
-
-for _pasta in (PASTA_DADOS_CVM, PASTA_SAIDA_ETAPA1, PASTA_DADOS_TRATADOS):
-    _pasta.mkdir(exist_ok=True, parents=True)
-
-# ============================================================
-# PLANO DE CONTAS PADRONIZADO (CVM)
-# ============================================================
-# A CVM exige que toda DFP siga uma estrutura de códigos fixa
-# (CD_CONTA), a mesma para qualquer empresa e qualquer ano.
-# Filtrar por CD_CONTA é muito mais confiável do que casar
-# texto livre em DS_CONTA: um termo como "Lucro" casa com
-# "Lucro Bruto", "Lucro Líquido" e "Lucro por Ação" ao mesmo
-# tempo, produzindo múltiplas linhas para o mesmo indicador
-# (e o pivot_table("first") descartava isso silenciosamente).
-#
-# Fonte: Manual de Preenchimento das DFPs da CVM.
+PASTA_REPORTS = RAIZ_PROJETO / "reports"
+ANOS = [2022, 2023, 2024, 2025]
+PERIODO = f"{min(ANOS)}_{max(ANOS)}"
+COD_CVM_AMBEV = 23264
+CNPJ_AMBEV = "07526557000100"
+NOME_EMPRESA = "AMBEV S.A."
+AUTORES = ("Arthur Almeida", "Nicolas Soares", "Pedro Barreto")
+REPOSITORIO = "https://github.com/soaresdossantosnicolas-wq/Projeto-Integrador-III-Analise-Financeira-Ambev"
+LICENCA = "MIT"
+FONTE_CVM = "https://dados.cvm.gov.br/dataset/cia_aberta-doc-dfp"
+URL_DFP = "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_{ano}.zip"
+ORDEM_EXERC_VALIDA = "ÚLTIMO"
+ESCALAS_MOEDA = {"UNIDADE": 1, "MIL": 1000}
+TOLERANCIA_IDENTIDADE_CONTABIL = 1e-6
+TOLERANCIA_ABSOLUTA = 1000  # arredondamento de R$ mil das DFPs
 
 CONTAS_DRE = {
     "receita_liquida": "3.01",
-    "custo_vendas": "3.02",           # negativo na DFP; usado p/ derivar lucro bruto
-    "lucro_bruto": "3.03",            # "Resultado Bruto" (nem toda DFP traz esta linha)
-    "resultado_operacional": "3.05",  # EBIT: antes do result. financeiro/tributos
-    "lucro_liquido": "3.11",          # Lucro/Prejuízo consolidado do período
+    "custo_vendas": "3.02",
+    "lucro_bruto": "3.03",
+    "despesas_receitas_operacionais": "3.04",
+    "resultado_operacional": "3.05",
+    "resultado_financeiro": "3.06",
+    "resultado_antes_tributos": "3.07",
+    "tributos_lucro": "3.08",
+    "resultado_continuado": "3.09",
+    "resultado_descontinuado": "3.10",
+    "lucro_liquido": "3.11",
+    "equivalencia_patrimonial": "3.04.06",
 }
-
 CONTAS_ATIVO = {
     "ativo_total": "1",
     "ativo_circulante": "1.01",
+    "ativo_nao_circulante": "1.02",
     "caixa_equivalentes": "1.01.01",
     "estoques": "1.01.04",
 }
-
 CONTAS_PASSIVO = {
-    "passivo_total": "2",       # Já inclui o Patrimônio Líquido (= Ativo Total)
+    "passivo_total": "2",
     "passivo_circulante": "2.01",
     "passivo_nao_circulante": "2.02",
     "patrimonio_liquido": "2.03",
 }
+PALETA = {
+    "primaria": "#2874F0",
+    "secundaria": "#168C80",
+    "destaque": "#A66BE0",
+    "positivo": "#23A375",
+    "negativo": "#D55E68",
+    "neutro": "#77869E",
+    "receita_liquida": "#2874F0",
+    "lucro_bruto": "#168C80",
+    "resultado_operacional": "#A66BE0",
+    "lucro_liquido": "#B57D12",
+    "margem_bruta": "#168C80",
+    "margem_operacional": "#A66BE0",
+    "margem_liquida": "#B57D12",
+    "roa": "#2874F0",
+    "roe": "#168C80",
+    "liquidez_corrente": "#2874F0",
+    "liquidez_seca": "#168C80",
+    "endividamento_geral": "#2874F0",
+    "capital_terceiros_patrimonio": "#A66BE0",
+    "passivo_circulante": "#2874F0",
+    "passivo_nao_circulante": "#A66BE0",
+    "patrimonio_liquido": "#168C80",
+}
+NOMES = {
+    "receita_liquida": "Receita líquida",
+    "lucro_bruto": "Lucro bruto",
+    "custo_vendas": "Custo das vendas",
+    "resultado_operacional": "EBIT — CVM (3.05)",
+    "lucro_liquido": "Lucro líquido consolidado",
+    "margem_bruta": "Margem bruta",
+    "margem_operacional": "Margem operacional — CVM",
+    "margem_liquida": "Margem líquida",
+    "roa": "ROA",
+    "roe": "ROE",
+    "liquidez_corrente": "Liquidez corrente",
+    "liquidez_seca": "Liquidez seca",
+    "endividamento_geral": "Endividamento geral",
+    "capital_terceiros_patrimonio": "Capital de terceiros / PL",
+    "ativo_total": "Ativo total",
+    "ativo_circulante": "Ativo circulante",
+    "ativo_nao_circulante": "Ativo não circulante",
+    "caixa_equivalentes": "Caixa e equivalentes",
+    "estoques": "Estoques",
+    "passivo_total": "Passivo + PL (CVM 2)",
+    "passivo_circulante": "Passivo circulante",
+    "passivo_nao_circulante": "Passivo não circulante",
+    "patrimonio_liquido": "Patrimônio líquido",
+    "passivo_exigivel": "Passivo exigível",
+    "despesas_receitas_operacionais": "Despesas/receitas operacionais",
+    "resultado_financeiro": "Resultado financeiro",
+    "tributos_lucro": "Tributos sobre lucro",
+    "equivalencia_patrimonial": "Equivalência patrimonial",
+}
+PERCENTUAIS = {
+    "margem_bruta",
+    "margem_operacional",
+    "margem_liquida",
+    "roa",
+    "roe",
+    "endividamento_geral",
+    "capital_terceiros_patrimonio",
+}
+RAZOES = {"liquidez_corrente", "liquidez_seca", "divida_liquida_ebitda"}
+FORMULAS = {
+    "receita_liquida": "Receita consolidada da DFP, conta 3.01, convertida para reais.",
+    "lucro_liquido": "Lucro consolidado do período (3.11), incluindo não controladores.",
+    "margem_bruta": "Lucro bruto / receita líquida × 100.",
+    "margem_operacional": "Resultado CVM 3.05 / receita líquida × 100. Inclui equivalência patrimonial.",
+    "margem_liquida": "Lucro líquido consolidado / receita líquida × 100.",
+    "roa": "Lucro líquido / ativo total de encerramento × 100; não usa saldo médio.",
+    "roe": "Lucro líquido consolidado / PL consolidado de encerramento × 100.",
+    "liquidez_corrente": "Ativo circulante / passivo circulante.",
+    "liquidez_seca": "(Ativo circulante − estoques) / passivo circulante.",
+    "endividamento_geral": "(Passivo circulante + não circulante) / ativo total × 100.",
+    "capital_terceiros_patrimonio": "Passivo exigível / patrimônio líquido × 100.",
+}
 
-# A CVM traz, na MESMA tabela, o exercício atual e o exercício
-# comparativo (ano anterior) — coluna ORDEM_EXERC. Sem filtrar
-# por isso, os dois períodos ficam misturados na mesma consulta
-# e o pivot pega um valor arbitrário entre eles (bug corrigido
-# nesta versão).
-ORDEM_EXERC_VALIDA = "ÚLTIMO"
 
-# Tolerância para o teste de sanidade contábil
-# (ativo_total ≈ passivo_total, já que o código "2" da CVM é o
-# passivo total incluindo PL).
-TOLERANCIA_IDENTIDADE_CONTABIL = 0.01  # 1%
+def preparar_pastas() -> None:
+    """Cria somente os diretórios de saída quando uma etapa é executada."""
+    for pasta in (PASTA_DADOS_CVM, PASTA_SAIDA_ETAPA1, PASTA_DADOS_TRATADOS):
+        pasta.mkdir(parents=True, exist_ok=True)
 
-# As DFPs da CVM informam a escala dos valores em ESCALA_MOEDA
-# ("MIL" = valores em milhares de reais; "UNIDADE" = em reais). Sem
-# converter, receita de R$ 79,7 bi aparece como 79.708.827 (e o dashboard
-# mostraria "R$ 79,71 mi"). A Etapa 2 converte tudo para reais.
-ESCALAS_MOEDA = {
-    "UNIDADE": 1,
-    "MIL": 1_000,
+
+GRUPOS_DFP = {
+    "DRE": "DF Consolidado - Demonstração do Resultado",
+    "BPA": "DF Consolidado - Balanço Patrimonial Ativo",
+    "BPP": "DF Consolidado - Balanço Patrimonial Passivo",
 }

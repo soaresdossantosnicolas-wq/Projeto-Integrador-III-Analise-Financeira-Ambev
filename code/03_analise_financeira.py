@@ -1,497 +1,209 @@
+"""Indicadores em reais, percentuais ou razões, com diagnóstico explícito de ausências."""
+
+import hashlib
+import json
 import logging
 
 import numpy as np
 import pandas as pd
 
 import config
+from excecoes import ErroValidacaoDados
 
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(levelname)s | %(message)s"
-)
 log = logging.getLogger(__name__)
+MONETARIOS = list(config.CONTAS_DRE) + list(config.CONTAS_ATIVO) + list(config.CONTAS_PASSIVO)
 
 
-PASTA_ENTRADA = config.PASTA_DADOS_TRATADOS
-PASTA_SAIDA = config.PASTA_DADOS_TRATADOS
-
-ARQUIVO_BASE = PASTA_ENTRADA / "ambev_financeiro_2022_2025.csv"
-ARQUIVO_INDICADORES = PASTA_SAIDA / "indicadores_financeiros_ambev.csv"
-ARQUIVO_ANALISE_HORIZONTAL = PASTA_SAIDA / "analise_horizontal_ambev.csv"
-ARQUIVO_ANALISE_VERTICAL = PASTA_SAIDA / "analise_vertical_ambev.csv"
-ARQUIVO_RESUMO = PASTA_SAIDA / "resumo_analise_ambev.csv"
+def obter_coluna(df: pd.DataFrame, nome: str) -> pd.Series:
+    """Expõe ausência ao log e mantém NaN em vez de inventar zeros."""
+    if nome not in df:
+        log.warning("Coluna %s ausente; indicadores dependentes não disponíveis.", nome)
+        return pd.Series(np.nan, index=df.index, dtype=float)
+    return pd.to_numeric(df[nome], errors="coerce")
 
 
-# ============================================================
-# FUNÇÕES AUXILIARES
-# ============================================================
+def calcular_razao(numerador: pd.Series, denominador: pd.Series) -> np.ndarray:
+    """Divisão vetorizada; zero, NaN ou infinito resultam em não disponível."""
+    n, d = np.broadcast_arrays(np.asarray(numerador, dtype=float), np.asarray(denominador, dtype=float))
+    saida = np.full(n.shape, np.nan)
+    np.divide(n, d, out=saida, where=np.isfinite(n) & np.isfinite(d) & (d != 0))
+    return saida
 
-def carregar_base():
 
-    if not ARQUIVO_BASE.exists():
+def calcular_percentual(numerador: pd.Series, denominador: pd.Series) -> np.ndarray:
+    """Retorna percentual; 40 significa 40%, não 0,40."""
+    return calcular_razao(numerador, denominador) * 100
 
-        raise FileNotFoundError(
-            f"Arquivo não encontrado:\n{ARQUIVO_BASE}\n\n"
-            "Execute primeiro a Etapa 2."
+
+def calcular_liquidez(df: pd.DataFrame) -> pd.DataFrame:
+    """Liquidez corrente e seca, em vezes, com saldo de encerramento."""
+    df = df.copy()
+    ac, pc, estoques = (obter_coluna(df, c) for c in ("ativo_circulante", "passivo_circulante", "estoques"))
+    df["liquidez_corrente"] = calcular_razao(ac, pc)
+    df["liquidez_seca"] = calcular_razao(ac - estoques, pc)
+    return df
+
+
+def calcular_rentabilidade(df: pd.DataFrame) -> pd.DataFrame:
+    """Margens, ROA e ROE sobre saldos finais consolidados, em percentual."""
+    df = df.copy()
+    formulas = {
+        "margem_bruta": ("lucro_bruto", "receita_liquida"),
+        "margem_operacional": ("resultado_operacional", "receita_liquida"),
+        "margem_liquida": ("lucro_liquido", "receita_liquida"),
+        "roa": ("lucro_liquido", "ativo_total"),
+        "roe": ("lucro_liquido", "patrimonio_liquido"),
+    }
+    for nome, (n, d) in formulas.items():
+        df[nome] = calcular_percentual(obter_coluna(df, n), obter_coluna(df, d))
+        if d == "patrimonio_liquido" and (obter_coluna(df, d) <= 0).any():
+            log.warning("ROE/estrutura de capital: PL não positivo limita a interpretação.")
+    return df
+
+
+def calcular_endividamento(df: pd.DataFrame) -> pd.DataFrame:
+    """Passivo exigível exclui PL; dívida financeira não se confunde com todo passivo."""
+    df = df.copy()
+    pc = obter_coluna(df, "passivo_circulante")
+    pnc = obter_coluna(df, "passivo_nao_circulante")
+    pl = obter_coluna(df, "patrimonio_liquido")
+    exigivel = pc + pnc
+    faltam = exigivel.isna()
+    if faltam.any():
+        log.warning("Passivo exigível ausente em %d linha(s); fallback = passivo CVM 2 − PL.", faltam.sum())
+        exigivel = exigivel.fillna(obter_coluna(df, "passivo_total") - pl)
+    df["passivo_exigivel"] = exigivel
+    df["endividamento_geral"] = calcular_percentual(exigivel, obter_coluna(df, "ativo_total"))
+    df["capital_terceiros_patrimonio"] = calcular_percentual(exigivel, pl)
+    # Não substituir dívida financeira por passivo exigível nem EBIT por EBITDA ajustado.
+    df["divida_liquida"] = obter_coluna(df, "divida_total") - obter_coluna(df, "caixa_equivalentes")
+    df["divida_liquida_ebitda"] = calcular_razao(df.divida_liquida, obter_coluna(df, "ebitda_normalizado"))
+    return df
+
+
+def variacao_anual(serie: pd.Series, anos: pd.Series) -> np.ndarray:
+    """(Atual − anterior) / |anterior| × 100; só compara anos consecutivos, sem preencher nulos."""
+    resultado = calcular_percentual(serie - serie.shift(), serie.shift().abs())
+    return np.where(anos.diff().eq(1), resultado, np.nan)
+
+
+def calcular_crescimento(df: pd.DataFrame) -> pd.DataFrame:
+    """Ordena o calendário e não transforma comparações com lacunas em crescimento anual."""
+    df = df.sort_values("ano_analise").copy()
+    if df.ano_analise.duplicated().any():
+        raise ErroValidacaoDados("Exercício duplicado nos indicadores.")
+    for coluna in ("receita_liquida", "lucro_liquido", "lucro_bruto", "ativo_total", "patrimonio_liquido"):
+        if coluna in df:
+            df[f"crescimento_{coluna}"] = variacao_anual(df[coluna], df.ano_analise)
+    return df
+
+
+def criar_analise_horizontal(df: pd.DataFrame) -> pd.DataFrame:
+    """Comparação anual das contas; preserva ausências e sinais com base absoluta."""
+    base = df.sort_values("ano_analise").copy()
+    quadros = []
+    for coluna in MONETARIOS:
+        if coluna not in base:
+            continue
+        quadros.append(
+            pd.DataFrame(
+                {
+                    "indicador": coluna,
+                    "ano_anterior": base.ano_analise.shift(),
+                    "ano_atual": base.ano_analise,
+                    "valor_anterior": base[coluna].shift(),
+                    "valor_atual": base[coluna],
+                    "variacao_percentual": variacao_anual(base[coluna], base.ano_analise),
+                }
+            ).iloc[1:]
         )
-
-    df = pd.read_csv(ARQUIVO_BASE, encoding="utf-8-sig")
-
-    df.columns = df.columns.str.strip().str.lower()
-
-    return df
+    return pd.concat(quadros, ignore_index=True) if quadros else pd.DataFrame()
 
 
-def converter_colunas_numericas(df):
+def criar_analise_vertical(df: pd.DataFrame) -> pd.DataFrame:
+    """Cada conta da DRE / receita × 100; contas sobrepostas não devem ser somadas."""
+    contas = [c for c in config.CONTAS_DRE if c in df]
+    long = df.melt(id_vars="ano_analise", value_vars=contas, var_name="indicador", value_name="valor")
+    long = long.merge(df[["ano_analise", "receita_liquida"]], on="ano_analise", validate="many_to_one")
+    long["percentual_receita"] = calcular_percentual(long.valor, long.receita_liquida)
+    return long.rename(columns={"ano_analise": "ano"})[["ano", "indicador", "valor", "percentual_receita"]]
 
-    df = df.copy()
 
-    for coluna in df.columns:
-
-        if coluna == "ano_analise":
+def criar_resumo(df: pd.DataFrame) -> pd.DataFrame:
+    """Compara os extremos reais do período; não troca anos com valores nulos."""
+    base = df.sort_values("ano_analise")
+    registros = []
+    for c in list(config.FORMULAS):
+        if c not in base:
             continue
-
-        df[coluna] = pd.to_numeric(df[coluna], errors="coerce")
-
-    return df
-
-
-def verificar_colunas(df):
-
-    colunas_necessarias = ["ano_analise"]
-
-    faltantes = [
-        coluna for coluna in colunas_necessarias
-        if coluna not in df.columns
-    ]
-
-    if faltantes:
-        raise ValueError(f"Colunas obrigatórias ausentes: {faltantes}")
-
-
-def obter_coluna(df, nome):
-
-    if nome in df.columns:
-        return df[nome]
-
-    return pd.Series(np.nan, index=df.index)
-
-
-def calcular_percentual(numerador, denominador):
-
-    return np.where(
-        denominador != 0,
-        (numerador / denominador) * 100,
-        np.nan
-    )
-
-
-def calcular_razao(numerador, denominador):
-
-    return np.where(
-        denominador != 0,
-        numerador / denominador,
-        np.nan
-    )
-
-
-# ============================================================
-# INDICADORES DE LIQUIDEZ
-# ============================================================
-
-def calcular_liquidez(df):
-
-    df = df.copy()
-
-    ativo_circulante = obter_coluna(df, "ativo_circulante")
-    passivo_circulante = obter_coluna(df, "passivo_circulante")
-
-    df["liquidez_corrente"] = calcular_razao(
-        ativo_circulante, passivo_circulante
-    )
-
-    estoque = obter_coluna(df, "estoques")
-
-    if estoque.isna().all():
-        log.warning(
-            "Coluna 'estoques' ausente/vazia — liquidez_seca "
-            "ficará NaN. Confira config.CONTAS_ATIVO na Etapa 2."
+        inicio, fim = base.iloc[0], base.iloc[-1]
+        delta = fim[c] - inicio[c]
+        registros.append(
+            {
+                "indicador": c,
+                "primeiro_ano": inicio.ano_analise,
+                "ultimo_ano": fim.ano_analise,
+                "valor_inicial": inicio[c],
+                "valor_final": fim[c],
+                "variacao_absoluta": delta,
+                "variacao_periodo_percentual": calcular_percentual(
+                    pd.Series([delta]), pd.Series([abs(inicio[c])])
+                )[0],
+                "unidade_variacao_absoluta": "p.p."
+                if c in config.PERCENTUAIS
+                else "vezes"
+                if c in config.RAZOES
+                else "R$",
+            }
         )
+    return pd.DataFrame(registros)
 
-    df["liquidez_seca"] = calcular_razao(
-        ativo_circulante - estoque, passivo_circulante
+
+def diagnosticar_ausencias(df: pd.DataFrame) -> pd.DataFrame:
+    """Registra todo NaN exportado, inclusive primeiro ano e indicadores fora do escopo."""
+    registros = []
+    for coluna in df.select_dtypes(include="number"):
+        for ano in df.loc[df[coluna].isna(), "ano_analise"]:
+            if coluna.startswith("crescimento_"):
+                motivo = "Sem par anual consecutivo válido, base zero ou valor ausente; sem preenchimento automático."
+            elif coluna in {"divida_liquida", "divida_liquida_ebitda"}:
+                motivo = "Dívida financeira e EBITDA normalizado não extraídos; indicador fora do escopo."
+            else:
+                motivo = "Entrada ausente/não finita ou denominador zero; verificar contas da base."
+            registros.append({"ano": int(ano), "indicador": coluna, "motivo": motivo})
+            log.info("%d/%s indisponível: %s", ano, coluna, motivo)
+    return pd.DataFrame(registros, columns=["ano", "indicador", "motivo"])
+
+
+def main() -> None:
+    """Executa cálculos e salva indicadores, análises, resumo e diagnóstico."""
+    config.preparar_pastas()
+    pasta = config.PASTA_DADOS_TRATADOS
+    df = pd.read_csv(pasta / f"ambev_financeiro_{config.PERIODO}.csv", encoding="utf-8-sig")
+    df.columns = df.columns.str.lower()
+    if df.ano_analise.duplicated().any() or set(df.ano_analise) != set(config.ANOS):
+        raise ErroValidacaoDados("Base financeira com exercícios duplicados ou incompletos.")
+    for funcao in (calcular_liquidez, calcular_rentabilidade, calcular_endividamento, calcular_crescimento):
+        df = funcao(df)
+    df.to_csv(pasta / "indicadores_financeiros_ambev.csv", index=False, encoding="utf-8-sig")
+    for nome, funcao in (
+        ("analise_horizontal_ambev", criar_analise_horizontal),
+        ("analise_vertical_ambev", criar_analise_vertical),
+        ("resumo_analise_ambev", criar_resumo),
+        ("diagnostico_indicadores", diagnosticar_ausencias),
+    ):
+        funcao(df).to_csv(pasta / f"{nome}.csv", index=False, encoding="utf-8-sig")
+    metadados = json.loads((pasta / "metadados_tratamento.json").read_text(encoding="utf-8"))
+    metadados["indicadores_sha256"] = hashlib.sha256(
+        (pasta / "indicadores_financeiros_ambev.csv").read_bytes()
+    ).hexdigest()
+    metadados["status"] = "validado"
+    (pasta / "metadados.json").write_text(
+        json.dumps(metadados, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
-
-    return df
-
-
-# ============================================================
-# INDICADORES DE RENTABILIDADE
-# ============================================================
-
-def calcular_rentabilidade(df):
-
-    df = df.copy()
-
-    receita = obter_coluna(df, "receita_liquida")
-    lucro_bruto = obter_coluna(df, "lucro_bruto")
-    lucro_liquido = obter_coluna(df, "lucro_liquido")
-    ativo_total = obter_coluna(df, "ativo_total")
-    patrimonio = obter_coluna(df, "patrimonio_liquido")
-    resultado_operacional = obter_coluna(df, "resultado_operacional")
-
-    df["margem_bruta"] = calcular_percentual(lucro_bruto, receita)
-    df["margem_operacional"] = calcular_percentual(
-        resultado_operacional, receita
-    )
-    df["margem_liquida"] = calcular_percentual(lucro_liquido, receita)
-    df["roa"] = calcular_percentual(lucro_liquido, ativo_total)
-    df["roe"] = calcular_percentual(lucro_liquido, patrimonio)
-
-    return df
-
-
-# ============================================================
-# INDICADORES DE ENDIVIDAMENTO
-# ============================================================
-
-def calcular_endividamento(df):
-
-    df = df.copy()
-
-    ativo_total = obter_coluna(df, "ativo_total")
-    passivo_total = obter_coluna(df, "passivo_total")
-    patrimonio = obter_coluna(df, "patrimonio_liquido")
-
-    passivo_circulante = obter_coluna(df, "passivo_circulante")
-    passivo_nao_circulante = obter_coluna(df, "passivo_nao_circulante")
-
-    # CORREÇÃO: passivo_total (código 2 da CVM) = Passivo + PL e, por
-    # identidade contábil, é sempre igual ao ativo_total — usá-lo no
-    # numerador dava 100% em todos os anos. O endividamento usa o
-    # passivo EXIGÍVEL (circulante + não circulante, sem o PL).
-    passivo_exigivel = (
-        passivo_circulante + passivo_nao_circulante
-    ).fillna(passivo_total - patrimonio)
-
-    df["passivo_exigivel"] = passivo_exigivel
-
-    df["endividamento_geral"] = calcular_percentual(
-        passivo_exigivel, ativo_total
-    )
-
-    df["capital_terceiros_patrimonio"] = calcular_percentual(
-        passivo_exigivel, patrimonio
-    )
-
-    divida_total = obter_coluna(df, "divida_total")
-    caixa = obter_coluna(df, "caixa_equivalentes")
-    ebitda = obter_coluna(df, "ebitda_normalizado")
-
-    df["divida_liquida"] = divida_total - caixa
-
-    df["divida_liquida_ebitda"] = calcular_razao(
-        df["divida_liquida"], ebitda
-    )
-
-    return df
-
-
-# ============================================================
-# CRESCIMENTO
-# ============================================================
-
-def calcular_crescimento(df):
-
-    df = df.copy()
-
-    df = df.sort_values("ano_analise")
-
-    colunas = [
-        "receita_liquida",
-        "lucro_liquido",
-        "lucro_bruto",
-        "ativo_total",
-        "patrimonio_liquido"
-    ]
-
-    for coluna in colunas:
-
-        if coluna not in df.columns:
-            continue
-
-        df[f"crescimento_{coluna}"] = df[coluna].pct_change() * 100
-
-    return df
-
-
-# ============================================================
-# ANÁLISE HORIZONTAL (vetorizada)
-# ============================================================
-#
-# Versão original percorria o DataFrame com um loop Python
-# (`for i in range(1, len(tabela))`) e indexação posicional via
-# `.iloc`, recalculando a variação linha a linha. Com pandas,
-# a mesma conta sai de `pct_change()` sobre a série já ordenada
-# por ano — sem loop, sem risco de desalinhamento de índice, e
-# ordens de grandeza mais rápido para séries maiores.
-
-def criar_analise_horizontal(df):
-
-    colunas = [
-        "receita_liquida",
-        "lucro_bruto",
-        "lucro_liquido",
-        "ativo_total",
-        "ativo_circulante",
-        "passivo_circulante",
-        "passivo_total",
-        "patrimonio_liquido",
-        "caixa_equivalentes"
-    ]
-
-    existentes = [c for c in colunas if c in df.columns]
-
-    if not existentes:
-        return pd.DataFrame()
-
-    tabela = (
-        df[["ano_analise"] + existentes]
-        .sort_values("ano_analise")
-        .set_index("ano_analise")
-    )
-
-    valor_atual = tabela.stack().rename("valor_atual")
-    valor_anterior = tabela.shift(1).stack().rename("valor_anterior")
-
-    combinado = pd.concat([valor_atual, valor_anterior], axis=1)
-    combinado.index.names = ["ano_atual", "indicador"]
-    combinado = combinado.reset_index()
-
-    combinado["ano_anterior"] = (
-        combinado.groupby("indicador")["ano_atual"].shift(1)
-    )
-
-    # Remove a primeira ocorrência de cada indicador (não tem
-    # ano anterior para comparar).
-    combinado = combinado.dropna(subset=["ano_anterior"]).copy()
-
-    variacao = np.where(
-        combinado["valor_anterior"].isna()
-        | combinado["valor_atual"].isna()
-        | (combinado["valor_anterior"] == 0),
-        np.nan,
-        (
-            (combinado["valor_atual"] - combinado["valor_anterior"])
-            / combinado["valor_anterior"].abs()
-        ) * 100
-    )
-
-    combinado["variacao_percentual"] = variacao
-
-    combinado["ano_anterior"] = combinado["ano_anterior"].astype(int)
-    combinado["ano_atual"] = combinado["ano_atual"].astype(int)
-
-    return combinado[
-        [
-            "indicador",
-            "ano_anterior",
-            "ano_atual",
-            "valor_anterior",
-            "valor_atual",
-            "variacao_percentual"
-        ]
-    ].sort_values(["indicador", "ano_atual"]).reset_index(drop=True)
-
-
-# ============================================================
-# ANÁLISE VERTICAL - DRE (vetorizada)
-# ============================================================
-
-def criar_analise_vertical(df):
-
-    receita = obter_coluna(df, "receita_liquida")
-
-    contas = ["lucro_bruto", "resultado_operacional", "lucro_liquido"]
-
-    existentes = [c for c in contas if c in df.columns]
-
-    if not existentes:
-        return pd.DataFrame()
-
-    base = df[["ano_analise"] + existentes].copy()
-
-    for conta in existentes:
-        base[f"{conta}__pct"] = calcular_percentual(df[conta], receita)
-
-    resultado = base.melt(
-        id_vars="ano_analise",
-        value_vars=existentes,
-        var_name="indicador",
-        value_name="valor"
-    )
-
-    percentuais = base.melt(
-        id_vars="ano_analise",
-        value_vars=[f"{c}__pct" for c in existentes],
-        var_name="indicador",
-        value_name="percentual_receita"
-    )
-    percentuais["indicador"] = percentuais["indicador"].str.replace(
-        "__pct", "", regex=False
-    )
-
-    resultado = resultado.merge(
-        percentuais, on=["ano_analise", "indicador"]
-    )
-
-    resultado["ano"] = resultado["ano_analise"].astype(int)
-
-    return resultado[
-        ["ano", "indicador", "valor", "percentual_receita"]
-    ].sort_values(["indicador", "ano"]).reset_index(drop=True)
-
-
-# ============================================================
-# RESUMO DA ANÁLISE
-# ============================================================
-
-def criar_resumo(df):
-
-    resumo = []
-
-    indicadores = [
-        "receita_liquida", "lucro_liquido", "margem_bruta",
-        "margem_liquida", "roa", "roe", "liquidez_corrente",
-        "liquidez_seca", "endividamento_geral"
-    ]
-
-    for indicador in indicadores:
-
-        if indicador not in df.columns:
-            continue
-
-        serie = df[["ano_analise", indicador]].dropna()
-
-        if serie.empty:
-            continue
-
-        primeiro = serie.iloc[0]
-        ultimo = serie.iloc[-1]
-
-        valor_inicial = primeiro[indicador]
-        valor_final = ultimo[indicador]
-
-        if valor_inicial != 0:
-            variacao = (
-                (valor_final - valor_inicial) / abs(valor_inicial)
-            ) * 100
-        else:
-            variacao = np.nan
-
-        resumo.append({
-            "indicador": indicador,
-            "primeiro_ano": int(primeiro["ano_analise"]),
-            "ultimo_ano": int(ultimo["ano_analise"]),
-            "valor_inicial": valor_inicial,
-            "valor_final": valor_final,
-            "variacao_periodo_percentual": variacao
-        })
-
-    return pd.DataFrame(resumo)
-
-
-# ============================================================
-# ORGANIZAÇÃO FINAL
-# ============================================================
-
-def organizar_resultado(df):
-
-    ordem = [
-        "ano_analise",
-        "receita_liquida", "lucro_bruto", "resultado_operacional",
-        "lucro_liquido",
-        "ativo_total", "ativo_circulante", "caixa_equivalentes",
-        "passivo_circulante", "passivo_total", "patrimonio_liquido",
-        "liquidez_corrente", "liquidez_seca",
-        "margem_bruta", "margem_operacional", "margem_liquida",
-        "roa", "roe",
-        "endividamento_geral", "capital_terceiros_patrimonio",
-        "divida_total", "divida_liquida", "ebitda_normalizado",
-        "divida_liquida_ebitda"
-    ]
-
-    existentes = [c for c in ordem if c in df.columns]
-    restante = [c for c in df.columns if c not in existentes]
-
-    return df[existentes + restante]
-
-
-# ============================================================
-# MAIN
-# ============================================================
-
-def main():
-
-    log.info("=" * 70)
-    log.info("ETAPA 3 - ANÁLISE FINANCEIRA DA AMBEV")
-    log.info("=" * 70)
-
-    df = carregar_base()
-
-    verificar_colunas(df)
-
-    log.info("Registros carregados: %d", len(df))
-    log.info("Anos encontrados: %s", sorted(df["ano_analise"].unique()))
-
-    df = converter_colunas_numericas(df)
-
-    df = calcular_liquidez(df)
-    df = calcular_rentabilidade(df)
-    df = calcular_endividamento(df)
-    df = calcular_crescimento(df)
-
-    df = organizar_resultado(df)
-
-    df.to_csv(ARQUIVO_INDICADORES, index=False, encoding="utf-8-sig")
-
-    horizontal = criar_analise_horizontal(df)
-    horizontal.to_csv(
-        ARQUIVO_ANALISE_HORIZONTAL, index=False, encoding="utf-8-sig"
-    )
-
-    vertical = criar_analise_vertical(df)
-    vertical.to_csv(
-        ARQUIVO_ANALISE_VERTICAL, index=False, encoding="utf-8-sig"
-    )
-
-    resumo = criar_resumo(df)
-    resumo.to_csv(ARQUIVO_RESUMO, index=False, encoding="utf-8-sig")
-
-    log.info("=" * 70)
-    log.info("INDICADORES")
-    log.info("=" * 70)
-
-    colunas_exibir = [
-        c for c in [
-            "ano_analise", "liquidez_corrente", "liquidez_seca",
-            "margem_bruta", "margem_liquida", "roa", "roe",
-            "endividamento_geral"
-        ]
-        if c in df.columns
-    ]
-
-    print(df[colunas_exibir].round(2).to_string(index=False))
-
-    log.info("=" * 70)
-    log.info("ARQUIVOS GERADOS")
-    log.info("Indicadores:        %s", ARQUIVO_INDICADORES)
-    log.info("Análise horizontal: %s", ARQUIVO_ANALISE_HORIZONTAL)
-    log.info("Análise vertical:   %s", ARQUIVO_ANALISE_VERTICAL)
-    log.info("Resumo:             %s", ARQUIVO_RESUMO)
-    log.info("ETAPA 3 CONCLUÍDA.")
+    log.info("Indicadores e análises gravados para %s.", df.ano_analise.tolist())
 
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s | %(message)s")
     main()

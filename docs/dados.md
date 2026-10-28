@@ -1,34 +1,42 @@
-# Dados e reprodutibilidade
+# Dados, versionamento e rastreabilidade
 
-## Origem
+## Origem e identidade
 
-- Portal: [CVM — DFP](https://dados.cvm.gov.br/dataset/cia_aberta-doc-dfp).
-- Empresa: Ambev S.A., código CVM `23264`.
-- Período configurado: 2022 a 2025.
-- URL de coleta: `https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_{ano}.zip`.
+DFPs consolidadas da Ambev, código CVM `23264`, CNPJ `07.526.557/0001-00`, exercícios anuais 2022–2025. URL: `https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_{ano}.zip`.
 
-| Diretório | Conteúdo | Versionamento |
-|---|---|---|
-| `dados_cvm/` | Cache dos ZIPs originais | Ignorado; recriado pela coleta |
-| `saida/` | CSVs extraídos e filtrados | Ignorado; recriado pela coleta |
-| `dados_tratados/` | Bases limpas, análises e relatório de qualidade | Ignorado, exceto o CSV de indicadores |
-| `reports/visualizacoes/` | HTMLs históricos | Preservados; não são regenerados pelo pipeline atual |
+Cada ZIP contém várias empresas e os exercícios atual e comparativo. O ano do nome do arquivo não é aceito como prova do ano do valor: DT_REFER e datas do exercício são verificados antes de atribuir ANO_ANALISE. A maior VERSAO é escolhida por demonstrativo e ano; não se misturam versões por conta.
 
-`indicadores_financeiros_ambev.csv` é um snapshot, suficiente para abrir o dashboard sem downloads. Colunas de dívida líquida e EBITDA podem estar vazias porque as entradas necessárias não são extraídas. Não substitua ausências por zero.
+Os CSVs originais são lidos com `sep=';'`, `encoding='latin1'` e CD_CONTA textual. Exportações do pipeline usam UTF-8 com BOM. A interface exporta CSV pt-BR com ponto e vírgula e vírgula decimal, mantendo valores monetários em reais.
 
-## Correção do snapshot em 27/10/2026
+## O que fica no Git
 
-O CSV anteriormente versionado ainda continha valores monetários em milhares de reais, embora a etapa de tratamento já aplicasse a conversão de `MIL` para `UNIDADE`. O snapshot foi regenerado com o pipeline existente usando as entradas locais: por exemplo, a receita de 2022 passou de `79708827` para `79708827000` reais. Margens, retornos, liquidez e taxas de crescimento permanecem iguais. Um teste protege a ordem de grandeza do snapshot para o período atual.
+| Caminho | Política |
+|---|---|
+| `dados_cvm/` | Ignorado; ZIPs baixados e verificados localmente |
+| `saida/` | Ignorado; extratos da empresa com todas as contas e manifesto da coleta |
+| `dados_tratados/indicadores_financeiros_ambev.csv` | Versionado; abre o dashboard sem coleta |
+| `dados_tratados/metadados.json` | Versionado; momento da geração, fontes, hashes, versão do status e hash do CSV |
+| `dados_tratados/proveniencia_contas.csv` | Versionado; ano, indicador, código, datas, versão e valor em reais |
+| `dados_tratados/relatorio_qualidade.csv` | Versionado; identidades/subtotais, diferença e tolerância por ano |
+| `dados_tratados/diagnostico_indicadores.csv` | Versionado; motivo de cada valor indisponível |
+| Demais arquivos de `dados_tratados/` | Ignorados; bases auxiliares e análises regeneradas pelo pipeline |
+| `reports/validacao/` | Versionado; evidências externas e alcance das verificações |
+| `reports/historico/` | Versionado como arquivo histórico, explicitamente inadequado para resultados atuais |
 
-## Atualizar o snapshot
+## Atualização
 
-1. Execute `python code/run_pipeline.py` e confira logs e relatório de qualidade.
-2. Revise o diff de `dados_tratados/indicadores_financeiros_ambev.csv` e verifique mudanças inesperadas de escala ou período.
-3. Execute `python -m pytest` e abra o dashboard.
-4. Faça commit explícito do CSV e das alterações de código relacionadas em uma branch.
+1. Execute `python code/run_pipeline.py` ou `--offline` se todos os ZIPs estiverem no cache.
+2. Leia os logs e confira as evidências de qualidade e proveniência.
+3. Execute testes e `python scripts/validar_referencia.py`.
+4. Revise o diff do CSV, dos metadados e das evidências. Alterações de dados reais devem ter explicação de período, versão e origem.
+5. Publique na branch de trabalho para revisão antes da integração na principal.
 
-Para baixar novamente um ZIP atualizado na CVM, remova apenas o ZIP local correspondente de `dados_cvm/` antes da coleta. A coleta reutiliza arquivos já existentes. A CVM pode republicar demonstrativos; não há garantia de reprodução byte a byte após novos downloads.
+A coleta reutiliza o cache válido. Para conferir uma republicação da CVM, mova o ZIP local correspondente para fora do cache e execute novamente a coleta. Não apague arquivos versionados para forçar essa operação.
 
-Os ZIPs, CSVs intermediários e o bytecode que antes eram rastreados foram retirados da versão atual do Git. Permanecem acessíveis no histórico. Não houve reescrita do histórico; clones completos ainda podem transferir os arquivos antigos. Para obter apenas a versão recente, use `git clone --depth 1 URL_DO_REPOSITORIO`.
+## Download verificado na revisão
 
-Os HTMLs são snapshots históricos e podem divergir do dashboard ou conter rótulos de versões anteriores. A referência de execução atual é o CSV de indicadores junto com o código e a metodologia.
+Os quatro ZIPs foram baixados novamente em 27/10/2026, validados e usados para uma nova execução completa. Seus hashes diferiam do cache anterior: a atualização do arquivo global não comprova, por si, que as contas da Ambev mudaram. As versões da Ambev encontradas eram 1 e as datas finais eram 31/12 do respectivo ano. O snapshot final foi conciliado com a referência oficial; os hashes estão em `metadados.json` e `reports/validacao/downloads.json`.
+
+A CVM pode republicar arquivos e valores. Downloads futuros não são garantidos byte a byte; preserve o cache e os hashes para reproduzir uma execução específica.
+
+Os ZIPs grandes antigos permanecem no histórico Git. A revisão não reescreveu o histórico. Um clone completo pode continuar pesado; `git clone --depth 1 --branch feat URL` obtém apenas a ponta recente.

@@ -1,5 +1,6 @@
-# Relatórios
+# Relatórios e evidências
 
-`visualizacoes/` preserva os HTMLs históricos que antes ficavam em `data/visualizacoes/`. Os HTMLs podem ser abertos individualmente no navegador.
+- `validacao/`: referência oficial, conciliação, registros de downloads e escopo da varredura de segurança da revisão.
+- `historico/visualizacoes/`: HTMLs preservados de versões anteriores. Contêm erros conhecidos de período, ausências e endividamento; não devem ser apresentados como análise atual.
 
-Esses arquivos não são gerados pelos scripts atuais. Para explorar a análise atualizada, use o dashboard descrito no README principal. Novos relatórios devem registrar a data da geração, a fonte dos dados e o comando que os produziu.
+O dashboard e os snapshots de `dados_tratados/` são a referência atual. Os HTMLs antigos não são regenerados pelo pipeline e não foram atualizados para aparentar que seus números foram corrigidos.

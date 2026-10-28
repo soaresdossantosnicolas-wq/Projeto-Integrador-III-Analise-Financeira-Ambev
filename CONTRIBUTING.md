@@ -6,7 +6,7 @@ Siga o README para criar o ambiente virtual e instale `python -m pip install -r 
 
 ## Fluxo de trabalho
 
-1. Crie uma branch a partir de `main`: `git switch -c feat/descricao-curta` (ou `fix/` e `docs/`).
+1. Crie uma branch a partir de `feat`: `git switch -c revisao/descricao-curta` (ou `fix/` e `docs/`).
 2. Faça alterações com escopo definido e atualize a documentação afetada.
 3. Rode `python -m ruff check .` e `python -m pytest`.
 4. Se alterar o cálculo ou tratamento, rode também o pipeline e confira as identidades contábeis e o diff do snapshot.
@@ -22,4 +22,4 @@ Não versione ambientes virtuais, credenciais, ZIPs da CVM, caches ou intermedi�
 - Registre alterações de período, fonte e limitações na metodologia.
 - Evite reformatação ampla em mudanças de lógica; facilite a revisão do diff.
 
-A licença do projeto ainda deve ser definida pelos autores; não adicione uma licença em nome do grupo sem essa decisão.
+O código utiliza licença MIT, atribuída a Arthur Almeida, Nicolas Soares e Pedro Barreto. Preserve a atribuição e os avisos da licença.

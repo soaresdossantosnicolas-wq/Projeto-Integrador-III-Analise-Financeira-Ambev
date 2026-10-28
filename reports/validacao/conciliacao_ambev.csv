@@ -1,0 +1,29 @@
+ano,indicador,unidade,cvm,oficial_ri,comparavel,diferenca,tolerancia,conceito,status
+2022,receita_liquida,R$ milhões,79708.827,79709.0,79708.827,-0.17299999999522697,0.5,Mesmo conceito; tolerância de arredondamento do RI,OK
+2023,receita_liquida,R$ milhões,79736.856,79737.0,79736.856,-0.14400000000023283,0.5,Mesmo conceito; tolerância de arredondamento do RI,OK
+2024,receita_liquida,R$ milhões,89452.669,89453.0,89452.669,-0.33100000000558794,0.5,Mesmo conceito; tolerância de arredondamento do RI,OK
+2025,receita_liquida,R$ milhões,88242.467,88242.0,88242.467,0.46700000000419095,0.5,Mesmo conceito; tolerância de arredondamento do RI,OK
+2022,lucro_bruto,R$ milhões,39286.758,39287.0,39286.758,-0.24199999999837019,0.5,Mesmo conceito; tolerância de arredondamento do RI,OK
+2023,lucro_bruto,R$ milhões,40445.285,40445.0,40445.285,0.28500000000349246,0.5,Mesmo conceito; tolerância de arredondamento do RI,OK
+2024,lucro_bruto,R$ milhões,45837.589,45838.0,45837.589,-0.4110000000000582,0.5,Mesmo conceito; tolerância de arredondamento do RI,OK
+2025,lucro_bruto,R$ milhões,45378.34,45378.0,45378.34,0.33999999999650754,0.5,Mesmo conceito; tolerância de arredondamento do RI,OK
+2022,lucro_liquido,R$ milhões,14891.291,14891.0,14891.291,0.29099999999925785,0.5,Mesmo conceito; tolerância de arredondamento do RI,OK
+2023,lucro_liquido,R$ milhões,14960.459,14960.0,14960.459,0.45900000000074215,0.5,Mesmo conceito; tolerância de arredondamento do RI,OK
+2024,lucro_liquido,R$ milhões,14846.952,14847.0,14846.952,-0.04800000000068394,0.5,Mesmo conceito; tolerância de arredondamento do RI,OK
+2025,lucro_liquido,R$ milhões,15988.433,15988.0,15988.433,0.4330000000009022,0.5,Mesmo conceito; tolerância de arredondamento do RI,OK
+2022,ativo_total,R$ milhões,137958.083,137958.0,137958.083,0.08300000001327135,0.5,Mesmo conceito; tolerância de arredondamento do RI,OK
+2023,ativo_total,R$ milhões,132644.133,132644.0,132644.133,0.13300000000162981,0.5,Mesmo conceito; tolerância de arredondamento do RI,OK
+2024,ativo_total,R$ milhões,162507.949,162508.0,162507.949,-0.05100000000675209,0.5,Mesmo conceito; tolerância de arredondamento do RI,OK
+2025,ativo_total,R$ milhões,145087.151,145087.0,145087.151,0.15100000001257285,0.5,Mesmo conceito; tolerância de arredondamento do RI,OK
+2022,patrimonio_liquido,R$ milhões,83327.827,83328.0,83327.827,-0.17299999999522697,0.5,Mesmo conceito; tolerância de arredondamento do RI,OK
+2023,patrimonio_liquido,R$ milhões,80143.802,80144.0,80143.802,-0.19800000000395812,0.5,Mesmo conceito; tolerância de arredondamento do RI,OK
+2024,patrimonio_liquido,R$ milhões,99580.514,99581.0,99580.514,-0.4860000000044238,0.5,Mesmo conceito; tolerância de arredondamento do RI,OK
+2025,patrimonio_liquido,R$ milhões,88774.781,88775.0,88774.781,-0.21899999999732245,0.5,Mesmo conceito; tolerância de arredondamento do RI,OK
+2022,roe,%,17.870730026357222,17.9,17.870730026357222,-0.029269973642776392,0.05,Mesmo conceito; tolerância de arredondamento do RI,OK
+2023,roe,%,18.66701931610382,18.7,18.66701931610382,-0.03298068389618081,0.05,Mesmo conceito; tolerância de arredondamento do RI,OK
+2024,roe,%,14.909495245224385,14.9,14.909495245224385,0.009495245224384163,0.05,Mesmo conceito; tolerância de arredondamento do RI,OK
+2025,roe,%,18.01010694692674,18.0,18.01010694692674,0.010106946926740079,0.05,Mesmo conceito; tolerância de arredondamento do RI,OK
+2022,resultado_operacional,R$ milhões,17658.84,17688.0,17687.946,-0.05400000000008731,0.5,EBIT RI = CVM 3.05 − equivalência patrimonial 3.04.06,OK
+2023,resultado_operacional,R$ milhões,18645.692,18831.0,18831.098,0.09800000000177533,0.5,EBIT RI = CVM 3.05 − equivalência patrimonial 3.04.06,OK
+2024,resultado_operacional,R$ milhões,21805.576,21802.0,21801.658,-0.342000000000553,0.5,EBIT RI = CVM 3.05 − equivalência patrimonial 3.04.06,OK
+2025,resultado_operacional,R$ milhões,23423.386,23318.0,23317.601,-0.39900000000125146,0.5,EBIT RI = CVM 3.05 − equivalência patrimonial 3.04.06,OK

@@ -1,1066 +1,508 @@
-"""
-Etapa 4 — Visualização e Dashboard Interativo
-Projeto Integrador III — Análise Financeira da Ambev S.A.
+"""Dashboard acadêmico: demonstrações consolidadas, unidades explícitas e comparações honestas."""
 
-Consome a base de indicadores gerada pela Etapa 3
-(dados_tratados/indicadores_financeiros_ambev.csv) e apresenta
-um dashboard interativo em Streamlit + Plotly.
-
-Execução:
-    python -m streamlit run code/04_visualizacao.py
-"""
-
-from pathlib import Path
+import hashlib
+import io
+import json
+import logging
 
 import numpy as np
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
 import streamlit as st
 
-
-# ============================================================
-# CONFIGURAÇÃO DA PÁGINA
-# ============================================================
-
-st.set_page_config(
-    page_title="Análise Financeira - Ambev",
-    page_icon="📊",
-    layout="wide"
+import config
+from dashboard_utils import (
+    calcular_variacoes,
+    exportar_csv,
+    formatar_indicador,
+    formatar_percentual,
+    formatar_valor,
+    numero_br,
+    preparar_series,
+    validar_snapshot,
 )
+from excecoes import ErroValidacaoDados
+
+log = logging.getLogger(__name__)
+st.set_page_config(page_title="Ambev | Análise financeira", page_icon="📊", layout="wide")
 
 
-# ============================================================
-# CAMINHOS
-# ============================================================
-
-RAIZ_PROJETO = Path(__file__).resolve().parent.parent
-
-ARQUIVOS_POSSIVEIS = [
-    RAIZ_PROJETO / "dados_tratados" / "indicadores_financeiros_ambev.csv",
-    RAIZ_PROJETO / "data" / "indicadores_financeiros_ambev.csv",
-    RAIZ_PROJETO / "data" / "processed" / "indicadores_financeiros_ambev.csv",
-]
-
-# Rótulos legíveis para os indicadores (usados em gráficos, KPIs e tabela)
-NOMES_INDICADORES = {
-    "receita_liquida": "Receita Líquida",
-    "lucro_bruto": "Lucro Bruto",
-    "resultado_operacional": "Resultado Operacional (EBIT)",
-    "lucro_liquido": "Lucro Líquido",
-    "ativo_total": "Ativo Total",
-    "ativo_circulante": "Ativo Circulante",
-    "caixa_equivalentes": "Caixa e Equivalentes",
-    "passivo_circulante": "Passivo Circulante",
-    "passivo_total": "Passivo Total",
-    "patrimonio_liquido": "Patrimônio Líquido",
-    "liquidez_corrente": "Liquidez Corrente",
-    "liquidez_seca": "Liquidez Seca",
-    "margem_bruta": "Margem Bruta",
-    "margem_operacional": "Margem Operacional",
-    "margem_liquida": "Margem Líquida",
-    "roa": "ROA",
-    "roe": "ROE",
-    "endividamento_geral": "Endividamento Geral",
-    "capital_terceiros_patrimonio": "Capital de Terceiros / PL",
-    "divida_liquida": "Dívida Líquida",
-    "divida_liquida_ebitda": "Dívida Líquida / EBITDA",
-}
-
-# Indicadores expressos em percentual (para formatação e eixos)
-INDICADORES_PERCENTUAIS = {
-    "margem_bruta", "margem_operacional", "margem_liquida",
-    "roa", "roe", "endividamento_geral", "capital_terceiros_patrimonio",
-}
-
-# Indicadores expressos como índice/razão (não moeda, não percentual)
-INDICADORES_RAZAO = {
-    "liquidez_corrente", "liquidez_seca", "divida_liquida_ebitda",
-}
-
-COLUNA_ANO = "ano_analise"
+@st.cache_data(show_spinner=False)
+def carregar_dados(conteudo: bytes) -> pd.DataFrame:
+    """Cache por conteúdo: atualizar o CSV invalida a leitura, mesmo sem mudar o caminho."""
+    return validar_snapshot(pd.read_csv(io.BytesIO(conteudo), encoding="utf-8-sig"))
 
 
-# ============================================================
-# CARREGAMENTO
-# ============================================================
-
-def localizar_base():
-    """Retorna o primeiro caminho existente entre os candidatos conhecidos."""
-
-    for arquivo in ARQUIVOS_POSSIVEIS:
-
-        if arquivo.exists():
-            return arquivo
-
-    return None
+@st.cache_data(show_spinner=False)
+def dados_grafico(df: pd.DataFrame, colunas: tuple[str, ...], percentual: bool = False) -> pd.DataFrame:
+    """Preparação leve e cacheada; o dashboard não reexecuta o ETL."""
+    return preparar_series(df, list(colunas), percentual=percentual)
 
 
-@st.cache_data
-def carregar_dados(caminho_str):
-    """
-    Carrega a base de indicadores gerada pela Etapa 3.
-    Recebe o caminho como string para ser compatível com o
-    cache do Streamlit (Path nem sempre é hashable de forma estável).
-    """
+def estilizar(fig: go.Figure, titulo: str, eixo: str, tema: str) -> go.Figure:
+    """Template único, cores centralizadas e contraste dos eixos em claro/escuro."""
+    escuro = tema == "Escuro"
+    fig.update_layout(
+        template="plotly_dark" if escuro else "plotly_white",
+        title=dict(text=titulo, font=dict(size=19)),
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(family="Arial, sans-serif", size=13, color="#E5EDF8" if escuro else "#17253C"),
+        margin=dict(l=10, r=10, t=65, b=20),
+        height=370,
+        separators=",.",
+        legend=dict(orientation="h", y=-0.23, x=0),
+        legend_title_text="",
+        hovermode="x unified",
+        dragmode=False,
+    )
+    fig.update_xaxes(title=None, type="category", showgrid=False)
+    fig.update_yaxes(title=eixo, gridcolor="rgba(133,147,169,0.18)", zeroline=True, rangemode="tozero")
+    return fig
 
-    df = pd.read_csv(
-        caminho_str,
-        encoding="utf-8-sig"
+
+def mostrar(fig: go.Figure, chave: str) -> None:
+    """Renderiza responsivamente com ferramentas discretas."""
+    st.plotly_chart(
+        fig,
+        theme=None,
+        use_container_width=True,
+        key=chave,
+        config={"displaylogo": False, "scrollZoom": False, "modeBarButtonsToRemove": ["lasso2d", "select2d"]},
     )
 
-    df.columns = (
-        df.columns
-        .str.strip()
-        .str.lower()
-    )
 
-    if COLUNA_ANO in df.columns:
-
-        df[COLUNA_ANO] = pd.to_numeric(
-            df[COLUNA_ANO],
-            errors="coerce"
-        )
-
-        df = df.dropna(subset=[COLUNA_ANO])
-        df[COLUNA_ANO] = df[COLUNA_ANO].astype(int)
-
-        df = df.sort_values(COLUNA_ANO).reset_index(drop=True)
-
-    return df
-
-
-# ============================================================
-# VALIDAÇÃO
-# ============================================================
-
-def validar_dados(df):
-    """
-    Verifica a integridade básica da base carregada e devolve
-    um dicionário com o diagnóstico, sem interromper a execução.
-    """
-
-    diagnostico = {
-        "colunas_nulas": {},
-        "duplicadas": 0,
-        "anos_presentes": [],
-        "anos_ausentes": [],
-        "indicadores_ausentes": [],
+def grafico_series(
+    df: pd.DataFrame,
+    colunas: tuple[str, ...],
+    titulo: str,
+    tema: str,
+    *,
+    percentual: bool = False,
+    linha: bool = False,
+    razao: bool = False,
+) -> go.Figure:
+    """Gráfico sem transformação monetária oculta; os eixos declaram R$ bilhões, % ou vezes."""
+    dados = dados_grafico(df, colunas, percentual).copy()
+    dados["y"] = dados.valor if percentual or razao else dados.valor / 1e9
+    cores = {
+        config.NOMES.get(c, c): config.PALETA.get(c, list(config.PALETA.values())[i % 6])
+        for i, c in enumerate(colunas)
     }
-
-    if COLUNA_ANO not in df.columns:
-        diagnostico["erro_critico"] = (
-            f"Coluna obrigatória '{COLUNA_ANO}' não encontrada na base."
-        )
-        return diagnostico
-
-    diagnostico["duplicadas"] = int(
-        df.drop(columns=[COLUNA_ANO]).duplicated().sum()
+    parametros = dict(
+        data_frame=dados,
+        x="ano_analise",
+        y="y",
+        color="rotulo",
+        color_discrete_map=cores,
+        custom_data=["exibicao", "rotulo"],
     )
-
-    for coluna in df.columns:
-
-        nulos = int(df[coluna].isna().sum())
-
-        if nulos > 0:
-            diagnostico["colunas_nulas"][coluna] = nulos
-
-    anos_esperados = [2022, 2023, 2024, 2025]
-    anos_presentes = sorted(df[COLUNA_ANO].dropna().unique().tolist())
-
-    diagnostico["anos_presentes"] = anos_presentes
-    diagnostico["anos_ausentes"] = [
-        ano for ano in anos_esperados if ano not in anos_presentes
-    ]
-
-    diagnostico["indicadores_ausentes"] = [
-        nome for nome in NOMES_INDICADORES
-        if nome not in df.columns
-    ]
-
-    return diagnostico
-
-
-# ============================================================
-# FORMATAÇÃO
-# ============================================================
-
-def formatar_valor(valor):
-    """Formata valores monetários em R$, com sufixo bi/mi/mil."""
-
-    if valor is None or pd.isna(valor):
-        return "N/D"
-
-    valor = float(valor)
-    valor_abs = abs(valor)
-
-    if valor_abs >= 1_000_000_000:
-        return f"R$ {valor / 1_000_000_000:.2f} bi"
-
-    if valor_abs >= 1_000_000:
-        return f"R$ {valor / 1_000_000:.2f} mi"
-
-    if valor_abs >= 1_000:
-        return f"R$ {valor / 1_000:.2f} mil"
-
-    return f"R$ {valor:,.2f}"
-
-
-def formatar_percentual(valor, casas=2):
-
-    if valor is None or pd.isna(valor):
-        return "N/D"
-
-    return f"{valor:.{casas}f}%"
-
-
-def formatar_razao(valor, casas=2):
-
-    if valor is None or pd.isna(valor):
-        return "N/D"
-
-    return f"{valor:.{casas}f}"
-
-
-def formatar_indicador(nome, valor):
-    """Escolhe a formatação adequada conforme o tipo do indicador."""
-
-    if nome in INDICADORES_PERCENTUAIS:
-        return formatar_percentual(valor)
-
-    if nome in INDICADORES_RAZAO:
-        return formatar_razao(valor)
-
-    return formatar_valor(valor)
-
-
-# ============================================================
-# VARIAÇÕES ANO A ANO (para os cards de KPI)
-# ============================================================
-
-def calcular_variacoes(df, coluna):
-    """
-    Retorna (valor_atual, valor_anterior, variacao_percentual)
-    considerando o último ano disponível (não-nulo) e o ano
-    imediatamente anterior presente na base filtrada.
-    """
-
-    if coluna not in df.columns:
-        return None, None, None
-
-    dados = df[[COLUNA_ANO, coluna]].dropna().sort_values(COLUNA_ANO)
-
-    if dados.empty:
-        return None, None, None
-
-    valor_atual = dados.iloc[-1][coluna]
-
-    if len(dados) < 2:
-        return valor_atual, None, None
-
-    valor_anterior = dados.iloc[-2][coluna]
-
-    if valor_anterior == 0 or pd.isna(valor_anterior):
-        variacao = None
+    if linha:
+        fig = px.line(**parametros, markers=True, line_shape="linear")
+        fig.update_traces(
+            mode="lines+markers+text",
+            text=dados.exibicao if len(colunas) == 1 else None,
+            textposition="top center",
+        )
     else:
-        variacao = ((valor_atual - valor_anterior) / abs(valor_anterior)) * 100
-
-    return valor_atual, valor_anterior, variacao
-
-
-# ============================================================
-# KPIs
-# ============================================================
-
-def criar_kpis(df):
-    """Renderiza os cards de KPI com valor atual e variação vs. ano anterior."""
-
-    indicadores_kpi = [
-        ("receita_liquida", "Receita Líquida"),
-        ("lucro_liquido", "Lucro Líquido"),
-        ("margem_liquida", "Margem Líquida"),
-        ("roe", "ROE"),
-        ("roa", "ROA"),
-        ("liquidez_corrente", "Liquidez Corrente"),
-        ("endividamento_geral", "Endividamento Geral"),
-    ]
-
-    disponiveis = [
-        (col, rotulo) for col, rotulo in indicadores_kpi
-        if col in df.columns
-    ]
-
-    if not disponiveis:
-        st.info("Nenhum dos indicadores principais está disponível na base.")
-        return
-
-    colunas_layout = st.columns(len(disponiveis))
-
-    for coluna_layout, (coluna, rotulo) in zip(colunas_layout, disponiveis):
-
-        valor_atual, valor_anterior, variacao = calcular_variacoes(df, coluna)
-
-        texto_valor = formatar_indicador(coluna, valor_atual)
-
-        if variacao is None:
-            texto_delta = None
-        else:
-            texto_delta = f"{variacao:+.2f}% vs. ano anterior"
-
-        with coluna_layout:
-
-            st.metric(
-                label=rotulo,
-                value=texto_valor,
-                delta=texto_delta,
-                delta_color="normal"
-            )
+        fig = px.bar(**parametros, barmode="group")
+    fig.update_traces(hovertemplate="%{customdata[1]}: %{customdata[0]}<extra></extra>")
+    return estilizar(fig, titulo, "%" if percentual else "Vezes" if razao else "R$ bilhões", tema)
 
 
-# ============================================================
-# GRÁFICO — DRE
-# ============================================================
+def criar_kpis(base: pd.DataFrame, ano: int) -> None:
+    """Quatro cards; percentuais variam em p.p., dinheiro em %, sempre contra ano−1."""
+    colunas = st.columns(4)
+    for container, nome in zip(colunas, ("receita_liquida", "lucro_liquido", "roe", "endividamento_geral")):
+        atual, anterior, relativo = calcular_variacoes(base, nome, ano)
+        delta = None
+        if np.isfinite(atual) and np.isfinite(anterior):
+            mudanca = atual - anterior if nome in config.PERCENTUAIS else relativo
+            if np.isfinite(mudanca):
+                unidade = "p.p." if nome in config.PERCENTUAIS else "%"
+                seta = "▲" if mudanca > 0 else "▼" if mudanca < 0 else "="
+                delta = f"{numero_br(mudanca)} {unidade} {seta} vs. {ano - 1}"
+        container.metric(
+            config.NOMES[nome],
+            formatar_indicador(nome, atual),
+            delta=delta,
+            delta_color="inverse" if nome == "endividamento_geral" else "normal",
+            help=config.FORMULAS[nome] + " Delta usa o ano calendário anterior, mesmo fora do filtro.",
+        )
 
-def criar_grafico_dre(df):
 
+def tabela_dados(df: pd.DataFrame) -> None:
+    """Tabela formatada como texto pt-BR e exportação numérica independente."""
     colunas = [
+        "ano_analise",
         "receita_liquida",
-        "lucro_bruto",
-        "resultado_operacional",
         "lucro_liquido",
+        "margem_bruta",
+        "margem_liquida",
+        "roe",
+        "liquidez_corrente",
+        "liquidez_seca",
+        "endividamento_geral",
     ]
-
-    existentes = [c for c in colunas if c in df.columns]
-
-    if not existentes:
-        st.info("Nenhuma conta da DRE disponível para exibição.")
-        return
-
-    dados = df[[COLUNA_ANO] + existentes].melt(
-        id_vars=COLUNA_ANO,
-        var_name="Indicador",
-        value_name="Valor"
-    )
-
-    dados["Indicador"] = dados["Indicador"].map(NOMES_INDICADORES)
-
-    fig = px.bar(
-        dados,
-        x=COLUNA_ANO,
-        y="Valor",
-        color="Indicador",
-        barmode="group",
-        title="Evolução das Principais Contas da DRE"
-    )
-
-    fig.update_layout(
-        template="plotly_white",
-        xaxis_title="Ano",
-        yaxis_title="Valor (R$)",
-        xaxis=dict(dtick=1)
-    )
-
-    st.plotly_chart(fig, width='stretch')
-
-
-def criar_grafico_crescimento(df):
-
-    colunas = [
-        "crescimento_receita_liquida",
-        "crescimento_lucro_liquido",
-    ]
-
-    existentes = [c for c in colunas if c in df.columns]
-
-    if not existentes:
-        st.info("Indicadores de crescimento não disponíveis na base.")
-        return
-
-    dados = df[[COLUNA_ANO] + existentes].melt(
-        id_vars=COLUNA_ANO,
-        var_name="Indicador",
-        value_name="Crescimento"
-    )
-
-    nomes = {
-        "crescimento_receita_liquida": "Crescimento da Receita",
-        "crescimento_lucro_liquido": "Crescimento do Lucro",
-    }
-
-    dados["Indicador"] = dados["Indicador"].map(nomes)
-
-    fig = px.bar(
-        dados,
-        x=COLUNA_ANO,
-        y="Crescimento",
-        color="Indicador",
-        barmode="group",
-        title="Crescimento Anual (%)"
-    )
-
-    fig.add_hline(y=0, line_dash="dash", line_color="gray")
-
-    fig.update_layout(
-        template="plotly_white",
-        yaxis_ticksuffix="%",
-        xaxis_title="Ano",
-        yaxis_title="Variação (%)",
-        xaxis=dict(dtick=1)
-    )
-
-    st.plotly_chart(fig, width='stretch')
-
-
-# ============================================================
-# GRÁFICO — MARGENS
-# ============================================================
-
-def criar_grafico_margens(df):
-
-    colunas = ["margem_bruta", "margem_operacional", "margem_liquida"]
-    existentes = [c for c in colunas if c in df.columns]
-
-    if not existentes:
-        st.info("Indicadores de margem não disponíveis na base.")
-        return
-
-    dados = df[[COLUNA_ANO] + existentes].melt(
-        id_vars=COLUNA_ANO,
-        var_name="Indicador",
-        value_name="Percentual"
-    )
-
-    dados["Indicador"] = dados["Indicador"].map(NOMES_INDICADORES)
-
-    fig = px.line(
-        dados,
-        x=COLUNA_ANO,
-        y="Percentual",
-        color="Indicador",
-        markers=True,
-        title="Evolução das Margens"
-    )
-
-    fig.update_layout(
-        template="plotly_white",
-        yaxis_ticksuffix="%",
-        xaxis_title="Ano",
-        yaxis_title="Percentual",
-        xaxis=dict(dtick=1)
-    )
-
-    st.plotly_chart(fig, width='stretch')
-
-
-# ============================================================
-# GRÁFICO — RENTABILIDADE
-# ============================================================
-
-def criar_grafico_rentabilidade(df):
-
-    colunas = ["roa", "roe"]
-    existentes = [c for c in colunas if c in df.columns]
-
-    if not existentes:
-        st.info("Indicadores de rentabilidade (ROA/ROE) não disponíveis.")
-        return
-
-    dados = df[[COLUNA_ANO] + existentes].melt(
-        id_vars=COLUNA_ANO,
-        var_name="Indicador",
-        value_name="Percentual"
-    )
-
-    dados["Indicador"] = dados["Indicador"].map(NOMES_INDICADORES)
-
-    fig = px.line(
-        dados,
-        x=COLUNA_ANO,
-        y="Percentual",
-        color="Indicador",
-        markers=True,
-        title="Retorno sobre Ativos (ROA) e sobre Patrimônio Líquido (ROE)"
-    )
-
-    fig.update_layout(
-        template="plotly_white",
-        yaxis_ticksuffix="%",
-        xaxis_title="Ano",
-        yaxis_title="Percentual",
-        xaxis=dict(dtick=1)
-    )
-
-    st.plotly_chart(fig, width='stretch')
-
-
-# ============================================================
-# GRÁFICO — LIQUIDEZ
-# ============================================================
-
-def criar_grafico_liquidez(df):
-
-    colunas = ["liquidez_corrente", "liquidez_seca"]
-    existentes = [c for c in colunas if c in df.columns and df[c].notna().any()]
-
-    if not existentes:
-        st.info("Indicadores de liquidez não disponíveis (ou totalmente vazios) na base.")
-        return
-
-    dados = df[[COLUNA_ANO] + existentes].melt(
-        id_vars=COLUNA_ANO,
-        var_name="Indicador",
-        value_name="Índice"
-    )
-
-    dados["Indicador"] = dados["Indicador"].map(NOMES_INDICADORES)
-
-    fig = px.line(
-        dados,
-        x=COLUNA_ANO,
-        y="Índice",
-        color="Indicador",
-        markers=True,
-        title="Indicadores de Liquidez"
-    )
-
-    fig.add_hline(
-        y=1,
-        line_dash="dash",
-        line_color="gray",
-        annotation_text="Referência = 1,0"
-    )
-
-    fig.update_layout(
-        template="plotly_white",
-        xaxis_title="Ano",
-        yaxis_title="Índice",
-        xaxis=dict(dtick=1)
-    )
-
-    st.plotly_chart(fig, width='stretch')
-
-
-# ============================================================
-# GRÁFICO — ENDIVIDAMENTO
-# ============================================================
-
-def criar_grafico_endividamento(df):
-
-    colunas = ["endividamento_geral", "capital_terceiros_patrimonio"]
-    existentes = [c for c in colunas if c in df.columns and df[c].notna().any()]
-
-    if not existentes:
-        st.info("Indicadores de endividamento não disponíveis na base.")
-        return
-
-    dados = df[[COLUNA_ANO] + existentes].melt(
-        id_vars=COLUNA_ANO,
-        var_name="Indicador",
-        value_name="Percentual"
-    )
-
-    dados["Indicador"] = dados["Indicador"].map(NOMES_INDICADORES)
-
-    fig = px.line(
-        dados,
-        x=COLUNA_ANO,
-        y="Percentual",
-        color="Indicador",
-        markers=True,
-        title="Indicadores de Endividamento"
-    )
-
-    fig.update_layout(
-        template="plotly_white",
-        yaxis_ticksuffix="%",
-        xaxis_title="Ano",
-        yaxis_title="Percentual",
-        xaxis=dict(dtick=1)
-    )
-
-    st.plotly_chart(fig, width='stretch')
-
-    if "divida_liquida" in df.columns and df["divida_liquida"].notna().any():
-
-        fig_divida = px.bar(
-            df,
-            x=COLUNA_ANO,
-            y="divida_liquida",
-            title="Dívida Líquida"
-        )
-
-        fig_divida.update_layout(
-            template="plotly_white",
-            xaxis_title="Ano",
-            yaxis_title="Valor (R$)",
-            xaxis=dict(dtick=1)
-        )
-
-        st.plotly_chart(fig_divida, width='stretch')
-
-
-# ============================================================
-# GRÁFICO — BALANÇO PATRIMONIAL
-# ============================================================
-
-def criar_grafico_balanco(df):
-
-    colunas = ["ativo_total", "passivo_total", "patrimonio_liquido"]
-    existentes = [c for c in colunas if c in df.columns and df[c].notna().any()]
-
-    if not existentes:
-        st.info("Contas patrimoniais não disponíveis na base.")
-        return
-
-    dados = df[[COLUNA_ANO] + existentes].melt(
-        id_vars=COLUNA_ANO,
-        var_name="Indicador",
-        value_name="Valor"
-    )
-
-    dados["Indicador"] = dados["Indicador"].map(NOMES_INDICADORES)
-
-    fig = px.bar(
-        dados,
-        x=COLUNA_ANO,
-        y="Valor",
-        color="Indicador",
-        barmode="group",
-        title="Evolução da Estrutura Patrimonial"
-    )
-
-    fig.update_layout(
-        template="plotly_white",
-        xaxis_title="Ano",
-        yaxis_title="Valor (R$)",
-        xaxis=dict(dtick=1)
-    )
-
-    st.plotly_chart(fig, width='stretch')
-
-    outras = ["ativo_circulante", "caixa_equivalentes", "passivo_circulante"]
-    outras_existentes = [c for c in outras if c in df.columns and df[c].notna().any()]
-
-    if outras_existentes:
-
-        dados2 = df[[COLUNA_ANO] + outras_existentes].melt(
-            id_vars=COLUNA_ANO,
-            var_name="Indicador",
-            value_name="Valor"
-        )
-
-        dados2["Indicador"] = dados2["Indicador"].map(NOMES_INDICADORES)
-
-        fig2 = px.line(
-            dados2,
-            x=COLUNA_ANO,
-            y="Valor",
-            color="Indicador",
-            markers=True,
-            title="Contas Complementares do Balanço"
-        )
-
-        fig2.update_layout(
-            template="plotly_white",
-            xaxis_title="Ano",
-            yaxis_title="Valor (R$)",
-            xaxis=dict(dtick=1)
-        )
-
-        st.plotly_chart(fig2, width='stretch')
-
-
-# ============================================================
-# TABELA FINANCEIRA
-# ============================================================
-
-def criar_tabela_financeira(df):
-
-    colunas_tabela = [
-        c for c in NOMES_INDICADORES
-        if c in df.columns and c not in (
-            "ativo_circulante", "caixa_equivalentes", "passivo_circulante",
-            "ativo_total", "passivo_total", "patrimonio_liquido",
-            "lucro_bruto", "resultado_operacional",
-            "divida_liquida", "divida_liquida_ebitda",
-        )
-    ]
-
-    if not colunas_tabela:
-        st.info("Não há indicadores suficientes para montar a tabela.")
-        return
-
-    tabela = df[[COLUNA_ANO] + colunas_tabela].copy()
-
-    tabela_formatada = tabela.copy()
-
-    for coluna in colunas_tabela:
-
-        tabela_formatada[coluna] = tabela[coluna].apply(
-            lambda v, c=coluna: formatar_indicador(c, v)
-        )
-
-    tabela_formatada = tabela_formatada.rename(
-        columns={COLUNA_ANO: "Ano", **NOMES_INDICADORES}
-    )
-
+    exibicao = pd.DataFrame({"Ano": df.ano_analise.astype(str)})
+    for nome in colunas[1:]:
+        exibicao[config.NOMES[nome]] = df[nome].map(lambda v, c=nome: formatar_indicador(c, v))
     st.dataframe(
-        tabela_formatada,
-        width='stretch',
-        hide_index=True
+        exibicao,
+        hide_index=True,
+        use_container_width=True,
+        column_config={"Ano": st.column_config.TextColumn("Exercício", width="small")},
     )
-
-    csv = tabela.rename(
-        columns={COLUNA_ANO: "ano", **NOMES_INDICADORES}
-    ).to_csv(index=False).encode("utf-8-sig")
-
     st.download_button(
-        label="⬇️ Baixar tabela de indicadores (CSV)",
-        data=csv,
-        file_name="tabela_indicadores_ambev.csv",
-        mime="text/csv"
+        "↓ Baixar dados selecionados",
+        data=exportar_csv(df),
+        file_name="ambev_indicadores.csv",
+        mime="text/csv",
+        help="Valores monetários em reais; percentuais na escala 0–100. CSV pt-BR.",
     )
 
 
-# ============================================================
-# INSIGHTS AUTOMÁTICOS
-# ============================================================
-
-def gerar_insights(df):
-    """
-    Gera interpretações descritivas simples, sem inferir causas.
-    Baseia-se apenas em comparações numéricas presentes na base.
-    """
-
-    insights = []
-
-    def maior_e_menor(coluna, rotulo, sufixo="%", inverte_melhor=False):
-
-        if coluna not in df.columns:
-            return
-
-        serie = df[[COLUNA_ANO, coluna]].dropna()
-
-        if serie.empty:
-            return
-
-        linha_max = serie.loc[serie[coluna].idxmax()]
-        linha_min = serie.loc[serie[coluna].idxmin()]
-
-        insights.append(
-            f"**Maior {rotulo}**: {int(linha_max[COLUNA_ANO])} "
-            f"({linha_max[coluna]:.2f}{sufixo})"
-        )
-
-        insights.append(
-            f"**Menor {rotulo}**: {int(linha_min[COLUNA_ANO])} "
-            f"({linha_min[coluna]:.2f}{sufixo})"
-        )
-
-    def maior_crescimento(coluna, rotulo):
-
-        if coluna not in df.columns:
-            return
-
-        serie = df[[COLUNA_ANO, coluna]].dropna()
-
-        if serie.empty:
-            return
-
-        linha = serie.loc[serie[coluna].idxmax()]
-
-        insights.append(
-            f"**Maior crescimento de {rotulo}**: {int(linha[COLUNA_ANO])} "
-            f"({linha[coluna]:+.2f}% em relação ao ano anterior)"
-        )
-
-    maior_crescimento("crescimento_receita_liquida", "receita")
-    maior_crescimento("crescimento_lucro_liquido", "lucro")
-
-    maior_e_menor("margem_liquida", "margem líquida")
-    maior_e_menor("roe", "ROE")
-    maior_e_menor("liquidez_corrente", "liquidez corrente", sufixo="")
-    maior_e_menor("endividamento_geral", "endividamento geral")
-
-    if not insights:
-        st.info(
-            "Não há dados suficientes na base para gerar insights automáticos."
-        )
-        return
-
-    for texto in insights:
-        st.markdown(f"- {texto}")
-
-
-# ============================================================
-# COMPARAÇÃO 2022 × 2025 (ou primeiro vs. último ano disponível)
-# ============================================================
-
-def criar_comparacao_periodo(df):
-
-    if df.empty or COLUNA_ANO not in df.columns:
-        st.info("Não há dados suficientes para a comparação entre períodos.")
-        return
-
-    anos_disponiveis = sorted(df[COLUNA_ANO].dropna().unique())
-
-    if len(anos_disponiveis) < 2:
-        st.info(
-            "É necessário ao menos dois anos selecionados para "
-            "comparar o início e o fim do período."
-        )
-        return
-
-    ano_inicial = anos_disponiveis[0]
-    ano_final = anos_disponiveis[-1]
-
-    st.caption(f"Comparação entre {int(ano_inicial)} e {int(ano_final)}")
-
-    colunas = [
-        "receita_liquida", "lucro_liquido", "margem_liquida",
-        "roe", "roa", "liquidez_corrente", "endividamento_geral",
+def cascata_dre(linha: pd.Series, tema: str) -> go.Figure:
+    """Ponte reconciliada até o lucro: despesas/receitas operacionais são agregadas, sem inventar aberturas."""
+    nomes = [
+        "Receita",
+        "Custos",
+        "Bruto",
+        "Operacionais",
+        "EBIT CVM",
+        "Financeiro",
+        "Tributos",
+        "Descontinuadas",
+        "Líquido",
     ]
-
-    linha_inicial = df[df[COLUNA_ANO] == ano_inicial].iloc[0]
-    linha_final = df[df[COLUNA_ANO] == ano_final].iloc[0]
-
-    registros = []
-
-    for coluna in colunas:
-
-        if coluna not in df.columns:
-            continue
-
-        valor_inicial = linha_inicial.get(coluna, np.nan)
-        valor_final = linha_final.get(coluna, np.nan)
-
-        if pd.isna(valor_inicial) or pd.isna(valor_final):
-            variacao_pct = np.nan
-        elif valor_inicial == 0:
-            variacao_pct = np.nan
-        else:
-            variacao_pct = (
-                (valor_final - valor_inicial) / abs(valor_inicial)
-            ) * 100
-
-        variacao_absoluta = (
-            valor_final - valor_inicial
-            if not (pd.isna(valor_inicial) or pd.isna(valor_final))
-            else np.nan
+    valores = [
+        linha.receita_liquida,
+        linha.custo_vendas,
+        linha.lucro_bruto,
+        linha.despesas_receitas_operacionais,
+        linha.resultado_operacional,
+        linha.resultado_financeiro,
+        linha.tributos_lucro,
+        linha.resultado_descontinuado,
+        linha.lucro_liquido,
+    ]
+    fig = go.Figure(
+        go.Waterfall(
+            x=nomes,
+            y=np.array(valores) / 1e9,
+            measure=[
+                "absolute",
+                "relative",
+                "total",
+                "relative",
+                "total",
+                "relative",
+                "relative",
+                "relative",
+                "total",
+            ],
+            customdata=[formatar_valor(v) for v in valores],
+            hovertemplate="%{x}: %{customdata}<extra></extra>",
+            increasing=dict(marker=dict(color=config.PALETA["positivo"])),
+            decreasing=dict(marker=dict(color=config.PALETA["negativo"])),
+            totals=dict(marker=dict(color=config.PALETA["primaria"])),
         )
-
-        registros.append({
-            "Indicador": NOMES_INDICADORES.get(coluna, coluna),
-            f"{int(ano_inicial)}": formatar_indicador(coluna, valor_inicial),
-            f"{int(ano_final)}": formatar_indicador(coluna, valor_final),
-            "Variação absoluta": formatar_indicador(coluna, variacao_absoluta),
-            "Variação (%)": formatar_percentual(variacao_pct),
-        })
-
-    if not registros:
-        st.info("Nenhum dos indicadores comparáveis está disponível na base.")
-        return
-
-    tabela_comparativa = pd.DataFrame(registros)
-
-    st.dataframe(
-        tabela_comparativa,
-        width='stretch',
-        hide_index=True
     )
+    return estilizar(fig, f"Da receita ao lucro · {int(linha.ano_analise)}", "R$ bilhões", tema)
 
 
-# ============================================================
-# EXECUÇÃO PRINCIPAL
-# ============================================================
-
-def main():
-
-    st.title("📊 Análise Financeira da Ambev")
+def sobre(metadados: dict) -> None:
+    """Metodologia e atribuição disponíveis dentro da aplicação publicada."""
+    st.subheader("Uma leitura dos números, com origem verificável")
+    st.write(
+        "Projeto Integrador III · Ciência de Dados · Fatec Cotia. Análise descritiva das DFPs consolidadas da Ambev, de 2022 a 2025."
+    )
     st.markdown(
-        "**Análise dos principais indicadores financeiros — 2022 a 2025**"
+        f"**Autores:** {', '.join(config.AUTORES)}.  \n**Licença do código:** {config.LICENCA}.  \n[Fonte CVM]({config.FONTE_CVM}) · [Código e documentação]({config.REPOSITORIO})"
     )
-
-    caminho = localizar_base()
-
-    if caminho is None:
-
-        st.error(
-            "A base de indicadores não foi encontrada em nenhum dos "
-            "caminhos esperados."
-        )
-
-        st.info(
-            "Execute primeiro as etapas anteriores do pipeline, na ordem:"
-        )
-
-        st.code(
-            "python code/02_tratamento_ambev.py\n"
-            "python code/03_analise_financeira.py"
-        )
-
-        st.caption(
-            "Caminhos verificados:\n" +
-            "\n".join(str(p) for p in ARQUIVOS_POSSIVEIS)
-        )
-
-        st.stop()
-
-    try:
-        df = carregar_dados(str(caminho))
-    except Exception as erro:
-        st.error(f"Não foi possível carregar a base de dados: {erro}")
-        st.stop()
-
-    if df.empty:
-        st.warning("A base de indicadores foi encontrada, mas está vazia.")
-        st.stop()
-
-    diagnostico = validar_dados(df)
-
-    if diagnostico.get("erro_critico"):
-        st.error(diagnostico["erro_critico"])
-        st.stop()
-
-    st.divider()
-
-    # --------------------------------------------------------
-    # SIDEBAR — FILTROS
-    # --------------------------------------------------------
-
-    st.sidebar.header("⚙️ Filtros")
-
-    anos_disponiveis = sorted(df[COLUNA_ANO].dropna().unique().tolist())
-
-    marcar_todos = st.sidebar.checkbox("Selecionar todos os anos", value=True)
-
-    if marcar_todos:
-        anos_selecionados = anos_disponiveis
-        st.sidebar.multiselect(
-            "Anos selecionados",
-            anos_disponiveis,
-            default=anos_disponiveis,
-            disabled=True
-        )
-    else:
-        anos_selecionados = st.sidebar.multiselect(
-            "Selecione os anos",
-            anos_disponiveis,
-            default=anos_disponiveis
-        )
-
-    if not anos_selecionados:
-        st.warning("Selecione pelo menos um ano na barra lateral.")
-        st.stop()
-
-    indicadores_disponiveis = [
-        c for c in NOMES_INDICADORES if c in df.columns
-    ]
-
-    indicadores_selecionados = st.sidebar.multiselect(
-        "Indicadores em destaque na tabela e nos insights",
-        options=indicadores_disponiveis,
-        default=indicadores_disponiveis,
-        format_func=lambda c: NOMES_INDICADORES.get(c, c)
+    st.markdown(
+        "**Método:** empresa por código CVM/CNPJ; demonstração consolidada; exercício ÚLTIMO; datas anuais e última versão da DFP; contas exatas; conversão de R$ mil para reais; validações contábeis antes da publicação."
     )
-
-    if diagnostico["anos_ausentes"]:
-
-        st.sidebar.warning(
-            "Anos ausentes na base: "
-            + ", ".join(str(a) for a in diagnostico["anos_ausentes"])
-        )
-
-    if diagnostico["indicadores_ausentes"]:
-
-        with st.sidebar.expander("Indicadores ausentes na base"):
-
-            for nome in diagnostico["indicadores_ausentes"]:
-                st.caption(f"- {NOMES_INDICADORES.get(nome, nome)}")
-
-    df_filtrado = df[df[COLUNA_ANO].isin(anos_selecionados)].copy()
-
-    colunas_manter = [COLUNA_ANO] + [
-        c for c in df_filtrado.columns
-        if c != COLUNA_ANO
-        and (c not in NOMES_INDICADORES or c in indicadores_selecionados)
-    ]
-
-    df_filtrado_indicadores = df_filtrado[colunas_manter].copy()
-
-    # --------------------------------------------------------
-    # KPIs
-    # --------------------------------------------------------
-
-    st.subheader("📌 Principais Indicadores")
-    criar_kpis(df_filtrado)
-
-    st.divider()
-
-    # --------------------------------------------------------
-    # ABAS
-    # --------------------------------------------------------
-
-    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
-        "📈 Resultados (DRE)",
-        "💰 Rentabilidade",
-        "🏦 Liquidez e Endividamento",
-        "🏛️ Balanço Patrimonial",
-        "📋 Tabela e Insights",
-        "🔁 2022 × 2025",
-    ])
-
-    with tab1:
-        st.subheader("Demonstração do Resultado (DRE)")
-        criar_grafico_dre(df_filtrado)
-
-        st.subheader("Crescimento Anual")
-        criar_grafico_crescimento(df_filtrado)
-
-    with tab2:
-        st.subheader("Margens")
-        criar_grafico_margens(df_filtrado)
-
-        st.subheader("Rentabilidade (ROA e ROE)")
-        criar_grafico_rentabilidade(df_filtrado)
-
-    with tab3:
-        st.subheader("Liquidez")
-        criar_grafico_liquidez(df_filtrado)
-
-        st.subheader("Endividamento")
-        criar_grafico_endividamento(df_filtrado)
-
-    with tab4:
-        st.subheader("Estrutura Patrimonial")
-        criar_grafico_balanco(df_filtrado)
-
-    with tab5:
-        col_tabela, col_insights = st.columns([2, 1])
-
-        with col_tabela:
-            st.subheader("Tabela de Indicadores por Ano")
-            criar_tabela_financeira(df_filtrado_indicadores)
-
-        with col_insights:
-            st.subheader("Principais Insights")
-            gerar_insights(df_filtrado)
-
-    with tab6:
-        st.subheader("Comparação entre Início e Fim do Período")
-        criar_comparacao_periodo(df_filtrado)
-
-    # --------------------------------------------------------
-    # RODAPÉ
-    # --------------------------------------------------------
-
-    st.divider()
-
+    st.dataframe(
+        pd.DataFrame(
+            [{"Indicador": config.NOMES.get(k, k), "Definição": v} for k, v in config.FORMULAS.items()]
+        ),
+        hide_index=True,
+        use_container_width=True,
+    )
+    st.info(
+        "EBIT CVM (3.05) inclui equivalência patrimonial. O EBIT do RI exclui esse resultado; diferenças de conceito e arredondamento estão reconciliadas em reports/validacao/conciliacao_ambev.csv."
+    )
+    st.markdown(
+        "**Limitações:** quatro observações anuais; valores nominais; ROA/ROE com saldos finais; sem previsão ou inferência causal. Dívida financeira e EBITDA normalizado não são extraídos, portanto dívida líquida/EBITDA é n/d. A liquidez seca desconta apenas estoques. Menor endividamento não significa, isoladamente, melhor desempenho."
+    )
     st.caption(
-        "Projeto Integrador III — Análise Financeira da Ambev | "
-        "Dados extraídos das Demonstrações Financeiras Padronizadas (DFP) "
-        "disponibilizadas pela CVM. Base consumida: "
-        f"`{caminho.relative_to(RAIZ_PROJETO)}`."
+        "Finalidade educacional. Não constitui recomendação de investimento. Nenhuma marca ou logotipo da companhia é utilizado."
     )
+    with st.expander("Rastreabilidade e atualização"):
+        st.json(metadados)
+
+
+def main() -> None:
+    """Carrega somente snapshots locais; erros esperados têm explicação sem traceback."""
+    st.markdown(
+        "<style>.block-container{padding-top:4.2rem;max-width:1500px} [data-testid='stMetricValue']{font-size:1.65rem} h1{letter-spacing:-.045em} [data-testid='stCaptionContainer']{line-height:1.5;color:inherit;opacity:.85} [data-testid='stMetricDelta']{color:inherit!important}</style>",
+        unsafe_allow_html=True,
+    )
+    try:
+        with st.spinner("Carregando demonstrações financeiras…"):
+            conteudo = (config.PASTA_DADOS_TRATADOS / "indicadores_financeiros_ambev.csv").read_bytes()
+            df = carregar_dados(conteudo)
+            metadados = json.loads(
+                (config.PASTA_DADOS_TRATADOS / "metadados.json").read_text(encoding="utf-8")
+            )
+            if (
+                hashlib.sha256(conteudo).hexdigest() != metadados.get("indicadores_sha256")
+                or metadados.get("status") != "validado"
+            ):
+                raise ErroValidacaoDados("Snapshot diverge dos metadados da última execução válida.")
+    except (OSError, ValueError, ErroValidacaoDados, pd.errors.ParserError):
+        log.exception("Snapshot indisponível ou inválido.")
+        st.error("Não foi possível abrir os dados validados do projeto.")
+        st.info(
+            "Confira os arquivos de indicadores e metadados. Para regenerá-los: python code/run_pipeline.py"
+        )
+        return
+    st.caption("PROJETO INTEGRADOR III  /  CIÊNCIA DE DADOS")
+    st.title("Ambev, em perspectiva.")
+    st.markdown("Demonstrações consolidadas · **2022–2025** · Dados abertos da CVM")
+    atualizado = pd.to_datetime(metadados.get("gerado_em_utc"), utc=True, errors="coerce")
+    st.caption(
+        f"Último exercício: 2025 · Snapshot gerado em {atualizado.strftime('%d/%m/%Y %H:%M UTC') if not pd.isna(atualizado) else 'data não disponível'} · Valores nominais em reais"
+    )
+    with st.sidebar:
+        st.subheader("Explorar a análise")
+        st.caption("AMBEV S.A. · CVM 23264")
+        if st.button("Limpar filtros", use_container_width=True):
+            st.session_state["anos"] = list(config.ANOS)
+            st.session_state["series"] = ["receita_liquida", "lucro_liquido", "resultado_operacional"]
+        anos = st.multiselect("Exercícios", config.ANOS, default=config.ANOS, key="anos")
+        st.caption("Demonstração: consolidada. O pipeline não mistura dados individuais.")
+        series = st.multiselect(
+            "Séries da DRE",
+            ["receita_liquida", "lucro_bruto", "resultado_operacional", "lucro_liquido"],
+            default=["receita_liquida", "lucro_liquido", "resultado_operacional"],
+            format_func=lambda c: config.NOMES[c],
+            key="series",
+        )
+        tema = st.selectbox(
+            "Contraste dos gráficos",
+            ["Escuro", "Claro"],
+            index=1 if st.get_option("theme.base") == "light" else 0,
+        )
+        st.divider()
+        st.caption(
+            "Filtro de anos afeta gráficos e exportação. O delta dos cards compara o último ano selecionado com o ano calendário anterior da base completa."
+        )
+        st.markdown(f"[Abrir repositório ↗]({config.REPOSITORIO})")
+    filtrado = df.loc[df.ano_analise.isin(anos)].copy()
+    if filtrado.empty:
+        st.info("Selecione ao menos um exercício na barra lateral.")
+        return
+    ultimo = int(filtrado.ano_analise.max())
+    criar_kpis(df, ultimo)
+    st.caption(
+        f"Cards referentes a {ultimo}. ▲/▼ indicam direção; interpretação exige contexto. Percentuais variam em pontos percentuais."
+    )
+    st.divider()
+    abas = st.tabs(
+        [
+            "Visão Geral",
+            "DRE",
+            "Rentabilidade",
+            "Liquidez e Endividamento",
+            "Balanço",
+            "Comparação de Períodos",
+            "Sobre",
+        ]
+    )
+    with abas[0]:
+        st.subheader("O desempenho ao longo do tempo")
+        if series:
+            mostrar(
+                grafico_series(filtrado, tuple(series), "Receita e resultados consolidados", tema), "geral"
+            )
+        else:
+            st.info("Selecione uma série da DRE na barra lateral.")
+        a, b = st.columns(2)
+        with a:
+            melhor = filtrado.loc[filtrado.margem_liquida.idxmax()]
+            st.markdown(
+                f"**Maior margem líquida no recorte**  \n{int(melhor.ano_analise)} · {formatar_percentual(melhor.margem_liquida)}"
+            )
+        with b:
+            atual, anterior, delta = calcular_variacoes(df, "receita_liquida", ultimo)
+            st.markdown(
+                f"**Receita de {ultimo}**  \n{formatar_valor(atual)} · {formatar_percentual(delta)} contra {ultimo - 1}"
+                if np.isfinite(delta)
+                else f"**Receita de {ultimo}**  \n{formatar_valor(atual)} · sem comparação anual disponível"
+            )
+        tabela_dados(filtrado)
+    with abas[1]:
+        mostrar(cascata_dre(filtrado.iloc[-1], tema), "cascata")
+        st.caption(
+            "Custos e despesas mantêm o sinal da DFP. Operacionais incluem equivalência patrimonial; subtotais não são somados duas vezes."
+        )
+        contas = ("custo_vendas", "lucro_bruto", "resultado_operacional", "lucro_liquido")
+        vertical = dados_grafico(filtrado, contas).copy()
+        receitas = filtrado.set_index("ano_analise").receita_liquida
+        vertical["percentual"] = vertical.valor / vertical.ano_analise.map(receitas) * 100
+        vertical["texto"] = vertical.percentual.map(formatar_percentual)
+        fig = px.bar(
+            vertical,
+            x="ano_analise",
+            y="percentual",
+            color="rotulo",
+            barmode="group",
+            color_discrete_sequence=[
+                config.PALETA[k] for k in ("neutro", "secundaria", "destaque", "positivo")
+            ],
+            custom_data=["texto", "rotulo"],
+        )
+        fig.update_traces(hovertemplate="%{customdata[1]}: %{customdata[0]}<extra></extra>")
+        mostrar(
+            estilizar(fig, "Análise vertical · contas em relação à receita", "% da receita líquida", tema),
+            "vertical",
+        )
+        st.caption(
+            "As contas se sobrepõem: lucro bruto, EBIT e lucro líquido não formam uma composição de 100%."
+        )
+    with abas[2]:
+        mostrar(
+            grafico_series(
+                filtrado,
+                ("margem_bruta", "margem_operacional", "margem_liquida"),
+                "Margens sobre a receita",
+                tema,
+                percentual=True,
+                linha=True,
+            ),
+            "margens",
+        )
+        mostrar(
+            grafico_series(
+                filtrado,
+                ("roa", "roe"),
+                "Retornos sobre saldos de encerramento",
+                tema,
+                percentual=True,
+                linha=True,
+            ),
+            "retornos",
+        )
+    with abas[3]:
+        fig = grafico_series(
+            filtrado,
+            ("liquidez_corrente", "liquidez_seca"),
+            "Cobertura do passivo circulante",
+            tema,
+            razao=True,
+        )
+        fig.add_hline(
+            y=1, line_dash="dot", line_color=config.PALETA["neutro"], annotation_text="Referência: 1,0 ×"
+        )
+        mostrar(fig, "liquidez")
+        mostrar(
+            grafico_series(
+                filtrado,
+                ("endividamento_geral", "capital_terceiros_patrimonio"),
+                "Estrutura de financiamento",
+                tema,
+                percentual=True,
+                linha=True,
+            ),
+            "endividamento",
+        )
+        st.info(
+            "Dívida líquida / EBITDA: n/d. O pipeline não extrai dívida financeira nem EBITDA normalizado; passivo exigível não é uma medida equivalente de dívida financeira."
+        )
+    with abas[4]:
+        dados = dados_grafico(
+            filtrado, ("passivo_circulante", "passivo_nao_circulante", "patrimonio_liquido")
+        ).copy()
+        dados["bilhoes"] = dados.valor / 1e9
+        fig = px.bar(
+            dados,
+            x="ano_analise",
+            y="bilhoes",
+            color="rotulo",
+            barmode="stack",
+            color_discrete_map={
+                config.NOMES[c]: config.PALETA[c]
+                for c in ("passivo_circulante", "passivo_nao_circulante", "patrimonio_liquido")
+            },
+            custom_data=["exibicao", "rotulo"],
+        )
+        fig.update_traces(hovertemplate="%{customdata[1]}: %{customdata[0]}<extra></extra>")
+        mostrar(estilizar(fig, "Como os ativos são financiados", "R$ bilhões", tema), "balanco")
+        st.caption(
+            "Passivo circulante + passivo não circulante + patrimônio líquido = ativo total. Identidade validada antes da geração do snapshot."
+        )
+    with abas[5]:
+        st.subheader("Variações e comparação entre extremos")
+        if len(filtrado) < 2:
+            st.info("Selecione pelo menos dois exercícios para comparar períodos.")
+        else:
+            inicio, fim = filtrado.iloc[0], filtrado.iloc[-1]
+            linhas = []
+            for c in ("receita_liquida", "lucro_liquido", "roe", "liquidez_corrente", "endividamento_geral"):
+                diferenca = fim[c] - inicio[c]
+                unidade = "p.p." if c in config.PERCENTUAIS else "×" if c in config.RAZOES else "R$"
+                linhas.append(
+                    {
+                        "Indicador": config.NOMES[c],
+                        str(int(inicio.ano_analise)): formatar_indicador(c, inicio[c]),
+                        str(int(fim.ano_analise)): formatar_indicador(c, fim[c]),
+                        "Variação absoluta": f"{numero_br(diferenca)} {unidade}"
+                        if unidade != "R$"
+                        else formatar_valor(diferenca),
+                    }
+                )
+            st.dataframe(pd.DataFrame(linhas), hide_index=True, use_container_width=True)
+            st.caption("Comparação entre extremos selecionados; não é crescimento anualizado.")
+        campo = st.selectbox(
+            "Conta para análise horizontal anual",
+            ["receita_liquida", "lucro_liquido", "lucro_bruto"],
+            format_func=lambda c: config.NOMES[c],
+        )
+        crescimento = f"crescimento_{campo}"
+        horizontal = filtrado[["ano_analise", crescimento]].dropna().copy()
+        if horizontal.empty:
+            st.info("Não há variação anual disponível para os anos selecionados.")
+        else:
+            horizontal["direcao"] = np.where(horizontal[crescimento] >= 0, "▲ Aumento", "▼ Redução")
+            horizontal["texto"] = horizontal[crescimento].map(formatar_percentual)
+            fig = px.bar(
+                horizontal,
+                x="ano_analise",
+                y=crescimento,
+                color="direcao",
+                text="texto",
+                custom_data=["texto"],
+                color_discrete_map={
+                    "▲ Aumento": config.PALETA["positivo"],
+                    "▼ Redução": config.PALETA["negativo"],
+                },
+            )
+            fig.update_traces(hovertemplate="Variação anual: %{customdata[0]}<extra></extra>")
+            mostrar(
+                estilizar(fig, config.NOMES[campo] + " · variação contra o ano anterior", "%", tema),
+                "horizontal",
+            )
+            st.caption(
+                "Base completa do calendário: ocultar um ano não altera a variação do seguinte. Base zero, ausente ou sem ano anterior gera n/d."
+            )
+    with abas[6]:
+        sobre(metadados)
+    st.divider()
+    st.caption(f"{' · '.join(config.AUTORES)} · 2026 · Licença MIT · Projeto Integrador III")
+    st.markdown(f"[Código-fonte e metodologia ↗]({config.REPOSITORIO})")
 
 
 if __name__ == "__main__":

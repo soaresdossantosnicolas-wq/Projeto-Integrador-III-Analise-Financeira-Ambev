@@ -1,317 +1,142 @@
+"""Coleta DFPs, verifica ZIP/ano e preserva todas as contas da empresa para auditoria."""
+
+import hashlib
+import json
 import logging
+import os
 import zipfile
+from datetime import datetime, timezone
+from pathlib import Path
 
 import pandas as pd
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 import config
+from cvm import filtrar_ambev, preparar_demonstrativo
+from excecoes import ErroColetaCVM
 
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(levelname)s | %(message)s"
-)
 log = logging.getLogger(__name__)
-
-
-ANOS = config.ANOS
 PASTA_DADOS = config.PASTA_DADOS_CVM
 PASTA_SAIDA = config.PASTA_SAIDA_ETAPA1
-COD_CVM_AMBEV = config.COD_CVM_AMBEV
-NOME_EMPRESA = config.NOME_EMPRESA
 
 
-# ============================================================
-# DOWNLOAD DOS ARQUIVOS DA CVM
-# ============================================================
-
-def baixar_dfp(ano):
-    """
-    Baixa o ZIP da DFP da CVM referente ao ano informado.
-    """
-
-    url = (
-        f"https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/"
-        f"DADOS/dfp_cia_aberta_{ano}.zip"
+def sessao_http() -> requests.Session:
+    """Repete apenas GETs transitórios, com espera crescente e timeout por tentativa."""
+    sessao = requests.Session()
+    retry = Retry(
+        total=3, backoff_factor=1, status_forcelist=[429, 500, 502, 503, 504], allowed_methods=["GET"]
     )
+    sessao.mount("https://", HTTPAdapter(max_retries=retry))
+    return sessao
 
-    caminho = PASTA_DADOS / f"dfp_cia_aberta_{ano}.zip"
 
-    if caminho.exists():
-        log.info("Arquivo %d já existe.", ano)
-        return caminho
-
-    log.info("Baixando DFP %d...", ano)
-
+def validar_zip(caminho: Path, ano: int) -> None:
+    """Rejeita cache corrompido e ZIP de outro ano antes de qualquer reutilização."""
     try:
-        resposta = requests.get(url, timeout=120)
-        resposta.raise_for_status()
+        with zipfile.ZipFile(caminho) as z:
+            nomes = set(z.namelist())
+            esperados = {f"dfp_cia_aberta_{tipo}_con_{ano}.csv" for tipo in config.GRUPOS_DFP}
+            if not esperados <= nomes:
+                raise ErroColetaCVM(f"ZIP {ano} não contém os três demonstrativos consolidados esperados.")
+            corrompido = z.testzip()
+            if corrompido:
+                raise ErroColetaCVM(f"CRC inválido em {corrompido}.")
+    except (zipfile.BadZipFile, OSError) as erro:
+        raise ErroColetaCVM(f"ZIP inválido: {caminho.name}. Remova o cache e repita a coleta.") from erro
 
-    except requests.RequestException as erro:
 
-        log.error("Falha ao baixar DFP %d: %s", ano, erro)
-        raise
-
-    caminho.write_bytes(resposta.content)
-
-    log.info("DFP %d baixada.", ano)
-
+def baixar_dfp(ano: int, *, offline: bool = False) -> Path:
+    """Baixa de forma atômica; um download parcial nunca substitui o cache válido."""
+    PASTA_DADOS.mkdir(parents=True, exist_ok=True)
+    caminho = PASTA_DADOS / f"dfp_cia_aberta_{ano}.zip"
+    if caminho.exists():
+        validar_zip(caminho, ano)
+        log.info("Cache verificado: %s", caminho.name)
+        return caminho
+    if offline:
+        raise ErroColetaCVM(f"Modo offline: falta {caminho.name}.")
+    temporario = caminho.with_suffix(".zip.part")
+    try:
+        with sessao_http() as sessao:
+            with sessao.get(config.URL_DFP.format(ano=ano), timeout=(15, 120), stream=True) as resposta:
+                resposta.raise_for_status()
+                with temporario.open("wb") as arquivo:
+                    for bloco in resposta.iter_content(chunk_size=1024 * 1024):
+                        arquivo.write(bloco)
+        validar_zip(temporario, ano)
+        os.replace(temporario, caminho)
+    except (requests.RequestException, OSError) as erro:
+        raise ErroColetaCVM(f"Falha no download da DFP {ano}: {erro}") from erro
+    finally:
+        temporario.unlink(missing_ok=True)
     return caminho
 
 
-# ============================================================
-# LEITURA DOS CSVs DENTRO DO ZIP
-# ============================================================
-
-def ler_csv_zip(caminho_zip, nome_arquivo):
-    """
-    Lê um CSV diretamente de dentro do ZIP.
-    """
-
-    with zipfile.ZipFile(caminho_zip) as z:
-
-        arquivos = z.namelist()
-
-        arquivo = next(
-            (
-                x for x in arquivos
-                if x.lower().endswith(nome_arquivo.lower())
-            ),
-            None
-        )
-
-        if arquivo is None:
-            raise FileNotFoundError(
-                f"{nome_arquivo} não encontrado no ZIP."
-            )
-
-        with z.open(arquivo) as f:
-
-            return pd.read_csv(
-                f, sep=";", encoding="latin1", low_memory=False,
-                dtype={"CD_CONTA": str}  # evita "3.10" virar 3.1
-            )
-
-
-# ============================================================
-# FILTRO DA AMBEV
-# ============================================================
-
-def filtrar_ambev(df):
-    """
-    Seleciona apenas registros da Ambev.
-    """
-
-    if "CD_CVM" in df.columns:
-
-        resultado = df[
-            pd.to_numeric(df["CD_CVM"], errors="coerce")
-            == COD_CVM_AMBEV
-        ].copy()
-
-    else:
-
-        resultado = df[
-            df["DENOM_CIA"]
-            .astype(str)
-            .str.contains("AMBEV", case=False, na=False)
-        ].copy()
-
-    return resultado
-
-
-# ============================================================
-# IDENTIFICAÇÃO DAS CONTAS
-# ============================================================
-#
-# Nesta etapa 1 mantemos a busca textual apenas para fins de
-# INSPEÇÃO/exportação bruta (é útil ver todas as contas que
-# contêm essas palavras, para conferência manual). A seleção
-# definitiva das contas usadas nos indicadores acontece na
-# Etapa 2, por CD_CONTA exato (ver config.CONTAS_DRE /
-# CONTAS_ATIVO / CONTAS_PASSIVO) — não por este texto livre.
-
-def procurar_contas(df, palavras):
-    """
-    Procura contas cujo nome contenha alguma das palavras.
-    Uso: inspeção/exportação bruta, não seleção de indicadores.
-    """
-
-    coluna = "DS_CONTA"
-
-    if coluna not in df.columns:
-        raise ValueError(f"A coluna {coluna} não foi encontrada.")
-
-    mascara = pd.Series(False, index=df.index)
-
-    for palavra in palavras:
-
-        mascara |= (
-            df[coluna]
-            .astype(str)
-            .str.contains(palavra, case=False, na=False)
-        )
-
-    return df[mascara].copy()
-
-
-# ============================================================
-# PROCESSAMENTO DA DRE
-# ============================================================
-
-def processar_dre(caminho_zip, ano):
-
-    log.info("[DRE] Processando %d...", ano)
-
-    df = ler_csv_zip(caminho_zip, f"dfp_cia_aberta_DRE_con_{ano}.csv")
-
-    df = filtrar_ambev(df)
-
-    if df.empty:
-        log.warning("Ambev não encontrada na DRE %d", ano)
-        return pd.DataFrame()
-
-    # CORREÇÃO: antes, a DRE era filtrada por palavras-chave em
-    # DS_CONTA ("Lucro Bruto", "Lucro", ...). A conta 3.03 se chama
-    # "Resultado Bruto" na DFP, então caía fora e Margem Bruta ficava
-    # NaN. Agora salvamos TODAS as contas da Ambev; a seleção dos
-    # indicadores é feita na Etapa 2, por CD_CONTA exato.
-    contas = df.copy()
-
-    contas.to_csv(
-        PASTA_SAIDA / f"ambev_dre_{ano}.csv",
-        index=False,
-        encoding="utf-8-sig"
-    )
-
-    return contas
-
-
-# ============================================================
-# PROCESSAMENTO DO BALANÇO
-# ============================================================
-
-def processar_balanco(caminho_zip, ano):
-
-    log.info("[BALANÇO] Processando %d...", ano)
-
-    ativo = ler_csv_zip(caminho_zip, f"dfp_cia_aberta_BPA_con_{ano}.csv")
-    passivo = ler_csv_zip(caminho_zip, f"dfp_cia_aberta_BPP_con_{ano}.csv")
-
-    ativo = filtrar_ambev(ativo)
-    passivo = filtrar_ambev(passivo)
-
-    ativo.to_csv(
-        PASTA_SAIDA / f"ambev_ativo_{ano}.csv",
-        index=False, encoding="utf-8-sig"
-    )
-
-    passivo.to_csv(
-        PASTA_SAIDA / f"ambev_passivo_{ano}.csv",
-        index=False, encoding="utf-8-sig"
-    )
-
-    return ativo, passivo
-
-
-# ============================================================
-# FLUXO DE CAIXA
-# ============================================================
-
-def processar_fluxo_caixa(caminho_zip, ano):
-
-    log.info("[DFC] Processando %d...", ano)
-
+def ler_csv_zip(caminho_zip: Path, nome_arquivo: str) -> pd.DataFrame:
+    """Lê o membro exato em Latin-1, separado por ponto e vírgula e com códigos textuais."""
     try:
+        with zipfile.ZipFile(caminho_zip) as z:
+            with z.open(nome_arquivo) as arquivo:
+                return pd.read_csv(
+                    arquivo,
+                    sep=";",
+                    encoding="latin1",
+                    low_memory=False,
+                    dtype={"CD_CONTA": str, "CNPJ_CIA": str},
+                )
+    except (KeyError, zipfile.BadZipFile, OSError, pd.errors.ParserError) as erro:
+        raise ErroColetaCVM(f"Não foi possível ler {nome_arquivo} em {caminho_zip.name}.") from erro
 
-        df = ler_csv_zip(
-            caminho_zip, f"dfp_cia_aberta_DFC_MI_con_{ano}.csv"
+
+def executar_coleta(*, offline: bool = False) -> None:
+    """Falha no primeiro ano inválido e só publica os CSVs após validar todos os anos."""
+    config.preparar_pastas()
+    preparados = []
+    manifesto = {"verificado_em_utc": datetime.now(timezone.utc).isoformat(), "fontes": []}
+    for ano in config.ANOS:
+        caminho = baixar_dfp(ano, offline=offline)
+        for tipo, nome in (("DRE", "dre"), ("BPA", "ativo"), ("BPP", "passivo")):
+            membro = f"dfp_cia_aberta_{tipo}_con_{ano}.csv"
+            bruto = filtrar_ambev(ler_csv_zip(caminho, membro))
+            validado = preparar_demonstrativo(bruto, ano, tipo)
+            preparados.append((f"ambev_{nome}_{ano}.csv", bruto))
+            log.info(
+                "%s/%d: %d contas atuais, versão %s, DT_REFER %s.",
+                tipo,
+                ano,
+                len(validado),
+                validado.VERSAO.iloc[0],
+                validado.DT_REFER.iloc[0],
+            )
+        with caminho.open("rb") as arquivo_zip:
+            sha256 = hashlib.file_digest(arquivo_zip, "sha256").hexdigest()
+        manifesto["fontes"].append(
+            {
+                "ano": ano,
+                "url": config.URL_DFP.format(ano=ano),
+                "arquivo": caminho.name,
+                "bytes": caminho.stat().st_size,
+                "sha256": sha256,
+            }
         )
-
-    except FileNotFoundError:
-
-        log.warning("Fluxo de caixa não encontrado para %d.", ano)
-        return pd.DataFrame()
-
-    df = filtrar_ambev(df)
-
-    df.to_csv(
-        PASTA_SAIDA / f"ambev_fluxo_caixa_{ano}.csv",
-        index=False, encoding="utf-8-sig"
+    for nome, bruto in preparados:
+        bruto.to_csv(PASTA_SAIDA / nome, index=False, encoding="utf-8-sig")
+    (PASTA_SAIDA / "manifesto_coleta.json").write_text(
+        json.dumps(manifesto, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
 
-    return df
 
+def main() -> None:
+    """Ponto de entrada da coleta individual."""
+    import argparse
 
-# ============================================================
-# EXECUÇÃO
-# ============================================================
-
-def main():
-
-    log.info("=" * 60)
-    log.info("ANÁLISE FINANCEIRA - AMBEV (Fonte: CVM - DFP)")
-    log.info("=" * 60)
-
-    todos_dre = []
-    todos_ativo = []
-    todos_passivo = []
-
-    for ano in ANOS:
-
-        try:
-
-            zip_path = baixar_dfp(ano)
-
-            dre = processar_dre(zip_path, ano)
-            ativo, passivo = processar_balanco(zip_path, ano)
-            processar_fluxo_caixa(zip_path, ano)
-
-            if not dre.empty:
-                dre["ANO_ANALISE"] = ano
-                todos_dre.append(dre)
-
-            if not ativo.empty:
-                ativo["ANO_ANALISE"] = ano
-                todos_ativo.append(ativo)
-
-            if not passivo.empty:
-                passivo["ANO_ANALISE"] = ano
-                todos_passivo.append(passivo)
-
-        except (requests.RequestException, FileNotFoundError,
-                zipfile.BadZipFile, ValueError) as erro:
-
-            # Exceções esperadas (rede, arquivo ausente, layout
-            # inesperado) são logadas e o pipeline segue para o
-            # próximo ano. Erros de programação (ex: NameError,
-            # KeyError por bug) NÃO são silenciados aqui — vão
-            # estourar normalmente, para não mascarar bugs.
-            log.error("Não foi possível processar %d: %s", ano, erro)
-
-    if todos_dre:
-        pd.concat(todos_dre, ignore_index=True).to_csv(
-            PASTA_SAIDA / "ambev_dre_2022_2025.csv",
-            index=False, encoding="utf-8-sig"
-        )
-
-    if todos_ativo:
-        pd.concat(todos_ativo, ignore_index=True).to_csv(
-            PASTA_SAIDA / "ambev_ativo_2022_2025.csv",
-            index=False, encoding="utf-8-sig"
-        )
-
-    if todos_passivo:
-        pd.concat(todos_passivo, ignore_index=True).to_csv(
-            PASTA_SAIDA / "ambev_passivo_2022_2025.csv",
-            index=False, encoding="utf-8-sig"
-        )
-
-    log.info("=" * 60)
-    log.info("PROCESSAMENTO FINALIZADO")
-    log.info("Dados brutos: %s", PASTA_DADOS)
-    log.info("Resultados:   %s", PASTA_SAIDA)
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--offline", action="store_true", help="exige todos os ZIPs no cache local")
+    executar_coleta(offline=parser.parse_args().offline)
 
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s | %(message)s")
     main()

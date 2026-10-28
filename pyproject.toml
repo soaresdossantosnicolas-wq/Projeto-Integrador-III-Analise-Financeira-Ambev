@@ -1,11 +1,30 @@
+[project]
+name = "ambev-analise-financeira"
+version = "1.0.0"
+description = "Projeto Integrador III: pipeline CVM e dashboard das DFPs consolidadas da Ambev"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = "MIT"
+authors = [
+    {name = "Arthur Almeida"},
+    {name = "Nicolas Soares"},
+    {name = "Pedro Barreto"},
+]
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.in"]}
+
+[tool.setuptools]
+py-modules = []
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-ra"
 
 [tool.ruff]
-target-version = "py310"
-line-length = 100
+target-version = "py312"
+line-length = 110
 
 [tool.ruff.lint]
-# Erros de sintaxe, nomes indefinidos e imports sem uso.
 select = ["E4", "E7", "E9", "F"]

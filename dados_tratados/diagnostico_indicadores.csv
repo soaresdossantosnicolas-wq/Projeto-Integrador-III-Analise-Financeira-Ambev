@@ -1,0 +1,14 @@
+﻿ano,indicador,motivo
+2022,divida_liquida,Dívida financeira e EBITDA normalizado não extraídos; indicador fora do escopo.
+2023,divida_liquida,Dívida financeira e EBITDA normalizado não extraídos; indicador fora do escopo.
+2024,divida_liquida,Dívida financeira e EBITDA normalizado não extraídos; indicador fora do escopo.
+2025,divida_liquida,Dívida financeira e EBITDA normalizado não extraídos; indicador fora do escopo.
+2022,divida_liquida_ebitda,Dívida financeira e EBITDA normalizado não extraídos; indicador fora do escopo.
+2023,divida_liquida_ebitda,Dívida financeira e EBITDA normalizado não extraídos; indicador fora do escopo.
+2024,divida_liquida_ebitda,Dívida financeira e EBITDA normalizado não extraídos; indicador fora do escopo.
+2025,divida_liquida_ebitda,Dívida financeira e EBITDA normalizado não extraídos; indicador fora do escopo.
+2022,crescimento_receita_liquida,"Sem par anual consecutivo válido, base zero ou valor ausente; sem preenchimento automático."
+2022,crescimento_lucro_liquido,"Sem par anual consecutivo válido, base zero ou valor ausente; sem preenchimento automático."
+2022,crescimento_lucro_bruto,"Sem par anual consecutivo válido, base zero ou valor ausente; sem preenchimento automático."
+2022,crescimento_ativo_total,"Sem par anual consecutivo válido, base zero ou valor ausente; sem preenchimento automático."
+2022,crescimento_patrimonio_liquido,"Sem par anual consecutivo válido, base zero ou valor ausente; sem preenchimento automático."
