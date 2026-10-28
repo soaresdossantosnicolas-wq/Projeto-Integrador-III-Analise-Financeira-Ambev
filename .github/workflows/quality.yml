@@ -31,6 +31,8 @@ jobs:
         run: python -m ruff check .
       - name: Testes sem coleta de rede
         run: python -m pytest
+      - name: Auditar saídas preditivas sem treinar
+        run: python scripts/validar_preditiva.py
       - name: Conciliação com referência oficial congelada
         run: python scripts/validar_referencia.py
 
@@ -67,5 +69,7 @@ jobs:
         if: always()
         with:
           name: dashboard-capturas
-          path: docs/images/
+          path: |
+            docs/images/
+            docs/img/
           if-no-files-found: warn

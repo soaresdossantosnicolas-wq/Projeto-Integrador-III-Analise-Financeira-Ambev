@@ -1,0 +1,8 @@
+{
+  "ano": 2019,
+  "indicador": "ativo_total",
+  "valor_milhoes": 101742.9,
+  "tolerancia_milhoes": 0.05,
+  "fonte": "https://www.sec.gov/Archives/edgar/data/1565025/000129281420000888/ambevsaform20f_2019.htm",
+  "motivo": "O painel resumido do RI diverge; a demonstração anual completa confirma a CVM na precisão publicada."
+}

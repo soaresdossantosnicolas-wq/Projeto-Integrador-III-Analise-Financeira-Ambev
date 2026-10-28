@@ -14,3 +14,7 @@ check:
 	$(PYTHON) -m ruff check .
 	$(PYTHON) -m pytest
 	$(PYTHON) scripts/validar_referencia.py
+
+.PHONY: projecoes
+projecoes:
+	$(PYTHON) code/05_modelagem_preditiva.py --preparar-dados

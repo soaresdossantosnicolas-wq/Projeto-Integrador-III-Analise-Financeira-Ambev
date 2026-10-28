@@ -17,3 +17,7 @@ A revisão não publicou um novo aplicativo e não confirmou uma URL pública ex
 Execute o pipeline localmente, confira os testes e a conciliação e publique juntos o CSV e os metadados correspondentes. Consulte [dados.md](dados.md). O validador não executa Git, não altera dependências e não faz push.
 
 Não adicione segredos a `.streamlit/config.toml`. Se integrações futuras exigirem credenciais, use os mecanismos de secrets do serviço; `.streamlit/secrets.toml` e `.env` são ignorados.
+
+## Camada preditiva
+
+Publique também `outputs/preditiva/` com CSVs e manifesto. A aba Projeções não baixa ITRs nem ajusta modelos no servidor. Reproduza localmente com `python code/05_modelagem_preditiva.py --offline`, usando as séries compactas versionadas.
