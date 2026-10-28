@@ -98,6 +98,16 @@ def grafico_projecao(historico: pd.DataFrame, previsto: pd.DataFrame, variavel: 
         legend=dict(orientation="h", y=-0.25),
         margin=dict(t=60, b=50, l=10, r=10),
     )
+    periodos = pd.to_datetime(pd.concat([hist.data, futuro.data], ignore_index=True))
+    trimestral = previsto.frequencia.iloc[0] == "trimestral"
+    rotulos = [f"{d.year}T{d.quarter}" if trimestral else str(d.year) for d in periodos]
+    fig.update_xaxes(
+        tickmode="array",
+        tickvals=periodos.tolist(),
+        ticktext=rotulos,
+        tickangle=-45 if trimestral else 0,
+        title="Trimestre" if trimestral else "Exercício",
+    )
     fig.update_yaxes(rangemode="tozero", gridcolor="rgba(133,147,169,.18)")
     fig.add_vline(
         x=pd.Timestamp(hist.data.iloc[-1]).timestamp() * 1000,
