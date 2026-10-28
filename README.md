@@ -52,11 +52,23 @@ A identidade **Executivo moderno** usa grafite, âmbar e tipografia Manrope com 
 
 ## Capturas do dashboard real
 
-![Visão geral em tema escuro](docs/img/depois/capa-escuro-desktop.png)
+**Antes**
 
-![DRE e análise vertical](docs/img/depois/escuro-desktop-02.png)
+![Visão Geral antes do redesign](docs/img/antes/visao-geral-escuro-desktop.webp)
 
-A [revisão de design](docs/design-dashboard.md) registra o diagnóstico e as duas direções propostas. As pastas `docs/img/antes/` e `docs/img/depois/` contêm as oito abas, em claro/escuro e desktop/celular, capturadas no aplicativo real. A execução do QA e seus limites estão documentados no relatório.
+**Depois**
+
+![Visão Geral depois do redesign](docs/img/depois/01-visao-geral-escuro-desktop.webp)
+
+Veja também a [Visão Geral clara](docs/img/depois/visao-geral-claro-desktop.webp), as versões para celular [escura](docs/img/depois/visao-geral-escuro-celular.webp) e [clara](docs/img/depois/visao-geral-claro-celular.webp), e a [DRE com análise vertical](docs/img/depois/02-dre.webp).
+
+A [revisão de design](docs/design-dashboard.md) registra o diagnóstico, as duas direções propostas e a validação. A seleção em `docs/img/` contém **13 WebP sem perdas, 1,40 MB no total**, todos abaixo de 300 KB. A matriz completa e os complementos ficam no ZIP **local e não versionado** `outputs/dashboard-capturas-completas-2026-10-28.zip` (10,21 MB). Os PNGs removidos da árvore atual permanecem nos commits anteriores, pois o histórico foi preservado.
+
+## Deploy no Streamlit Community Cloud
+
+Use este repositório, branch **`feat`**, entrada **`code/04_visualizacao.py`** e Python **3.12**. As dependências estão em `requirements.txt`; mantenha os snapshots locais, `assets/` e `.streamlit/config.toml` no checkout. A abertura do dashboard não exige baixar ZIPs da CVM, executar modelos ou configurar credenciais.
+
+As [instruções de deploy](docs/deploy.md) detalham a configuração. Não há URL pública de aplicativo confirmada: disponibilizar os commits no GitHub e publicar o aplicativo são etapas distintas. O envio desta revisão ao GitHub está pendente de DNS e autenticação SSH funcionais.
 
 ## Reproduzir o pipeline
 
@@ -183,9 +195,9 @@ Limitações: amostra pequena, revisões posteriores, choques macroeconômicos, 
 - [Diagnóstico, método, backtest, projeções e interpretação para apresentação](docs/analise-preditiva.md)
 - [Riscos e pendências a validar com o professor](docs/riscos-preditiva.md)
 - Resultados e premissas: `outputs/preditiva/`
-- [Captura anual](docs/img/projecoes-anual.png) e [captura trimestral](docs/img/projecoes-trimestral.png), geradas com o aplicativo real.
+- [Captura atual da aba Projeções](docs/img/depois/07-projecoes.webp). As capturas completas, incluindo as anteriores, estão preservadas no ZIP local descrito acima.
 
-![Projeções anuais com faixa exploratória](docs/img/projecoes-anual.png)
+![Projeções anuais com faixa exploratória](docs/img/depois/07-projecoes.webp)
 
 ## Testes e qualidade
 
