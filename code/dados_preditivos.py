@@ -163,6 +163,49 @@ def derivar_indicadores(df: pd.DataFrame, frequencia: str) -> pd.DataFrame:
     return df
 
 
+def validar_referencia_oficial(anual: pd.DataFrame) -> pd.DataFrame:
+    """Compara com referências primárias congeladas; única divergência conhecida exige a DFP completa."""
+    pasta = config.PASTA_PREDITIVA
+    referencias = pd.read_csv(pasta / "referencia_oficial.csv")
+    alternativa = json.loads((pasta / "referencia_alternativa.json").read_text())
+    dados = anual.set_index("ano")
+    linhas = []
+    for r in referencias.itertuples(index=False):
+        valor = float(dados.loc[r.ano, r.indicador])
+        if r.indicador == "resultado_operacional":
+            valor -= float(dados.loc[r.ano, "equivalencia_patrimonial"])
+        valor = valor if r.indicador == "roe" else valor / 1e6
+        diferenca = valor - r.publicado
+        tolerancia = 0.05 if r.indicador == "roe" else 0.5
+        linha = {
+            "ano": r.ano,
+            "indicador": r.indicador,
+            "publicado": r.publicado,
+            "cvm_comparavel": valor,
+            "diferenca": diferenca,
+            "tolerancia": tolerancia,
+            "status": "OK",
+            "url": r.url,
+        }
+        if abs(diferenca) > tolerancia:
+            if (r.ano, r.indicador) != (alternativa["ano"], alternativa["indicador"]):
+                raise ErroValidacaoDados(
+                    f"Divergência não justificada com publicação oficial: {r.ano}/{r.indicador}."
+                )
+            delta = valor - alternativa["valor_milhoes"]
+            if abs(delta) > alternativa["tolerancia_milhoes"]:
+                raise ErroValidacaoDados("Divergência também com a DFP completa de 2019.")
+            linha.update(
+                status="DIVERGENCIA_PAINEL_RI_CONFIRMADO_DFP",
+                fonte_alternativa=alternativa["fonte"],
+                valor_dfp_publicada_milhoes=alternativa["valor_milhoes"],
+                diferenca_dfp_publicada_milhoes=delta,
+                tolerancia_dfp_publicada_milhoes=alternativa["tolerancia_milhoes"],
+            )
+        linhas.append(linha)
+    return pd.DataFrame(linhas)
+
+
 def preparar_series(*, offline: bool = False) -> dict:
     """Audita todo o histórico baixado; modelagem principal começa em 2019 por comparabilidade."""
     pasta = config.PASTA_PREDITIVA
@@ -271,6 +314,7 @@ def preparar_series(*, offline: bool = False) -> dict:
         np.testing.assert_allclose(comparavel[campo], antigo[campo], rtol=1e-12, atol=0.01)
     main_anual = anual.loc[anual.ano >= config.PREDITIVA_ANO_INICIAL].copy()
     main_tri = derivar_indicadores(tri.loc[tri.ano >= config.PREDITIVA_ANO_INICIAL].copy(), "trimestral")
+    validar_referencia_oficial(main_anual).to_csv(pasta / "validacao_oficial_ampliada.csv", index=False)
     main_anual.to_csv(pasta / "historico_anual.csv", index=False)
     main_tri.to_csv(pasta / "historico_trimestral.csv", index=False)
     diagnostico = {

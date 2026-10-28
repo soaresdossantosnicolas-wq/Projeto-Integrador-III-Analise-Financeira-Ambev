@@ -191,3 +191,5 @@ PREDITIVA_ROTULOS_MODELOS = {
     "holt_winters": "Holt-Winters aditivo",
     "direcionadores": "Direcionadores históricos",
 }
+PREDITIVA_MIN_MODELOS = {"holt": 8, "holt_winters": 16, "tendencia_sazonal": 8}
+PREDITIVA_MIN_ERROS_SELECAO = 5  # política conservadora, não limiar universal de validade estatística
