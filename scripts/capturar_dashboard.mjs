@@ -16,11 +16,15 @@ try {
   await pagina.getByRole('tab', { name: 'Projeções', exact: true }).click();
   await pagina.getByRole('heading', { name: 'Projeções exploratórias, com limites explícitos' }).scrollIntoViewIfNeeded();
   await fs.mkdir('docs/img', { recursive: true });
+  await pagina.locator('[data-testid="stPlotlyChart"]:visible').scrollIntoViewIfNeeded();
+  await pagina.waitForTimeout(500);
   await pagina.screenshot({ path: 'docs/img/projecoes-anual.png', fullPage: true });
   await pagina.getByLabel('Frequência das projeções').click();
   await pagina.getByRole('option', { name: 'Trimestral · 2026T1–T4', exact: true }).click();
   await pagina.getByText('28 trimestres comparáveis;', { exact: false }).waitFor();
   await pagina.getByRole('heading', { name: 'Projeções exploratórias, com limites explícitos' }).scrollIntoViewIfNeeded();
+  await pagina.locator('[data-testid="stPlotlyChart"]:visible').scrollIntoViewIfNeeded();
+  await pagina.waitForTimeout(500);
   await pagina.screenshot({ path: 'docs/img/projecoes-trimestral.png', fullPage: true });
   await pagina.getByRole('tab', { name: 'Sobre', exact: true }).click();
   for (const nome of ['Arthur Almeida', 'Nicolas Soares', 'Pedro Barreto']) {
