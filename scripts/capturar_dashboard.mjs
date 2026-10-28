@@ -19,6 +19,8 @@ try {
   await pagina.locator('[data-testid="stPlotlyChart"]:visible').scrollIntoViewIfNeeded();
   await pagina.waitForTimeout(500);
   await pagina.screenshot({ path: 'docs/img/projecoes-anual.png', fullPage: true });
+  await pagina.getByRole('heading', { name: 'Projeções exploratórias, com limites explícitos' }).scrollIntoViewIfNeeded();
+  await pagina.waitForTimeout(500);
   await pagina.getByLabel('Frequência das projeções').click();
   await pagina.getByRole('option', { name: 'Trimestral · 2026T1–T4', exact: true }).click();
   await pagina.getByText('28 trimestres comparáveis;', { exact: false }).waitFor();
