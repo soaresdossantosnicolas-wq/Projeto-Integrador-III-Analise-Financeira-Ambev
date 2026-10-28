@@ -172,7 +172,9 @@ Limitações: amostra pequena, revisões posteriores, choques macroeconômicos, 
 - [Diagnóstico, método, backtest, projeções e interpretação para apresentação](docs/analise-preditiva.md)
 - [Riscos e pendências a validar com o professor](docs/riscos-preditiva.md)
 - Resultados e premissas: `outputs/preditiva/`
-- Capturas reais: `docs/img/`
+- [Captura anual](docs/img/projecoes-anual.png) e [captura trimestral](docs/img/projecoes-trimestral.png), geradas com o aplicativo real.
+
+![Projeções anuais com faixa exploratória](docs/img/projecoes-anual.png)
 
 ## Testes e qualidade
 
