@@ -117,8 +117,11 @@ def test_contraste_paleta_grafica_em_ambos_fundos():
         return (maior + 0.05) / (menor + 0.05)
 
     for cor in set(config.PALETA.values()):
-        for fundo in ["#0B1220", "#F7F9FC"]:
+        for fundo in ["#0B1220", "#F7F9FC", *[t["fundo"] for t in config.TEMAS_DASHBOARD.values()]]:
             assert contraste(cor, fundo) >= 3  # elementos gráficos não textuais
+    for tema in config.TEMAS_DASHBOARD.values():
+        for token in ["texto", "muted", "acento"]:
+            assert contraste(tema[token], tema["fundo"]) >= 4.5
     assert contraste("#E5EDF8", "#0B1220") >= 4.5
     assert contraste("#17253C", "#F7F9FC") >= 4.5
 
