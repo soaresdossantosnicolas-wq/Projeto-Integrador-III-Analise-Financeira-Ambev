@@ -12,7 +12,7 @@ import pandas as pd
 from statsmodels.stats.diagnostic import acorr_ljungbox
 
 import config
-from dados_preditivos import preparar_series, validar_referencia_oficial
+from dados_preditivos import preparar_series, validar_entradas_modelagem, validar_referencia_oficial
 from excecoes import ErroValidacaoDados
 from modelos_preditivos import (
     ALVOS,
@@ -501,6 +501,7 @@ def main() -> None:
     for f, df in historicos.items():
         if df.data.max() > pd.Timestamp(config.PREDITIVA_DATA_CORTE):
             raise ErroValidacaoDados("Informação posterior ao corte declarado.")
+    validar_entradas_modelagem(historicos, pd.read_csv(original))
     validar_referencia_oficial(historicos["anual"])
     preds, falhas, plausibilidade = [], [], []
     for f, df in historicos.items():

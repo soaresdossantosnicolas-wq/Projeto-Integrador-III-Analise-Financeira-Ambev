@@ -175,6 +175,8 @@ def validar_referencia_oficial(anual: pd.DataFrame) -> pd.DataFrame:
         if r.indicador == "resultado_operacional":
             valor -= float(dados.loc[r.ano, "equivalencia_patrimonial"])
         valor = valor if r.indicador == "roe" else valor / 1e6
+        if not np.isfinite([valor, r.publicado]).all():
+            raise ErroValidacaoDados(f"Referência oficial não finita: {r.ano}/{r.indicador}.")
         diferenca = valor - r.publicado
         tolerancia = 0.05 if r.indicador == "roe" else 0.5
         linha = {
@@ -204,6 +206,49 @@ def validar_referencia_oficial(anual: pd.DataFrame) -> pd.DataFrame:
             )
         linhas.append(linha)
     return pd.DataFrame(linhas)
+
+
+def validar_entradas_modelagem(historicos: dict[str, pd.DataFrame], estagio3: pd.DataFrame) -> None:
+    """Reconcilia CSVs antes do treino, inclusive na execução offline sem reconstrução dos ZIPs."""
+    contas = list(dict.fromkeys(nome for mapa in MAPAS.values() for nome in mapa))
+    for frequencia, df in historicos.items():
+        faltantes = set(contas + ["data"]) - set(df)
+        if faltantes:
+            raise ErroValidacaoDados(f"Histórico {frequencia}: contas ausentes {sorted(faltantes)}.")
+        if not np.isfinite(df[contas].to_numpy(dtype=float)).all():
+            raise ErroValidacaoDados(f"Histórico {frequencia}: conta não finita.")
+        for _, linha in df.iterrows():
+            conferir_identidades(linha)
+        recalculado = derivar_indicadores(df, frequencia)
+        for campo in config.PREDITIVA_INDICADORES + ["passivo_exigivel"]:
+            if campo not in df or not np.allclose(
+                df[campo], recalculado[campo], rtol=1e-10, atol=1e-8, equal_nan=True
+            ):
+                raise ErroValidacaoDados(f"Indicador inconsistente em {frequencia}: {campo}.")
+
+    anual = historicos["anual"].copy()
+    trimestral = historicos["trimestral"].copy()
+    anual.index = pd.to_datetime(anual.data).dt.year
+    trimestral["ano_conferencia"] = pd.to_datetime(trimestral.data).dt.year
+    grupos = trimestral.groupby("ano_conferencia")
+    if set(anual.index) != set(grupos.groups) or not grupos.size().eq(4).all():
+        raise ErroValidacaoDados("Séries anual e trimestral não cobrem os mesmos exercícios completos.")
+    for campo in FLUXOS:
+        if not np.allclose(grupos[campo].sum(), anual.sort_index()[campo], rtol=1e-12, atol=0.01):
+            raise ErroValidacaoDados(f"Soma trimestral diverge do anual: {campo}.")
+    encerramento = trimestral.sort_values("data").groupby("ano_conferencia").tail(1)
+    encerramento = encerramento.set_index("ano_conferencia").sort_index()
+    for campo in list(config.CONTAS_ATIVO) + list(config.CONTAS_PASSIVO):
+        if not np.allclose(encerramento[campo], anual.sort_index()[campo], rtol=1e-12, atol=0.01):
+            raise ErroValidacaoDados(f"Balanço do quarto trimestre diverge do anual: {campo}.")
+    for linha in estagio3.itertuples(index=False):
+        if linha.ano_analise not in anual.index:
+            raise ErroValidacaoDados(f"Ano do estágio 3 ausente: {linha.ano_analise}.")
+        for campo in contas + config.PREDITIVA_INDICADORES:
+            if not hasattr(linha, campo) or not np.isclose(
+                getattr(linha, campo), anual.loc[linha.ano_analise, campo], rtol=1e-12, atol=0.01
+            ):
+                raise ErroValidacaoDados(f"Divergência com estágio 3: {linha.ano_analise}/{campo}.")
 
 
 def preparar_series(*, offline: bool = False) -> dict:

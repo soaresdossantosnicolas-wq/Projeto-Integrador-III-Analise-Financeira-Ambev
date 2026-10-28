@@ -8,7 +8,14 @@ import pandas as pd
 import pytest
 
 import config
-from dados_preditivos import derivar_indicadores, desagregar_trimestres, preparar_itr
+from dados_preditivos import (
+    FLUXOS,
+    derivar_indicadores,
+    desagregar_trimestres,
+    preparar_itr,
+    validar_entradas_modelagem,
+    validar_referencia_oficial,
+)
 from excecoes import ErroValidacaoDados
 from modelos_preditivos import (
     aplicar_cenario,
@@ -54,6 +61,75 @@ def sintetico(n=28, frequencia="trimestral"):
         }
     )
     return derivar_indicadores(df, frequencia)
+
+
+@pytest.fixture
+def entradas_conciliadas():
+    """Duas DFPs e oito ITRs sintéticos com todas as contas do contrato."""
+    q = sintetico(8)
+    q["lucro_bruto"] = q.receita_liquida * 0.5
+    q["custo_vendas"] = q.lucro_bruto - q.receita_liquida
+    q["despesas_receitas_operacionais"] = q.resultado_operacional - q.lucro_bruto
+    q["resultado_financeiro"] = 0.0
+    q["resultado_antes_tributos"] = q.resultado_operacional
+    q["tributos_lucro"] = q.lucro_liquido - q.resultado_operacional
+    q["resultado_continuado"] = q.lucro_liquido
+    q["resultado_descontinuado"] = 0.0
+    q["equivalencia_patrimonial"] = 0.0
+    q["caixa_equivalentes"] = q.ativo_circulante * 0.2
+    q["estoques"] = q.ativo_circulante * 0.3
+    q["passivo_total"] = q.ativo_total
+    q["ano"] = q.data.dt.year
+    a = q.groupby("ano").tail(1).copy().set_index("ano")
+    a[FLUXOS] = q.groupby("ano")[FLUXOS].sum()
+    a = derivar_indicadores(a.reset_index(), "anual")
+    h = {"anual": a, "trimestral": q}
+    return h, a.rename(columns={"ano": "ano_analise"}).copy()
+
+
+def test_entradas_offline_reconciliadas(entradas_conciliadas):
+    validar_entradas_modelagem(*entradas_conciliadas)
+
+
+@pytest.mark.parametrize("campo", config.PREDITIVA_INDICADORES)
+def test_indicador_csv_inconsistente_interrompe_antes_do_treino(entradas_conciliadas, campo):
+    historicos, estagio3 = entradas_conciliadas
+    historicos["trimestral"].loc[7, campo] += 1
+    with pytest.raises(ErroValidacaoDados, match="Indicador inconsistente"):
+        validar_entradas_modelagem(historicos, estagio3)
+
+
+def test_soma_itr_divergente_e_estagio3_preservado(entradas_conciliadas):
+    historicos, estagio3 = entradas_conciliadas
+    q = historicos["trimestral"].copy()
+    # A DRE permanece internamente coerente; a divergência aparece na conciliação DFP/ITR.
+    q.loc[0, ["receita_liquida", "lucro_bruto"]] += 10
+    q.loc[0, "despesas_receitas_operacionais"] -= 10
+    historicos["trimestral"] = derivar_indicadores(q, "trimestral")
+    with pytest.raises(ErroValidacaoDados, match="Soma trimestral"):
+        validar_entradas_modelagem(historicos, estagio3)
+
+
+def test_estagio3_divergente_interrompe(entradas_conciliadas):
+    historicos, estagio3 = entradas_conciliadas
+    estagio3.loc[estagio3.index[0], "estoques"] += 100
+    with pytest.raises(ErroValidacaoDados, match="Divergência com estágio 3"):
+        validar_entradas_modelagem(historicos, estagio3)
+
+
+def test_balanco_q4_nao_pode_divergir_da_dfp(entradas_conciliadas):
+    historicos, estagio3 = entradas_conciliadas
+    historicos["trimestral"].loc[3, "estoques"] += 100
+    with pytest.raises(ErroValidacaoDados, match="Balanço do quarto trimestre"):
+        validar_entradas_modelagem(historicos, estagio3)
+
+
+def test_referencia_oficial_nan_nao_passa_por_comparacao():
+    # A verificação deve rejeitar NaN, pois abs(NaN) > tolerância retorna False.
+    anual = pd.read_csv(config.PASTA_PREDITIVA / "historico_anual.csv")
+    anual.loc[anual.ano.eq(2019), "receita_liquida"] = np.nan
+    with pytest.raises(ErroValidacaoDados, match="não finita"):
+        validar_referencia_oficial(anual)
 
 
 def test_tendencia_conhecida_e_baselines():
