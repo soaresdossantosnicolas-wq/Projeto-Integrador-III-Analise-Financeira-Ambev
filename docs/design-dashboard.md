@@ -113,3 +113,28 @@ A branch remota foi conferida por leitura e continua em `45e8907`, anterior ao r
 O envio agora usa o remoto SSH. As tentativas em `github.com` e `ssh.github.com:443` falharam na resolução de nomes deste ambiente; o agente SSH também não estava disponível. Não houve uso do conector para publicar blobs ou binários nesta revisão, nem push na `main`.
 
 Para concluir de uma máquina com DNS e autenticação SSH funcionais, execute `git fetch origin feat` e `git push origin feat`. Não use `--force`. Se a branch remota avançar antes do envio, confira as alterações e integre-as preservando o histórico.
+
+
+### Verificação final desta revisão
+
+```text
+88 passed in 18.85s
+All checks passed!
+README: 18 alvos locais verificados; 3 imagens locais; 0 links quebrados.
+SHA-256: 30/30 arquivos históricos/preditivos idênticos ao início.
+Dashboard: inicializado e renderizado; 0 exceções Streamlit; 0 erros JavaScript.
+Console do Streamlit: sem ERROR ou Traceback.
+```
+
+A árvore de trabalho foi mantida limpa. O envio SSH permanece pendente: a condição `git log origin/feat..HEAD` vazio não foi atendida. O pacote Git estimado, com o histórico local preservado, tem aproximadamente **11,44 MB**, apesar de a seleção atual de imagens ocupar 1,40 MB.
+
+Foi preparado o bundle local e ignorado `outputs/dashboard-feat-pendente.bundle`, para transferir os commits sem conector e sem credenciais embutidas. Em uma cópia do repositório que tenha os commits da branch remota atual, importe-o preservando a história:
+
+```bash
+git fetch /caminho/dashboard-feat-pendente.bundle feat
+git switch feat
+git merge --ff-only FETCH_HEAD
+git push origin feat
+```
+
+Se o avanço rápido falhar, pare e confira a divergência antes de integrar. Não use `--force`. O bundle não publica nada por conta própria.

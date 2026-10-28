@@ -42,3 +42,6 @@ package-lock.json
 # Capturas completas e pacotes locais de QA visual
 /outputs/qa-visual/
 /outputs/dashboard-capturas-*.zip
+
+# Transferência local dos commits pendentes, sem credenciais
+/outputs/*.bundle

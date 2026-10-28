@@ -157,5 +157,18 @@
   "bytes_zip_local": 10205379,
   "historico_reescrito": false,
   "publicacao_git": "pendente: SSH bloqueado por falha de resolução de nomes no ambiente",
-  "remoto_feat_confirmado": "45e8907c1e90a9fe8ea001f39e6666908d38c770"
+  "remoto_feat_confirmado": "45e8907c1e90a9fe8ea001f39e6666908d38c770",
+  "verificacao_final_publicacao": {
+    "pytest": "88 passed in 18.85s",
+    "ruff": "All checks passed!",
+    "hashes_iguais": 30,
+    "alvos_readme_verificados": 18,
+    "links_locais_quebrados": 0,
+    "excecoes_streamlit": 0,
+    "erros_javascript": 0,
+    "console_streamlit": "sem ERROR ou Traceback",
+    "publicado": false,
+    "motivo": "git push SSH não consegue resolver github.com neste ambiente",
+    "bundle_local": "outputs/dashboard-feat-pendente.bundle"
+  }
 }
