@@ -283,7 +283,7 @@ def tabela_executiva(df: pd.DataFrame, unidade: str, tema: str = "Escuro") -> No
         width="stretch",
         row_height=44,
         column_config={
-            "Indicador": st.column_config.TextColumn(pinned=True, width="large"),
+            "Indicador": st.column_config.TextColumn(pinned=True, width="medium"),
             "Último / maior": st.column_config.ProgressColumn(
                 "Último / maior (%)",
                 min_value=0,
@@ -353,7 +353,7 @@ def comparar(base: pd.DataFrame, filtrado: pd.DataFrame, tema: str) -> None:
         pd.DataFrame(linhas),
         hide_index=True,
         width="stretch",
-        column_config={"Indicador": st.column_config.TextColumn(pinned=True, width="large")},
+        column_config={"Indicador": st.column_config.TextColumn(pinned=True, width="medium")},
     )
     campos = ["receita_liquida", "resultado_operacional", "lucro_liquido"]
     variacoes = [

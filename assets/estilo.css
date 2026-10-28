@@ -50,3 +50,4 @@ hr {border-color:var(--borda);opacity:.6;}
 [role="tab"][aria-selected="true"]{color:var(--acento)!important;background:var(--elevado)!important;}
 button[aria-pressed="true"]{color:var(--acento)!important;border-color:var(--acento)!important;}
 .js-plotly-plot text{font-variant-numeric:tabular-nums;}
+@media(max-width:760px){[data-testid="stMetric"]{padding:.65rem .6rem!important;}[data-testid="stMetricValue"]{font-size:1.15rem!important;letter-spacing:-.05em!important;}[data-testid="stMetricDelta"]{font-size:.65rem!important;}}
