@@ -35,3 +35,6 @@ Thumbs.db
 # QA visual opcional
 node_modules/
 package-lock.json
+
+# ZIPs usados exclusivamente na ampliação da série preditiva
+/dados_modelagem/

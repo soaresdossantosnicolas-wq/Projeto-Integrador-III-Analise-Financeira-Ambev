@@ -139,3 +139,55 @@ GRUPOS_DFP = {
     "BPA": "DF Consolidado - Balanço Patrimonial Ativo",
     "BPP": "DF Consolidado - Balanço Patrimonial Passivo",
 }
+
+# Modelagem: origem temporal fixa; nunca incorporar ITRs de 2026 nesta execução retrospectiva.
+PASTA_DADOS_MODELAGEM = RAIZ_PROJETO / "dados_modelagem"
+PASTA_PREDITIVA = RAIZ_PROJETO / "outputs" / "preditiva"
+PREDITIVA_ANOS_COLETA = list(range(2015, 2026))
+PREDITIVA_ANO_INICIAL = 2019  # pós-adoção IAS 29/IFRS 15 e IFRS 16; ver diagnóstico
+PREDITIVA_DATA_CORTE = "2025-12-31"
+PREDITIVA_MIN_TREINO = {"anual": 3, "trimestral": 16}
+PREDITIVA_FINAL_ANOS = {"anual": 2, "trimestral": 1}
+PREDITIVA_HORIZONTES = {"anual": 2, "trimestral": 4}
+PREDITIVA_SEMENTE = 42
+PREDITIVA_SIMULACOES = 1000
+PREDITIVA_QUANTIS_FAIXA = (0.10, 0.90)
+PREDITIVA_CENARIOS = {"pessimista": 0.25, "base": 0.50, "otimista": 0.75}
+# Quantis são decisões de desenho; valores econômicos são calculados exclusivamente no treino.
+# Sem overrides econômicos por padrão. Cada override exige uma justificativa do grupo/professor.
+PREDITIVA_OVERRIDES = {}
+PREDITIVA_MODELOS = {
+    "anual": ["ingenuo", "media_movel", "drift", "crescimento_medio", "tendencia", "direcionadores"],
+    "trimestral": [
+        "ingenuo",
+        "ingenuo_sazonal",
+        "media_movel",
+        "drift",
+        "crescimento_medio",
+        "tendencia",
+        "tendencia_sazonal",
+        "holt",
+        "holt_winters",
+        "direcionadores",
+    ],
+}
+PREDITIVA_ALVOS = ["receita_liquida", "resultado_operacional", "lucro_liquido"]
+PREDITIVA_INDICADORES = [
+    "margem_operacional",
+    "margem_liquida",
+    "liquidez_corrente",
+    "endividamento_geral",
+    "roe",
+]
+PREDITIVA_ROTULOS_MODELOS = {
+    "ingenuo": "Ingênuo — último valor",
+    "ingenuo_sazonal": "Ingênuo sazonal",
+    "media_movel": "Média móvel",
+    "drift": "Drift aditivo",
+    "crescimento_medio": "Crescimento médio",
+    "tendencia": "Tendência linear",
+    "tendencia_sazonal": "Tendência + sazonalidade",
+    "holt": "Holt amortecido",
+    "holt_winters": "Holt-Winters aditivo",
+    "direcionadores": "Direcionadores históricos",
+}
