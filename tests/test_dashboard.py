@@ -121,3 +121,36 @@ def test_contraste_paleta_grafica_em_ambos_fundos():
             assert contraste(cor, fundo) >= 3  # elementos gráficos não textuais
     assert contraste("#E5EDF8", "#0B1220") >= 4.5
     assert contraste("#17253C", "#F7F9FC") >= 4.5
+
+
+def test_explicacoes_opcionais_preservam_numeros_filtros_e_avisos():
+    import json
+
+    app = AppTest.from_file(str(RAIZ / "code/04_visualizacao.py")).run(timeout=30)
+    assert not app.exception
+    assert app.sidebar.checkbox[0].label == "Mostrar explicações"
+    assert app.sidebar.checkbox[0].value is True
+    assert any(c.value.startswith("Como ler:") for c in app.caption)
+    assert any(e.label == "Margem líquida" for e in app.expander)
+    assert "Ainda não é lucro" in app.metric[0].proto.help
+    app.sidebar.multiselect[0].set_value([2025]).run()
+    metricas = [(m.value, m.delta) for m in app.metric]
+    tracos = [json.loads(g.proto.spec)["data"] for g in app.get("plotly_chart")]
+    app.sidebar.checkbox[0].uncheck().run()
+    assert not app.exception
+    assert not any(c.value.startswith("Como ler:") for c in app.caption)
+    assert [(m.value, m.delta) for m in app.metric] == metricas
+    assert [json.loads(g.proto.spec)["data"] for g in app.get("plotly_chart")] == tracos
+    assert app.sidebar.multiselect[0].value == [2025]
+    assert any(e.label == "Margem líquida" for e in app.expander)
+    assert any("EBIT CVM (3.05)" in i.value for i in app.info)
+    app.sidebar.checkbox[0].check().run()
+    assert any(c.value.startswith("Como ler:") for c in app.caption)
+
+
+def test_glossario_cobre_todos_os_campos_publicados():
+    from explicacoes import GLOSSARIO
+
+    df = pd.read_csv(RAIZ / "dados_tratados/indicadores_financeiros_ambev.csv")
+    assert set(df.columns) <= set(GLOSSARIO)
+    assert all(len(entrada) == 4 and all(entrada) for entrada in GLOSSARIO.values())
