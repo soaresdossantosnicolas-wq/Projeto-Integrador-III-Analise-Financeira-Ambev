@@ -66,7 +66,7 @@ def test_dashboard_abre_filtra_limpa_e_trata_vazio():
     assert not app.exception
     assert not app.error
     assert len(app.metric) == 4
-    assert len(app.tabs) == 7
+    assert len(app.tabs) == 8
     delta = app.metric[0].delta
     app.sidebar.multiselect[0].set_value([2025]).run()
     assert not app.exception
