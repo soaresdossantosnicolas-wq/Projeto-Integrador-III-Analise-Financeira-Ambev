@@ -58,5 +58,104 @@
     "apresentacao": true,
     "troca_tema": true
   },
-  "publicacao_streamlit_cloud": "não realizada; código preparado para deploy"
+  "publicacao_streamlit_cloud": "não realizada; código preparado para deploy",
+  "imagens_versionadas_otimizadas": [
+    {
+      "arquivo": "docs/img/depois/01-visao-geral-escuro-desktop.webp",
+      "origem_no_zip": "docs/img/depois/escuro-desktop-01.png",
+      "bytes": 134284,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/depois/02-dre.webp",
+      "origem_no_zip": "docs/img/depois/escuro-desktop-02.png",
+      "bytes": 110874,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/depois/03-rentabilidade.webp",
+      "origem_no_zip": "docs/img/depois/escuro-desktop-03.png",
+      "bytes": 104484,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/depois/04-liquidez-endividamento.webp",
+      "origem_no_zip": "docs/img/depois/escuro-desktop-04.png",
+      "bytes": 108090,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/depois/05-balanco.webp",
+      "origem_no_zip": "docs/img/depois/escuro-desktop-05.png",
+      "bytes": 101746,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/depois/06-comparacao.webp",
+      "origem_no_zip": "docs/img/depois/escuro-desktop-06.png",
+      "bytes": 119650,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/depois/07-projecoes.webp",
+      "origem_no_zip": "docs/img/depois/escuro-desktop-07.png",
+      "bytes": 142786,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/depois/08-sobre.webp",
+      "origem_no_zip": "docs/img/depois/escuro-desktop-08.png",
+      "bytes": 164716,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/depois/visao-geral-claro-desktop.webp",
+      "origem_no_zip": "docs/img/depois/claro-desktop-01.png",
+      "bytes": 130826,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/depois/visao-geral-escuro-celular.webp",
+      "origem_no_zip": "docs/img/depois/escuro-celular-01.png",
+      "bytes": 91500,
+      "largura": 390,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/depois/visao-geral-claro-celular.webp",
+      "origem_no_zip": "docs/img/depois/claro-celular-01.png",
+      "bytes": 90360,
+      "largura": 390,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/antes/visao-geral-escuro-desktop.webp",
+      "origem_no_zip": "docs/img/antes/escuro-desktop-01.png",
+      "bytes": 53916,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/antes/visao-geral-claro-desktop.webp",
+      "origem_no_zip": "docs/img/antes/claro-desktop-01.png",
+      "bytes": 51386,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    }
+  ],
+  "bytes_imagens_versionadas": 1404618,
+  "arquivo_zip_local": "outputs/dashboard-capturas-completas-2026-10-28.zip",
+  "bytes_zip_local": 10205379,
+  "historico_reescrito": false,
+  "publicacao_git": "pendente: SSH bloqueado por falha de resolução de nomes no ambiente",
+  "remoto_feat_confirmado": "45e8907c1e90a9fe8ea001f39e6666908d38c770"
 }

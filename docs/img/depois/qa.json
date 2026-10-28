@@ -361,5 +361,7 @@
     "link_compartilhavel": "http://127.0.0.1:8503/?aba=Proje%C3%A7%C3%B5es&cenario=Pessimista&forma=Barras&frequencia=Trimestral+%C2%B7+2026T1%E2%80%93T4",
     "apresentacao": true,
     "troca_tema": true
-  }
+  },
+  "arquivo_zip_local": "outputs/dashboard-capturas-completas-2026-10-28.zip",
+  "nota": "Os campos arquivo identificam entradas dentro do ZIP local; a seleção WebP está versionada em docs/img."
 }

@@ -4,7 +4,7 @@ Autores: Arthur Almeida, Nicolas Soares e Pedro Barreto. Projeto Integrador III 
 
 ## Diagnóstico antes das alterações
 
-A aplicação da branch `feat` foi executada antes das alterações da interface. Foram registradas as oito abas em dois temas e duas larguras: 1440 px e 390 px. As 32 capturas iniciais e o relatório da execução estão em [`img/antes/`](img/antes/). Não houve exceções nem transbordamento horizontal nessa matriz.
+A aplicação da branch `feat` foi executada antes das alterações da interface. Foram registradas as oito abas em dois temas e duas larguras: 1440 px e 390 px. As 32 capturas iniciais estão preservadas no ZIP local descrito abaixo; a seleção otimizada e o relatório da execução estão em [`img/antes/`](img/antes/). Não houve exceções nem transbordamento horizontal nessa matriz.
 
 | Aspecto | O que foi observado | Efeito na leitura |
 |---|---|---|
@@ -60,7 +60,7 @@ A unidade monetária altera os gráficos monetários e a tabela executiva; os KP
 
 Os testes de apresentação verificam conversões de unidade, razões sem reescala, deltas com anos ocultos, retorno numérico do Excel, restauração de URL, projeções sem treino e preservação dos KPIs no modo apresentação. Os testes anteriores permanecem ativos, incluindo validação financeira e preditiva.
 
-A auditoria de navegador está em `scripts/auditar_visual.py` e `scripts/auditar_visual.cjs`. O roteiro cobre as oito abas, ambos os temas e larguras de desktop/celular; testa também diálogo, seleção Plotly, exportações, restauração de cenário/frequência/aba em nova sessão, troca de tema e modo apresentação. O resultado final e a lista de imagens ficam em [`img/depois/qa.json`](img/depois/qa.json).
+A auditoria de navegador está em `scripts/auditar_visual.py` e `scripts/auditar_visual.cjs`. O roteiro cobre as oito abas, ambos os temas e larguras de desktop/celular; testa também diálogo, seleção Plotly, exportações, restauração de cenário/frequência/aba em nova sessão, troca de tema e modo apresentação. O resultado final e a lista de entradas do ZIP ficam em [`img/depois/qa.json`](img/depois/qa.json). Novas execuções gravam em `outputs/qa-visual/`, ignorado pelo Git.
 
 As capturas finais mantêm a largura real e ampliam a altura para registrar o conteúdo das abas. As imagens `capa-*` preservam o viewport de 1440×1050 ou 390×844. Não se trata de comparação automática de pixels com o layout anterior.
 
@@ -98,3 +98,18 @@ O CSS usa seletores da versão fixada do Streamlit; uma atualização futura req
 A interface mantém todas as abas preparadas na navegação; fragments reduzem a execução de controles locais, mas uma mudança global de anos/unidade/tema requer atualizar os blocos dependentes. Não foi alegado um ganho de desempenho percentual sem benchmark.
 
 A publicação no Streamlit Community Cloud depende da configuração da conta e do apontamento para a branch de entrega; não foi criada uma URL pública de aplicativo nesta revisão.
+
+
+## Fechamento da publicação e política de imagens
+
+A árvore atual mantém somente **13 imagens WebP sem perdas** em `docs/img/`: oito abas depois/escuro/desktop, três variantes adicionais da Visão Geral e duas comparações anteriores. São **1.404.618 bytes** no total; a maior tem **164.716 bytes**. Todas têm largura de até 1440 px.
+
+A matriz completa de 64 capturas, cinco complementares, duas capturas antigas de projeções e os dois manifestos originais foram preservados em `outputs/dashboard-capturas-completas-2026-10-28.zip` (**10.205.379 bytes**). O arquivo está ignorado pelo Git. CRC e hashes das 71 imagens originais foram conferidos; nenhuma estava corrompida. A otimização não exigiu refazer a matriz validada.
+
+As 69 imagens novas já haviam sido incluídas no commit local `ebadd58` antes desta revisão. Em respeito à proibição de reescrever o histórico, sua remoção foi feita por novos commits. Por isso os PNGs continuam acessíveis no histórico, embora não estejam na árvore atual. O peso histórico não foi eliminado; reduzir os objetos já commitados exigiria reescrever esse histórico, o que não foi feito.
+
+A branch remota foi conferida por leitura e continua em `45e8907`, anterior ao redesign. Os objetos avulsos criados pela tentativa anterior não constituem commits publicados na branch. O `git fsck` local não encontrou corrupção; indicou somente um commit antigo sem referência, que não foi removido.
+
+O envio agora usa o remoto SSH. As tentativas em `github.com` e `ssh.github.com:443` falharam na resolução de nomes deste ambiente; o agente SSH também não estava disponível. Não houve uso do conector para publicar blobs ou binários nesta revisão, nem push na `main`.
+
+Para concluir de uma máquina com DNS e autenticação SSH funcionais, execute `git fetch origin feat` e `git push origin feat`. Não use `--force`. Se a branch remota avançar antes do envio, confira as alterações e integre-as preservando o histórico.
