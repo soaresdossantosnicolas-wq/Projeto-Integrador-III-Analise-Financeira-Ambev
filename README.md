@@ -148,6 +148,8 @@ A receita de R$ 89,45 bilhões pertence a **2024**, não a 2025. A receita de 20
 
 ## Análise preditiva
 
+**Revisão em 28/10/2026:** 77 testes aprovados e resultados numéricos reproduzidos sem alterações. A execução offline agora concilia os históricos anual/trimestral, os indicadores por fórmula e o estágio 3 antes de treinar. Veja o [diagnóstico e as evidências desta revisão](docs/auditoria-preditiva-2026-10-28.md), incluindo a conferência atual das referências publicadas pela Ambev e os limites da auditoria.
+
 **Pergunta:** que trajetória os principais resultados e indicadores podem seguir em 2026–2027, e quanto confiar nessa projeção?
 
 A nova camada auditou DFP/ITR de **2015–2025** (11 anos/44 trimestres) e adotou o corte **2019–2025** (7 anos/28 trimestres) após avaliar IFRS 16 e reapresentações. A DRE trimestral deriva dos acumulados e Q4 = anual − nove meses; balanços são saldos. O estágio 3 de 2022–2025 foi preservado.

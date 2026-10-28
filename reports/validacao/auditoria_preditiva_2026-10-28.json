@@ -1,0 +1,12 @@
+{
+  "data": "2026-10-28",
+  "commit_inicial": "5457f2c0f125cdd0f4c80c5274e30f0cf1d8e79a",
+  "pagina_ri": "https://ri.ambev.com.br/visao-geral/destaques-financeiros/",
+  "sha256_pagina_ri": "44aaab73d9f00944ce7fdc0fbf67e6044f47c6a560979e892e7dc5a49cb1fa0d",
+  "comparacoes_ri": 49,
+  "referencias_congeladas_iguais_pagina_atual": true,
+  "testes": 77,
+  "csv_numericos_reproduzidos_sem_diferencas": true,
+  "zip_itr_2025_acessivel": true,
+  "zip_cvm_reextraidos_nesta_revisao": false
+}
