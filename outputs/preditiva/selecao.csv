@@ -1,0 +1,3 @@
+frequencia,modelo,regra,casos_finais_supera_baseline,casos_finais,conclusao_final
+anual,ingenuo,Evidência insuficiente para seleção: menos de cinco erros por alvo/horizonte; baseline mantido.,0,6,"No teste reservado, supera o baseline em 0/6 combinações alvo/horizonte. Não reescolher pelo teste."
+trimestral,ingenuo_sazonal,Seleção provisória por menor MASE médio no desenvolvimento; não é evidência de superioridade estatística.,0,12,"No teste reservado, supera o baseline em 0/12 combinações alvo/horizonte. Não reescolher pelo teste."

@@ -13,6 +13,21 @@ try {
   await pagina.getByRole('tab', { name: 'DRE', exact: true }).click();
   await pagina.getByRole('tab', { name: 'DRE', exact: true }).getAttribute('aria-selected').then(v => { if (v !== 'true') throw new Error('Aba DRE não selecionada'); });
   await pagina.screenshot({ path: `${destino}/dashboard-dre.png`, fullPage: true });
+  await pagina.getByRole('tab', { name: 'Projeções', exact: true }).click();
+  await pagina.getByRole('heading', { name: 'Projeções exploratórias, com limites explícitos' }).scrollIntoViewIfNeeded();
+  await fs.mkdir('docs/img', { recursive: true });
+  await pagina.locator('[data-testid="stPlotlyChart"]:visible').scrollIntoViewIfNeeded();
+  await pagina.waitForTimeout(500);
+  await pagina.screenshot({ path: 'docs/img/projecoes-anual.png', fullPage: true });
+  await pagina.getByRole('heading', { name: 'Projeções exploratórias, com limites explícitos' }).scrollIntoViewIfNeeded();
+  await pagina.waitForTimeout(500);
+  await pagina.getByLabel('Frequência das projeções').click();
+  await pagina.getByRole('option', { name: 'Trimestral · 2026T1–T4', exact: true }).click();
+  await pagina.getByText('28 trimestres comparáveis;', { exact: false }).waitFor();
+  await pagina.getByRole('heading', { name: 'Projeções exploratórias, com limites explícitos' }).scrollIntoViewIfNeeded();
+  await pagina.locator('[data-testid="stPlotlyChart"]:visible').scrollIntoViewIfNeeded();
+  await pagina.waitForTimeout(500);
+  await pagina.screenshot({ path: 'docs/img/projecoes-trimestral.png', fullPage: true });
   await pagina.getByRole('tab', { name: 'Sobre', exact: true }).click();
   for (const nome of ['Arthur Almeida', 'Nicolas Soares', 'Pedro Barreto']) {
     await pagina.getByText(nome, { exact: false }).first().waitFor();
@@ -29,5 +44,5 @@ try {
   await pagina.getByRole('heading', { name: 'Ambev, em perspectiva.' }).waitFor();
   await pagina.getByTestId('stPlotlyChart').first().waitFor();
   await pagina.screenshot({ path: `${destino}/dashboard-claro.png`, fullPage: true });
-  await fs.writeFile(`${destino}/qa-visual.json`, JSON.stringify({ viewportMobile: largura, abas: 7, autoresConferidos: true }, null, 2));
+  await fs.writeFile(`${destino}/qa-visual.json`, JSON.stringify({ viewportMobile: largura, abas: 8, autoresConferidos: true }, null, 2));
 } finally { await navegador.close(); }

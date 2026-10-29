@@ -1,0 +1,63 @@
+{
+  "data_corte": "2025-12-31",
+  "autores": [
+    "Arthur Almeida",
+    "Nicolas Soares",
+    "Pedro Barreto"
+  ],
+  "semente": 42,
+  "n_simulacoes": 1000,
+  "n_observacoes": {
+    "anual": 7,
+    "trimestral": 28
+  },
+  "teste_final": {
+    "anual": "2024–2025; origem fixa em 2023",
+    "trimestral": "2025T1–T4; origem fixa em 2024T4"
+  },
+  "incerteza": "Quantis de simulações exploratórias; não são intervalos calibrados com garantia de cobertura.",
+  "evidencia": "Evidência insuficiente para precisão robusta, especialmente 2027 e indicadores patrimoniais.",
+  "vintages": "Backtest retrospectivo com arquivos atuais e datas contábeis; não comprova disponibilidade em tempo real na origem. Divulgação ocorre após o encerramento do período.",
+  "sha256_historico_estagio3": "ff66a0ae2f3c3d443dc41924769e462219ce1084685c6b42fbaa749f59dddeee",
+  "versoes_execucao": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "scipy": "1.18.1",
+    "statsmodels": "0.14.6"
+  },
+  "politicas_amostra": {
+    "janelas": {
+      "anual": 3,
+      "trimestral": 16
+    },
+    "modelos": {
+      "holt": 8,
+      "holt_winters": 16,
+      "tendencia_sazonal": 8
+    },
+    "erros_selecao": 5
+  },
+  "sha256_arquivos": {
+    "diagnostico_residuos.csv": "41b89a7e93e7afa1e70b02c6ebe71bb54bb1cdc15c5149ecb34f4992a76db8d1",
+    "balancos_projetados.csv": "a0cfa14442598c634c241834ad57b253c8a2defff0aa24f7e2503428433d6a38",
+    "premissas_cenarios.csv": "1d15a2071fe2d6788eff620d8697f0aa3ccec7f8c7c8afb3d7517e49df90c56f",
+    "resumo_modelos.csv": "b5131c9945817ee7ffedee15636a9067d08e880461f7584470cc8d81e02f3585",
+    "projecoes.csv": "5840f9136fb2c6cec82128454279920f88fac1f686215c2151394e05fc708877",
+    "ajustes_plausibilidade.csv": "d13d169011c044ef20512819fff5812d9ac76d470d1f1108759cc860a0d8fea8",
+    "conciliacao_trimestres.csv": "401681fcc7b88cd6a25529fcf0bdbfd74c8c0d9b2ba8d243d5509460388b0e2d",
+    "referencia_oficial.csv": "f61908f492b0f4edd34d21938c16b369ac5ec34754815d816d00fdf2dc78ac2b",
+    "versoes_contas.csv": "6c40b48a0b5d60ce0efa48d31165cbb9821ab1a5ccaa4f0643ff998a9a7c2751",
+    "falhas_modelos.csv": "44dd57572ab580321f91cb811f98c77521020425004f68d3a298a299589a0507",
+    "serie_trimestral_ampliada.csv": "39b1cbd0da889624b8b75efcc36a5de5843ef8b856737dc7128f6ac88efcd344",
+    "validacao_oficial_ampliada.csv": "299642b7d01b7e9b35a9b261b861aba352a8c261b1666c55dc30e14d774c91af",
+    "sensibilidade.csv": "648296f465bd0da9fe7b1774a242159ef24c623d8360f368f4933e17613abf28",
+    "historico_anual.csv": "cdf463de063cb4d0dbf816608ba29b8bce73fcc9897eb6ae921c32163a06a55b",
+    "serie_anual_ampliada.csv": "f7580b318d6883c5a4d00cb1b31ce36c802272955f105d079eb0511f9ee90442",
+    "conciliacao_projecoes_base.csv": "b6cc8264b337072449ba1f2f286fdc98cd35b7f6b7c18857d00f9b58448c4c2e",
+    "modelos_descartados.csv": "ee2856b126f39ca77a5b239971ccc5655f596d78259cccabf880a84b33758259",
+    "metricas.csv": "c4b8b4ad2229dea9a00f76d5c66ec5c3b2bcb994b9ccd6af55323858b33d7ad4",
+    "backtest.csv": "cb194d2ac7cb513ef33a5bd758ba7c9fff5f9bc4e5ae2060a39fe7da63883b3e",
+    "historico_trimestral.csv": "9b5dfdf8cbe5d7f5eff37c91561e9c920dfe1293ba808e043d89b0d230e3dbd3",
+    "selecao.csv": "0c68f6d3672281742a612beca28f25e455feb58b8c581b79bfa08daddfa1ff94"
+  }
+}

@@ -1,0 +1,200 @@
+[
+  {
+    "tipo": "ITR",
+    "ano": 2015,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/ITR/DADOS/itr_cia_aberta_2015.zip",
+    "arquivo": "itr_cia_aberta_2015.zip",
+    "bytes": 24295580,
+    "sha256": "2755f06e74668144620b4265e59db8149284252a1b3a5bb6404c0db22b21c64b",
+    "status": "ok"
+  },
+  {
+    "tipo": "ITR",
+    "ano": 2016,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/ITR/DADOS/itr_cia_aberta_2016.zip",
+    "arquivo": "itr_cia_aberta_2016.zip",
+    "bytes": 23803768,
+    "sha256": "3c2954a0d7e2c4c1c6dec157134e959fd0dea0ba53001d4bab01d04727d67c21",
+    "status": "ok"
+  },
+  {
+    "tipo": "ITR",
+    "ano": 2017,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/ITR/DADOS/itr_cia_aberta_2017.zip",
+    "arquivo": "itr_cia_aberta_2017.zip",
+    "bytes": 24127956,
+    "sha256": "f2e626260461ec4e04614d32212ca8dc5a1be7c5b56c261343eb8866c9ed5f26",
+    "status": "ok"
+  },
+  {
+    "tipo": "ITR",
+    "ano": 2018,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/ITR/DADOS/itr_cia_aberta_2018.zip",
+    "arquivo": "itr_cia_aberta_2018.zip",
+    "bytes": 23460448,
+    "sha256": "a551278c83e5c0584edd2a29b6035e34e833176176827e3f04a28f8373df536b",
+    "status": "ok"
+  },
+  {
+    "tipo": "ITR",
+    "ano": 2019,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/ITR/DADOS/itr_cia_aberta_2019.zip",
+    "arquivo": "itr_cia_aberta_2019.zip",
+    "bytes": 24435666,
+    "sha256": "dbfe1e32296563a9efdcb993ed5811876e3d50b778bc547fe004af15b9a75021",
+    "status": "ok"
+  },
+  {
+    "tipo": "ITR",
+    "ano": 2020,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/ITR/DADOS/itr_cia_aberta_2020.zip",
+    "arquivo": "itr_cia_aberta_2020.zip",
+    "bytes": 27151708,
+    "sha256": "4ca11b431eb21aa98f813a3c18086ca600f234f5eb0dcec0c51a8641fccbca0a",
+    "status": "ok"
+  },
+  {
+    "tipo": "ITR",
+    "ano": 2021,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/ITR/DADOS/itr_cia_aberta_2021.zip",
+    "arquivo": "itr_cia_aberta_2021.zip",
+    "bytes": 31230595,
+    "sha256": "c8723d5ccd4a6e99e9bc1566f2a558139cee1c2d96e4b940c4bcbedcb46a173a",
+    "status": "ok"
+  },
+  {
+    "tipo": "ITR",
+    "ano": 2022,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/ITR/DADOS/itr_cia_aberta_2022.zip",
+    "arquivo": "itr_cia_aberta_2022.zip",
+    "bytes": 32327948,
+    "sha256": "f0d633b8e2db975a08702bbf0fe5cf4b6cb5c79f97030d453559c2592badcc30",
+    "status": "ok"
+  },
+  {
+    "tipo": "ITR",
+    "ano": 2023,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/ITR/DADOS/itr_cia_aberta_2023.zip",
+    "arquivo": "itr_cia_aberta_2023.zip",
+    "bytes": 32355342,
+    "sha256": "6366881937b49dfa0d37a91468089ef24c6e7e7cf9ff1243d8746ea4669fd7af",
+    "status": "ok"
+  },
+  {
+    "tipo": "ITR",
+    "ano": 2024,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/ITR/DADOS/itr_cia_aberta_2024.zip",
+    "arquivo": "itr_cia_aberta_2024.zip",
+    "bytes": 32727833,
+    "sha256": "99444794a0ce7380a64584a7f0631b3829ac94671bddcbefceeabcba8b4dedb3",
+    "status": "ok"
+  },
+  {
+    "tipo": "ITR",
+    "ano": 2025,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/ITR/DADOS/itr_cia_aberta_2025.zip",
+    "arquivo": "itr_cia_aberta_2025.zip",
+    "bytes": 31685281,
+    "sha256": "0d3639376f582e43a98451349b36002a9aef7865aa83f2d09f103bdb32a38c8a",
+    "status": "ok"
+  },
+  {
+    "tipo": "DFP",
+    "ano": 2015,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2015.zip",
+    "arquivo": "dfp_cia_aberta_2015.zip",
+    "bytes": 8987623,
+    "sha256": "39a7001be9eaa91a6acc83831c816794df4f92441d7702b80da6c4b234352b4e",
+    "status": "ok"
+  },
+  {
+    "tipo": "DFP",
+    "ano": 2016,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2016.zip",
+    "arquivo": "dfp_cia_aberta_2016.zip",
+    "bytes": 9832691,
+    "sha256": "772f06a73c5fe80534b61365ea5d03f9d8fcce21b87823bd5c9d48699bcf71d5",
+    "status": "ok"
+  },
+  {
+    "tipo": "DFP",
+    "ano": 2017,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2017.zip",
+    "arquivo": "dfp_cia_aberta_2017.zip",
+    "bytes": 10150935,
+    "sha256": "1ff8185d61759e49b406c55c5d0b593587c2e76e9032c95f836f7fea02fc9d58",
+    "status": "ok"
+  },
+  {
+    "tipo": "DFP",
+    "ano": 2018,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2018.zip",
+    "arquivo": "dfp_cia_aberta_2018.zip",
+    "bytes": 10237924,
+    "sha256": "280dcf5acd7bdb529acc186c9a1195092a1e06cf1e33ddcdca0b11c31261296f",
+    "status": "ok"
+  },
+  {
+    "tipo": "DFP",
+    "ano": 2019,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2019.zip",
+    "arquivo": "dfp_cia_aberta_2019.zip",
+    "bytes": 11185526,
+    "sha256": "bc82a1162b44686e8953b521e3424a5938b6661ff4655f832db4ea9488296a0d",
+    "status": "ok"
+  },
+  {
+    "tipo": "DFP",
+    "ano": 2020,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2020.zip",
+    "arquivo": "dfp_cia_aberta_2020.zip",
+    "bytes": 12637854,
+    "sha256": "8fb97d1887aed1e1e2d85e54cb133baf9f65b9f46f60fa8720f09c1f7a74362e",
+    "status": "ok"
+  },
+  {
+    "tipo": "DFP",
+    "ano": 2021,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2021.zip",
+    "arquivo": "dfp_cia_aberta_2021.zip",
+    "bytes": 13283026,
+    "sha256": "64b8693b709538a0357c5179ae02231cb380d0000956ee57a873a21d4efda2e4",
+    "status": "ok"
+  },
+  {
+    "tipo": "DFP",
+    "ano": 2022,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2022.zip",
+    "arquivo": "dfp_cia_aberta_2022.zip",
+    "bytes": 13449429,
+    "sha256": "4379d3b8986b3a42af0247fe02d7a9a42c34178b70437a4d36c86e682706c1d7",
+    "status": "ok"
+  },
+  {
+    "tipo": "DFP",
+    "ano": 2023,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2023.zip",
+    "arquivo": "dfp_cia_aberta_2023.zip",
+    "bytes": 13562065,
+    "sha256": "e2be633d975ed3731766538b8c8170a5f943956024fe55afa4387969e9194a90",
+    "status": "ok"
+  },
+  {
+    "tipo": "DFP",
+    "ano": 2024,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2024.zip",
+    "arquivo": "dfp_cia_aberta_2024.zip",
+    "bytes": 13396926,
+    "sha256": "c4def75946f770539f8a6f8e174afc8cab67f37d91657475dcc740018e94e203",
+    "status": "ok"
+  },
+  {
+    "tipo": "DFP",
+    "ano": 2025,
+    "url": "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2025.zip",
+    "arquivo": "dfp_cia_aberta_2025.zip",
+    "bytes": 12806582,
+    "sha256": "cdce6cc0e0bb85128d48928a697841f66019965bf120858c6d9802a8b70f1184",
+    "status": "ok"
+  }
+]

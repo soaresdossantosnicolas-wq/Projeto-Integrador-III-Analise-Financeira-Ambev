@@ -17,9 +17,18 @@ def main() -> int:
     grupo = parser.add_mutually_exclusive_group()
     grupo.add_argument("--sem-coleta", action="store_true", help="reutiliza CSVs já extraídos em saida/")
     grupo.add_argument("--offline", action="store_true", help="executa coleta com ZIPs em cache, sem rede")
+    parser.add_argument(
+        "--com-projecoes",
+        action="store_true",
+        help="executa também ampliação CVM e estágio 5; exige dependências preditivas",
+    )
     args = parser.parse_args()
     etapas = [] if args.sem_coleta else [("analise_ambev_cvm.py", ["--offline"] if args.offline else [])]
     etapas += [("02_tratamento_ambev.py", []), ("03_analise_financeira.py", [])]
+    if args.com_projecoes:
+        etapas.append(
+            ("05_modelagem_preditiva.py", ["--preparar-dados"] + (["--offline"] if args.offline else []))
+        )
     for nome, opcoes in etapas:
         log.info("Executando %s", nome)
         resultado = subprocess.run(

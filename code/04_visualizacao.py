@@ -22,6 +22,7 @@ from dashboard_utils import (
     preparar_series,
     validar_snapshot,
 )
+from dashboard_projecoes import renderizar_projecoes
 from excecoes import ErroValidacaoDados
 from explicacoes import EXPLICACOES_GRAFICOS, GLOSSARIO, ajuda_indicador
 
@@ -254,7 +255,7 @@ def sobre(metadados: dict) -> None:
         "EBIT CVM (3.05) inclui equivalência patrimonial. O EBIT do RI exclui esse resultado; diferenças de conceito e arredondamento estão reconciliadas em reports/validacao/conciliacao_ambev.csv."
     )
     st.markdown(
-        "**Limitações:** quatro observações anuais; valores nominais; ROA/ROE com saldos finais; sem previsão ou inferência causal. Dívida financeira e EBITDA normalizado não são extraídos, portanto dívida líquida/EBITDA é n/d. A liquidez seca desconta apenas estoques. Menor endividamento não significa, isoladamente, melhor desempenho."
+        "**Limitações:** quatro observações anuais; valores nominais; ROA/ROE com saldos finais; análise histórica descritiva e projeções exploratórias separadas, sem inferência causal. Dívida financeira e EBITDA normalizado não são extraídos, portanto dívida líquida/EBITDA é n/d. A liquidez seca desconta apenas estoques. Menor endividamento não significa, isoladamente, melhor desempenho."
     )
     st.caption(
         "Finalidade educacional. Não constitui recomendação de investimento. Nenhuma marca ou logotipo da companhia é utilizado."
@@ -344,6 +345,7 @@ def main() -> None:
             "Liquidez e Endividamento",
             "Balanço",
             "Comparação de Períodos",
+            "Projeções",
             "Sobre",
         ]
     )
@@ -534,6 +536,8 @@ def main() -> None:
                 "Base completa do calendário: ocultar um ano não altera a variação do seguinte. Base zero, ausente ou sem ano anterior gera n/d."
             )
     with abas[6]:
+        renderizar_projecoes(tema)
+    with abas[7]:
         sobre(metadados)
     st.divider()
     st.caption(f"{' · '.join(config.AUTORES)} · 2026 · Licença MIT · Projeto Integrador III")

@@ -35,7 +35,7 @@ python -m pip install -r requirements.txt
 python -m streamlit run code/04_visualizacao.py
 ```
 
-Abra <http://localhost:8501>. As abas são **Visão Geral, DRE, Rentabilidade, Liquidez e Endividamento, Balanço, Comparação de Períodos e Sobre**. O filtro de anos afeta gráficos e exportação; os cards comparam o último ano selecionado com o **ano calendário anterior da base completa**, inclusive se ele estiver oculto pelo filtro.
+Abra <http://localhost:8501>. As abas são **Visão Geral, DRE, Rentabilidade, Liquidez e Endividamento, Balanço, Comparação de Períodos, Projeções e Sobre**. O filtro de anos afeta gráficos e exportação; os cards comparam o último ano selecionado com o **ano calendário anterior da base completa**, inclusive se ele estiver oculto pelo filtro.
 
 **Para quem está começando:** a opção “Mostrar explicações”, ativada por padrão na barra lateral, exibe guias curtos de leitura dos gráficos. Os ícones de ajuda dos cards explicam o significado e a fórmula. A aba Sobre reúne um glossário de todos os campos do snapshot, com exemplos hipotéticos e cuidados de interpretação. Ocultar os guias mantém o glossário, a ajuda e os avisos metodológicos disponíveis.
 
@@ -146,6 +146,38 @@ Valores monetários em R$ bilhões, arredondados apenas para exibição:
 
 A receita de R$ 89,45 bilhões pertence a **2024**, não a 2025. A receita de 2025 é R$ 88,24 bilhões. A proximidade das receitas de 2022 e 2023 é real, conforme a referência oficial consultada. Consulte a [revisão final](docs/revisao-final.md) para os resultados e limites de cada item A–J.
 
+## Análise preditiva
+
+**Revisão em 28/10/2026:** 77 testes aprovados e resultados numéricos reproduzidos sem alterações. A execução offline agora concilia os históricos anual/trimestral, os indicadores por fórmula e o estágio 3 antes de treinar. Veja o [diagnóstico e as evidências desta revisão](docs/auditoria-preditiva-2026-10-28.md), incluindo a conferência atual das referências publicadas pela Ambev e os limites da auditoria.
+
+**Pergunta:** que trajetória os principais resultados e indicadores podem seguir em 2026–2027, e quanto confiar nessa projeção?
+
+A nova camada auditou DFP/ITR de **2015–2025** (11 anos/44 trimestres) e adotou o corte **2019–2025** (7 anos/28 trimestres) após avaliar IFRS 16 e reapresentações. A DRE trimestral deriva dos acumulados e Q4 = anual − nove meses; balanços são saldos. O estágio 3 de 2022–2025 foi preservado.
+
+O padrão anual é o **ingênuo**, por insuficiência de validação; o trimestral é o **ingênuo sazonal**, com menor MASE agregado de desenvolvimento que tendência, Holt e Holt-Winters. Alguns métodos anuais erraram menos no teste final, mas não foram escolhidos olhando esse resultado. ARIMA/SARIMA e ML complexo foram descartados pela amostra insuficiente sob o protocolo.
+
+Validação por janelas expansivas, sem embaralhar, com reserva final 2024–2025 anual e 2025 trimestral. Há um erro por horizonte na reserva. MAE, RMSE, sMAPE/MAPE e MASE são salvos por modelo/alvo/horizonte. Cenários e faixas de bootstrap são exploratórios, **sem cobertura futura demonstrada**.
+
+```bash
+python code/05_modelagem_preditiva.py --offline
+# Reconstruir dos arquivos CVM:
+python code/05_modelagem_preditiva.py --preparar-dados
+# Pipeline completo com camada opcional:
+python code/run_pipeline.py --com-projecoes
+python scripts/validar_preditiva.py
+```
+
+A aba **Projeções** lê `outputs/preditiva/`, sem treinar a cada interação. Exibe histórico, faixa de incerteza, modelos, cenários, premissas e sensibilidade. Statsmodels e dependências têm versões fixadas. Este é um estudo retrospectivo com corte contábil em 2025, não uma previsão em tempo real de outubro de 2026.
+
+Limitações: amostra pequena, revisões posteriores, choques macroeconômicos, valores nominais e balanço aproximado por razões históricas. Identidades são preservadas, mas alternativas anuais e trimestrais não são reconciliadas automaticamente. As projeções não constituem recomendação de investimento.
+
+- [Diagnóstico, método, backtest, projeções e interpretação para apresentação](docs/analise-preditiva.md)
+- [Riscos e pendências a validar com o professor](docs/riscos-preditiva.md)
+- Resultados e premissas: `outputs/preditiva/`
+- [Captura anual](docs/img/projecoes-anual.png) e [captura trimestral](docs/img/projecoes-trimestral.png), geradas com o aplicativo real.
+
+![Projeções anuais com faixa exploratória](docs/img/projecoes-anual.png)
+
 ## Testes e qualidade
 
 ```bash
@@ -156,7 +188,7 @@ python scripts/validar_referencia.py
 python code/preparar_deploy.py
 ```
 
-`requirements.in` registra as seis dependências diretas. `requirements.txt` fixa as 37 dependências de execução, incluindo as transitivas resolvidas no ambiente validado. Testes e Ruff ficam em `requirements-dev.txt`.
+`requirements.in` registra as sete dependências diretas. `requirements.txt` fixa as 40 dependências de execução, incluindo as transitivas resolvidas no ambiente validado. Testes e Ruff ficam em `requirements-dev.txt`.
 
 Os testes não dependem de acesso à internet: usam fixtures sintéticas com o schema da CVM e valores oficiais congelados. A integração contínua usa Python 3.12 e Ubuntu 24.04. A captura visual opcional gera telas do Streamlit real como artefato da execução do GitHub Actions; consulte [validação visual](docs/validacao-visual.md).
 

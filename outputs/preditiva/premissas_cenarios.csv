@@ -1,0 +1,829 @@
+cenario,parametro,valor,referencia_base,quantil,origem,treino_fim,n_observacoes,trimestre,frequencia,modelo,horizonte
+pessimista,crescimento,0.023784920156147416,0.10197885940642337,0.25,quantil do histórico de treino,2025-12-31,6.0,0,anual,ingenuo,
+pessimista,margem_operacional,0.2333478439175538,0.24376663372671417,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,ingenuo,1.0
+pessimista,margem_operacional,0.2333478439175538,0.24376663372671417,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,ingenuo,2.0
+pessimista,margem_liquida,0.18065415075134578,0.18682110326375773,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,ingenuo,1.0
+pessimista,margem_liquida,0.18065415075134578,0.18682110326375773,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,ingenuo,2.0
+pessimista,crescimento_receita_efetivo,-0.0709577489466493,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,ingenuo,1.0
+pessimista,margem_operacional_efetiva,0.25502467291723874,0.26544346272639907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,ingenuo,1.0
+pessimista,margem_liquida_efetiva,0.1750205589382822,0.18118751145069414,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,ingenuo,1.0
+pessimista,crescimento_receita_efetivo,-0.0709577489466493,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,ingenuo,2.0
+pessimista,margem_operacional_efetiva,0.25502467291723874,0.26544346272639907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,ingenuo,2.0
+pessimista,margem_liquida_efetiva,0.1750205589382822,0.18118751145069414,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,ingenuo,2.0
+base,crescimento,0.10197885940642337,0.10197885940642337,0.5,quantil do histórico de treino,2025-12-31,6.0,0,anual,ingenuo,
+base,margem_operacional,0.24376663372671417,0.24376663372671417,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,ingenuo,1.0
+base,margem_operacional,0.24376663372671417,0.24376663372671417,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,ingenuo,2.0
+base,margem_liquida,0.18682110326375773,0.18682110326375773,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,ingenuo,1.0
+base,margem_liquida,0.18682110326375773,0.18682110326375773,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,ingenuo,2.0
+base,crescimento_receita_efetivo,0.0,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,ingenuo,1.0
+base,margem_operacional_efetiva,0.26544346272639907,0.26544346272639907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,ingenuo,1.0
+base,margem_liquida_efetiva,0.18118751145069417,0.18118751145069414,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,ingenuo,1.0
+base,crescimento_receita_efetivo,0.0,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,ingenuo,2.0
+base,margem_operacional_efetiva,0.26544346272639907,0.26544346272639907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,ingenuo,2.0
+base,margem_liquida_efetiva,0.18118751145069417,0.18118751145069414,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,ingenuo,2.0
+otimista,crescimento,0.11885458529293741,0.10197885940642337,0.75,quantil do histórico de treino,2025-12-31,6.0,0,anual,ingenuo,
+otimista,margem_operacional,0.26914828341329905,0.24376663372671417,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,ingenuo,1.0
+otimista,margem_operacional,0.26914828341329905,0.24376663372671417,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,ingenuo,2.0
+otimista,margem_liquida,0.19429200941184074,0.18682110326375773,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,ingenuo,1.0
+otimista,margem_liquida,0.19429200941184074,0.18682110326375773,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,ingenuo,2.0
+otimista,crescimento_receita_efetivo,0.015314019631560205,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,ingenuo,1.0
+otimista,margem_operacional_efetiva,0.2908251124129839,0.26544346272639907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,ingenuo,1.0
+otimista,margem_liquida_efetiva,0.1886584175987772,0.18118751145069414,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,ingenuo,1.0
+otimista,crescimento_receita_efetivo,0.015314019631560427,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,ingenuo,2.0
+otimista,margem_operacional_efetiva,0.2908251124129839,0.26544346272639907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,ingenuo,2.0
+otimista,margem_liquida_efetiva,0.1886584175987772,0.18118751145069414,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,ingenuo,2.0
+pessimista,crescimento,0.023784920156147416,0.10197885940642337,0.25,quantil do histórico de treino,2025-12-31,6.0,0,anual,media_movel,
+pessimista,margem_operacional,0.2333478439175538,0.24376663372671417,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,media_movel,1.0
+pessimista,margem_operacional,0.2333478439175538,0.24376663372671417,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,media_movel,2.0
+pessimista,margem_liquida,0.18065415075134578,0.18682110326375773,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,media_movel,1.0
+pessimista,margem_liquida,0.18065415075134578,0.18682110326375773,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,media_movel,2.0
+pessimista,crescimento_receita_efetivo,-0.09656047527611944,-0.027558193720943924,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,media_movel,1.0
+pessimista,margem_operacional_efetiva,0.23770365023317908,0.24812244004233938,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,media_movel,1.0
+pessimista,margem_liquida_efetiva,0.17172796895484688,0.17789492146725883,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,media_movel,1.0
+pessimista,crescimento_receita_efetivo,-0.0709577489466493,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,media_movel,2.0
+pessimista,margem_operacional_efetiva,0.23770365023317905,0.24812244004233938,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,media_movel,2.0
+pessimista,margem_liquida_efetiva,0.17172796895484688,0.17789492146725883,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,media_movel,2.0
+base,crescimento,0.10197885940642337,0.10197885940642337,0.5,quantil do histórico de treino,2025-12-31,6.0,0,anual,media_movel,
+base,margem_operacional,0.24376663372671417,0.24376663372671417,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,media_movel,1.0
+base,margem_operacional,0.24376663372671417,0.24376663372671417,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,media_movel,2.0
+base,margem_liquida,0.18682110326375773,0.18682110326375773,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,media_movel,1.0
+base,margem_liquida,0.18682110326375773,0.18682110326375773,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,media_movel,2.0
+base,crescimento_receita_efetivo,-0.027558193720943924,-0.027558193720943924,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,media_movel,1.0
+base,margem_operacional_efetiva,0.24812244004233938,0.24812244004233938,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,media_movel,1.0
+base,margem_liquida_efetiva,0.17789492146725883,0.17789492146725883,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,media_movel,1.0
+base,crescimento_receita_efetivo,0.0,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,media_movel,2.0
+base,margem_operacional_efetiva,0.24812244004233938,0.24812244004233938,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,media_movel,2.0
+base,margem_liquida_efetiva,0.17789492146725883,0.17789492146725883,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,media_movel,2.0
+otimista,crescimento,0.11885458529293741,0.10197885940642337,0.75,quantil do histórico de treino,2025-12-31,6.0,0,anual,media_movel,
+otimista,margem_operacional,0.26914828341329905,0.24376663372671417,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,media_movel,1.0
+otimista,margem_operacional,0.26914828341329905,0.24376663372671417,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,media_movel,2.0
+otimista,margem_liquida,0.19429200941184074,0.18682110326375773,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,media_movel,1.0
+otimista,margem_liquida,0.19429200941184074,0.18682110326375773,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,media_movel,2.0
+otimista,crescimento_receita_efetivo,-0.012666200809036576,-0.027558193720943924,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,media_movel,1.0
+otimista,margem_operacional_efetiva,0.27350408972892426,0.24812244004233938,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,media_movel,1.0
+otimista,margem_liquida_efetiva,0.18536582761534187,0.17789492146725883,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,media_movel,1.0
+otimista,crescimento_receita_efetivo,0.015314019631560205,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,media_movel,2.0
+otimista,margem_operacional_efetiva,0.27350408972892426,0.24812244004233938,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,media_movel,2.0
+otimista,margem_liquida_efetiva,0.18536582761534187,0.17789492146725883,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,media_movel,2.0
+pessimista,crescimento,0.023784920156147416,0.10197885940642337,0.25,quantil do histórico de treino,2025-12-31,6.0,0,anual,drift,
+pessimista,margem_operacional,0.2333478439175538,0.24376663372671417,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,drift,1.0
+pessimista,margem_operacional,0.2333478439175538,0.24376663372671417,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,drift,2.0
+pessimista,margem_liquida,0.18065415075134578,0.18682110326375773,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,drift,1.0
+pessimista,margem_liquida,0.18065415075134578,0.18682110326375773,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,drift,2.0
+pessimista,crescimento_receita_efetivo,-0.008414868986010404,0.06731973695461924,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,drift,1.0
+pessimista,margem_operacional_efetiva,0.2513256247305167,0.261744414539677,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,drift,1.0
+pessimista,margem_liquida_efetiva,0.17031708504032494,0.1764840375527369,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,drift,1.0
+pessimista,crescimento_receita_efetivo,-0.012359675852740115,0.06307363634696972,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,drift,2.0
+pessimista,margem_operacional_efetiva,0.24806551588380293,0.2584843056929633,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,drift,2.0
+pessimista,margem_liquida_efetiva,0.16617173842925376,0.1723386909416657,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,drift,2.0
+base,crescimento,0.10197885940642337,0.10197885940642337,0.5,quantil do histórico de treino,2025-12-31,6.0,0,anual,drift,
+base,margem_operacional,0.24376663372671417,0.24376663372671417,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,drift,1.0
+base,margem_operacional,0.24376663372671417,0.24376663372671417,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,drift,2.0
+base,margem_liquida,0.18682110326375773,0.18682110326375773,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,drift,1.0
+base,margem_liquida,0.18682110326375773,0.18682110326375773,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,drift,2.0
+base,crescimento_receita_efetivo,0.06731973695461924,0.06731973695461924,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,drift,1.0
+base,margem_operacional_efetiva,0.261744414539677,0.261744414539677,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,drift,1.0
+base,margem_liquida_efetiva,0.1764840375527369,0.1764840375527369,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,drift,1.0
+base,crescimento_receita_efetivo,0.06307363634696972,0.06307363634696972,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,drift,2.0
+base,margem_operacional_efetiva,0.2584843056929633,0.2584843056929633,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,drift,2.0
+base,margem_liquida_efetiva,0.1723386909416657,0.1723386909416657,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,drift,2.0
+otimista,crescimento,0.11885458529293741,0.10197885940642337,0.75,quantil do histórico de treino,2025-12-31,6.0,0,anual,drift,
+otimista,margem_operacional,0.26914828341329905,0.24376663372671417,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,drift,1.0
+otimista,margem_operacional,0.26914828341329905,0.24376663372671417,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,drift,2.0
+otimista,margem_liquida,0.19429200941184074,0.18682110326375773,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,drift,1.0
+otimista,margem_liquida,0.19429200941184074,0.18682110326375773,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,drift,2.0
+otimista,crescimento_receita_efetivo,0.08366469235949392,0.06731973695461924,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,drift,1.0
+otimista,margem_operacional_efetiva,0.28712606422626186,0.261744414539677,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,drift,1.0
+otimista,margem_liquida_efetiva,0.1839549437008199,0.1764840375527369,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,drift,1.0
+otimista,crescimento_receita_efetivo,0.07935356688378148,0.06307363634696972,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,drift,2.0
+otimista,margem_operacional_efetiva,0.2838659553795482,0.2584843056929633,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,drift,2.0
+otimista,margem_liquida_efetiva,0.17980959708974875,0.1723386909416657,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,drift,2.0
+pessimista,crescimento,0.023784920156147416,0.10197885940642337,0.25,quantil do histórico de treino,2025-12-31,6.0,0,anual,crescimento_medio,
+pessimista,margem_operacional,0.2333478439175538,0.24376663372671417,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,crescimento_medio,1.0
+pessimista,margem_operacional,0.2333478439175538,0.24376663372671417,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,crescimento_medio,2.0
+pessimista,margem_liquida,0.18065415075134578,0.18682110326375773,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,crescimento_medio,1.0
+pessimista,margem_liquida,0.18065415075134578,0.18682110326375773,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,crescimento_medio,2.0
+pessimista,crescimento_receita_efetivo,0.01584322649453429,0.09343060053810093,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,crescimento_medio,1.0
+pessimista,margem_operacional_efetiva,0.24843780659716053,0.2588565964063209,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,crescimento_medio,1.0
+pessimista,margem_liquida_efetiva,0.1675425728528923,0.17370952536530423,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,crescimento_medio,1.0
+pessimista,crescimento_receita_efetivo,0.01584322649453429,0.0934306005381007,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,crescimento_medio,2.0
+pessimista,margem_operacional_efetiva,0.24201439055561993,0.2524331803647803,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,crescimento_medio,2.0
+pessimista,margem_liquida_efetiva,0.16597550599636104,0.16654017134536722,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,crescimento_medio,2.0
+base,crescimento,0.10197885940642337,0.10197885940642337,0.5,quantil do histórico de treino,2025-12-31,6.0,0,anual,crescimento_medio,
+base,margem_operacional,0.24376663372671417,0.24376663372671417,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,crescimento_medio,1.0
+base,margem_operacional,0.24376663372671417,0.24376663372671417,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,crescimento_medio,2.0
+base,margem_liquida,0.18682110326375773,0.18682110326375773,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,crescimento_medio,1.0
+base,margem_liquida,0.18682110326375773,0.18682110326375773,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,crescimento_medio,2.0
+base,crescimento_receita_efetivo,0.09343060053810093,0.09343060053810093,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,crescimento_medio,1.0
+base,margem_operacional_efetiva,0.25885659640632097,0.2588565964063209,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,crescimento_medio,1.0
+base,margem_liquida_efetiva,0.17370952536530423,0.17370952536530423,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,crescimento_medio,1.0
+base,crescimento_receita_efetivo,0.0934306005381007,0.0934306005381007,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,crescimento_medio,2.0
+base,margem_operacional_efetiva,0.25243318036478035,0.2524331803647803,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,crescimento_medio,2.0
+base,margem_liquida_efetiva,0.1665401713453672,0.16654017134536722,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,crescimento_medio,2.0
+otimista,crescimento,0.11885458529293741,0.10197885940642337,0.75,quantil do histórico de treino,2025-12-31,6.0,0,anual,crescimento_medio,
+otimista,margem_operacional,0.26914828341329905,0.24376663372671417,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,crescimento_medio,1.0
+otimista,margem_operacional,0.26914828341329905,0.24376663372671417,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,crescimento_medio,2.0
+otimista,margem_liquida,0.19429200941184074,0.18682110326375773,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,crescimento_medio,1.0
+otimista,margem_liquida,0.19429200941184074,0.18682110326375773,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,crescimento_medio,2.0
+otimista,crescimento_receita_efetivo,0.11017541822049015,0.09343060053810093,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,crescimento_medio,1.0
+otimista,margem_operacional_efetiva,0.2842382460929058,0.2588565964063209,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,crescimento_medio,1.0
+otimista,margem_liquida_efetiva,0.1811804315133873,0.17370952536530423,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,crescimento_medio,1.0
+otimista,crescimento_receita_efetivo,0.11017541822048993,0.0934306005381007,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,crescimento_medio,2.0
+otimista,margem_operacional_efetiva,0.2778148300513652,0.2524331803647803,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,crescimento_medio,2.0
+otimista,margem_liquida_efetiva,0.17401107749345024,0.16654017134536722,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,crescimento_medio,2.0
+pessimista,crescimento,0.023784920156147416,0.10197885940642337,0.25,quantil do histórico de treino,2025-12-31,6.0,0,anual,tendencia,
+pessimista,margem_operacional,0.2333478439175538,0.24376663372671417,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,tendencia,1.0
+pessimista,margem_operacional,0.2333478439175538,0.24376663372671417,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,tendencia,2.0
+pessimista,margem_liquida,0.18065415075134578,0.18682110326375773,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,tendencia,1.0
+pessimista,margem_liquida,0.18065415075134578,0.18682110326375773,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,tendencia,2.0
+pessimista,crescimento_receita_efetivo,0.048214566479094945,0.12827437642435147,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,tendencia,1.0
+pessimista,margem_operacional_efetiva,0.22780597496240318,0.2382247647715635,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,tendencia,1.0
+pessimista,margem_liquida_efetiva,0.16597550599636104,0.16816306875252812,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,tendencia,1.0
+pessimista,crescimento_receita_efetivo,-0.012317687696790425,0.06311883144536501,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,tendencia,2.0
+pessimista,margem_operacional_efetiva,0.22565642072988504,0.23607521053904543,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,tendencia,2.0
+pessimista,margem_liquida_efetiva,0.16597550599636104,0.16597550599636102,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,tendencia,2.0
+base,crescimento,0.10197885940642337,0.10197885940642337,0.5,quantil do histórico de treino,2025-12-31,6.0,0,anual,tendencia,
+base,margem_operacional,0.24376663372671417,0.24376663372671417,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,tendencia,1.0
+base,margem_operacional,0.24376663372671417,0.24376663372671417,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,tendencia,2.0
+base,margem_liquida,0.18682110326375773,0.18682110326375773,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,tendencia,1.0
+base,margem_liquida,0.18682110326375773,0.18682110326375773,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,tendencia,2.0
+base,crescimento_receita_efetivo,0.12827437642435147,0.12827437642435147,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,tendencia,1.0
+base,margem_operacional_efetiva,0.2382247647715635,0.2382247647715635,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,tendencia,1.0
+base,margem_liquida_efetiva,0.16816306875252812,0.16816306875252812,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,tendencia,1.0
+base,crescimento_receita_efetivo,0.06311883144536501,0.06311883144536501,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,tendencia,2.0
+base,margem_operacional_efetiva,0.23607521053904543,0.23607521053904543,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,tendencia,2.0
+base,margem_liquida_efetiva,0.16597550599636102,0.16597550599636102,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,tendencia,2.0
+otimista,crescimento,0.11885458529293741,0.10197885940642337,0.75,quantil do histórico de treino,2025-12-31,6.0,0,anual,tendencia,
+otimista,margem_operacional,0.26914828341329905,0.24376663372671417,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,tendencia,1.0
+otimista,margem_operacional,0.26914828341329905,0.24376663372671417,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,tendencia,2.0
+otimista,margem_liquida,0.19429200941184074,0.18682110326375773,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,tendencia,1.0
+otimista,margem_liquida,0.19429200941184074,0.18682110326375773,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,tendencia,2.0
+otimista,crescimento_receita_efetivo,0.1455527923747002,0.12827437642435147,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,tendencia,1.0
+otimista,margem_operacional_efetiva,0.26360641445814836,0.2382247647715635,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,tendencia,1.0
+otimista,margem_liquida_efetiva,0.1756339749006111,0.16816306875252812,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,tendencia,1.0
+otimista,crescimento_receita_efetivo,0.07939945410080074,0.06311883144536501,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,tendencia,2.0
+otimista,margem_operacional_efetiva,0.2614568602256303,0.23607521053904543,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,tendencia,2.0
+otimista,margem_liquida_efetiva,0.17221883803586924,0.16597550599636102,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,tendencia,2.0
+pessimista,crescimento,0.023784920156147416,0.10197885940642337,0.25,quantil do histórico de treino,2025-12-31,6.0,0,anual,direcionadores,
+pessimista,margem_operacional,0.2333478439175538,0.24376663372671417,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,direcionadores,1.0
+pessimista,margem_operacional,0.2333478439175538,0.24376663372671417,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,direcionadores,2.0
+pessimista,margem_liquida,0.18065415075134578,0.18682110326375773,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,direcionadores,1.0
+pessimista,margem_liquida,0.18065415075134578,0.18682110326375773,0.25,quantil do histórico de treino,2025-12-31,7.0,0,anual,direcionadores,2.0
+pessimista,crescimento_receita_efetivo,0.023784920156147304,0.10197885940642326,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,direcionadores,1.0
+pessimista,margem_operacional_efetiva,0.2478992553484879,0.2583180451576482,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,direcionadores,1.0
+pessimista,margem_liquida_efetiva,0.1819528480101277,0.18811980052253968,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,direcionadores,1.0
+pessimista,crescimento_receita_efetivo,0.023784920156147304,0.10197885940642326,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,direcionadores,2.0
+pessimista,margem_operacional_efetiva,0.2450754800478896,0.25549426985705,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,direcionadores,2.0
+pessimista,margem_liquida_efetiva,0.1837955451876278,0.18996249770003978,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,direcionadores,2.0
+base,crescimento,0.10197885940642337,0.10197885940642337,0.5,quantil do histórico de treino,2025-12-31,6.0,0,anual,direcionadores,
+base,margem_operacional,0.24376663372671417,0.24376663372671417,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,direcionadores,1.0
+base,margem_operacional,0.24376663372671417,0.24376663372671417,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,direcionadores,2.0
+base,margem_liquida,0.18682110326375773,0.18682110326375773,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,direcionadores,1.0
+base,margem_liquida,0.18682110326375773,0.18682110326375773,0.5,quantil do histórico de treino,2025-12-31,7.0,0,anual,direcionadores,2.0
+base,crescimento_receita_efetivo,0.10197885940642326,0.10197885940642326,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,direcionadores,1.0
+base,margem_operacional_efetiva,0.2583180451576482,0.2583180451576482,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,direcionadores,1.0
+base,margem_liquida_efetiva,0.18811980052253968,0.18811980052253968,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,direcionadores,1.0
+base,crescimento_receita_efetivo,0.10197885940642326,0.10197885940642326,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,direcionadores,2.0
+base,margem_operacional_efetiva,0.25549426985705004,0.25549426985705,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,direcionadores,2.0
+base,margem_liquida_efetiva,0.18996249770003973,0.18996249770003978,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,direcionadores,2.0
+otimista,crescimento,0.11885458529293741,0.10197885940642337,0.75,quantil do histórico de treino,2025-12-31,6.0,0,anual,direcionadores,
+otimista,margem_operacional,0.26914828341329905,0.24376663372671417,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,direcionadores,1.0
+otimista,margem_operacional,0.26914828341329905,0.24376663372671417,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,direcionadores,2.0
+otimista,margem_liquida,0.19429200941184074,0.18682110326375773,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,direcionadores,1.0
+otimista,margem_liquida,0.19429200941184074,0.18682110326375773,0.75,quantil do histórico de treino,2025-12-31,7.0,0,anual,direcionadores,2.0
+otimista,crescimento_receita_efetivo,0.11885458529293746,0.10197885940642326,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,direcionadores,1.0
+otimista,margem_operacional_efetiva,0.2836996948442332,0.2583180451576482,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,direcionadores,1.0
+otimista,margem_liquida_efetiva,0.1955907066706227,0.18811980052253968,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,direcionadores,1.0
+otimista,crescimento_receita_efetivo,0.11885458529293746,0.10197885940642326,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,direcionadores,2.0
+otimista,margem_operacional_efetiva,0.2808759195436349,0.25549426985705,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,direcionadores,2.0
+otimista,margem_liquida_efetiva,0.19743340384812277,0.18996249770003978,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,0,anual,direcionadores,2.0
+pessimista,crescimento,0.023784920156147416,0.10197885940642337,0.25,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,ingenuo,
+pessimista,margem_operacional,0.23831570963088206,0.24025103714734353,0.25,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,ingenuo,1.0
+pessimista,margem_operacional,0.19213408580301844,0.21869679307228193,0.25,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,ingenuo,2.0
+pessimista,margem_operacional,0.22269259077428455,0.24104905239331195,0.25,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,ingenuo,3.0
+pessimista,margem_operacional,0.2548959838812675,0.27834435554131254,0.25,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,ingenuo,4.0
+pessimista,margem_liquida,0.16668952817749333,0.1860167936058814,0.25,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,ingenuo,1.0
+pessimista,margem_liquida,0.12989265418358373,0.13890189412805073,0.25,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,ingenuo,2.0
+pessimista,margem_liquida,0.15877841763794218,0.197610514739195,0.25,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,ingenuo,3.0
+pessimista,margem_liquida,0.18421832417262787,0.22400698399218297,0.25,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,ingenuo,4.0
+pessimista,crescimento_receita_efetivo,0.08258570797914655,0.10268996680413167,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,ingenuo,1.0
+pessimista,margem_operacional_efetiva,0.2809257177110296,0.28286104522749106,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,ingenuo,1.0
+pessimista,margem_liquida_efetiva,0.163257586580669,0.18258485200905705,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,ingenuo,1.0
+pessimista,crescimento_receita_efetivo,0.19019721730363948,0.23481301375188313,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,ingenuo,2.0
+pessimista,margem_operacional_efetiva,0.25629833795822754,0.28286104522749106,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,ingenuo,2.0
+pessimista,margem_liquida_efetiva,0.17357561206459007,0.18258485200905705,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,ingenuo,2.0
+pessimista,crescimento_receita_efetivo,0.12606355535627767,0.18997079808370043,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,ingenuo,3.0
+pessimista,margem_operacional_efetiva,0.26450458360846363,0.28286104522749106,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,ingenuo,3.0
+pessimista,margem_liquida_efetiva,0.14375275490780426,0.18258485200905705,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,ingenuo,3.0
+pessimista,crescimento_receita_efetivo,-0.07095774894664919,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,ingenuo,4.0
+pessimista,margem_operacional_efetiva,0.259412673567446,0.28286104522749106,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,ingenuo,4.0
+pessimista,margem_liquida_efetiva,0.14279619218950193,0.18258485200905705,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,ingenuo,4.0
+base,crescimento,0.10197885940642337,0.10197885940642337,0.5,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,ingenuo,
+base,margem_operacional,0.24025103714734353,0.24025103714734353,0.5,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,ingenuo,1.0
+base,margem_operacional,0.21869679307228193,0.21869679307228193,0.5,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,ingenuo,2.0
+base,margem_operacional,0.24104905239331195,0.24104905239331195,0.5,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,ingenuo,3.0
+base,margem_operacional,0.27834435554131254,0.27834435554131254,0.5,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,ingenuo,4.0
+base,margem_liquida,0.1860167936058814,0.1860167936058814,0.5,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,ingenuo,1.0
+base,margem_liquida,0.13890189412805073,0.13890189412805073,0.5,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,ingenuo,2.0
+base,margem_liquida,0.197610514739195,0.197610514739195,0.5,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,ingenuo,3.0
+base,margem_liquida,0.22400698399218297,0.22400698399218297,0.5,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,ingenuo,4.0
+base,crescimento_receita_efetivo,0.10268996680413167,0.10268996680413167,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,ingenuo,1.0
+base,margem_operacional_efetiva,0.282861045227491,0.28286104522749106,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,ingenuo,1.0
+base,margem_liquida_efetiva,0.18258485200905705,0.18258485200905705,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,ingenuo,1.0
+base,crescimento_receita_efetivo,0.23481301375188313,0.23481301375188313,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,ingenuo,2.0
+base,margem_operacional_efetiva,0.282861045227491,0.28286104522749106,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,ingenuo,2.0
+base,margem_liquida_efetiva,0.18258485200905705,0.18258485200905705,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,ingenuo,2.0
+base,crescimento_receita_efetivo,0.18997079808370043,0.18997079808370043,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,ingenuo,3.0
+base,margem_operacional_efetiva,0.282861045227491,0.28286104522749106,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,ingenuo,3.0
+base,margem_liquida_efetiva,0.18258485200905705,0.18258485200905705,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,ingenuo,3.0
+base,crescimento_receita_efetivo,0.0,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,ingenuo,4.0
+base,margem_operacional_efetiva,0.2828610452274911,0.28286104522749106,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,ingenuo,4.0
+base,margem_liquida_efetiva,0.18258485200905705,0.18258485200905705,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,ingenuo,4.0
+otimista,crescimento,0.11885458529293741,0.10197885940642337,0.75,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,ingenuo,
+otimista,margem_operacional,0.24733367439364878,0.24025103714734353,0.75,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,ingenuo,1.0
+otimista,margem_operacional,0.23606343015794187,0.21869679307228193,0.75,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,ingenuo,2.0
+otimista,margem_operacional,0.2520556286845379,0.24104905239331195,0.75,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,ingenuo,3.0
+otimista,margem_operacional,0.30916022441104407,0.27834435554131254,0.75,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,ingenuo,4.0
+otimista,margem_liquida,0.1894973262708569,0.1860167936058814,0.75,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,ingenuo,1.0
+otimista,margem_liquida,0.17839711152864846,0.13890189412805073,0.75,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,ingenuo,2.0
+otimista,margem_liquida,0.20928415839565767,0.197610514739195,0.75,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,ingenuo,3.0
+otimista,margem_liquida,0.24630585540641825,0.22400698399218297,0.75,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,ingenuo,4.0
+otimista,crescimento_receita_efetivo,0.10688759114069213,0.10268996680413167,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,ingenuo,1.0
+otimista,margem_operacional_efetiva,0.2899436824737963,0.28286104522749106,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,ingenuo,1.0
+otimista,margem_liquida_efetiva,0.18606538467403255,0.18258485200905705,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,ingenuo,1.0
+otimista,crescimento_receita_efetivo,0.24423206524612517,0.23481301375188313,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,ingenuo,2.0
+otimista,margem_operacional_efetiva,0.300227682313151,0.28286104522749106,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,ingenuo,2.0
+otimista,margem_liquida_efetiva,0.22208006940965475,0.18258485200905705,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,ingenuo,2.0
+otimista,crescimento_receita_efetivo,0.2036122278173822,0.18997079808370043,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,ingenuo,3.0
+otimista,margem_operacional_efetiva,0.29386762151871704,0.28286104522749106,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,ingenuo,3.0
+otimista,margem_liquida_efetiva,0.1942584956655197,0.18258485200905705,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,ingenuo,3.0
+otimista,crescimento_receita_efetivo,0.015314019631560205,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,ingenuo,4.0
+otimista,margem_operacional_efetiva,0.31367691409722265,0.28286104522749106,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,ingenuo,4.0
+otimista,margem_liquida_efetiva,0.20488372342329236,0.18258485200905705,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,ingenuo,4.0
+pessimista,crescimento,0.023784920156147416,0.10197885940642337,0.25,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,ingenuo_sazonal,
+pessimista,margem_operacional,0.23831570963088206,0.24025103714734353,0.25,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,ingenuo_sazonal,1.0
+pessimista,margem_operacional,0.19213408580301844,0.21869679307228193,0.25,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,ingenuo_sazonal,2.0
+pessimista,margem_operacional,0.22269259077428455,0.24104905239331195,0.25,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,ingenuo_sazonal,3.0
+pessimista,margem_operacional,0.2548959838812675,0.27834435554131254,0.25,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,ingenuo_sazonal,4.0
+pessimista,margem_liquida,0.16668952817749333,0.1860167936058814,0.25,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,ingenuo_sazonal,1.0
+pessimista,margem_liquida,0.12989265418358373,0.13890189412805073,0.25,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,ingenuo_sazonal,2.0
+pessimista,margem_liquida,0.15877841763794218,0.197610514739195,0.25,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,ingenuo_sazonal,3.0
+pessimista,margem_liquida,0.18421832417262787,0.22400698399218297,0.25,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,ingenuo_sazonal,4.0
+pessimista,crescimento_receita_efetivo,-0.018232013920696177,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,ingenuo_sazonal,1.0
+pessimista,margem_operacional_efetiva,0.25199324140388113,0.2539285689203426,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,ingenuo_sazonal,1.0
+pessimista,margem_liquida_efetiva,0.14978795324287222,0.16911521867126025,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,ingenuo_sazonal,1.0
+pessimista,crescimento_receita_efetivo,-0.03613162150978799,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,ingenuo_sazonal,2.0
+pessimista,margem_operacional_efetiva,0.1921340858030184,0.21869679307228193,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,ingenuo_sazonal,2.0
+pessimista,margem_liquida_efetiva,0.12989265418358373,0.13890189412805073,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,ingenuo_sazonal,2.0
+pessimista,crescimento_receita_efetivo,-0.05370488320414035,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,ingenuo_sazonal,3.0
+pessimista,margem_operacional_efetiva,0.28383597976728026,0.3021924413863077,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,ingenuo_sazonal,3.0
+pessimista,margem_liquida_efetiva,0.19447048239335896,0.2333025794946118,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,ingenuo_sazonal,3.0
+pessimista,crescimento_receita_efetivo,-0.07095774894664919,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,ingenuo_sazonal,4.0
+pessimista,margem_operacional_efetiva,0.259412673567446,0.28286104522749106,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,ingenuo_sazonal,4.0
+pessimista,margem_liquida_efetiva,0.14279619218950193,0.18258485200905705,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,ingenuo_sazonal,4.0
+base,crescimento,0.10197885940642337,0.10197885940642337,0.5,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,ingenuo_sazonal,
+base,margem_operacional,0.24025103714734353,0.24025103714734353,0.5,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,ingenuo_sazonal,1.0
+base,margem_operacional,0.21869679307228193,0.21869679307228193,0.5,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,ingenuo_sazonal,2.0
+base,margem_operacional,0.24104905239331195,0.24104905239331195,0.5,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,ingenuo_sazonal,3.0
+base,margem_operacional,0.27834435554131254,0.27834435554131254,0.5,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,ingenuo_sazonal,4.0
+base,margem_liquida,0.1860167936058814,0.1860167936058814,0.5,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,ingenuo_sazonal,1.0
+base,margem_liquida,0.13890189412805073,0.13890189412805073,0.5,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,ingenuo_sazonal,2.0
+base,margem_liquida,0.197610514739195,0.197610514739195,0.5,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,ingenuo_sazonal,3.0
+base,margem_liquida,0.22400698399218297,0.22400698399218297,0.5,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,ingenuo_sazonal,4.0
+base,crescimento_receita_efetivo,0.0,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,ingenuo_sazonal,1.0
+base,margem_operacional_efetiva,0.2539285689203426,0.2539285689203426,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,ingenuo_sazonal,1.0
+base,margem_liquida_efetiva,0.16911521867126025,0.16911521867126025,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,ingenuo_sazonal,1.0
+base,crescimento_receita_efetivo,0.0,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,ingenuo_sazonal,2.0
+base,margem_operacional_efetiva,0.21869679307228193,0.21869679307228193,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,ingenuo_sazonal,2.0
+base,margem_liquida_efetiva,0.13890189412805073,0.13890189412805073,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,ingenuo_sazonal,2.0
+base,crescimento_receita_efetivo,0.0,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,ingenuo_sazonal,3.0
+base,margem_operacional_efetiva,0.30219244138630763,0.3021924413863077,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,ingenuo_sazonal,3.0
+base,margem_liquida_efetiva,0.2333025794946118,0.2333025794946118,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,ingenuo_sazonal,3.0
+base,crescimento_receita_efetivo,0.0,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,ingenuo_sazonal,4.0
+base,margem_operacional_efetiva,0.2828610452274911,0.28286104522749106,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,ingenuo_sazonal,4.0
+base,margem_liquida_efetiva,0.18258485200905705,0.18258485200905705,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,ingenuo_sazonal,4.0
+otimista,crescimento,0.11885458529293741,0.10197885940642337,0.75,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,ingenuo_sazonal,
+otimista,margem_operacional,0.24733367439364878,0.24025103714734353,0.75,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,ingenuo_sazonal,1.0
+otimista,margem_operacional,0.23606343015794187,0.21869679307228193,0.75,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,ingenuo_sazonal,2.0
+otimista,margem_operacional,0.2520556286845379,0.24104905239331195,0.75,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,ingenuo_sazonal,3.0
+otimista,margem_operacional,0.30916022441104407,0.27834435554131254,0.75,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,ingenuo_sazonal,4.0
+otimista,margem_liquida,0.1894973262708569,0.1860167936058814,0.75,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,ingenuo_sazonal,1.0
+otimista,margem_liquida,0.17839711152864846,0.13890189412805073,0.75,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,ingenuo_sazonal,2.0
+otimista,margem_liquida,0.20928415839565767,0.197610514739195,0.75,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,ingenuo_sazonal,3.0
+otimista,margem_liquida,0.24630585540641825,0.22400698399218297,0.75,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,ingenuo_sazonal,4.0
+otimista,crescimento_receita_efetivo,0.003806713095183323,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,ingenuo_sazonal,1.0
+otimista,margem_operacional_efetiva,0.26101120616664786,0.2539285689203426,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,ingenuo_sazonal,1.0
+otimista,margem_liquida_efetiva,0.17259575133623575,0.16911521867126025,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,ingenuo_sazonal,1.0
+otimista,crescimento_receita_efetivo,0.007627917254955818,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,ingenuo_sazonal,2.0
+otimista,margem_operacional_efetiva,0.23606343015794187,0.21869679307228193,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,ingenuo_sazonal,2.0
+otimista,margem_liquida_efetiva,0.17839711152864848,0.13890189412805073,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,ingenuo_sazonal,2.0
+otimista,crescimento_receita_efetivo,0.011463667642642728,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,ingenuo_sazonal,3.0
+otimista,margem_operacional_efetiva,0.31319901767753366,0.3021924413863077,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,ingenuo_sazonal,3.0
+otimista,margem_liquida_efetiva,0.24497622315107445,0.2333025794946118,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,ingenuo_sazonal,3.0
+otimista,crescimento_receita_efetivo,0.015314019631560205,0.0,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,ingenuo_sazonal,4.0
+otimista,margem_operacional_efetiva,0.31367691409722265,0.28286104522749106,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,ingenuo_sazonal,4.0
+otimista,margem_liquida_efetiva,0.20488372342329236,0.18258485200905705,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,ingenuo_sazonal,4.0
+pessimista,crescimento,0.023784920156147416,0.10197885940642337,0.25,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,media_movel,
+pessimista,margem_operacional,0.23831570963088206,0.24025103714734353,0.25,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,media_movel,1.0
+pessimista,margem_operacional,0.19213408580301844,0.21869679307228193,0.25,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,media_movel,2.0
+pessimista,margem_operacional,0.22269259077428455,0.24104905239331195,0.25,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,media_movel,3.0
+pessimista,margem_operacional,0.2548959838812675,0.27834435554131254,0.25,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,media_movel,4.0
+pessimista,margem_liquida,0.16668952817749333,0.1860167936058814,0.25,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,media_movel,1.0
+pessimista,margem_liquida,0.12989265418358373,0.13890189412805073,0.25,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,media_movel,2.0
+pessimista,margem_liquida,0.15877841763794218,0.197610514739195,0.25,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,media_movel,3.0
+pessimista,margem_liquida,0.18421832417262787,0.22400698399218297,0.25,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,media_movel,4.0
+pessimista,crescimento_receita_efetivo,-0.03729193338375447,-0.019413873474499965,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,media_movel,1.0
+pessimista,margem_operacional_efetiva,0.26350813520993766,0.26544346272639907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,media_movel,1.0
+pessimista,margem_liquida_efetiva,0.1618602460223061,0.18118751145069414,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,media_movel,1.0
+pessimista,crescimento_receita_efetivo,0.05840346267022167,0.09807883139406215,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,media_movel,2.0
+pessimista,margem_operacional_efetiva,0.2388807554571356,0.26544346272639907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,media_movel,2.0
+pessimista,margem_liquida_efetiva,0.17217827150622714,0.18118751145069414,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,media_movel,2.0
+pessimista,crescimento_receita_efetivo,0.001371494445167487,0.058202115462452575,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,media_movel,3.0
+pessimista,margem_operacional_efetiva,0.24708700110737167,0.26544346272639907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,media_movel,3.0
+pessimista,margem_liquida_efetiva,0.14235541434944132,0.18118751145069414,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,media_movel,3.0
+pessimista,crescimento_receita_efetivo,-0.17383310834027355,-0.11073270271291102,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,media_movel,4.0
+pessimista,margem_operacional_efetiva,0.24199509106635397,0.26544346272639907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,media_movel,4.0
+pessimista,margem_liquida_efetiva,0.14139885163113905,0.18118751145069414,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,media_movel,4.0
+base,crescimento,0.10197885940642337,0.10197885940642337,0.5,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,media_movel,
+base,margem_operacional,0.24025103714734353,0.24025103714734353,0.5,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,media_movel,1.0
+base,margem_operacional,0.21869679307228193,0.21869679307228193,0.5,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,media_movel,2.0
+base,margem_operacional,0.24104905239331195,0.24104905239331195,0.5,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,media_movel,3.0
+base,margem_operacional,0.27834435554131254,0.27834435554131254,0.5,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,media_movel,4.0
+base,margem_liquida,0.1860167936058814,0.1860167936058814,0.5,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,media_movel,1.0
+base,margem_liquida,0.13890189412805073,0.13890189412805073,0.5,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,media_movel,2.0
+base,margem_liquida,0.197610514739195,0.197610514739195,0.5,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,media_movel,3.0
+base,margem_liquida,0.22400698399218297,0.22400698399218297,0.5,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,media_movel,4.0
+base,crescimento_receita_efetivo,-0.019413873474499965,-0.019413873474499965,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,media_movel,1.0
+base,margem_operacional_efetiva,0.26544346272639907,0.26544346272639907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,media_movel,1.0
+base,margem_liquida_efetiva,0.18118751145069414,0.18118751145069414,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,media_movel,1.0
+base,crescimento_receita_efetivo,0.09807883139406215,0.09807883139406215,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,media_movel,2.0
+base,margem_operacional_efetiva,0.26544346272639907,0.26544346272639907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,media_movel,2.0
+base,margem_liquida_efetiva,0.18118751145069414,0.18118751145069414,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,media_movel,2.0
+base,crescimento_receita_efetivo,0.058202115462452575,0.058202115462452575,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,media_movel,3.0
+base,margem_operacional_efetiva,0.26544346272639907,0.26544346272639907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,media_movel,3.0
+base,margem_liquida_efetiva,0.18118751145069412,0.18118751145069414,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,media_movel,3.0
+base,crescimento_receita_efetivo,-0.11073270271291102,-0.11073270271291102,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,media_movel,4.0
+base,margem_operacional_efetiva,0.26544346272639907,0.26544346272639907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,media_movel,4.0
+base,margem_liquida_efetiva,0.18118751145069414,0.18118751145069414,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,media_movel,4.0
+otimista,crescimento,0.11885458529293741,0.10197885940642337,0.75,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,media_movel,
+otimista,margem_operacional,0.24733367439364878,0.24025103714734353,0.75,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,media_movel,1.0
+otimista,margem_operacional,0.23606343015794187,0.21869679307228193,0.75,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,media_movel,2.0
+otimista,margem_operacional,0.2520556286845379,0.24104905239331195,0.75,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,media_movel,3.0
+otimista,margem_operacional,0.30916022441104407,0.27834435554131254,0.75,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,media_movel,4.0
+otimista,margem_liquida,0.1894973262708569,0.1860167936058814,0.75,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,media_movel,1.0
+otimista,margem_liquida,0.17839711152864846,0.13890189412805073,0.75,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,media_movel,2.0
+otimista,margem_liquida,0.20928415839565767,0.197610514739195,0.75,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,media_movel,3.0
+otimista,margem_liquida,0.24630585540641825,0.22400698399218297,0.75,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,media_movel,4.0
+otimista,crescimento_receita_efetivo,-0.015681063425700414,-0.019413873474499965,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,media_movel,1.0
+otimista,margem_operacional_efetiva,0.27252609997270427,0.26544346272639907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,media_movel,1.0
+otimista,margem_liquida_efetiva,0.18466804411566964,0.18118751145069414,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,media_movel,1.0
+otimista,crescimento_receita_efetivo,0.10645488585935459,0.09807883139406215,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,media_movel,2.0
+otimista,margem_operacional_efetiva,0.28281009981205896,0.26544346272639907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,media_movel,2.0
+otimista,margem_liquida_efetiva,0.22068272885129184,0.18118751145069414,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,media_movel,2.0
+otimista,crescimento_receita_efetivo,0.07033299281285554,0.058202115462452575,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,media_movel,3.0
+otimista,margem_operacional_efetiva,0.276450039017625,0.26544346272639907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,media_movel,3.0
+otimista,margem_liquida_efetiva,0.19286115510715685,0.18118751145069414,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,media_movel,3.0
+otimista,crescimento_receita_efetivo,-0.09711444586455209,-0.11073270271291102,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,media_movel,4.0
+otimista,margem_operacional_efetiva,0.2962593315961306,0.26544346272639907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,media_movel,4.0
+otimista,margem_liquida_efetiva,0.2034863828649294,0.18118751145069414,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,media_movel,4.0
+pessimista,crescimento,0.023784920156147416,0.10197885940642337,0.25,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,drift,
+pessimista,margem_operacional,0.23831570963088206,0.24025103714734353,0.25,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,drift,1.0
+pessimista,margem_operacional,0.19213408580301844,0.21869679307228193,0.25,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,drift,2.0
+pessimista,margem_operacional,0.22269259077428455,0.24104905239331195,0.25,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,drift,3.0
+pessimista,margem_operacional,0.2548959838812675,0.27834435554131254,0.25,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,drift,4.0
+pessimista,margem_liquida,0.16668952817749333,0.1860167936058814,0.25,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,drift,1.0
+pessimista,margem_liquida,0.12989265418358373,0.13890189412805073,0.25,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,drift,2.0
+pessimista,margem_liquida,0.15877841763794218,0.197610514739195,0.25,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,drift,3.0
+pessimista,margem_liquida,0.18421832417262787,0.22400698399218297,0.25,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,drift,4.0
+pessimista,crescimento_receita_efetivo,0.10225165213362608,0.12272111920808748,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,drift,1.0
+pessimista,margem_operacional_efetiva,0.28022452084763894,0.28215984836410046,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,drift,1.0
+pessimista,margem_liquida_efetiva,0.16261068109018087,0.1819379465185689,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,drift,1.0
+pessimista,crescimento_receita_efetivo,0.23343878577400612,0.27967553796717026,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,drift,2.0
+pessimista,margem_operacional_efetiva,0.25492052660434494,0.28148323387360846,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,drift,2.0
+pessimista,margem_liquida_efetiva,0.17230448012401964,0.18131372006848664,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,drift,2.0
+pessimista,crescimento_receita_efetivo,0.18743080645929444,0.2548208115877386,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,drift,3.0
+pessimista,margem_operacional_efetiva,0.262473469702835,0.28082993132186246,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,drift,3.0
+pessimista,margem_liquida_efetiva,0.14187890348895377,0.1807110005902066,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,drift,3.0
+pessimista,crescimento_receita_efetivo,-0.003450879451863509,0.07266286266124755,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,drift,4.0
+pessimista,margem_operacional_efetiva,0.25675038467468014,0.2801987563347252,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,drift,4.0
+pessimista,margem_liquida_efetiva,0.14034003559224054,0.18012869541179563,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,drift,4.0
+base,crescimento,0.10197885940642337,0.10197885940642337,0.5,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,drift,
+base,margem_operacional,0.24025103714734353,0.24025103714734353,0.5,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,drift,1.0
+base,margem_operacional,0.21869679307228193,0.21869679307228193,0.5,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,drift,2.0
+base,margem_operacional,0.24104905239331195,0.24104905239331195,0.5,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,drift,3.0
+base,margem_operacional,0.27834435554131254,0.27834435554131254,0.5,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,drift,4.0
+base,margem_liquida,0.1860167936058814,0.1860167936058814,0.5,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,drift,1.0
+base,margem_liquida,0.13890189412805073,0.13890189412805073,0.5,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,drift,2.0
+base,margem_liquida,0.197610514739195,0.197610514739195,0.5,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,drift,3.0
+base,margem_liquida,0.22400698399218297,0.22400698399218297,0.5,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,drift,4.0
+base,crescimento_receita_efetivo,0.12272111920808748,0.12272111920808748,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,drift,1.0
+base,margem_operacional_efetiva,0.28215984836410046,0.28215984836410046,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,drift,1.0
+base,margem_liquida_efetiva,0.1819379465185689,0.1819379465185689,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,drift,1.0
+base,crescimento_receita_efetivo,0.27967553796717026,0.27967553796717026,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,drift,2.0
+base,margem_operacional_efetiva,0.2814832338736084,0.28148323387360846,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,drift,2.0
+base,margem_liquida_efetiva,0.18131372006848664,0.18131372006848664,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,drift,2.0
+base,crescimento_receita_efetivo,0.2548208115877386,0.2548208115877386,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,drift,3.0
+base,margem_operacional_efetiva,0.2808299313218624,0.28082993132186246,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,drift,3.0
+base,margem_liquida_efetiva,0.18071100059020662,0.1807110005902066,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,drift,3.0
+base,crescimento_receita_efetivo,0.07266286266124755,0.07266286266124755,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,drift,4.0
+base,margem_operacional_efetiva,0.28019875633472524,0.2801987563347252,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,drift,4.0
+base,margem_liquida_efetiva,0.18012869541179563,0.18012869541179563,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,drift,4.0
+otimista,crescimento,0.11885458529293741,0.10197885940642337,0.75,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,drift,
+otimista,margem_operacional,0.24733367439364878,0.24025103714734353,0.75,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,drift,1.0
+otimista,margem_operacional,0.23606343015794187,0.21869679307228193,0.75,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,drift,2.0
+otimista,margem_operacional,0.2520556286845379,0.24104905239331195,0.75,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,drift,3.0
+otimista,margem_operacional,0.30916022441104407,0.27834435554131254,0.75,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,drift,4.0
+otimista,margem_liquida,0.1894973262708569,0.1860167936058814,0.75,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,drift,1.0
+otimista,margem_liquida,0.17839711152864846,0.13890189412805073,0.75,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,drift,2.0
+otimista,margem_liquida,0.20928415839565767,0.197610514739195,0.75,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,drift,3.0
+otimista,margem_liquida,0.24630585540641825,0.22400698399218297,0.75,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,drift,4.0
+otimista,crescimento_receita_efetivo,0.12699499639481582,0.12272111920808748,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,drift,1.0
+otimista,margem_operacional_efetiva,0.2892424856104058,0.28215984836410046,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,drift,1.0
+otimista,margem_liquida_efetiva,0.18541847918354443,0.1819379465185689,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,drift,1.0
+otimista,crescimento_receita_efetivo,0.28943679708397485,0.27967553796717026,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,drift,2.0
+otimista,margem_operacional_efetiva,0.2988498709592684,0.28148323387360846,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,drift,2.0
+otimista,margem_liquida_efetiva,0.2208089374690844,0.18131372006848664,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,drift,2.0
+otimista,crescimento_receita_efetivo,0.26920566032285165,0.2548208115877386,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,drift,3.0
+otimista,margem_operacional_efetiva,0.29183650761308844,0.28082993132186246,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,drift,3.0
+otimista,margem_liquida_efetiva,0.19238464424666923,0.1807110005902066,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,drift,3.0
+otimista,crescimento_receita_efetivo,0.0890896427980874,0.07266286266124755,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,drift,4.0
+otimista,margem_operacional_efetiva,0.3110146252044568,0.2801987563347252,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,drift,4.0
+otimista,margem_liquida_efetiva,0.20242756682603086,0.18012869541179563,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,drift,4.0
+pessimista,crescimento,0.023784920156147416,0.10197885940642337,0.25,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,crescimento_medio,
+pessimista,margem_operacional,0.23831570963088206,0.24025103714734353,0.25,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,crescimento_medio,1.0
+pessimista,margem_operacional,0.19213408580301844,0.21869679307228193,0.25,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,crescimento_medio,2.0
+pessimista,margem_operacional,0.22269259077428455,0.24104905239331195,0.25,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,crescimento_medio,3.0
+pessimista,margem_operacional,0.2548959838812675,0.27834435554131254,0.25,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,crescimento_medio,4.0
+pessimista,margem_liquida,0.16668952817749333,0.1860167936058814,0.25,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,crescimento_medio,1.0
+pessimista,margem_liquida,0.12989265418358373,0.13890189412805073,0.25,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,crescimento_medio,2.0
+pessimista,margem_liquida,0.15877841763794218,0.197610514739195,0.25,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,crescimento_medio,3.0
+pessimista,margem_liquida,0.18421832417262787,0.22400698399218297,0.25,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,crescimento_medio,4.0
+pessimista,crescimento_receita_efetivo,0.07843794916570634,0.09846518164892992,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,crescimento_medio,1.0
+pessimista,margem_operacional_efetiva,0.25236632938148673,0.2543016568979482,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,crescimento_medio,1.0
+pessimista,margem_liquida_efetiva,0.15460930013236432,0.1739365655607524,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,crescimento_medio,1.0
+pessimista,crescimento_receita_efetivo,0.05877585346391023,0.09846518164892992,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,crescimento_medio,2.0
+pessimista,margem_operacional_efetiva,0.19245540901837419,0.21901811628763768,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,crescimento_medio,2.0
+pessimista,margem_liquida_efetiva,0.13385264205729866,0.14286188200176564,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,crescimento_medio,2.0
+pessimista,crescimento_receita_efetivo,0.03947223736465921,0.09846518164892992,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,crescimento_medio,3.0
+pessimista,margem_operacional_efetiva,0.28427998009100863,0.30263644171003606,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,crescimento_medio,3.0
+pessimista,margem_liquida_efetiva,0.20112176235973134,0.23995385946098413,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,crescimento_medio,3.0
+pessimista,crescimento_receita_efetivo,0.020520565062849716,0.09846518164892992,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,crescimento_medio,4.0
+pessimista,margem_operacional_efetiva,0.25982827097641825,0.2832766426364633,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,crescimento_medio,4.0
+pessimista,margem_liquida_efetiva,0.14800154813096486,0.18779020795051996,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,crescimento_medio,4.0
+base,crescimento,0.10197885940642337,0.10197885940642337,0.5,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,crescimento_medio,
+base,margem_operacional,0.24025103714734353,0.24025103714734353,0.5,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,crescimento_medio,1.0
+base,margem_operacional,0.21869679307228193,0.21869679307228193,0.5,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,crescimento_medio,2.0
+base,margem_operacional,0.24104905239331195,0.24104905239331195,0.5,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,crescimento_medio,3.0
+base,margem_operacional,0.27834435554131254,0.27834435554131254,0.5,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,crescimento_medio,4.0
+base,margem_liquida,0.1860167936058814,0.1860167936058814,0.5,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,crescimento_medio,1.0
+base,margem_liquida,0.13890189412805073,0.13890189412805073,0.5,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,crescimento_medio,2.0
+base,margem_liquida,0.197610514739195,0.197610514739195,0.5,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,crescimento_medio,3.0
+base,margem_liquida,0.22400698399218297,0.22400698399218297,0.5,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,crescimento_medio,4.0
+base,crescimento_receita_efetivo,0.09846518164892992,0.09846518164892992,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,crescimento_medio,1.0
+base,margem_operacional_efetiva,0.2543016568979482,0.2543016568979482,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,crescimento_medio,1.0
+base,margem_liquida_efetiva,0.1739365655607524,0.1739365655607524,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,crescimento_medio,1.0
+base,crescimento_receita_efetivo,0.09846518164892992,0.09846518164892992,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,crescimento_medio,2.0
+base,margem_operacional_efetiva,0.2190181162876377,0.21901811628763768,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,crescimento_medio,2.0
+base,margem_liquida_efetiva,0.14286188200176567,0.14286188200176564,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,crescimento_medio,2.0
+base,crescimento_receita_efetivo,0.09846518164892992,0.09846518164892992,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,crescimento_medio,3.0
+base,margem_operacional_efetiva,0.302636441710036,0.30263644171003606,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,crescimento_medio,3.0
+base,margem_liquida_efetiva,0.23995385946098413,0.23995385946098413,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,crescimento_medio,3.0
+base,crescimento_receita_efetivo,0.09846518164892992,0.09846518164892992,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,crescimento_medio,4.0
+base,margem_operacional_efetiva,0.28327664263646324,0.2832766426364633,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,crescimento_medio,4.0
+base,margem_liquida_efetiva,0.18779020795051996,0.18779020795051996,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,crescimento_medio,4.0
+otimista,crescimento,0.11885458529293741,0.10197885940642337,0.75,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,crescimento_medio,
+otimista,margem_operacional,0.24733367439364878,0.24025103714734353,0.75,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,crescimento_medio,1.0
+otimista,margem_operacional,0.23606343015794187,0.21869679307228193,0.75,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,crescimento_medio,2.0
+otimista,margem_operacional,0.2520556286845379,0.24104905239331195,0.75,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,crescimento_medio,3.0
+otimista,margem_operacional,0.30916022441104407,0.27834435554131254,0.75,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,crescimento_medio,4.0
+otimista,margem_liquida,0.1894973262708569,0.1860167936058814,0.75,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,crescimento_medio,1.0
+otimista,margem_liquida,0.17839711152864846,0.13890189412805073,0.75,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,crescimento_medio,2.0
+otimista,margem_liquida,0.20928415839565767,0.197610514739195,0.75,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,crescimento_medio,3.0
+otimista,margem_liquida,0.24630585540641825,0.22400698399218297,0.75,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,crescimento_medio,4.0
+otimista,crescimento_receita_efetivo,0.10264672344051573,0.09846518164892992,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,crescimento_medio,1.0
+otimista,margem_operacional_efetiva,0.26138429414425346,0.2543016568979482,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,crescimento_medio,1.0
+otimista,margem_liquida_efetiva,0.1774170982257279,0.1739365655607524,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,crescimento_medio,1.0
+otimista,crescimento_receita_efetivo,0.10684418316199817,0.09846518164892992,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,crescimento_medio,2.0
+otimista,margem_operacional_efetiva,0.23638475337329756,0.21901811628763768,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,crescimento_medio,2.0
+otimista,margem_liquida_efetiva,0.18235709940236336,0.14286188200176564,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,crescimento_medio,2.0
+otimista,crescimento_receita_efetivo,0.1110576214083685,0.09846518164892992,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,crescimento_medio,3.0
+otimista,margem_operacional_efetiva,0.31364301800126193,0.30263644171003606,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,crescimento_medio,3.0
+otimista,margem_liquida_efetiva,0.2516275031174468,0.23995385946098413,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,crescimento_medio,3.0
+otimista,crescimento_receita_efetivo,0.115287099005287,0.09846518164892992,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,crescimento_medio,4.0
+otimista,margem_operacional_efetiva,0.31409251150619477,0.2832766426364633,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,crescimento_medio,4.0
+otimista,margem_liquida_efetiva,0.2100890793647552,0.18779020795051996,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,crescimento_medio,4.0
+pessimista,crescimento,0.023784920156147416,0.10197885940642337,0.25,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,tendencia,
+pessimista,margem_operacional,0.23831570963088206,0.24025103714734353,0.25,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,tendencia,1.0
+pessimista,margem_operacional,0.19213408580301844,0.21869679307228193,0.25,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,tendencia,2.0
+pessimista,margem_operacional,0.22269259077428455,0.24104905239331195,0.25,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,tendencia,3.0
+pessimista,margem_operacional,0.2548959838812675,0.27834435554131254,0.25,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,tendencia,4.0
+pessimista,margem_liquida,0.16668952817749333,0.1860167936058814,0.25,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,tendencia,1.0
+pessimista,margem_liquida,0.12989265418358373,0.13890189412805073,0.25,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,tendencia,2.0
+pessimista,margem_liquida,0.15877841763794218,0.197610514739195,0.25,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,tendencia,3.0
+pessimista,margem_liquida,0.18421832417262787,0.22400698399218297,0.25,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,tendencia,4.0
+pessimista,crescimento_receita_efetivo,0.07224473961400135,0.09215696052182043,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,tendencia,1.0
+pessimista,margem_operacional_efetiva,0.2406903498193872,0.2426256773358487,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,tendencia,1.0
+pessimista,margem_liquida_efetiva,0.1549426457980145,0.17426991122640256,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,tendencia,1.0
+pessimista,crescimento_receita_efetivo,0.19856330954212797,0.24349271777080017,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,tendencia,2.0
+pessimista,margem_operacional_efetiva,0.215660922757772,0.24222363002703545,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,tendencia,2.0
+pessimista,margem_liquida_efetiva,0.1645764460598728,0.17358568600433982,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,tendencia,2.0
+pessimista,crescimento_receita_efetivo,0.15265040085918957,0.21806652111029123,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,tendencia,3.0
+pessimista,margem_operacional_efetiva,0.22347814647128786,0.24183460809031526,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,tendencia,3.0
+pessimista,margem_liquida_efetiva,0.13409153094322823,0.17292362804448108,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,tendencia,3.0
+pessimista,crescimento_receita_efetivo,-0.03361796460655431,0.04019169666154476,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,tendencia,4.0
+pessimista,margem_operacional_efetiva,0.2180096169694212,0.24145798862946627,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,tendencia,4.0
+pessimista,margem_liquida_efetiva,0.13249401744977166,0.17228267726932672,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,tendencia,4.0
+base,crescimento,0.10197885940642337,0.10197885940642337,0.5,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,tendencia,
+base,margem_operacional,0.24025103714734353,0.24025103714734353,0.5,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,tendencia,1.0
+base,margem_operacional,0.21869679307228193,0.21869679307228193,0.5,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,tendencia,2.0
+base,margem_operacional,0.24104905239331195,0.24104905239331195,0.5,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,tendencia,3.0
+base,margem_operacional,0.27834435554131254,0.27834435554131254,0.5,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,tendencia,4.0
+base,margem_liquida,0.1860167936058814,0.1860167936058814,0.5,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,tendencia,1.0
+base,margem_liquida,0.13890189412805073,0.13890189412805073,0.5,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,tendencia,2.0
+base,margem_liquida,0.197610514739195,0.197610514739195,0.5,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,tendencia,3.0
+base,margem_liquida,0.22400698399218297,0.22400698399218297,0.5,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,tendencia,4.0
+base,crescimento_receita_efetivo,0.09215696052182043,0.09215696052182043,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,tendencia,1.0
+base,margem_operacional_efetiva,0.2426256773358487,0.2426256773358487,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,tendencia,1.0
+base,margem_liquida_efetiva,0.1742699112264026,0.17426991122640256,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,tendencia,1.0
+base,crescimento_receita_efetivo,0.24349271777080017,0.24349271777080017,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,tendencia,2.0
+base,margem_operacional_efetiva,0.2422236300270354,0.24222363002703545,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,tendencia,2.0
+base,margem_liquida_efetiva,0.1735856860043398,0.17358568600433982,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,tendencia,2.0
+base,crescimento_receita_efetivo,0.21806652111029123,0.21806652111029123,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,tendencia,3.0
+base,margem_operacional_efetiva,0.24183460809031523,0.24183460809031526,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,tendencia,3.0
+base,margem_liquida_efetiva,0.17292362804448103,0.17292362804448108,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,tendencia,3.0
+base,crescimento_receita_efetivo,0.04019169666154476,0.04019169666154476,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,tendencia,4.0
+base,margem_operacional_efetiva,0.24145798862946635,0.24145798862946627,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,tendencia,4.0
+base,margem_liquida_efetiva,0.17228267726932667,0.17228267726932672,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,tendencia,4.0
+otimista,crescimento,0.11885458529293741,0.10197885940642337,0.75,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,tendencia,
+otimista,margem_operacional,0.24733367439364878,0.24025103714734353,0.75,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,tendencia,1.0
+otimista,margem_operacional,0.23606343015794187,0.21869679307228193,0.75,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,tendencia,2.0
+otimista,margem_operacional,0.2520556286845379,0.24104905239331195,0.75,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,tendencia,3.0
+otimista,margem_operacional,0.30916022441104407,0.27834435554131254,0.75,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,tendencia,4.0
+otimista,margem_liquida,0.1894973262708569,0.1860167936058814,0.75,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,tendencia,1.0
+otimista,margem_liquida,0.17839711152864846,0.13890189412805073,0.75,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,tendencia,2.0
+otimista,margem_liquida,0.20928415839565767,0.197610514739195,0.75,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,tendencia,3.0
+otimista,margem_liquida,0.24630585540641825,0.22400698399218297,0.75,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,tendencia,4.0
+otimista,crescimento_receita_efetivo,0.09631448872543458,0.09215696052182043,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,tendencia,1.0
+otimista,margem_operacional_efetiva,0.24970831458215392,0.2426256773358487,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,tendencia,1.0
+otimista,margem_liquida_efetiva,0.17775044389137812,0.17426991122640256,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,tendencia,1.0
+otimista,crescimento_receita_efetivo,0.2529779773290959,0.24349271777080017,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,tendencia,2.0
+otimista,margem_operacional_efetiva,0.2595902671126954,0.24222363002703545,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,tendencia,2.0
+otimista,margem_liquida_efetiva,0.21308090340493757,0.17358568600433982,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,tendencia,2.0
+otimista,crescimento_receita_efetivo,0.23203003087492968,0.21806652111029123,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,tendencia,3.0
+otimista,margem_operacional_efetiva,0.25284118438154124,0.24183460809031526,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,tendencia,3.0
+otimista,margem_liquida_efetiva,0.18459727170094375,0.17292362804448108,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,tendencia,3.0
+otimista,crescimento_receita_efetivo,0.056121212724805414,0.04019169666154476,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,tendencia,4.0
+otimista,margem_operacional_efetiva,0.27227385749919786,0.24145798862946627,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,tendencia,4.0
+otimista,margem_liquida_efetiva,0.19458154868356195,0.17228267726932672,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,tendencia,4.0
+pessimista,crescimento,0.023784920156147416,0.10197885940642337,0.25,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,tendencia_sazonal,
+pessimista,margem_operacional,0.23831570963088206,0.24025103714734353,0.25,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,tendencia_sazonal,1.0
+pessimista,margem_operacional,0.19213408580301844,0.21869679307228193,0.25,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,tendencia_sazonal,2.0
+pessimista,margem_operacional,0.22269259077428455,0.24104905239331195,0.25,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,tendencia_sazonal,3.0
+pessimista,margem_operacional,0.2548959838812675,0.27834435554131254,0.25,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,tendencia_sazonal,4.0
+pessimista,margem_liquida,0.16668952817749333,0.1860167936058814,0.25,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,tendencia_sazonal,1.0
+pessimista,margem_liquida,0.12989265418358373,0.13890189412805073,0.25,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,tendencia_sazonal,2.0
+pessimista,margem_liquida,0.15877841763794218,0.197610514739195,0.25,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,tendencia_sazonal,3.0
+pessimista,margem_liquida,0.18421832417262787,0.22400698399218297,0.25,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,tendencia_sazonal,4.0
+pessimista,crescimento_receita_efetivo,0.04495097507020218,0.06435633457882428,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,tendencia_sazonal,1.0
+pessimista,margem_operacional_efetiva,0.23419707942685516,0.23613240694331666,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,tendencia_sazonal,1.0
+pessimista,margem_liquida_efetiva,0.13887673988820984,0.15820400531659792,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,tendencia_sazonal,1.0
+pessimista,crescimento_receita_efetivo,0.09992649671055776,0.14115840010589942,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,tendencia_sazonal,2.0
+pessimista,margem_operacional_efetiva,0.1862430388943775,0.21280574616364095,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,tendencia_sazonal,2.0
+pessimista,margem_liquida_efetiva,0.13174196104746824,0.14075120099193525,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,tendencia_sazonal,2.0
+pessimista,crescimento_receita_efetivo,0.12762159383473204,0.19161725958476983,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,tendencia_sazonal,3.0
+pessimista,margem_operacional_efetiva,0.21280228153509875,0.23115874315412616,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,tendencia_sazonal,3.0
+pessimista,margem_liquida_efetiva,0.12910479432167715,0.16793689142292997,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,tendencia_sazonal,3.0
+pessimista,crescimento_receita_efetivo,0.04291991096921399,0.12257532936392135,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,tendencia_sazonal,4.0
+pessimista,margem_operacional_efetiva,0.24380475820593905,0.2672531298659841,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,tendencia_sazonal,4.0
+pessimista,margem_liquida_efetiva,0.15970606944987312,0.1994947292694282,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,tendencia_sazonal,4.0
+base,crescimento,0.10197885940642337,0.10197885940642337,0.5,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,tendencia_sazonal,
+base,margem_operacional,0.24025103714734353,0.24025103714734353,0.5,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,tendencia_sazonal,1.0
+base,margem_operacional,0.21869679307228193,0.21869679307228193,0.5,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,tendencia_sazonal,2.0
+base,margem_operacional,0.24104905239331195,0.24104905239331195,0.5,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,tendencia_sazonal,3.0
+base,margem_operacional,0.27834435554131254,0.27834435554131254,0.5,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,tendencia_sazonal,4.0
+base,margem_liquida,0.1860167936058814,0.1860167936058814,0.5,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,tendencia_sazonal,1.0
+base,margem_liquida,0.13890189412805073,0.13890189412805073,0.5,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,tendencia_sazonal,2.0
+base,margem_liquida,0.197610514739195,0.197610514739195,0.5,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,tendencia_sazonal,3.0
+base,margem_liquida,0.22400698399218297,0.22400698399218297,0.5,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,tendencia_sazonal,4.0
+base,crescimento_receita_efetivo,0.06435633457882428,0.06435633457882428,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,tendencia_sazonal,1.0
+base,margem_operacional_efetiva,0.23613240694331666,0.23613240694331666,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,tendencia_sazonal,1.0
+base,margem_liquida_efetiva,0.15820400531659792,0.15820400531659792,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,tendencia_sazonal,1.0
+base,crescimento_receita_efetivo,0.14115840010589942,0.14115840010589942,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,tendencia_sazonal,2.0
+base,margem_operacional_efetiva,0.2128057461636409,0.21280574616364095,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,tendencia_sazonal,2.0
+base,margem_liquida_efetiva,0.14075120099193525,0.14075120099193525,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,tendencia_sazonal,2.0
+base,crescimento_receita_efetivo,0.19161725958476983,0.19161725958476983,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,tendencia_sazonal,3.0
+base,margem_operacional_efetiva,0.23115874315412616,0.23115874315412616,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,tendencia_sazonal,3.0
+base,margem_liquida_efetiva,0.16793689142293,0.16793689142292997,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,tendencia_sazonal,3.0
+base,crescimento_receita_efetivo,0.12257532936392135,0.12257532936392135,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,tendencia_sazonal,4.0
+base,margem_operacional_efetiva,0.26725312986598415,0.2672531298659841,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,tendencia_sazonal,4.0
+base,margem_liquida_efetiva,0.1994947292694282,0.1994947292694282,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,tendencia_sazonal,4.0
+otimista,crescimento,0.11885458529293741,0.10197885940642337,0.75,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,tendencia_sazonal,
+otimista,margem_operacional,0.24733367439364878,0.24025103714734353,0.75,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,tendencia_sazonal,1.0
+otimista,margem_operacional,0.23606343015794187,0.21869679307228193,0.75,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,tendencia_sazonal,2.0
+otimista,margem_operacional,0.2520556286845379,0.24104905239331195,0.75,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,tendencia_sazonal,3.0
+otimista,margem_operacional,0.30916022441104407,0.27834435554131254,0.75,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,tendencia_sazonal,4.0
+otimista,margem_liquida,0.1894973262708569,0.1860167936058814,0.75,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,tendencia_sazonal,1.0
+otimista,margem_liquida,0.17839711152864846,0.13890189412805073,0.75,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,tendencia_sazonal,2.0
+otimista,margem_liquida,0.20928415839565767,0.197610514739195,0.75,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,tendencia_sazonal,3.0
+otimista,margem_liquida,0.24630585540641825,0.22400698399218297,0.75,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,tendencia_sazonal,4.0
+otimista,crescimento_receita_efetivo,0.068408033775607,0.06435633457882428,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,tendencia_sazonal,1.0
+otimista,margem_operacional_efetiva,0.2432150441896219,0.23613240694331666,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,tendencia_sazonal,1.0
+otimista,margem_liquida_efetiva,0.1616845379815734,0.15820400531659792,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,tendencia_sazonal,1.0
+otimista,crescimento_receita_efetivo,0.14986306195670496,0.14115840010589942,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,tendencia_sazonal,2.0
+otimista,margem_operacional_efetiva,0.2301723832493009,0.21280574616364095,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,tendencia_sazonal,2.0
+otimista,margem_liquida_efetiva,0.180246418392533,0.14075120099193525,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,tendencia_sazonal,2.0
+otimista,crescimento_receita_efetivo,0.20527756380588635,0.19161725958476983,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,tendencia_sazonal,3.0
+otimista,margem_operacional_efetiva,0.24216531944535213,0.23115874315412616,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,tendencia_sazonal,3.0
+otimista,margem_liquida_efetiva,0.1796105350793926,0.16793689142292997,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,tendencia_sazonal,3.0
+otimista,crescimento_receita_efetivo,0.13976646999570552,0.12257532936392135,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,tendencia_sazonal,4.0
+otimista,margem_operacional_efetiva,0.2980689987357157,0.2672531298659841,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,tendencia_sazonal,4.0
+otimista,margem_liquida_efetiva,0.22179360068366352,0.1994947292694282,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,tendencia_sazonal,4.0
+pessimista,crescimento,0.023784920156147416,0.10197885940642337,0.25,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,holt,
+pessimista,margem_operacional,0.23831570963088206,0.24025103714734353,0.25,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,holt,1.0
+pessimista,margem_operacional,0.19213408580301844,0.21869679307228193,0.25,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,holt,2.0
+pessimista,margem_operacional,0.22269259077428455,0.24104905239331195,0.25,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,holt,3.0
+pessimista,margem_operacional,0.2548959838812675,0.27834435554131254,0.25,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,holt,4.0
+pessimista,margem_liquida,0.16668952817749333,0.1860167936058814,0.25,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,holt,1.0
+pessimista,margem_liquida,0.12989265418358373,0.13890189412805073,0.25,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,holt,2.0
+pessimista,margem_liquida,0.15877841763794218,0.197610514739195,0.25,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,holt,3.0
+pessimista,margem_liquida,0.18421832417262787,0.22400698399218297,0.25,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,holt,4.0
+pessimista,crescimento_receita_efetivo,0.006761697834647862,0.02545785980978721,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,holt,1.0
+pessimista,margem_operacional_efetiva,0.254795728110762,0.2567310556272235,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,holt,1.0
+pessimista,margem_liquida_efetiva,0.15700482943222197,0.17633209486061002,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,holt,1.0
+pessimista,crescimento_receita_efetivo,0.11410379483207223,0.1558671491819108,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,holt,2.0
+pessimista,margem_operacional_efetiva,0.23205869045373564,0.25862139772299914,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,holt,2.0
+pessimista,margem_liquida_efetiva,0.1669641024240748,0.1759733423685418,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,holt,2.0
+pessimista,crescimento_receita_efetivo,0.06053464455671165,0.12072293910557774,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,holt,3.0
+pessimista,margem_operacional_efetiva,0.24221421083981304,0.26057067245884047,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,holt,3.0
+pessimista,margem_liquida_efetiva,0.1368046153044647,0.17563671240571752,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,holt,3.0
+pessimista,crescimento_receita_efetivo,-0.1200076245441879,-0.0527961732008696,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,holt,4.0
+pessimista,margem_operacional_efetiva,0.23912571050686993,0.26257408216691497,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,holt,4.0
+pessimista,margem_liquida_efetiva,0.13553195058560166,0.17532061040515676,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,holt,4.0
+base,crescimento,0.10197885940642337,0.10197885940642337,0.5,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,holt,
+base,margem_operacional,0.24025103714734353,0.24025103714734353,0.5,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,holt,1.0
+base,margem_operacional,0.21869679307228193,0.21869679307228193,0.5,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,holt,2.0
+base,margem_operacional,0.24104905239331195,0.24104905239331195,0.5,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,holt,3.0
+base,margem_operacional,0.27834435554131254,0.27834435554131254,0.5,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,holt,4.0
+base,margem_liquida,0.1860167936058814,0.1860167936058814,0.5,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,holt,1.0
+base,margem_liquida,0.13890189412805073,0.13890189412805073,0.5,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,holt,2.0
+base,margem_liquida,0.197610514739195,0.197610514739195,0.5,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,holt,3.0
+base,margem_liquida,0.22400698399218297,0.22400698399218297,0.5,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,holt,4.0
+base,crescimento_receita_efetivo,0.02545785980978721,0.02545785980978721,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,holt,1.0
+base,margem_operacional_efetiva,0.2567310556272235,0.2567310556272235,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,holt,1.0
+base,margem_liquida_efetiva,0.17633209486061,0.17633209486061002,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,holt,1.0
+base,crescimento_receita_efetivo,0.1558671491819108,0.1558671491819108,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,holt,2.0
+base,margem_operacional_efetiva,0.2586213977229991,0.25862139772299914,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,holt,2.0
+base,margem_liquida_efetiva,0.1759733423685418,0.1759733423685418,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,holt,2.0
+base,crescimento_receita_efetivo,0.12072293910557774,0.12072293910557774,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,holt,3.0
+base,margem_operacional_efetiva,0.26057067245884047,0.26057067245884047,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,holt,3.0
+base,margem_liquida_efetiva,0.17563671240571754,0.17563671240571752,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,holt,3.0
+base,crescimento_receita_efetivo,-0.0527961732008696,-0.0527961732008696,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,holt,4.0
+base,margem_operacional_efetiva,0.2625740821669149,0.26257408216691497,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,holt,4.0
+base,margem_liquida_efetiva,0.17532061040515676,0.17532061040515676,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,holt,4.0
+otimista,crescimento,0.11885458529293741,0.10197885940642337,0.75,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,holt,
+otimista,margem_operacional,0.24733367439364878,0.24025103714734353,0.75,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,holt,1.0
+otimista,margem_operacional,0.23606343015794187,0.21869679307228193,0.75,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,holt,2.0
+otimista,margem_operacional,0.2520556286845379,0.24104905239331195,0.75,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,holt,3.0
+otimista,margem_operacional,0.30916022441104407,0.27834435554131254,0.75,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,holt,4.0
+otimista,margem_liquida,0.1894973262708569,0.1860167936058814,0.75,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,holt,1.0
+otimista,margem_liquida,0.17839711152864846,0.13890189412805073,0.75,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,holt,2.0
+otimista,margem_liquida,0.20928415839565767,0.197610514739195,0.75,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,holt,3.0
+otimista,margem_liquida,0.24630585540641825,0.22400698399218297,0.75,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,holt,4.0
+otimista,crescimento_receita_efetivo,0.02936148367328384,0.02545785980978721,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,holt,1.0
+otimista,margem_operacional_efetiva,0.26381369287352874,0.2567310556272235,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,holt,1.0
+otimista,margem_liquida_efetiva,0.1798126275255855,0.17633209486061002,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,holt,1.0
+otimista,crescimento_receita_efetivo,0.16468400815359208,0.1558671491819108,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,holt,2.0
+otimista,margem_operacional_efetiva,0.2759880348086591,0.25862139772299914,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,holt,2.0
+otimista,margem_liquida_efetiva,0.21546855976913945,0.1759733423685418,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,holt,2.0
+otimista,crescimento_receita_efetivo,0.1335705343989697,0.12072293910557774,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,holt,3.0
+otimista,margem_operacional_efetiva,0.2715772487500664,0.26057067245884047,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,holt,3.0
+otimista,margem_liquida_efetiva,0.18731035606218016,0.17563671240571752,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,holt,3.0
+otimista,crescimento_receita_efetivo,-0.03829067520217888,-0.0527961732008696,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,holt,4.0
+otimista,margem_operacional_efetiva,0.29338995103664645,0.26257408216691497,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,holt,4.0
+otimista,margem_liquida_efetiva,0.19761948181939207,0.17532061040515676,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,holt,4.0
+pessimista,crescimento,0.023784920156147416,0.10197885940642337,0.25,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,holt_winters,
+pessimista,margem_operacional,0.23831570963088206,0.24025103714734353,0.25,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,holt_winters,1.0
+pessimista,margem_operacional,0.19213408580301844,0.21869679307228193,0.25,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,holt_winters,2.0
+pessimista,margem_operacional,0.22269259077428455,0.24104905239331195,0.25,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,holt_winters,3.0
+pessimista,margem_operacional,0.2548959838812675,0.27834435554131254,0.25,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,holt_winters,4.0
+pessimista,margem_liquida,0.16668952817749333,0.1860167936058814,0.25,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,holt_winters,1.0
+pessimista,margem_liquida,0.12989265418358373,0.13890189412805073,0.25,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,holt_winters,2.0
+pessimista,margem_liquida,0.15877841763794218,0.197610514739195,0.25,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,holt_winters,3.0
+pessimista,margem_liquida,0.18421832417262787,0.22400698399218297,0.25,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,holt_winters,4.0
+pessimista,crescimento_receita_efetivo,-0.04239617994082945,-0.024612908918157927,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,holt_winters,1.0
+pessimista,margem_operacional_efetiva,0.25413282317752023,0.2560681506939817,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,holt_winters,1.0
+pessimista,margem_liquida_efetiva,0.14661000868180837,0.16593727411019643,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,holt_winters,1.0
+pessimista,crescimento_receita_efetivo,-0.003971134300353452,0.033366056950441925,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,holt_winters,2.0
+pessimista,margem_operacional_efetiva,0.20644967758987393,0.23301238485913736,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,holt_winters,2.0
+pessimista,margem_liquida_efetiva,0.13780437283886862,0.1468136127833356,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,holt_winters,2.0
+pessimista,crescimento_receita_efetivo,0.022156936410389072,0.08016718914432985,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,holt_winters,3.0
+pessimista,margem_operacional_efetiva,0.234544497396233,0.2529009590152604,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,holt_winters,3.0
+pessimista,margem_liquida_efetiva,0.13714617784990862,0.17597827495116147,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,holt_winters,3.0
+pessimista,crescimento_receita_efetivo,-0.04977944879039142,0.022795841773876058,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,holt_winters,4.0
+pessimista,margem_operacional_efetiva,0.2677648987711365,0.29121327043118156,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,holt_winters,4.0
+pessimista,margem_liquida_efetiva,0.16980910431352425,0.20959776413307932,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,holt_winters,4.0
+base,crescimento,0.10197885940642337,0.10197885940642337,0.5,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,holt_winters,
+base,margem_operacional,0.24025103714734353,0.24025103714734353,0.5,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,holt_winters,1.0
+base,margem_operacional,0.21869679307228193,0.21869679307228193,0.5,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,holt_winters,2.0
+base,margem_operacional,0.24104905239331195,0.24104905239331195,0.5,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,holt_winters,3.0
+base,margem_operacional,0.27834435554131254,0.27834435554131254,0.5,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,holt_winters,4.0
+base,margem_liquida,0.1860167936058814,0.1860167936058814,0.5,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,holt_winters,1.0
+base,margem_liquida,0.13890189412805073,0.13890189412805073,0.5,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,holt_winters,2.0
+base,margem_liquida,0.197610514739195,0.197610514739195,0.5,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,holt_winters,3.0
+base,margem_liquida,0.22400698399218297,0.22400698399218297,0.5,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,holt_winters,4.0
+base,crescimento_receita_efetivo,-0.024612908918157927,-0.024612908918157927,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,holt_winters,1.0
+base,margem_operacional_efetiva,0.2560681506939817,0.2560681506939817,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,holt_winters,1.0
+base,margem_liquida_efetiva,0.16593727411019646,0.16593727411019643,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,holt_winters,1.0
+base,crescimento_receita_efetivo,0.033366056950441925,0.033366056950441925,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,holt_winters,2.0
+base,margem_operacional_efetiva,0.23301238485913736,0.23301238485913736,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,holt_winters,2.0
+base,margem_liquida_efetiva,0.14681361278333563,0.1468136127833356,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,holt_winters,2.0
+base,crescimento_receita_efetivo,0.08016718914432985,0.08016718914432985,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,holt_winters,3.0
+base,margem_operacional_efetiva,0.25290095901526033,0.2529009590152604,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,holt_winters,3.0
+base,margem_liquida_efetiva,0.17597827495116147,0.17597827495116147,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,holt_winters,3.0
+base,crescimento_receita_efetivo,0.022795841773876058,0.022795841773876058,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,holt_winters,4.0
+base,margem_operacional_efetiva,0.2912132704311816,0.29121327043118156,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,holt_winters,4.0
+base,margem_liquida_efetiva,0.20959776413307932,0.20959776413307932,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,holt_winters,4.0
+otimista,crescimento,0.11885458529293741,0.10197885940642337,0.75,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,holt_winters,
+otimista,margem_operacional,0.24733367439364878,0.24025103714734353,0.75,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,holt_winters,1.0
+otimista,margem_operacional,0.23606343015794187,0.21869679307228193,0.75,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,holt_winters,2.0
+otimista,margem_operacional,0.2520556286845379,0.24104905239331195,0.75,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,holt_winters,3.0
+otimista,margem_operacional,0.30916022441104407,0.27834435554131254,0.75,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,holt_winters,4.0
+otimista,margem_liquida,0.1894973262708569,0.1860167936058814,0.75,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,holt_winters,1.0
+otimista,margem_liquida,0.17839711152864846,0.13890189412805073,0.75,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,holt_winters,2.0
+otimista,margem_liquida,0.20928415839565767,0.197610514739195,0.75,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,holt_winters,3.0
+otimista,margem_liquida,0.24630585540641825,0.22400698399218297,0.75,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,holt_winters,4.0
+otimista,crescimento_receita_efetivo,-0.020899890105663954,-0.024612908918157927,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,holt_winters,1.0
+otimista,margem_operacional_efetiva,0.2631507879402869,0.2560681506939817,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,holt_winters,1.0
+otimista,margem_liquida_efetiva,0.169417806775172,0.16593727411019643,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,holt_winters,1.0
+otimista,crescimento_receita_efetivo,0.041248487726939675,0.033366056950441925,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,holt_winters,2.0
+otimista,margem_operacional_efetiva,0.25037902194479733,0.23301238485913736,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,holt_winters,2.0
+otimista,margem_liquida_efetiva,0.18630883018393335,0.1468136127833356,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,holt_winters,2.0
+otimista,crescimento_receita_efetivo,0.09254986679916821,0.08016718914432985,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,holt_winters,3.0
+otimista,margem_operacional_efetiva,0.26390753530648636,0.2529009590152604,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,holt_winters,3.0
+otimista,margem_liquida_efetiva,0.1876519186076241,0.17597827495116147,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,holt_winters,3.0
+otimista,crescimento_receita_efetivo,0.03845895737387939,0.022795841773876058,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,holt_winters,4.0
+otimista,margem_operacional_efetiva,0.32202913930091315,0.29121327043118156,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,holt_winters,4.0
+otimista,margem_liquida_efetiva,0.23189663554731457,0.20959776413307932,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,holt_winters,4.0
+pessimista,crescimento,0.023784920156147416,0.10197885940642337,0.25,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,direcionadores,
+pessimista,margem_operacional,0.23831570963088206,0.24025103714734353,0.25,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,direcionadores,1.0
+pessimista,margem_operacional,0.19213408580301844,0.21869679307228193,0.25,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,direcionadores,2.0
+pessimista,margem_operacional,0.22269259077428455,0.24104905239331195,0.25,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,direcionadores,3.0
+pessimista,margem_operacional,0.2548959838812675,0.27834435554131254,0.25,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,direcionadores,4.0
+pessimista,margem_liquida,0.16668952817749333,0.1860167936058814,0.25,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,direcionadores,1.0
+pessimista,margem_liquida,0.12989265418358373,0.13890189412805073,0.25,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,direcionadores,2.0
+pessimista,margem_liquida,0.15877841763794218,0.197610514739195,0.25,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,direcionadores,3.0
+pessimista,margem_liquida,0.18421832417262787,0.22400698399218297,0.25,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,direcionadores,4.0
+pessimista,crescimento_receita_efetivo,0.08188756550141263,0.10197885940642326,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,direcionadores,1.0
+pessimista,margem_operacional_efetiva,0.24926771409126264,0.2512030416077241,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,direcionadores,1.0
+pessimista,margem_liquida_efetiva,0.15381404785406874,0.1731413132824568,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,direcionadores,1.0
+pessimista,crescimento_receita_efetivo,0.062162576346562526,0.10197885940642326,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,direcionadores,2.0
+pessimista,margem_operacional_efetiva,0.19214030002285967,0.21870300729212314,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,direcionadores,2.0
+pessimista,margem_liquida_efetiva,0.14532215422371544,0.15433139416818248,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,direcionadores,2.0
+pessimista,crescimento_receita_efetivo,0.04279721346856946,0.10197885940642326,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,direcionadores,3.0
+pessimista,margem_operacional_efetiva,0.246669156371663,0.2650256179906904,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,direcionadores,3.0
+pessimista,margem_liquida_efetiva,0.14948369657317878,0.18831579367443163,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,direcionadores,3.0
+pessimista,crescimento_receita_efetivo,0.023784920156147304,0.10197885940642326,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,direcionadores,4.0
+pessimista,margem_operacional_efetiva,0.266527917571624,0.28997628923166907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,direcionadores,4.0
+pessimista,margem_liquida_efetiva,0.19258357450424718,0.2323722343238023,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,direcionadores,4.0
+base,crescimento,0.10197885940642337,0.10197885940642337,0.5,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,direcionadores,
+base,margem_operacional,0.24025103714734353,0.24025103714734353,0.5,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,direcionadores,1.0
+base,margem_operacional,0.21869679307228193,0.21869679307228193,0.5,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,direcionadores,2.0
+base,margem_operacional,0.24104905239331195,0.24104905239331195,0.5,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,direcionadores,3.0
+base,margem_operacional,0.27834435554131254,0.27834435554131254,0.5,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,direcionadores,4.0
+base,margem_liquida,0.1860167936058814,0.1860167936058814,0.5,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,direcionadores,1.0
+base,margem_liquida,0.13890189412805073,0.13890189412805073,0.5,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,direcionadores,2.0
+base,margem_liquida,0.197610514739195,0.197610514739195,0.5,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,direcionadores,3.0
+base,margem_liquida,0.22400698399218297,0.22400698399218297,0.5,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,direcionadores,4.0
+base,crescimento_receita_efetivo,0.10197885940642326,0.10197885940642326,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,direcionadores,1.0
+base,margem_operacional_efetiva,0.2512030416077241,0.2512030416077241,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,direcionadores,1.0
+base,margem_liquida_efetiva,0.17314131328245674,0.1731413132824568,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,direcionadores,1.0
+base,crescimento_receita_efetivo,0.10197885940642326,0.10197885940642326,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,direcionadores,2.0
+base,margem_operacional_efetiva,0.21870300729212314,0.21870300729212314,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,direcionadores,2.0
+base,margem_liquida_efetiva,0.15433139416818245,0.15433139416818248,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,direcionadores,2.0
+base,crescimento_receita_efetivo,0.10197885940642326,0.10197885940642326,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,direcionadores,3.0
+base,margem_operacional_efetiva,0.26502561799069035,0.2650256179906904,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,direcionadores,3.0
+base,margem_liquida_efetiva,0.18831579367443163,0.18831579367443163,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,direcionadores,3.0
+base,crescimento_receita_efetivo,0.10197885940642326,0.10197885940642326,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,direcionadores,4.0
+base,margem_operacional_efetiva,0.28997628923166907,0.28997628923166907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,direcionadores,4.0
+base,margem_liquida_efetiva,0.2323722343238023,0.2323722343238023,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,direcionadores,4.0
+otimista,crescimento,0.11885458529293741,0.10197885940642337,0.75,quantil do histórico de treino,2025-12-31,6.0,0,trimestral,direcionadores,
+otimista,margem_operacional,0.24733367439364878,0.24025103714734353,0.75,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,direcionadores,1.0
+otimista,margem_operacional,0.23606343015794187,0.21869679307228193,0.75,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,direcionadores,2.0
+otimista,margem_operacional,0.2520556286845379,0.24104905239331195,0.75,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,direcionadores,3.0
+otimista,margem_operacional,0.30916022441104407,0.27834435554131254,0.75,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,direcionadores,4.0
+otimista,margem_liquida,0.1894973262708569,0.1860167936058814,0.75,quantil do histórico de treino,2025-12-31,7.0,1,trimestral,direcionadores,1.0
+otimista,margem_liquida,0.17839711152864846,0.13890189412805073,0.75,quantil do histórico de treino,2025-12-31,7.0,2,trimestral,direcionadores,2.0
+otimista,margem_liquida,0.20928415839565767,0.197610514739195,0.75,quantil do histórico de treino,2025-12-31,7.0,3,trimestral,direcionadores,3.0
+otimista,margem_liquida,0.24630585540641825,0.22400698399218297,0.75,quantil do histórico de treino,2025-12-31,7.0,4,trimestral,direcionadores,4.0
+otimista,crescimento_receita_efetivo,0.10617377676114081,0.10197885940642326,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,direcionadores,1.0
+otimista,margem_operacional_efetiva,0.25828567885402937,0.2512030416077241,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,direcionadores,1.0
+otimista,margem_liquida_efetiva,0.17662184594743224,0.1731413132824568,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,1,trimestral,direcionadores,1.0
+otimista,crescimento_receita_efetivo,0.1103846629626859,0.10197885940642326,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,direcionadores,2.0
+otimista,margem_operacional_efetiva,0.23606964437778305,0.21870300729212314,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,direcionadores,2.0
+otimista,margem_liquida_efetiva,0.1938266115687802,0.15433139416818248,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,2,trimestral,direcionadores,2.0
+otimista,crescimento_receita_efetivo,0.11461157879987693,0.10197885940642326,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,direcionadores,3.0
+otimista,margem_operacional_efetiva,0.2760321942819164,0.2650256179906904,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,direcionadores,3.0
+otimista,margem_liquida_efetiva,0.19998943733089425,0.18831579367443163,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,3,trimestral,direcionadores,3.0
+otimista,crescimento_receita_efetivo,0.11885458529293746,0.10197885940642326,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,direcionadores,4.0
+otimista,margem_operacional_efetiva,0.3207921581014006,0.28997628923166907,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,direcionadores,4.0
+otimista,margem_liquida_efetiva,0.25467110573803753,0.2323722343238023,,"resultado efetivo após modelo, choque relativo e limites; não é a taxa histórica bruta",2025-12-31,,4,trimestral,direcionadores,4.0

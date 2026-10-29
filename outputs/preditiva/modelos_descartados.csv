@@ -1,0 +1,5 @@
+modelo,motivo
+ARIMA/SARIMA,Corte comparável tem 28 trimestres e 7 anos. Política conservadora exige >=32 pontos de treino mais reserva para ordens ARIMA e >=20 anuais; não há desenvolvimento suficiente para comparação comum.
+Holt anual,Somente 7 observações anuais; abaixo do mínimo operacional de 8 para esta família no projeto.
+"Random forest, boosting e redes neurais","Amostra pequena, sem conjunto independente suficiente nem demonstração de ganho frente aos baselines. Não implementados."
+Variáveis BCB e preços de ações,Não incluídos: sem demonstração de ganho fora da amostra; preços de ações estão fora do escopo.
