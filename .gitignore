@@ -45,3 +45,7 @@ package-lock.json
 
 # Transferência local dos commits pendentes, sem credenciais
 /outputs/*.bundle
+
+# Documentos de apoio: versionar referências, nunca os PDFs fornecidos
+/fontes/
+/dados/explicacoes/*.pdf
