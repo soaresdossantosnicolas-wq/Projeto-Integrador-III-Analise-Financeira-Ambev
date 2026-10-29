@@ -50,28 +50,30 @@ CONTAS_PASSIVO = {
     "patrimonio_liquido": "2.03",
 }
 PALETA = {
-    "primaria": "#2874F0",
-    "secundaria": "#168C80",
-    "destaque": "#A66BE0",
-    "positivo": "#23A375",
-    "negativo": "#D55E68",
-    "neutro": "#77869E",
-    "receita_liquida": "#2874F0",
-    "lucro_bruto": "#168C80",
-    "resultado_operacional": "#A66BE0",
-    "lucro_liquido": "#B57D12",
-    "margem_bruta": "#168C80",
-    "margem_operacional": "#A66BE0",
-    "margem_liquida": "#B57D12",
-    "roa": "#2874F0",
-    "roe": "#168C80",
-    "liquidez_corrente": "#2874F0",
-    "liquidez_seca": "#168C80",
-    "endividamento_geral": "#2874F0",
-    "capital_terceiros_patrimonio": "#A66BE0",
-    "passivo_circulante": "#2874F0",
-    "passivo_nao_circulante": "#A66BE0",
-    "patrimonio_liquido": "#168C80",
+    "primaria": "#AE7F32",
+    "secundaria": "#278577",
+    "destaque": "#9574B5",
+    "positivo": "#278577",
+    "negativo": "#BE656B",
+    "neutro": "#788381",
+    "receita_liquida": "#AE7F32",
+    "lucro_bruto": "#477FA8",
+    "resultado_operacional": "#9574B5",
+    "lucro_liquido": "#278577",
+    "margem_bruta": "#477FA8",
+    "margem_operacional": "#9574B5",
+    "margem_liquida": "#278577",
+    "roa": "#477FA8",
+    "roe": "#278577",
+    "liquidez_corrente": "#477FA8",
+    "liquidez_seca": "#278577",
+    "endividamento_geral": "#AE7F32",
+    "capital_terceiros_patrimonio": "#9574B5",
+    "passivo_circulante": "#477FA8",
+    "passivo_nao_circulante": "#9574B5",
+    "patrimonio_liquido": "#278577",
+    "ativo_circulante": "#AE7F32",
+    "ativo_nao_circulante": "#477FA8",
 }
 NOMES = {
     "receita_liquida": "Receita líquida",
@@ -193,3 +195,41 @@ PREDITIVA_ROTULOS_MODELOS = {
 }
 PREDITIVA_MIN_MODELOS = {"holt": 8, "holt_winters": 16, "tendencia_sazonal": 8}
 PREDITIVA_MIN_ERROS_SELECAO = 5  # política conservadora, não limiar universal de validade estatística
+
+# Identidade visual própria; estas constantes não participam do pipeline financeiro.
+CORES_CATEGORICAS = ("#AE7F32", "#278577", "#477FA8", "#9574B5", "#BE656B", "#788381")
+TEMAS_DASHBOARD = {
+    "Escuro": {
+        "fundo": "#141719",
+        "superficie": "#1D2224",
+        "elevado": "#252C2E",
+        "texto": "#F3EFE7",
+        "muted": "#B3BDB9",
+        "borda": "#39413F",
+        "acento": "#E2B566",
+        "grade": "rgba(179,189,185,0.10)",
+        "esquema": "dark",
+    },
+    "Claro": {
+        "fundo": "#F4F1EA",
+        "superficie": "#FFFFFF",
+        "elevado": "#EBE7DF",
+        "texto": "#242C29",
+        "muted": "#59645E",
+        "borda": "#D9DED6",
+        "acento": "#835B20",
+        "grade": "rgba(66,78,69,0.10)",
+        "esquema": "light",
+    },
+}
+UNIDADES_VISUAIS = {"Bilhões": (1e9, "R$ bilhões"), "Milhões": (1e6, "R$ milhões"), "Mil": (1e3, "R$ mil")}
+ABAS_DASHBOARD = [
+    "Visão Geral",
+    "DRE",
+    "Rentabilidade",
+    "Liquidez e Endividamento",
+    "Balanço",
+    "Comparação de Períodos",
+    "Projeções",
+    "Sobre",
+]

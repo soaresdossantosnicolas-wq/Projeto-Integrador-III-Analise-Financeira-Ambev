@@ -41,13 +41,34 @@ Abra <http://localhost:8501>. As abas são **Visão Geral, DRE, Rentabilidade, L
 
 Não há URL de aplicativo público confirmada nesta revisão. Consulte as [instruções de publicação](docs/deploy.md). A licença e a identificação acadêmica estão no próprio dashboard.
 
+## Explorar e compartilhar a análise
+
+A identidade **Executivo moderno** usa grafite, âmbar e tipografia Manrope com fallback local. Os KPIs mostram sparklines, e a Visão Geral reúne indicador, gráfico e insight coordenados. Clique em um ponto ou use “Ver contas” para abrir o detalhamento do exercício.
+
+- Alterne linha/barras, unidade monetária e % da receita; explore a DRE por cascata/mapa de calor e o balanço por composição.
+- Compare dois exercícios explícitos e exporte o recorte em CSV/Excel ou o gráfico em HTML interativo.
+- Copie a URL do navegador para compartilhar aba, filtros, indicador e cenário. O modo apresentação oculta os filtros laterais.
+- As projeções continuam consumindo somente CSVs salvos. A mudança de design não altera os resultados financeiros.
+
 ## Capturas do dashboard real
 
-![Visão geral em tema escuro](docs/images/dashboard-visao-geral.png)
+**Antes**
 
-![DRE em cascata](docs/images/dashboard-dre.png)
+![Visão Geral antes do redesign](docs/img/antes/visao-geral-escuro-desktop.webp)
 
-As capturas são produzidas pelo aplicativo real no GitHub Actions. A pasta `docs/images/` também contém a versão clara e a captura móvel. A validação funcional e os limites da inspeção visual estão na [revisão final](docs/revisao-final.md).
+**Depois**
+
+![Visão Geral depois do redesign](docs/img/depois/01-visao-geral-escuro-desktop.webp)
+
+Veja também a [Visão Geral clara](docs/img/depois/visao-geral-claro-desktop.webp), as versões para celular [escura](docs/img/depois/visao-geral-escuro-celular.webp) e [clara](docs/img/depois/visao-geral-claro-celular.webp), e a [DRE com análise vertical](docs/img/depois/02-dre.webp).
+
+A [revisão de design](docs/design-dashboard.md) registra o diagnóstico, as duas direções propostas e a validação. A seleção em `docs/img/` contém **13 WebP sem perdas, 1,40 MB no total**, todos abaixo de 300 KB. A matriz completa e os complementos ficam no ZIP **local e não versionado** `outputs/dashboard-capturas-completas-2026-10-28.zip` (10,21 MB). Os PNGs removidos da árvore atual permanecem nos commits anteriores, pois o histórico foi preservado.
+
+## Deploy no Streamlit Community Cloud
+
+Use este repositório, branch **`feat`**, entrada **`code/04_visualizacao.py`** e Python **3.12**. As dependências estão em `requirements.txt`; mantenha os snapshots locais, `assets/` e `.streamlit/config.toml` no checkout. A abertura do dashboard não exige baixar ZIPs da CVM, executar modelos ou configurar credenciais.
+
+As [instruções de deploy](docs/deploy.md) detalham a configuração. Não há URL pública de aplicativo confirmada: disponibilizar os commits no GitHub e publicar o aplicativo são etapas distintas. O envio desta revisão ao GitHub está pendente de DNS e autenticação SSH funcionais.
 
 ## Reproduzir o pipeline
 
@@ -174,9 +195,9 @@ Limitações: amostra pequena, revisões posteriores, choques macroeconômicos, 
 - [Diagnóstico, método, backtest, projeções e interpretação para apresentação](docs/analise-preditiva.md)
 - [Riscos e pendências a validar com o professor](docs/riscos-preditiva.md)
 - Resultados e premissas: `outputs/preditiva/`
-- [Captura anual](docs/img/projecoes-anual.png) e [captura trimestral](docs/img/projecoes-trimestral.png), geradas com o aplicativo real.
+- [Captura atual da aba Projeções](docs/img/depois/07-projecoes.webp). As capturas completas, incluindo as anteriores, estão preservadas no ZIP local descrito acima.
 
-![Projeções anuais com faixa exploratória](docs/img/projecoes-anual.png)
+![Projeções anuais com faixa exploratória](docs/img/depois/07-projecoes.webp)
 
 ## Testes e qualidade
 

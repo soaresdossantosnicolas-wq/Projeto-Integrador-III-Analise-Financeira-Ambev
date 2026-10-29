@@ -1,10 +1,13 @@
 [theme]
 base = "dark"
-primaryColor = "#67A1FF"
-backgroundColor = "#0B1220"
-secondaryBackgroundColor = "#142137"
-textColor = "#E5EDF8"
+primaryColor = "#E2B566"
+backgroundColor = "#141719"
+secondaryBackgroundColor = "#1D2224"
+textColor = "#F3EFE7"
 font = "sans serif"
+greenColor = "#278577"
+redColor = "#BE656B"
+chartCategoricalColors = ["#AE7F32", "#278577", "#477FA8", "#9574B5", "#BE656B", "#788381"]
 
 [server]
 headless = true
