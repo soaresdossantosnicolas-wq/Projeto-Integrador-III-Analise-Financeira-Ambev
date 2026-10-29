@@ -1,0 +1,174 @@
+{
+  "data": "2026-10-28",
+  "branch": "feat",
+  "testes_pytest": 88,
+  "lint": "aprovado",
+  "capturas_antes": 32,
+  "capturas_depois": 32,
+  "imagens_complementares": 5,
+  "larguras": [
+    1440,
+    390
+  ],
+  "temas": [
+    "Escuro",
+    "Claro"
+  ],
+  "excecoes_matriz": 0,
+  "overflow_horizontal": 0,
+  "dados_intactos": true,
+  "sha256_dados": {
+    "dados_tratados/diagnostico_indicadores.csv": "03a72145f65bfbbc0b0a4638dc8a7fb17f5a9ed438f3dbca97fbd5af23426a46",
+    "dados_tratados/indicadores_financeiros_ambev.csv": "ff66a0ae2f3c3d443dc41924769e462219ce1084685c6b42fbaa749f59dddeee",
+    "dados_tratados/metadados.json": "149e7f35bef08605868c0c013540a938e50b4b0e5f1f8bef68b1435c9e30e5dd",
+    "dados_tratados/proveniencia_contas.csv": "1d2280cc9b521630543b48089db3974e873c96d693ae1e14b3adff644fa857dc",
+    "dados_tratados/relatorio_qualidade.csv": "8c186fa9d476dcc771d0d53d44e7c15ba3ba6722da7396f1aa4f4ff58dbef7a4",
+    "outputs/preditiva/ajustes_plausibilidade.csv": "d13d169011c044ef20512819fff5812d9ac76d470d1f1108759cc860a0d8fea8",
+    "outputs/preditiva/backtest.csv": "cb194d2ac7cb513ef33a5bd758ba7c9fff5f9bc4e5ae2060a39fe7da63883b3e",
+    "outputs/preditiva/balancos_projetados.csv": "a0cfa14442598c634c241834ad57b253c8a2defff0aa24f7e2503428433d6a38",
+    "outputs/preditiva/conciliacao_projecoes_base.csv": "b6cc8264b337072449ba1f2f286fdc98cd35b7f6b7c18857d00f9b58448c4c2e",
+    "outputs/preditiva/conciliacao_trimestres.csv": "401681fcc7b88cd6a25529fcf0bdbfd74c8c0d9b2ba8d243d5509460388b0e2d",
+    "outputs/preditiva/diagnostico_dados.json": "cf0be0b3fc869a1509418469cb17fd2e09a8ec822ab61fa116cce183b353938b",
+    "outputs/preditiva/diagnostico_fontes.json": "4f230ab1d4ac8cd1c5bc3fbff38bbf84041b40060ab7502d7de7e99a4acaa94a",
+    "outputs/preditiva/diagnostico_residuos.csv": "41b89a7e93e7afa1e70b02c6ebe71bb54bb1cdc15c5149ecb34f4992a76db8d1",
+    "outputs/preditiva/falhas_modelos.csv": "44dd57572ab580321f91cb811f98c77521020425004f68d3a298a299589a0507",
+    "outputs/preditiva/historico_anual.csv": "cdf463de063cb4d0dbf816608ba29b8bce73fcc9897eb6ae921c32163a06a55b",
+    "outputs/preditiva/historico_trimestral.csv": "9b5dfdf8cbe5d7f5eff37c91561e9c920dfe1293ba808e043d89b0d230e3dbd3",
+    "outputs/preditiva/metadados.json": "058d09a947631a6ad9a7e32afede7b0335150d9e15d4856ef8c7a07e537fe574",
+    "outputs/preditiva/metricas.csv": "c4b8b4ad2229dea9a00f76d5c66ec5c3b2bcb994b9ccd6af55323858b33d7ad4",
+    "outputs/preditiva/modelos_descartados.csv": "ee2856b126f39ca77a5b239971ccc5655f596d78259cccabf880a84b33758259",
+    "outputs/preditiva/premissas_cenarios.csv": "1d15a2071fe2d6788eff620d8697f0aa3ccec7f8c7c8afb3d7517e49df90c56f",
+    "outputs/preditiva/projecoes.csv": "5840f9136fb2c6cec82128454279920f88fac1f686215c2151394e05fc708877",
+    "outputs/preditiva/referencia_alternativa.json": "63a9ee58b53a2da7a17f270cf5ae60615917901160d9e80f27c6b7a05df3ffad",
+    "outputs/preditiva/referencia_oficial.csv": "f61908f492b0f4edd34d21938c16b369ac5ec34754815d816d00fdf2dc78ac2b",
+    "outputs/preditiva/resumo_modelos.csv": "b5131c9945817ee7ffedee15636a9067d08e880461f7584470cc8d81e02f3585",
+    "outputs/preditiva/selecao.csv": "0c68f6d3672281742a612beca28f25e455feb58b8c581b79bfa08daddfa1ff94",
+    "outputs/preditiva/sensibilidade.csv": "648296f465bd0da9fe7b1774a242159ef24c623d8360f368f4933e17613abf28",
+    "outputs/preditiva/serie_anual_ampliada.csv": "f7580b318d6883c5a4d00cb1b31ce36c802272955f105d079eb0511f9ee90442",
+    "outputs/preditiva/serie_trimestral_ampliada.csv": "39b1cbd0da889624b8b75efcc36a5de5843ef8b856737dc7128f6ac88efcd344",
+    "outputs/preditiva/validacao_oficial_ampliada.csv": "299642b7d01b7e9b35a9b261b861aba352a8c261b1666c55dc30e14d774c91af",
+    "outputs/preditiva/versoes_contas.csv": "6c40b48a0b5d60ce0efa48d31165cbb9821ab1a5ccaa4f0643ff998a9a7c2751"
+  },
+  "verificacoes_navegador": {
+    "dialogo": true,
+    "selecao_plotly": true,
+    "selecao_consumida": true,
+    "downloads": true,
+    "link_compartilhavel": "http://127.0.0.1:8503/?aba=Proje%C3%A7%C3%B5es&cenario=Pessimista&forma=Barras&frequencia=Trimestral+%C2%B7+2026T1%E2%80%93T4",
+    "apresentacao": true,
+    "troca_tema": true
+  },
+  "publicacao_streamlit_cloud": "não realizada; código preparado para deploy",
+  "imagens_versionadas_otimizadas": [
+    {
+      "arquivo": "docs/img/depois/01-visao-geral-escuro-desktop.webp",
+      "origem_no_zip": "docs/img/depois/escuro-desktop-01.png",
+      "bytes": 134284,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/depois/02-dre.webp",
+      "origem_no_zip": "docs/img/depois/escuro-desktop-02.png",
+      "bytes": 110874,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/depois/03-rentabilidade.webp",
+      "origem_no_zip": "docs/img/depois/escuro-desktop-03.png",
+      "bytes": 104484,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/depois/04-liquidez-endividamento.webp",
+      "origem_no_zip": "docs/img/depois/escuro-desktop-04.png",
+      "bytes": 108090,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/depois/05-balanco.webp",
+      "origem_no_zip": "docs/img/depois/escuro-desktop-05.png",
+      "bytes": 101746,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/depois/06-comparacao.webp",
+      "origem_no_zip": "docs/img/depois/escuro-desktop-06.png",
+      "bytes": 119650,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/depois/07-projecoes.webp",
+      "origem_no_zip": "docs/img/depois/escuro-desktop-07.png",
+      "bytes": 142786,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/depois/08-sobre.webp",
+      "origem_no_zip": "docs/img/depois/escuro-desktop-08.png",
+      "bytes": 164716,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/depois/visao-geral-claro-desktop.webp",
+      "origem_no_zip": "docs/img/depois/claro-desktop-01.png",
+      "bytes": 130826,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/depois/visao-geral-escuro-celular.webp",
+      "origem_no_zip": "docs/img/depois/escuro-celular-01.png",
+      "bytes": 91500,
+      "largura": 390,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/depois/visao-geral-claro-celular.webp",
+      "origem_no_zip": "docs/img/depois/claro-celular-01.png",
+      "bytes": 90360,
+      "largura": 390,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/antes/visao-geral-escuro-desktop.webp",
+      "origem_no_zip": "docs/img/antes/escuro-desktop-01.png",
+      "bytes": 53916,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    },
+    {
+      "arquivo": "docs/img/antes/visao-geral-claro-desktop.webp",
+      "origem_no_zip": "docs/img/antes/claro-desktop-01.png",
+      "bytes": 51386,
+      "largura": 1440,
+      "compressao": "WebP sem perdas"
+    }
+  ],
+  "bytes_imagens_versionadas": 1404618,
+  "arquivo_zip_local": "outputs/dashboard-capturas-completas-2026-10-28.zip",
+  "bytes_zip_local": 10205379,
+  "historico_reescrito": false,
+  "publicacao_git": "pendente: SSH bloqueado por falha de resolução de nomes no ambiente",
+  "remoto_feat_confirmado": "45e8907c1e90a9fe8ea001f39e6666908d38c770",
+  "verificacao_final_publicacao": {
+    "pytest": "88 passed in 18.85s",
+    "ruff": "All checks passed!",
+    "hashes_iguais": 30,
+    "alvos_readme_verificados": 18,
+    "links_locais_quebrados": 0,
+    "excecoes_streamlit": 0,
+    "erros_javascript": 0,
+    "console_streamlit": "sem ERROR ou Traceback",
+    "publicado": false,
+    "motivo": "git push SSH não consegue resolver github.com neste ambiente",
+    "bundle_local": "outputs/dashboard-feat-pendente.bundle"
+  }
+}

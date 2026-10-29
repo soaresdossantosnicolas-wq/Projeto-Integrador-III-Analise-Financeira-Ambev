@@ -11,6 +11,7 @@ import streamlit as st
 
 import config
 from dashboard_utils import formatar_indicador, numero_br
+from dashboard_design import estilizar_figura
 
 
 @st.cache_data(show_spinner=False)
@@ -26,11 +27,21 @@ def carregar_saidas(arquivos: tuple) -> dict:
     return dados
 
 
-def grafico_projecao(historico: pd.DataFrame, previsto: pd.DataFrame, variavel: str, tema: str) -> go.Figure:
+def grafico_projecao(
+    historico: pd.DataFrame, previsto: pd.DataFrame, variavel: str, tema: str, unidade_visual: str = "Bilhões"
+) -> go.Figure:
     """Dados realizados sólidos, futuro tracejado e faixa exploratória; apenas muda a unidade de exibição."""
-    divisor = 1 if variavel in config.PERCENTUAIS or variavel in config.RAZOES else 1e9
+    divisor = (
+        1
+        if variavel in config.PERCENTUAIS or variavel in config.RAZOES
+        else config.UNIDADES_VISUAIS[unidade_visual][0]
+    )
     unidade = (
-        "%" if variavel in config.PERCENTUAIS else "Vezes" if variavel in config.RAZOES else "R$ bilhões"
+        "%"
+        if variavel in config.PERCENTUAIS
+        else "Vezes"
+        if variavel in config.RAZOES
+        else config.UNIDADES_VISUAIS[unidade_visual][1]
     )
     hist = historico.dropna(subset=[variavel]).sort_values("data")
     if previsto.frequencia.iloc[0] == "trimestral":
@@ -54,8 +65,8 @@ def grafico_projecao(historico: pd.DataFrame, previsto: pd.DataFrame, variavel: 
             mode="lines",
             line=dict(width=0),
             fill="tonexty",
-            fillcolor="rgba(166,107,224,.22)",
-            name="Faixa exploratória — sem cobertura validada",
+            fillcolor="rgba(149,116,181,.20)",
+            name="Faixa exploratória",
             customdata=[
                 [formatar_indicador(variavel, a), formatar_indicador(variavel, b)]
                 for a, b in zip(futuro.inferior, futuro.superior)
@@ -86,18 +97,8 @@ def grafico_projecao(historico: pd.DataFrame, previsto: pd.DataFrame, variavel: 
             hovertemplate="Projetado: %{customdata}<extra></extra>",
         )
     )
-    fig.update_layout(
-        template="plotly_dark" if tema == "Escuro" else "plotly_white",
-        title=config.NOMES[variavel] + " · histórico e projeção",
-        paper_bgcolor="rgba(0,0,0,0)",
-        plot_bgcolor="rgba(0,0,0,0)",
-        font=dict(color="#E5EDF8" if tema == "Escuro" else "#17253C"),
-        yaxis_title=unidade,
-        separators=",.",
-        height=440,
-        legend=dict(orientation="h", y=-0.25),
-        margin=dict(t=60, b=50, l=10, r=10),
-    )
+    estilizar_figura(fig, config.NOMES[variavel] + "<br><sup>Histórico e projeção</sup>", unidade, tema)
+    fig.update_layout(height=440, margin=dict(t=115, b=40, l=15, r=15))
     periodos = pd.to_datetime(pd.concat([hist.data, futuro.data], ignore_index=True))
     trimestral = previsto.frequencia.iloc[0] == "trimestral"
     rotulos = [f"{d.year}T{d.quarter}" if trimestral else str(d.year) for d in periodos]
@@ -108,7 +109,7 @@ def grafico_projecao(historico: pd.DataFrame, previsto: pd.DataFrame, variavel: 
         tickangle=-45 if trimestral else 0,
         title="Trimestre" if trimestral else "Exercício",
     )
-    fig.update_yaxes(rangemode="tozero", gridcolor="rgba(133,147,169,.18)")
+    fig.update_yaxes(rangemode="tozero", gridcolor=config.TEMAS_DASHBOARD[tema]["grade"])
     fig.add_vline(
         x=pd.Timestamp(hist.data.iloc[-1]).timestamp() * 1000,
         line_dash="dot",
@@ -122,7 +123,9 @@ def mostrar_metricas(dados: dict, freq: str, variavel: str) -> None:
     with st.expander("Comparar modelos e entender as métricas"):
         conjunto = st.selectbox(
             "Conjunto de avaliação",
-            ["desenvolvimento", "teste_final"],
+            key="avaliacao",
+            bind="query-params",
+            options=["desenvolvimento", "teste_final"],
             format_func=lambda c: (
                 "Desenvolvimento — usado na seleção"
                 if c == "desenvolvimento"
@@ -150,7 +153,7 @@ def mostrar_metricas(dados: dict, freq: str, variavel: str) -> None:
                     else "Não se aplica",
                 }
             )
-        st.dataframe(pd.DataFrame(linhas), hide_index=True, use_container_width=True)
+        st.dataframe(pd.DataFrame(linhas), hide_index=True, width="stretch")
         st.caption(
             "MAE/RMSE: erro na unidade do alvo. sMAPE/MAPE: erro relativo; MAPE pode distorcer com valores perto de zero. MASE usa variação ingênua SOMENTE do treino (sazonal nos trimestres); MASE < 1 não prova vitória sobre o baseline no teste. Comparações usam as mesmas origens. N=1 não permite inferir confiabilidade."
         )
@@ -189,7 +192,7 @@ def mostrar_premissas(dados: dict, freq: str, modelo: str, cenario: str, variave
                 "horizonte": "Horizonte",
             }
         )
-        st.dataframe(p, hide_index=True, use_container_width=True)
+        st.dataframe(p, hide_index=True, width="stretch")
         st.caption(
             "Pessimista/base/otimista usam quantis históricos 25/50/75; margens trimestrais usam o mesmo trimestre do calendário. São referências de choque relativo, não taxas aplicadas diretamente a todos os modelos: veja as linhas efetivas. Não representam probabilidades dos cenários. Overrides exigem fonte/justificativa; o PL residual fecha o balanço."
         )
@@ -223,11 +226,12 @@ def mostrar_premissas(dados: dict, freq: str, modelo: str, cenario: str, variave
                 }
             ),
             hide_index=True,
-            use_container_width=True,
+            width="stretch",
         )
 
 
-def renderizar_projecoes(tema: str) -> None:
+@st.fragment
+def renderizar_projecoes(tema: str, unidade_visual: str = "Bilhões") -> None:
     """Interface de leitura; previsões são geradas separadamente no estágio 5."""
     st.subheader("Projeções exploratórias, com limites explícitos")
     st.warning(
@@ -258,12 +262,16 @@ def renderizar_projecoes(tema: str) -> None:
     a, b = st.columns(2)
     freq = a.selectbox(
         "Frequência das projeções",
-        ["anual", "trimestral"],
+        key="frequencia",
+        bind="query-params",
+        options=["anual", "trimestral"],
         format_func=lambda f: "Anual · 2026–2027" if f == "anual" else "Trimestral · 2026T1–T4",
     )
     variavel = b.selectbox(
         "Variável projetada",
-        config.PREDITIVA_ALVOS + config.PREDITIVA_INDICADORES,
+        key="variavel_projetada",
+        bind="query-params",
+        options=config.PREDITIVA_ALVOS + config.PREDITIVA_INDICADORES,
         format_func=lambda c: config.NOMES[c],
     )
     selecionado = dados["selecao"].loc[lambda d: d.frequencia.eq(freq)].iloc[0]
@@ -271,11 +279,19 @@ def renderizar_projecoes(tema: str) -> None:
     a, b = st.columns(2)
     modelo = a.selectbox(
         "Modelo para projeção",
-        modelos,
+        key=f"modelo_projecao_{freq}",
+        bind="query-params",
+        options=modelos,
         index=modelos.index(selecionado.modelo),
         format_func=lambda m: config.PREDITIVA_ROTULOS_MODELOS[m],
     )
-    cenario = b.selectbox("Cenário", ["base", "pessimista", "otimista"], format_func=str.capitalize)
+    cenario = b.selectbox(
+        "Cenário",
+        ["base", "pessimista", "otimista"],
+        format_func=str.capitalize,
+        key="cenario",
+        bind="query-params",
+    )
     st.caption(
         "O padrão foi definido no desenvolvimento, sem usar o teste final. A escolha manual explora alternativas. Os filtros descritivos de anos não alteram o treino desta aba."
     )
@@ -304,9 +320,9 @@ def renderizar_projecoes(tema: str) -> None:
         return
     previsto["data"] = pd.to_datetime(previsto.data)
     st.plotly_chart(
-        grafico_projecao(hist, previsto, variavel, tema),
+        grafico_projecao(hist, previsto, variavel, tema, unidade_visual),
         theme=None,
-        use_container_width=True,
+        width="stretch",
         key="grafico_projecoes",
     )
     st.caption(
@@ -323,7 +339,7 @@ def renderizar_projecoes(tema: str) -> None:
             "Erros históricos no horizonte": previsto.n_residuos_horizonte,
         }
     )
-    st.dataframe(tabela, hide_index=True, use_container_width=True)
+    st.dataframe(tabela, hide_index=True, width="stretch")
     st.download_button(
         "Baixar projeções selecionadas",
         previsto.to_csv(index=False, sep=";", decimal=",").encode("utf-8-sig"),
@@ -357,12 +373,12 @@ def renderizar_projecoes(tema: str) -> None:
                 }
             ),
             hide_index=True,
-            use_container_width=True,
+            width="stretch",
         )
         st.caption(
             "Viés positivo: subestimação. Autocorrelação e Ljung–Box são exploratórios, com poucos erros e horizontes sobrepostos. Receita não positiva recebe fallback explícito e margens ficam nos limites do treino. Liquidez por razões não é previsão de caixa. Alternativas anuais e trimestrais são modeladas separadamente; não há reconciliação automática entre cenários/modelos distintos."
         )
-        st.dataframe(dados["modelos_descartados"], hide_index=True, use_container_width=True)
+        st.dataframe(dados["modelos_descartados"], hide_index=True, width="stretch")
     st.caption(
         "Fontes atuais podem incorporar revisões posteriores; não se reconstroem vintages nem atraso de divulgação. Consulte a metodologia e os riscos antes de interpretar cada número."
     )
