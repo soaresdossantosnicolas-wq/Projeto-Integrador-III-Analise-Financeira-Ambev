@@ -23,6 +23,7 @@ from dashboard_utils import (
     validar_snapshot,
 )
 from dashboard_projecoes import renderizar_projecoes
+from dashboard_explicacoes import renderizar_explicacoes
 from dashboard_design import aplicar_tema, estilizar_figura
 from dashboard_interacoes import explorar, comparar, tabela_executiva, composicao_balanco, analise_vertical
 from excecoes import ErroValidacaoDados
@@ -538,6 +539,8 @@ def main() -> None:
         renderizar_projecoes(tema, unidade)
     with abas[7], st.container(border=True):
         sobre(metadados)
+    with abas[8], st.container(border=True):
+        renderizar_explicacoes(df, tema)
     st.markdown(
         f'<div class="rodape">{" · ".join(config.AUTORES)}<br>Projeto Integrador III · 2026 · Licença MIT · <a href="{config.REPOSITORIO}" target="_blank" rel="noopener noreferrer">Código, dados e metodologia ↗</a></div>',
         unsafe_allow_html=True,
