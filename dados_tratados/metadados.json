@@ -1,5 +1,5 @@
 {
-  "gerado_em_utc": "2026-10-27T22:20:33.155004+00:00",
+  "gerado_em_utc": "2026-10-28T00:30:38.306813+00:00",
   "anos": [
     2022,
     2023,
@@ -40,6 +40,6 @@
       "sha256": "cdce6cc0e0bb85128d48928a697841f66019965bf120858c6d9802a8b70f1184"
     }
   ],
-  "indicadores_sha256": "ff66a0ae2f3c3d443dc41924769e462219ce1084685c6b42fbaa749f59dddeee",
+  "indicadores_sha256": "169c40a3648b9af822f21d70cddc586e1f175575132f2156e5a74dc15e02eb41",
   "status": "validado"
 }
