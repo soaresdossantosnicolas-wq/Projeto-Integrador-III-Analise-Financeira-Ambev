@@ -66,7 +66,7 @@ def grafico_projecao(
             line=dict(width=0),
             fill="tonexty",
             fillcolor="rgba(149,116,181,.20)",
-            name="Faixa exploratória",
+            name="Faixa exploratória P10–P90",
             customdata=[
                 [formatar_indicador(variavel, a), formatar_indicador(variavel, b)]
                 for a, b in zip(futuro.inferior, futuro.superior)
@@ -147,8 +147,14 @@ def mostrar_metricas(dados: dict, freq: str, variavel: str) -> None:
                     "sMAPE (%)": numero_br(r.smape),
                     "MAPE (%)": numero_br(r.mape),
                     "MASE (×)": numero_br(r.mase),
-                    "Supera ingênuo (MAE)": "Sim" if r.supera_ingenuo else "Não",
-                    "Supera sazonal (MAE)": ("Sim" if r.supera_ingenuo_sazonal else "Não")
+                    "Supera ingênuo (MAE)": "Referência"
+                    if r.modelo == "ingenuo"
+                    else ("Sim" if r.supera_ingenuo else "Não"),
+                    "Supera sazonal (MAE)": (
+                        "Referência"
+                        if r.modelo == "ingenuo_sazonal"
+                        else ("Sim" if r.supera_ingenuo_sazonal else "Não")
+                    )
                     if freq == "trimestral"
                     else "Não se aplica",
                 }
@@ -238,7 +244,7 @@ def renderizar_projecoes(tema: str, unidade_visual: str = "Bilhões") -> None:
         "Projeções baseadas em dados históricos e premissas simplificadas; não constituem recomendação de investimento."
     )
     st.info(
-        "Corte contábil em 31/12/2025. Este é um exercício retrospectivo para 2026–2027, não uma previsão em tempo real de outubro de 2026. As faixas não têm cobertura estatística futura demonstrada."
+        "Projeção elaborada com dados até 31/12/2025; não incorpora informações posteriores. Exercício retrospectivo para 2026–2027. Faixa exploratória P10–P90: cobertura não validada."
     )
     nomes = [
         "projecoes.csv",
@@ -295,7 +301,14 @@ def renderizar_projecoes(tema: str, unidade_visual: str = "Bilhões") -> None:
     st.caption(
         "O padrão foi definido no desenvolvimento, sem usar o teste final. A escolha manual explora alternativas. Os filtros descritivos de anos não alteram o treino desta aba."
     )
-    st.caption(selecionado.regra + " " + selecionado.conclusao_final)
+    referencia = "ingenuo" if freq == "anual" else "ingenuo_sazonal"
+    if selecionado.modelo == referencia:
+        st.info(
+            "Modelo padrão: baseline. O selecionado é a própria referência; compará-lo consigo mesmo não avalia as alternativas. Evidência insuficiente para demonstrar ganho confiável com modelos mais complexos."
+        )
+        st.caption(selecionado.regra)
+    else:
+        st.caption(selecionado.regra + " " + selecionado.conclusao_final)
     if freq == "anual":
         st.warning(
             "Apenas 7 observações anuais comparáveis e 1 erro por horizonte no teste final. Evidência insuficiente para precisão robusta, especialmente em 2027."

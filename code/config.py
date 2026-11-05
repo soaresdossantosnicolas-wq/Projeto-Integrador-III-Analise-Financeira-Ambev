@@ -85,7 +85,7 @@ NOMES = {
     "margem_operacional": "Margem operacional — CVM",
     "margem_liquida": "Margem líquida",
     "roa": "ROA",
-    "roe": "ROE",
+    "roe": "ROE sobre PL final",
     "liquidez_corrente": "Liquidez corrente",
     "liquidez_seca": "Liquidez seca",
     "endividamento_geral": "Endividamento geral",
@@ -125,7 +125,7 @@ FORMULAS = {
     "roe": "Lucro líquido consolidado / PL consolidado de encerramento × 100.",
     "liquidez_corrente": "Ativo circulante / passivo circulante.",
     "liquidez_seca": "(Ativo circulante − estoques) / passivo circulante.",
-    "endividamento_geral": "(Passivo circulante + não circulante) / ativo total × 100.",
+    "endividamento_geral": "(Passivo circulante + não circulante) / ativo total × 100. Inclui obrigações operacionais e financeiras; não equivale à dívida bancária.",
     "capital_terceiros_patrimonio": "Passivo exigível / patrimônio líquido × 100.",
 }
 
@@ -223,6 +223,12 @@ TEMAS_DASHBOARD = {
     },
 }
 UNIDADES_VISUAIS = {"Bilhões": (1e9, "R$ bilhões"), "Milhões": (1e6, "R$ milhões"), "Mil": (1e3, "R$ mil")}
+# Limites operacionais conservadores, não limites oficiais da CVM.
+# DFPs do manifesto atual: cerca de 13 MB comprimidos; margem para outros anos/ITRs.
+CVM_MAX_DOWNLOAD_BYTES = 256 * 1024 * 1024
+CVM_MAX_DESCOMPACTADO_BYTES = 2 * 1024 * 1024 * 1024
+CVM_MAX_MEMBROS_ZIP = 500
+
 ABAS_DASHBOARD = [
     "Visão Geral",
     "DRE",
@@ -230,9 +236,9 @@ ABAS_DASHBOARD = [
     "Liquidez e Endividamento",
     "Balanço",
     "Comparação de Períodos",
+    "O que explica os resultados?",
     "Projeções",
     "Sobre",
-    "O que explica os resultados?",
 ]
 
 # Explicações: curadoria local e somente histórico realizado, sem regenerar dados.

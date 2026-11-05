@@ -147,7 +147,14 @@ def figura_exploracao(
             hovertemplate=tooltip,
             name=config.NOMES[campo],
         )
-    estilizar_figura(fig, config.NOMES[campo], eixo, tema)
+    atual, anterior, variacao = calcular_variacoes(base, campo, ano)
+    titulo = f"{config.NOMES[campo]} · {ano}"
+    if np.isfinite(variacao):
+        diferenca = atual - anterior if percentual else variacao
+        unidade_delta = "p.p." if percentual else "%"
+        direcao = "avança" if diferenca > 0 else "recua" if diferenca < 0 else "permanece estável"
+        titulo += f" · {direcao} {numero_br(abs(diferenca))} {unidade_delta}"
+    estilizar_figura(fig, titulo, eixo, tema)
     fig.update_layout(showlegend=False, clickmode="event+select", height=380)
     fig.update_xaxes(type="category")
     if razao and campo.startswith("liquidez"):
@@ -268,15 +275,11 @@ def tabela_executiva(df: pd.DataFrame, unidade: str, tema: str = "Escuro") -> No
             "Indicador": config.NOMES[campo] + f" ({sufixo})",
             **dict(zip(df.ano_analise.astype(str), valores)),
             "Evolução": valores,
-            "Último / maior": valores[-1] / max(valores) * 100 if max(valores) > 0 else np.nan,
         }
         linhas.append(linha)
     tabela = pd.DataFrame(linhas)
     numericas = df.ano_analise.astype(str).tolist()
     estilo = tabela.style.format(precision=2, decimal=",", thousands=".", na_rep="n/d", subset=numericas)
-    estilo = estilo.highlight_max(
-        axis=1, subset=numericas, props=f"color: {config.TEMAS_DASHBOARD[tema]['acento']}; font-weight: 700;"
-    )
     st.dataframe(
         estilo,
         hide_index=True,
@@ -284,14 +287,6 @@ def tabela_executiva(df: pd.DataFrame, unidade: str, tema: str = "Escuro") -> No
         row_height=44,
         column_config={
             "Indicador": st.column_config.TextColumn(pinned=True, width="medium"),
-            "Último / maior": st.column_config.ProgressColumn(
-                "Último / maior (%)",
-                min_value=0,
-                max_value=100,
-                format="%.0f%%",
-                help="Último valor dividido pelo maior valor no recorte. Não é meta nem avaliação de desempenho.",
-                color=config.PALETA["primaria"],
-            ),
             "Evolução": st.column_config.LineChartColumn(
                 "Trajetória",
                 width="medium",
@@ -301,7 +296,7 @@ def tabela_executiva(df: pd.DataFrame, unidade: str, tema: str = "Escuro") -> No
         },
     )
     st.caption(
-        "Maior valor de cada linha em destaque, sem julgamento de desempenho. Barra: último / maior valor do recorte. Sparklines têm escalas próprias. Exportações em reais; ordenação e busca disponíveis na tabela."
+        "Trajetórias com escalas próprias, sem classificação automática de melhor desempenho. Exportações em reais; ordenação e busca disponíveis na tabela."
     )
     exportacoes(df, "executiva")
 

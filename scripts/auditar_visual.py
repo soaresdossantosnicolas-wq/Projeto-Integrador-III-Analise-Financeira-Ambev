@@ -13,7 +13,7 @@ RAIZ = Path(__file__).resolve().parents[1]
 
 
 def main() -> None:
-    """Captura oito abas × dois temas × duas larguras; falhas impedem sucesso silencioso."""
+    """Captura nove abas × dois temas × duas larguras; falhas impedem sucesso silencioso."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--fase", choices=["antes", "depois"], default="depois")
     args = parser.parse_args()

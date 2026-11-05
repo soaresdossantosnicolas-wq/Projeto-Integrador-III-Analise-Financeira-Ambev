@@ -109,9 +109,11 @@ def grafico_series(
 
 
 def criar_kpis(base: pd.DataFrame, ano: int) -> None:
-    """Quatro cards; percentuais variam em p.p., dinheiro em %, sempre contra ano−1."""
-    colunas = st.columns(4)
-    for container, nome in zip(colunas, ("receita_liquida", "lucro_liquido", "roe", "endividamento_geral")):
+    """Cinco cards; variações usam o ano calendário anterior."""
+    colunas = st.columns(5)
+    for container, nome in zip(
+        colunas, ("receita_liquida", "lucro_liquido", "roe", "endividamento_geral", "liquidez_corrente")
+    ):
         atual, anterior, relativo = calcular_variacoes(base, nome, ano)
         delta = None
         if np.isfinite(atual) and np.isfinite(anterior):
@@ -126,7 +128,9 @@ def criar_kpis(base: pd.DataFrame, ano: int) -> None:
             ),
             formatar_indicador(nome, atual),
             delta=delta,
-            delta_color="inverse" if nome == "endividamento_geral" else "normal",
+            delta_color="off"
+            if nome in config.RAZOES
+            else ("inverse" if nome == "endividamento_geral" else "normal"),
             border=True,
             chart_data=base.loc[base.ano_analise.le(ano), nome].tolist(),
             chart_type="area",
@@ -398,7 +402,7 @@ def main() -> None:
     abas = st.tabs(config.ABAS_DASHBOARD, key="aba", bind="query-params")
     with abas[0]:
         st.markdown('<div class="secao-numero">01 / A HISTÓRIA DOS RESULTADOS</div>', unsafe_allow_html=True)
-        st.subheader("O que move os resultados")
+        st.subheader("Como os resultados evoluíram")
         with st.container(border=True):
             explorar(df, filtrado, tema, unidade, mostrar_explicacoes)
         with st.expander("Receita e resultados · visão conjunta", expanded=False):
@@ -535,11 +539,11 @@ def main() -> None:
             st.caption(
                 "Base completa do calendário: ocultar um ano não altera a variação do seguinte. Base zero ou ausente gera n/d."
             )
-    with abas[6], st.container(border=True):
-        renderizar_projecoes(tema, unidade)
     with abas[7], st.container(border=True):
-        sobre(metadados)
+        renderizar_projecoes(tema, unidade)
     with abas[8], st.container(border=True):
+        sobre(metadados)
+    with abas[6], st.container(border=True):
         renderizar_explicacoes(df, tema)
     st.markdown(
         f'<div class="rodape">{" · ".join(config.AUTORES)}<br>Projeto Integrador III · 2026 · Licença MIT · <a href="{config.REPOSITORIO}" target="_blank" rel="noopener noreferrer">Código, dados e metodologia ↗</a></div>',
