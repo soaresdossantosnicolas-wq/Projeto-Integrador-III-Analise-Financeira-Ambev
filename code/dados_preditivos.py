@@ -15,6 +15,7 @@ import config
 from analise_ambev_cvm import sessao_http
 from cvm import converter_numerico, filtrar_ambev, filtrar_ultimo_exercicio, preparar_demonstrativo
 from excecoes import ErroColetaCVM, ErroValidacaoDados
+from seguranca_arquivos import gravar_download_limitado, validar_limites_zip
 
 log = logging.getLogger(__name__)
 MAPAS = {"DRE": config.CONTAS_DRE, "BPA": config.CONTAS_ATIVO, "BPP": config.CONTAS_PASSIVO}
@@ -39,9 +40,7 @@ def baixar_documento(documento: str, ano: int, *, offline: bool = False) -> Path
                     stream=True,
                 ) as resposta:
                     resposta.raise_for_status()
-                    with temporario.open("wb") as arquivo:
-                        for bloco in resposta.iter_content(1024 * 1024):
-                            arquivo.write(bloco)
+                    gravar_download_limitado(resposta, temporario)
             validar_arquivo(temporario, documento, ano)
             os.replace(temporario, caminho)
         except (requests.RequestException, OSError, zipfile.BadZipFile) as erro:
@@ -55,6 +54,7 @@ def baixar_documento(documento: str, ano: int, *, offline: bool = False) -> Path
 def validar_arquivo(caminho: Path, documento: str, ano: int) -> None:
     """Exige os três membros do ano indicado e CRC íntegro."""
     with zipfile.ZipFile(caminho) as z:
+        validar_limites_zip(caminho, z)
         for tipo in MAPAS:
             if f"{documento.lower()}_cia_aberta_{tipo}_con_{ano}.csv" not in z.namelist():
                 raise ErroColetaCVM(f"Membro {tipo}/{ano} ausente em {caminho.name}.")
@@ -65,6 +65,7 @@ def validar_arquivo(caminho: Path, documento: str, ano: int) -> None:
 def ler_membro(caminho: Path, documento: str, tipo: str, ano: int) -> pd.DataFrame:
     """Filtra somente a mesma empresa e preserva códigos com zeros e datas originais."""
     with zipfile.ZipFile(caminho) as z:
+        validar_limites_zip(caminho, z)
         with z.open(f"{documento.lower()}_cia_aberta_{tipo}_con_{ano}.csv") as arquivo:
             df = pd.read_csv(arquivo, sep=";", encoding="latin1", low_memory=False, dtype={"CD_CONTA": str})
     return filtrar_ambev(df)
