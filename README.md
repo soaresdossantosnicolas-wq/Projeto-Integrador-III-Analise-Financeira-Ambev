@@ -1,5 +1,33 @@
 # Ambev, em perspectiva
 
+## Revisão de BI e engenharia — novembro de 2026
+
+A visão geral apresenta cinco KPIs, incluindo liquidez corrente. ROE é identificado
+como retorno sobre PL final. A tabela histórica não classifica o maior valor como
+melhor desempenho. Títulos do explorador descrevem variações, sem atribuir causas.
+A aba de explicações antecede as projeções; fontes pendentes e interpretações em
+rascunho permanecem assim até revisão dos autores.
+
+Quando o modelo padrão é o próprio baseline, a tela informa essa condição sem
+apresentar a comparação consigo mesmo como avaliação das alternativas. As faixas
+P10–P90 são exploratórias, com cobertura não validada e corte em 31/12/2025.
+Os arquivos preditivos existentes são preservados; sua interpretação é ajustada na interface.
+
+O Dev Container usa Python 3.12 e instala `requirements-dev.txt` com interrupção
+em caso de erro. CORS e XSRF não são desativados pelo comando de inicialização.
+Para executar localmente: `python -m streamlit run code/04_visualizacao.py`.
+No Community Cloud, conferir branch e arquivo principal nas configurações do app;
+um commit no GitHub não comprova, isoladamente, que a versão entrou em produção.
+
+Downloads CVM têm limites operacionais editáveis em `config.py`: 256 MiB
+comprimidos, 2 GiB descompactados e 500 membros. O manifesto DFP registra arquivos
+de aproximadamente 13 MB; os limites são uma política conservadora com folga,
+não máximos oficiais nem uma medição completa dos ITRs. O diretório central do ZIP
+é conferido antes de CRC/leitura e os bytes recebidos são contados durante o download.
+Novos períodos acima dos limites exigem revisão explícita, nunca remoção silenciosa da proteção.
+
+Validação e pendências desta revisão: [relatório](docs/revisao-bi-2026-11-05.md).
+
 **Projeto Integrador III · Ciência de Dados · Fatec Cotia**
 
 Pipeline auditável em Python para analisar as Demonstrações Financeiras Padronizadas (DFP) **consolidadas da Ambev S.A.**, nos exercícios de **2022 a 2025**, e apresentar resultados em um dashboard Streamlit. A fonte é o portal de dados abertos da CVM; a seleção usa código CVM/CNPJ e códigos de contas, sem inferir valores pelo nome das contas.
