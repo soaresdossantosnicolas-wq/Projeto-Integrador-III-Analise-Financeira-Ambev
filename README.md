@@ -228,3 +228,30 @@ Ciência de Dados · Fatec Cotia · Projeto Integrador III.
 ## Licença
 
 Código sob [licença MIT](LICENSE). A licença do projeto não substitui as condições de uso dos dados públicos da CVM nem concede direitos sobre marcas de terceiros. O dashboard usa cabeçalho textual, sem logotipo da Ambev.
+
+## Metodologia da explicação dos resultados
+
+A aba **O que explica os resultados?** distingue três camadas, por exercício de 2022 a 2025:
+
+- **O que os dados mostram:** valores e variações calculados do snapshot CVM, em comparação com exatamente o ano anterior. A ponte de margem fecha pela identidade da DRE; descreve mudanças das razões CPV/receita e despesas operacionais líquidas/receita, sem atribuir causas econômicas. Em 2022, comparações com 2021 ficam **n/d**, pois o ano anterior não está no snapshot do dashboard.
+- **O que a companhia diz:** paráfrases curadas dos releases oficiais, com documento, data, página, URL, período, medida, unidade, comparabilidade e data de acesso. Entradas pendentes não contêm afirmação factual. Relatórios de sustentabilidade servem apenas como contexto, não como prova de causa financeira.
+- **Interpretação do grupo:** quatro propostas com evidências e limitações, identificadas como **rascunho (a revisar pelo grupo)**. A aprovação e o texto final são responsabilidade de Arthur Almeida, Nicolas Soares e Pedro Barreto.
+
+Os quatro exercícios foram confrontados com a receita anual dos releases correspondentes: o deslocamento antigo de anos não está presente. O release 2025 está disponível, publicado em 12/02/2026. O CSV do dashboard já está em **reais**; a reconciliação exibe também R$ mil e preserva a unidade original do release, R$ milhões. Diferenças de arredondamento até R$ 50 mil são explicitadas.
+
+**Base contábil e medidas orgânicas/ajustadas:** crescimento orgânico não é crescimento nominal, lucro ajustado não é lucro contábil e EBITDA não é EBIT. A conta CVM 3.05 inclui equivalência patrimonial, que o release mostra separada do lucro operacional; essa diferença de classificação é reconciliada e permanece visível. Não são calculadas diferenças monetárias entre medidas incompatíveis. O CPV e a conta 3.04 mantêm os valores originais; esta última é líquida de outras receitas e inclui equivalência, portanto não equivale a SG&A bruto.
+
+A aba oferece seleção de exercício, comparação de dois anos, ponte da margem operacional, tabela de reconciliação com fontes e exportação CSV/Excel das três camadas, incluindo referências. Os controles usam atualização parcial; o carregamento é cacheado pelo conteúdo dos arquivos. Não há coleta, ETL ou modelagem a cada interação.
+
+A curadoria está em `dados/explicacoes/`: `explicacoes_companhia.csv`, `interpretacao_grupo.csv`, `referencias_reconciliacao.csv` e `documentos.csv`. Nesta entrega são **17 afirmações verificadas**, **15 temas oficiais pendentes** e **4 interpretações em rascunho**; 24 comparações monetárias conciliadas e 8 medidas não comparáveis. Nenhum release está faltando. O grupo deve revisar as pendências e, se necessário, fornecer DFPs completas com notas e relatório da administração em `fontes/`. Essa pasta não é versionada; PDFs não são necessários no Streamlit Community Cloud.
+
+Consulte o [diagnóstico e limites](docs/diagnostico-explicacoes.md), o [anexo de fontes e pendências por ano](docs/fontes-explicacoes.md) e a [reconciliação numérica](docs/reconciliacao-resultados.csv). Para incluir uma afirmação, confira o documento e a página, registre a medida e a unidade e só então altere o status para `verificado`. Nunca converta automaticamente uma interpretação em conclusão revisada.
+
+Verificação local, sem internet:
+
+```bash
+python -m pytest -q
+python scripts/verificar_explicacoes.py --hashes-inicio docs/explicacoes-hashes-inicio.json
+```
+
+O verificador bloqueia schema ou fonte inválidos, páginas fora do documento, calendário desalinhado, referências desconhecidas e diferenças não conciliadas. Ele lista pendências editoriais sem transformá-las em fatos. Para exigir aprovação editorial completa, acrescente `--exigir-revisao` (falha intencionalmente enquanto houver pendências/rascunhos). A conferência semântica das paráfrases continua sendo uma tarefa de revisão humana.

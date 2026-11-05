@@ -232,4 +232,9 @@ ABAS_DASHBOARD = [
     "Comparação de Períodos",
     "Projeções",
     "Sobre",
+    "O que explica os resultados?",
 ]
+
+# Explicações: curadoria local e somente histórico realizado, sem regenerar dados.
+PASTA_EXPLICACOES = RAIZ_PROJETO / "dados" / "explicacoes"
+EXPLICACOES_ARREDONDAMENTO_REAIS = 50_000  # release a 0,1 milhão: meia unidade
