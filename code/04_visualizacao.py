@@ -54,6 +54,15 @@ def estilizar(fig: go.Figure, titulo: str, eixo: str, tema: str) -> go.Figure:
 
 def mostrar(fig: go.Figure, chave: str) -> None:
     """Renderiza responsivamente com ferramentas discretas."""
+    if chave in {"margens", "retornos", "liquidez", "endividamento", "balanco"}:
+        # Título em bloco próprio: não disputa a margem do Plotly com a legenda.
+        st.subheader(fig.layout.title.text)
+        fig = go.Figure(fig)
+        fig.update_layout(
+            title=dict(text=""),
+            margin=dict(t=65),
+            legend=dict(y=1.02, yanchor="bottom"),
+        )
     st.plotly_chart(
         fig,
         theme=None,
