@@ -65,7 +65,9 @@ def test_dashboard_abre_filtra_limpa_e_trata_vazio():
     app = AppTest.from_file(str(RAIZ / "code/04_visualizacao.py")).run(timeout=30)
     assert not app.exception
     assert not app.error
-    assert len(app.metric) == 4
+    assert len(app.metric) == 5
+    assert app.metric[4].label == "Liquidez corrente"
+    assert app.metric[4].value == "0,96 ×"
     assert len(app.tabs) == 9
     delta = app.metric[0].delta
     app.sidebar.multiselect[0].set_value([2025]).run()

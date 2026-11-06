@@ -16,6 +16,7 @@ from urllib3.util.retry import Retry
 import config
 from cvm import filtrar_ambev, preparar_demonstrativo
 from excecoes import ErroColetaCVM
+from seguranca_arquivos import gravar_download_limitado, validar_limites_zip
 
 log = logging.getLogger(__name__)
 PASTA_DADOS = config.PASTA_DADOS_CVM
@@ -36,6 +37,7 @@ def validar_zip(caminho: Path, ano: int) -> None:
     """Rejeita cache corrompido e ZIP de outro ano antes de qualquer reutilização."""
     try:
         with zipfile.ZipFile(caminho) as z:
+            validar_limites_zip(caminho, z)
             nomes = set(z.namelist())
             esperados = {f"dfp_cia_aberta_{tipo}_con_{ano}.csv" for tipo in config.GRUPOS_DFP}
             if not esperados <= nomes:
@@ -62,9 +64,7 @@ def baixar_dfp(ano: int, *, offline: bool = False) -> Path:
         with sessao_http() as sessao:
             with sessao.get(config.URL_DFP.format(ano=ano), timeout=(15, 120), stream=True) as resposta:
                 resposta.raise_for_status()
-                with temporario.open("wb") as arquivo:
-                    for bloco in resposta.iter_content(chunk_size=1024 * 1024):
-                        arquivo.write(bloco)
+                gravar_download_limitado(resposta, temporario)
         validar_zip(temporario, ano)
         os.replace(temporario, caminho)
     except (requests.RequestException, OSError) as erro:
@@ -78,6 +78,7 @@ def ler_csv_zip(caminho_zip: Path, nome_arquivo: str) -> pd.DataFrame:
     """Lê o membro exato em Latin-1, separado por ponto e vírgula e com códigos textuais."""
     try:
         with zipfile.ZipFile(caminho_zip) as z:
+            validar_limites_zip(caminho_zip, z)
             with z.open(nome_arquivo) as arquivo:
                 return pd.read_csv(
                     arquivo,

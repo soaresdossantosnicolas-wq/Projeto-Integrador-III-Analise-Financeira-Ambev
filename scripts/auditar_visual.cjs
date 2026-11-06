@@ -2,7 +2,7 @@
 const {chromium}=require('playwright');
 const fs=require('node:fs/promises');
 const path=require('node:path');
-const abas=['Visão Geral','DRE','Rentabilidade','Liquidez e Endividamento','Balanço','Comparação de Períodos','Projeções','Sobre'];
+const abas=['Visão Geral','DRE','Rentabilidade','Liquidez e Endividamento','Balanço','Comparação de Períodos','O que explica os resultados?','Projeções','Sobre'];
 const fase=process.env.QA_FASE||'depois';
 const destino=`outputs/qa-visual/${fase}`;
 async function aguardar(p){
@@ -28,7 +28,7 @@ async function aguardar(p){
    for(let i=0;i<abas.length;i++){
     await p.getByRole('tab',{name:abas[i],exact:true}).click();await aguardar(p);
     if(await p.getByRole('tab',{name:abas[i],exact:true}).getAttribute('aria-selected')!=='true')throw Error('Aba não selecionada');
-    if(i<7)await p.locator('[role="tabpanel"]:visible [data-testid="stPlotlyChart"] .js-plotly-plot').first().waitFor({state:'visible',timeout:30000});
+    if(abas[i]!=='Sobre')await p.locator('[role="tabpanel"]:visible [data-testid="stPlotlyChart"] .js-plotly-plot').first().waitFor({state:'visible',timeout:30000});
     await p.waitForTimeout(350);
     const largura=await p.evaluate(()=>({pagina:document.documentElement.scrollWidth,janela:innerWidth}));
     const kpisTruncados=await p.locator('[data-testid="stMetricValue"], [data-testid="stMetricValue"] *').evaluateAll(es=>es.filter(e=>e.clientWidth>0&&e.scrollWidth>e.clientWidth+1).length);
