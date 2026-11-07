@@ -7,6 +7,7 @@ import plotly.graph_objects as go
 import streamlit as st
 
 import config
+from dashboard_renderizacao import mostrar_figura as mostrar_figura
 
 
 @lru_cache(maxsize=1)
@@ -74,16 +75,3 @@ def insight(titulo: str, valor: str, texto: str) -> None:
         f'<div class="valor-foco">{escape(valor)}</div><p>{escape(texto)}</p></div>',
         unsafe_allow_html=True,
     )
-
-
-def mostrar_figura(fig: go.Figure, **opcoes):
-    """Título responsivo fora do canvas; preserva a figura original para exportação."""
-    if fig.layout.title.text:
-        st.subheader(fig.layout.title.text)
-    exibicao = go.Figure(fig)
-    exibicao.update_layout(
-        title=dict(text=""),
-        margin=dict(t=28, b=55, autoexpand=True),
-        legend=dict(orientation="h", y=-0.20, x=0, yanchor="top", xanchor="left"),
-    )
-    return st.plotly_chart(exibicao, **opcoes)

@@ -20,7 +20,8 @@ from analise_explicacoes import (
     validar_referencias,
     verificar_pendencias,
 )
-from dashboard_design import mostrar_figura, estilizar_figura
+from dashboard_renderizacao import mostrar_figura
+from dashboard_design import estilizar_figura
 from dashboard_utils import numero_br
 from excecoes import ErroValidacaoDados
 

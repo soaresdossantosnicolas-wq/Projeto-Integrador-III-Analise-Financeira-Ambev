@@ -24,7 +24,8 @@ from dashboard_utils import (
 )
 from dashboard_projecoes import renderizar_projecoes
 from dashboard_explicacoes import renderizar_explicacoes
-from dashboard_design import mostrar_figura, aplicar_tema, estilizar_figura
+from dashboard_renderizacao import mostrar_figura
+from dashboard_design import aplicar_tema, estilizar_figura
 from dashboard_interacoes import explorar, comparar, tabela_executiva, composicao_balanco, analise_vertical
 from excecoes import ErroValidacaoDados
 from explicacoes import EXPLICACOES_GRAFICOS, GLOSSARIO, ajuda_indicador
