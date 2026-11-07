@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 import streamlit as st
 
 import config
-from dashboard_design import estilizar_figura, insight
+from dashboard_design import mostrar_figura, estilizar_figura, insight
 from dashboard_utils import calcular_variacoes, exportar_csv, formatar_indicador, numero_br
 from explicacoes import ajuda_indicador
 
@@ -228,7 +228,7 @@ def explorar(base: pd.DataFrame, filtrado: pd.DataFrame, tema: str, unidade: str
             detalhar_exercicio(base, ano)
     with grafico:
         fig = figura_exploracao(base, filtrado, campo, tema, unidade, modo, forma, ano)
-        st.plotly_chart(
+        mostrar_figura(
             fig,
             theme=None,
             width="stretch",
@@ -370,7 +370,7 @@ def comparar(base: pd.DataFrame, filtrado: pd.DataFrame, tema: str) -> None:
     estilizar_figura(fig, f"O que mudou · {inicio} → {fim}", "Indicador", tema)
     fig.update_layout(height=280, showlegend=False, margin=dict(t=65, l=15, b=20, r=15))
     fig.update_xaxes(title="Variação relativa (%)")
-    st.plotly_chart(fig, theme=None, width="stretch", key="comparacao_barras")
+    mostrar_figura(fig, theme=None, width="stretch", key="comparacao_barras")
     st.caption(
         "Comparação entre os dois anos escolhidos, sem anualização. Cores indicam aumento/redução, não um julgamento econômico automático."
     )
@@ -414,7 +414,7 @@ def composicao_balanco(linha: pd.Series, tema: str) -> None:
                 ],
                 legend=dict(font=dict(size=10)),
             )
-            st.plotly_chart(fig, theme=None, width="stretch", key=f"composicao_{campos[0]}")
+            mostrar_figura(fig, theme=None, width="stretch", key=f"composicao_{campos[0]}")
 
 
 @st.fragment
@@ -475,7 +475,7 @@ def analise_vertical(df: pd.DataFrame, tema: str, explicar: bool) -> None:
         margin=dict(t=90, b=25, l=105 if campo == "Mapa de calor" else 15, r=15),
     )
     fig.update_xaxes(type="category")
-    st.plotly_chart(fig, theme=None, width="stretch", key="vertical_figura")
+    mostrar_figura(fig, theme=None, width="stretch", key="vertical_figura")
     if explicar:
         st.caption(
             "Como ler: cada célula ou barra divide a conta pela receita do mesmo exercício. Custos mantêm o sinal negativo da DFP."

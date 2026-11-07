@@ -20,7 +20,7 @@ from analise_explicacoes import (
     validar_referencias,
     verificar_pendencias,
 )
-from dashboard_design import estilizar_figura
+from dashboard_design import mostrar_figura, estilizar_figura
 from dashboard_utils import numero_br
 from excecoes import ErroValidacaoDados
 
@@ -161,7 +161,7 @@ def _mostrar_ponte(df: pd.DataFrame, ano: int, tema: str) -> None:
     )
     estilizar_figura(fig, f"Ponte da margem operacional · {ano - 1} → {ano}", "Pontos percentuais", tema)
     fig.update_yaxes(rangemode="normal", ticksuffix=" p.p.")
-    st.plotly_chart(fig, theme=None, width="stretch", key=f"ponte_explicacoes_{ano}")
+    mostrar_figura(fig, theme=None, width="stretch", key=f"ponte_explicacoes_{ano}")
     st.caption(
         "Margem operacional = 100 + CPV/receita × 100 + conta 3.04/receita × 100. "
         "A primeira contribuição é a mudança da margem bruta; a segunda é a mudança da razão "
