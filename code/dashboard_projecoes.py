@@ -11,7 +11,7 @@ import streamlit as st
 
 import config
 from dashboard_utils import formatar_indicador, numero_br
-from dashboard_design import estilizar_figura
+from dashboard_design import mostrar_figura, estilizar_figura
 
 
 @st.cache_data(show_spinner=False)
@@ -97,7 +97,7 @@ def grafico_projecao(
             hovertemplate="Projetado: %{customdata}<extra></extra>",
         )
     )
-    estilizar_figura(fig, config.NOMES[variavel] + "<br><sup>Histórico e projeção</sup>", unidade, tema)
+    estilizar_figura(fig, config.NOMES[variavel] + " · Histórico e projeção", unidade, tema)
     fig.update_layout(height=440, margin=dict(t=115, b=40, l=15, r=15))
     periodos = pd.to_datetime(pd.concat([hist.data, futuro.data], ignore_index=True))
     trimestral = previsto.frequencia.iloc[0] == "trimestral"
@@ -332,7 +332,7 @@ def renderizar_projecoes(tema: str, unidade_visual: str = "Bilhões") -> None:
         st.info("Sem projeção disponível; nenhuma linha sem faixa será exibida.")
         return
     previsto["data"] = pd.to_datetime(previsto.data)
-    st.plotly_chart(
+    mostrar_figura(
         grafico_projecao(hist, previsto, variavel, tema, unidade_visual),
         theme=None,
         width="stretch",
