@@ -11,7 +11,8 @@ import streamlit as st
 
 import config
 from dashboard_utils import formatar_indicador, numero_br
-from dashboard_design import mostrar_figura, estilizar_figura
+from dashboard_renderizacao import mostrar_figura
+from dashboard_design import estilizar_figura
 
 
 @st.cache_data(show_spinner=False)

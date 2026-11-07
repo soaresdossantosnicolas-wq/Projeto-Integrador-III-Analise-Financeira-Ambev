@@ -8,7 +8,8 @@ import plotly.graph_objects as go
 import streamlit as st
 
 import config
-from dashboard_design import mostrar_figura, estilizar_figura, insight
+from dashboard_renderizacao import mostrar_figura
+from dashboard_design import estilizar_figura, insight
 from dashboard_utils import calcular_variacoes, exportar_csv, formatar_indicador, numero_br
 from explicacoes import ajuda_indicador
 
